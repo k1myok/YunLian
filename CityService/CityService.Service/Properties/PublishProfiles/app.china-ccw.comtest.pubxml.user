@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+您 Web 项目的发布/打包进程将使用此文件。您可以通过编辑此 MSBuild 文件
+来自定义该进程的行为。若要了解与此相关的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkID=208121。
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAAnsIxZRoPEGIhRtC0xlpPwAAAAACAAAAAAAQZgAAAAEAACAAAAC8BCN5NUnObgrbTCwQqpFWkco1fdCtBfMkyRUl7bM21gAAAAAOgAAAAAIAACAAAABbz6Xu/vrNbZf0k7bHFPCHS4gDa+PtwX8b5KZ6xnHBpRAAAABbMpo7yrbHeY327Llmqk8zQAAAAPJr784v7wC/w2i4h9d7JdAHuET7ATEzcN+dXxdaLOs1qwLOVF1Nntkf5gcwJ9Sy87JNv8leLwCYgFaeAuo0EkI=</EncryptedPassword>
+    <_PublishTargetUrl>ftp://app.china-ccw.com/PreProjects_Test\CityService\CityService.Service/</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/CityService.Alipay.Aop.dll">
+      <publishTime>11/18/2015 16:46:37</publishTime>
+    </File>
+    <File Include="bin/CityService.Alipay.Aop.pdb">
+      <publishTime>11/18/2015 16:46:37</publishTime>
+    </File>
+    <File Include="bin/CityService.DataAccess.dll">
+      <publishTime>11/18/2015 16:46:38</publishTime>
+    </File>
+    <File Include="bin/CityService.DataAccess.pdb">
+      <publishTime>11/18/2015 16:46:38</publishTime>
+    </File>
+    <File Include="bin/CityService.Service.dll">
+      <publishTime>11/18/2015 17:54:49</publishTime>
+    </File>
+    <File Include="bin/CityService.Service.pdb">
+      <publishTime>11/18/2015 17:54:48</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>09/09/2015 10:35:34</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>06/22/2015 11:04:38</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/EntityFramework.resources.dll">
+      <publishTime>09/09/2015 10:35:33</publishTime>
+    </File>
+    <File Include="CityService.DataAccess.csproj.user">
+      <publishTime>09/28/2015 10:52:50</publishTime>
+    </File>
+    <File Include="CityServicesInfo/eduMenuPage.xml">
+      <publishTime>11/18/2015 14:26:25</publishTime>
+    </File>
+    <File Include="CityServicesInfo/healthMenuPage.xml">
+      <publishTime>11/18/2015 14:38:48</publishTime>
+    </File>
+    <File Include="CityServicesInfo/menuPage.xml">
+      <publishTime>11/13/2015 17:55:52</publishTime>
+    </File>
+    <File Include="CityServicesInfo/policeMenuPage.xml">
+      <publishTime>11/18/2015 14:41:17</publishTime>
+    </File>
+    <File Include="CityServicesInfo/szbmMenuPage.xml">
+      <publishTime>11/18/2015 14:41:56</publishTime>
+    </File>
+    <File Include="CityServicesInfo/szqxMenuPage.xml">
+      <publishTime>11/13/2015 17:22:39</publishTime>
+    </File>
+    <File Include="CityServicesInfo/travalMenuPage.xml">
+      <publishTime>11/18/2015 14:41:41</publishTime>
+    </File>
+    <File Include="CityServicesInfo_Alipay/eduMenuPage.xml">
+      <publishTime>11/18/2015 15:21:31</publishTime>
+    </File>
+    <File Include="CityServicesInfo_Alipay/healthMenuPage.xml">
+      <publishTime>11/18/2015 15:19:11</publishTime>
+    </File>
+    <File Include="CityServicesInfo_Alipay/menuPage.xml">
+      <publishTime>11/18/2015 16:45:37</publishTime>
+    </File>
+    <File Include="CityServicesInfo_Alipay/policeMenuPage.xml">
+      <publishTime>11/18/2015 15:16:54</publishTime>
+    </File>
+    <File Include="CityServicesInfo_Alipay/szbmMenuPage.xml">
+      <publishTime>11/18/2015 16:34:10</publishTime>
+    </File>
+    <File Include="CityServicesInfo_Alipay/szqxMenuPage.xml">
+      <publishTime>11/18/2015 16:45:37</publishTime>
+    </File>
+    <File Include="CityServicesInfo_Alipay/travalMenuPage.xml">
+      <publishTime>11/18/2015 16:33:09</publishTime>
+    </File>
+    <File Include="EducationCJService.svc">
+      <publishTime>11/12/2015 16:53:03</publishTime>
+    </File>
+    <File Include="EducationService.svc">
+      <publishTime>09/15/2015 14:58:34</publishTime>
+    </File>
+    <File Include="EnvProtectionService.svc">
+      <publishTime>09/09/2015 10:35:33</publishTime>
+    </File>
+    <File Include="HospitalInfoService.svc">
+      <publishTime>09/09/2015 10:35:33</publishTime>
+    </File>
+    <File Include="KnowAllService.svc">
+      <publishTime>10/30/2015 13:30:11</publishTime>
+    </File>
+    <File Include="PoliceService.svc">
+      <publishTime>10/21/2015 10:13:18</publishTime>
+    </File>
+    <File Include="PriceQueryService.svc">
+      <publishTime>09/09/2015 10:35:33</publishTime>
+    </File>
+    <File Include="Resource/Mapping.xml">
+      <publishTime>11/18/2015 10:56:17</publishTime>
+    </File>
+    <File Include="Service References/EhrServiceReference/CityService.Service.EhrServiceReference.ehrServiceResponse.datasource">
+      <publishTime>09/09/2015 10:35:33</publishTime>
+    </File>
+    <File Include="Service References/KnowAllServiceReference/CityService.Service.KnowAllServiceReference.GetcaseinfoByGuidResponse.datasource">
+      <publishTime>10/30/2015 13:36:18</publishTime>
+    </File>
+    <File Include="Service References/KnowAllServiceReference/CityService.Service.KnowAllServiceReference.GetInfoXmlResponse.datasource">
+      <publishTime>10/30/2015 13:36:18</publishTime>
+    </File>
+    <File Include="Service References/KnowAllServiceReference/CityService.Service.KnowAllServiceReference.GetServiceCompanyResponse.datasource">
+      <publishTime>10/30/2015 13:36:18</publishTime>
+    </File>
+    <File Include="Service References/KnowAllServiceReference/CityService.Service.KnowAllServiceReference.GetServiceEquipmentResponse.datasource">
+      <publishTime>10/30/2015 13:36:18</publishTime>
+    </File>
+    <File Include="Service2.svc">
+      <publishTime>09/09/2015 10:35:33</publishTime>
+    </File>
+    <File Include="test/jgg.xml">
+      <publishTime>11/10/2015 17:00:58</publishTime>
+    </File>
+    <File Include="TravalService.svc">
+      <publishTime>09/09/2015 10:35:33</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>11/18/2015 17:55:20</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <title>
+    苏州教育
+  </title>
+  <menus>
+    <menu>
+      <content>学区查询</content>
+      <url>../Education/Default.html</url>
+      <image>../Images/义务教育.png</image>
+    </menu>
+    <menu>
+      <content>E卡通</content>
+      <url>../ECard/selectLoginWay.html</url>
+      <image>../Images/苏州E卡通.png</image>
+    </menu>
+      <!--<menu>
+      <content>考试成绩查询</content>
+      <url>../Education/CJQUery/Default.html</url>
+      <image>../Images/考试成绩查询.png</image>
+    </menu>-->
+
+  </menus>
+  <foot>
+    <div class='am-agreement am-ft-gray am-ft-sm'>
+      <p id='footValue'>
+        本服务由苏州市教育局<br />苏州云联智慧信息技术应用有限公司提供支持
+      </p>
+    </div>
+  </foot>
+  <type>
+    type_jgg
+  </type>
+</root>

@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport"  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+
+    <title>查询结果</title>
+    <link href="../Content/amui-demo_files/demo.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../Content/alipay/amui-demo_files/amui.js"></script>
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/amui.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/agreement.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/article.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/city-select.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/timeline.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/page-result.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/iconfont.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/button-group.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/search.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/top-notice.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/toast.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/message.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/dialog.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/card.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/header.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/switch.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/simple-password.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/form.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/message(1).css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/demo.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/button.css" media="all">
+    <script charset="utf-8" src="../Content/alipay/amui-demo_files/zepto.js"></script>
+    <script charset="utf-8" src="../Content/alipay/amui-demo_files/amui.js"></script>
+    <script type="text/javascript" src="../Scripts/extensions/base.js"></script>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="header" class="am-header" style="display:none">
+        </div> 
+        <div data-role="content">
+            <div class="am-toast" id="toast">
+                <div class="am-toast-text">
+                    <span class="am-toast-icon am-icon" am-mode="toast-loading"></span> 正在努力查询...
+                </div>
+            </div>
+            <div class="am-card" id="cardContainer">
+                <div id="resultDiv" class="am-page-result-wrap" style="margin-top:125px; text-align:center;display:none">
+                    <div class="am-page-result-pic">
+                        <img src="../Images/empty.png" width="138" height="138">
+                    </div>
+                    <div class="am-page-result-title" style="color:#8F8F95; font-size:16px; margin-top:25px;font-family:stheitisc">未查询到学区信息</div>
+                    <div class="am-page-result-brief" style="color:#8F8F95; font-size:16px; margin-top:8px;font-family:stheitisc">请返回修改准确的查询条件！</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            $("#container").hide();
+            search();
+        })
+
+        function search() {
+            $("#toast").show();
+            var url = "../../CityService.Service/EducationService.svc/Search";
+            var region = decodeURI(getQueryStringByName("region"));
+            var schoolType = decodeURI(getQueryStringByName("schoolType"));
+            var searchType = decodeURI(getQueryStringByName("searchType"));
+            var searchText = decodeURI(getQueryStringByName("searchText"));
+
+            var args = $.parseJSON('{"region":"' + region + '","schoolType":"' + schoolType+ '","searchType":"' + searchType+ '","searchText":"' + searchText + '"}');
+            $.ajax(url, {
+                type: 'get',
+                contentType: 'text/json',
+                data: args,
+                success: function (msg) {
+                    if (msg.d == null || msg.d.length == 0)
+                        $("#resultDiv").show();
+                    else
+                    {
+                        $("#container").show();
+                        $.each(msg.d, function () {
+                            addToList(this);
+                        });
+                    }
+                },
+                error: function (xhr) {
+                },
+                complete: function () {
+                    $("#toast").hide();
+                }
+            });
+        }
+               
+        function addToList(ele)
+        {
+            var addressHtml = "";
+            if (ele.SchoolAddress != null)
+            {
+                addressHtml =
+                '<div class="am-card-item-footer">' +
+                    '<a class="am-card-item-more" style="color:#b2b2b2">地址：' + ele.SchoolAddress + '</a>' +
+                '</div>';
+            }
+
+            var content =
+                '<div class="am-card-item">' +
+                    '<div class="am-card-item-header">' +
+                        '<h3 class="am-card-item-title">' + ele.SchoolName + '</h3>' +
+                    '</div>' +
+                    '<div class="am-card-item-content">' +
+                        '<div class="am-card-item-subject">' + ele.SchoolDistricts.trim() + '</div>' +
+                    '</div>' +
+                    addressHtml +
+                '</div>';
+            
+            document.getElementById("cardContainer").innerHTML += content;
+        }
+
+    </script>
+</body>
+</html>

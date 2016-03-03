@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "新建普通住房贷款申请指南";
+}
+@*<div style="padding:0 10px;padding-bottom:10px;margin-top:15px;">
+    <div style="width:70px;float:right;z-index:2;font-size:13px;padding:0 10px;text-align:center;font-weight:bolder;word-break:keep-all;">
+        <img src="~/Images/地图.png" style="width:30px;height:30px;" onclick="Show()" />
+        <div><strong>办理网点</strong></div>
+    </div>
+    <div>
+        <p style="text-align:center;"><b>新建普通住房</b></p>
+        <p><b>办理流程</b></p>
+        <p>借款申请人带齐材料至办理场所进行贷款申请→中心逐级审批，对符合贷款条件的出具《贷款申请审批表》</p>
+        <p>（保证担保）→借款申请人凭审批材料至担保公司办理保证担保手续→借款申请人凭审批材料以及担保材料至贷款银行办理借款签约手续</p>
+        <p>（质押担保）→至贷款银行办理质押担保及借款签约手续</p>
+        <p>（公积金余额质押）→在中心柜面申请的同时办理质押手续→至贷款银行办理借款签约手续</p>
+    </div>
+</div>*@
+@*<div style="padding:0 10px;">
+    <p><b>办理要件</b></p>
+    <img src="~/Images/新建普通住房要件.PNG" id="Images1" style="width:100%" />
+</div>*@
+<div data-role="content" style="background-color:#fff">
+    <div class="am-list" am-mode="flat  chip">
+        <div class="am-list-body">
+            <div style="width:70px;float:right;z-index:2;font-size:13px;margin:-15px 10px;text-align:center;font-weight:bolder;word-break:keep-all;">
+                <img src="~/Images/地图.png" style="width:30px;height:30px;" onclick="Show()" />
+                <div><strong>办理网点</strong></div>
+            </div>
+         
+                <p style="text-align:center;"><b>新建普通住房</b></p>
+                
+                    <p style="padding-top:15px;"><b>办理流程</b></p>
+                <div style="padding-top:15px;">
+                    <p>借款申请人带齐材料至办理场所进行贷款申请→中心逐级审批，对符合贷款条件的出具《贷款申请审批表》</p>
+                    <p>（保证担保）→借款申请人凭审批材料至担保公司办理保证担保手续→借款申请人凭审批材料以及担保材料至贷款银行办理借款签约手续</p>
+                    <p>（质押担保）→至贷款银行办理质押担保及借款签约手续</p>
+                    <p>（公积金余额质押）→在中心柜面申请的同时办理质押手续→至贷款银行办理借款签约手续</p>
+                </div>
+            <p style="padding-top:15px;"><b>办理要件</b></p>
+            <div style="margin-top:15px">
+            <img src="~/Images/新建普通住房要件.PNG" id="Images1" style="width:100%" />
+               </div>
+        </div>
+    </div>
+ </div>
+
+
+
+
+
+
+
+    <script>
+            $(function () {
+                $("#Images1").click(function () {
+                    var url = $("#Images1").attr("src");
+                    window.location.href = "../AlipayProvidentFund/ShowImages?url=" + url;
+                });
+            });
+            function Show() {
+                window.location.href = "../AlipayProvidentFund/SelectPoint";
+            }
+    </script>
+

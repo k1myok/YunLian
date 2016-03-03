@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../Scripts/extensions/base.js"></script>
+    <script type="text/javascript" src="../Content/alipay/amui-demo_files/amui.js"></script>
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=2ffb8bddf5f3620892d0bb3051b23777"></script>
+    <title>登陆</title>
+</head>
+<body>
+    
+</body>
+<script type="text/javascript">
+    $(function () {
+        gettoken();
+    });
+
+    if (openid == "") {
+        location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx520c15f417810387&redirect_uri=http%3a%2f%2flocalhost%2fCityService%2fCityService.WeiXin%2fPolice%2fGetOpenID.html&response_type=code&scope=snsapi_base&state=123#wechat_redirect";
+    }
+    else
+    {
+
+
+    }
+
+
+
+
+    function gettoken()
+    {
+        var url = "../../CityService.Service/PoliceService.svc/getAccessToken1";
+        $.ajax(url, {
+            type: "Get",
+            dataType: "json",
+            success: function (result) {
+
+                var temp = JSON.parse(result);
+                alert(temp.access_token);
+                GetOpenID(temp.access_token)
+
+            },
+            error: function (result) {
+                alert();
+            },
+        });
+    }
+    function getCookie(key) {
+        var keyValues = document.cookie.split(";");
+        for (var index = 0; index < keyValues.length; index++) {
+            var keyValue = keyValues[index].split("=");
+            if (keyValue[0].trim() == key)
+                return keyValue[1];
+        }
+        return null;
+    }
+    function GetOpenID(code) {
+        var url = "../../CityService.Service/PoliceService.svc/GetAccessToken";
+        $.ajax(url, {
+            type: "GET",
+            data: {
+                code: code,
+            },
+            dataType: "Json",
+            success: function (result) {
+                var openID = result.d;
+                document.cookie = "openID=" + openID;
+                alert(openID);
+                location.href = "Homepage.html"
+                // alert(result.d);
+                //获取openID 或查询是否在数据库中存在，如果存在直接跳转到getHOspitaillist.html/否则跳转到LoginRegister.html
+                //
+            },
+            error: function () {
+                return;
+            },
+        });
+    }
+    function ExistOpenID(openID) {
+        document.cookie = "openID=" + openID;
+        var url = "../../CityService.Service/PoliceService.svc/ExsitOpenID";
+        $.ajax(url, {
+            type: "GET",
+            data:
+                {
+                    openId: openID,
+                },
+            dataType: "json",
+            success: function (result) {
+                var type = decodeURI(getQueryStringByName("type"));
+                var temp = JSON.parse(result.d);
+                if (temp.succ == false) {
+                    location.href = "Login.html?type=" + type;
+                }
+                else {
+                    var guid = temp.data.guid;
+                    document.cookie = "guid=" + guid;
+                    if (type == 1) {
+                        location.href = "MyConsulting.html";
+                    }
+                    else {
+                        alert("cuowu");
+                        // location.href = "AskQuestion.html";
+                    }
+                }
+            },
+            error: function () {
+                return;
+            }
+        });
+    }
+    function geturl() {
+        var type = decodeURI(getQueryStringByName("type"));
+        var url = "../../CityService.Service/PoliceService.svc/GetAuthorizeUrl";
+        $.ajax(url, {
+            type: 'Get',
+            contentType:'html',
+            data: {},
+            success: function (result) {
+                location.href = "result";
+            },
+            error: function () { },
+        });
+    }
+</script>
+</html>
+

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://service.ws.com/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="EhrServiceImplService" targetNamespace="http://service.ws.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://service.ws.com/">
+      <xsd:element name="ehrService" type="tns:ehrService" />
+      <xsd:complexType name="ehrService">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="GetCheckRptReq" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ehrServiceResponse" type="tns:ehrServiceResponse" />
+      <xsd:complexType name="ehrServiceResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ehrServiceResponse">
+    <wsdl:part name="parameters" element="tns:ehrServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ehrService">
+    <wsdl:part name="parameters" element="tns:ehrService" />
+  </wsdl:message>
+  <wsdl:portType name="EhrService">
+    <wsdl:operation name="ehrService">
+      <wsdl:input name="ehrService" message="tns:ehrService" />
+      <wsdl:output name="ehrServiceResponse" message="tns:ehrServiceResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EhrServiceImplServiceSoapBinding" type="tns:EhrService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ehrService">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="ehrService">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ehrServiceResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EhrServiceImplService">
+    <wsdl:port name="EhrServiceImplPort" binding="tns:EhrServiceImplServiceSoapBinding">
+      <soap:address location="http://58.210.226.38:8080/EhrService/services/EhrService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

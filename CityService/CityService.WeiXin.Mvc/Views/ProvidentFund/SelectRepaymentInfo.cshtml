@@ -1,0 +1,59 @@
+﻿@model CityService.Service.Controllers.Models.ProvidentFundModel.Repayment
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>个人公积金缴存信息详情</title>
+    <script src="~/Script/jquery-1.10.2.min.js"></script>
+    <script src="~/Script/extensions/base.js"></script>
+    <meta charset='UTF-8'>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <link href="../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/button.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/toast.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/dialog.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/button-group.css" type="text/css" rel="stylesheet" />
+    <script src="~/Script/extensions/base.js"></script>
+    <script src="~/Script/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../Content/alipay/amui-demo_files/amui.js"></script>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="content" style="padding:0px;">
+            <div>
+                <img src="~/Image/苏州市住房公积金管理中心.jpg" style="width:100%;" />
+            </div>
+            <div class="am-list am-list-5lb" am-mode="flat chip form">
+                <div class="am-list-header">个人缴存信息详情</div>
+                <div class="am-list-body">
+                    <div class="am-list-item am-input-autoclear">
+                        <div class="am-list-label">还款日期</div>
+                        <div class="am-list-control am-ft-right">@Model.rDate</div>
+                    </div>
+                    <div class="am-list-item am-input-autoclear">
+                        <div class="am-list-label" style="width:40%;">本次还款金额</div>
+                        <div class="am-list-control am-ft-right">@Model.SumAmt</div>
+                    </div>
+                    <div class="am-list-item am-input-autoclear">
+                        <div class="am-list-label" style="width:40%;">本次还款本金</div>
+                        <div class="am-list-control am-ft-right">@Model.RCapi</div>
+                    </div>
+                    <div class="am-list-item am-input-autoclear">
+                        <div class="am-list-label" style="width:40%;">本次还款利息</div>
+                        <div class="am-list-control am-ft-right">@Model.rInte</div>
+                    </div>
+                    <div class="am-list-item am-input-autoclear">
+                        <div class="am-list-label" style="width:40%;">贷款本金余额</div>
+                        <div class="am-list-control am-ft-right">@Model.Bal</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

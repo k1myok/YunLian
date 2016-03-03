@@ -1,0 +1,169 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>办事咨询</title>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <link href="../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/toast.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/button.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/dialog.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/button-group.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/card.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../Scripts/extensions/base.js"></script>
+    <script type="text/javascript" src="../Content/alipay/amui-demo_files/amui.js"></script>
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=2ffb8bddf5f3620892d0bb3051b23777"></script>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="content" style="background-color:#EFEFF4">
+            <div class="am-toast" id="toast">
+                <div class="am-toast-text">
+                    <span class="am-toast-icon am-icon" am-mode="toast-loading"></span> 正在努力查询...
+                </div>
+            </div>
+            <div class="am-list am-list-5lb" am-mode="flat chip form">
+                <div class="am-search am-input-autoclear">
+                    <div class="am-search-input">
+                        <div class="am-search-icon"><i class="am-icon" am-mode="search"></i></div>
+                        <input class="am-search-value" id="keyword" type="text" placeholder="问题关键字" value="">
+                        <div class="am-search-clear"><i class="am-icon-clear am-icon" am-mode="clear clear-tiny" style="visibility: hidden;"></i></div>
+                    </div>
+                    <div class="am-search-button" style="display: none;">
+                        <button type="button" class="am-button" am-mode="little blue" onclick="SearchQuestion()" disabled="disabled">确定</button>
+                    </div>
+                </div>
+                <div class="am-list-footer am-ft-right" style="font-size:12px">
+                    <a href="AskQuestion.html">我要咨询</a>
+                </div>
+                    <div class="am-list-body" id="Questions"></div>
+                    <div class="am-list-body" id="QuestionSearch"></div>
+               </div>
+        </div>
+    <div style="padding-left:15px;padding-right:15px;margin-top:15PX;margin-bottom:20px;">
+        <button class="am-button am-button-light" id="moreButton" style="visibility:visible;">更多</button>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $("#toast").show();
+            search();
+            $("#moreButton").click(function () {
+                page_index++;
+                search();
+            });
+        });
+        function SearchQuestion()
+        {
+            $("#Questions").html("");
+            search();
+            $("#moreButton").click(function () {
+                page_index++;
+                search();
+
+            });
+          }
+        var page_index = 1;
+        function search() {
+            var url = "../../CityService.Service/PoliceService.svc/Consultingservices";
+            var keyword = $("#keyword").val();
+            $.ajax(url, {
+                type: "get",
+                data: {
+                    keyword: keyword,
+                    page_index:page_index
+                },
+                success: function (msg) {
+                    if (msg.d.succ == "True") {
+                        var total = parseInt(msg.d.data.totals);
+                        if (total > 0) {
+                            addTolist(msg.d.data.list);
+                            if (total > page_index) {
+                                $("#moreButton").css("visibility", "visible");
+                            }
+                            else {
+                                $("#moreButton").css("visibility", "hidden");
+                            }
+                        }
+                    }
+                    else {
+                        alert("未查到相关内容，请重新查询");
+                        $("#moreButton").css("visibility", "hidden");
+                    }
+                },
+                error: function () { },
+                complete: function () {
+                    $("#toast").hide();
+                }
+            });
+        }
+
+        function addTolist(result) {
+            var content = "";
+            for (var i = 0; i < result.length; i++) {
+                var temp = result[i].context;
+                content +=
+                    '<div class="am-card">'+
+                                '<div class="am-card-item">'+
+                                    '<div class="am-card-item-header">'+
+                                       ' <h3 class="am-card-item-title" id="title">' + result[i].context + '</h3>' +
+                                        '<div class="am-card-item-footnote">' +
+                                     '<div class="am-card-item-tims  am-ft-right">' + result[i].CreateTime + '</div>' +
+                                 '</div>' +
+                                    '</div>' +
+                                    '<div class="am-card-item-content">'+
+                                       ' <div class="am-card-item-subject">'+
+                                          '  <br />'+
+                                          '  <p class="am-ft-orange" style="word-break:break-all" id="'+ result[i].Guid +'"></p>' +
+                                          '  <br />'+
+                                       ' </div>'+
+                                   ' </div>'+
+                                '</div>'+
+                           ' </div>';
+                Answer(result[i].Guid);
+            }
+            $("#Questions").append(content);
+        }
+        function Answer(Guid) {
+            var cs = "." + Guid;
+            var url = "../../CityService.Service/PoliceService.svc/GetAnswer";
+            $.ajax(url, {
+                type: "get",
+                data: {
+                    Guid: Guid,
+                },
+                success: function (msg) {
+                    if (msg.d.succ == "True") {
+                        var result = msg.d.data.Context;
+                        $("#" + Guid + "").html(result);
+                    }
+                    else {
+                        var result = "暂时未回复你的问题，请稍后再查询";
+                        return result;
+                    }
+                },
+                error: function () { }
+            });
+        }
+
+
+
+
+
+
+
+
+
+
+
+        function turn() {
+            location.href = "AskQuestion.html";
+        }
+
+    </script>
+</body>
+</html>

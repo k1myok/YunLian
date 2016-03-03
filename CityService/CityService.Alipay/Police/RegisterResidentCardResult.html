@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>居住证办理进度查询结果</title>
+    <meta charset='UTF-8'>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <link href="../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/toast.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/button.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/dialog.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/button-group.css" type="text/css" rel="stylesheet" />
+
+    <script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../Scripts/extensions/base.js"></script>
+    <script type="text/javascript" src="../Content/alipay/amui-demo_files/amui.js"></script>
+</head>
+<body>
+    <div data-role="page" id="detailDiv">
+        <div data-role="content" style="background-color:#EFEFF4;padding-top:15px;">
+            <div class="am-list am-list-5lb" am-mode="flat chip">
+            <div class="am-list-header">居住证办理信息</div>
+             <div class="am-list" am-mode="radius">   
+            <div class="am-list-body">
+                <div class="am-toast" id="toast">
+                    <div class="am-toast-text">
+                        <span class="am-toast-icon am-icon" am-mode="toast-loading"></span> 正在查询...
+                    </div>
+                </div>  
+        <div class="am-list-item">
+            <div class="am-list-label" style="width:25%">姓名</div>
+            <div class="am-list-control" id="Name" style="width:75%"></div>
+        </div>
+        <div class="am-list-item">
+            <div class="am-list-label" style="width:25%">性别</div>
+            <div class="am-list-control" id="Sex" style="width:75%"></div>
+        </div>
+        <div class="am-list-item">
+            <div class="am-list-label" style="width:25%">居民证号</div>
+            <div class="am-list-control" id="jmCard" style="width:75%"></div>
+        </div>
+        <div class="am-list-item">
+            <div class="am-list-label" style="width:25%">户籍所在地</div>
+            <div class="am-list-control" id="hjAddress" style="width:75%"></div>
+        </div>
+        <div class="am-list-item">
+            <div class="am-list-label" style="width:25%">居住证号</div>
+            <div class="am-list-control" id="no" style="width:75%"></div>
+        </div>
+        <div class="am-list-item">
+            <div class="am-list-label" style="width:25%">现居住地址</div>
+            <div class="am-list-control" id="Address" style="width:75%"></div>
+        </div>
+        <div class="am-list-item">
+            <div class="am-list-label" style="width:25%">居住证状态</div>
+            <div class="am-list-control" id="Status" style="width:75%"></div>
+        </div>
+        <div class="am-list-item">
+            <div class="am-list-label" style="width:25%">是否领取居住证</div>
+            <div class="am-list-control" id="isGet" style="width:75%"></div>
+        </div>
+    </div>
+</div>
+                </div>
+        </div>
+    </div>
+    <div id="fuwu" style="display: block;font-family:STHeitiSC  ;font-size: 12px; margin-bottom: 15px; margin-left: 0px; width: 100%; text-align: center; bottom: 0px;z-index:-1;">
+        <div class="am-agreement am-ft-gray am-ft-sm">
+            <p>
+                本服务由苏州市公安局<br />苏州云联智慧信息技术应用有限公司提供支持
+            </p>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            $("#toast").show();
+            var idcard = decodeURI(getQueryStringByName("idcard"));
+            var url = "../../CityService.Service/PoliceService.svc/SelectRegisterResidentCardInfo";
+            $.ajax(url, {
+                type: 'get',
+                contentType: 'text/json',
+                data: "idcard=" + idcard,
+                success: function (msg) {
+                    if (msg.d.msg != null) {
+                        alert(msg.d.msg);
+                        window.location.href = "SelectRegisterResidentCard.html";
+                    } else
+                    {
+                        $("#Name").html(msg.d.data.姓名);
+                        $("#Sex").html(msg.d.data.性别);
+                        $("#jmCard").html(msg.d.data.居民证号);
+                        $("#hjAddress").html(msg.d.data.户籍所在地);
+                        $("#no").html(msg.d.data.居住证号);
+                        $("#Address").html(msg.d.data.现居住地址);
+                        $("#Status").html(msg.d.data.居住证状态);
+                        $("#isGet").html(msg.d.data.是否领居住证);
+                    }
+                },
+                error: function (xhr) {
+                },
+                complete: function () {
+                    $("#toast").hide();
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

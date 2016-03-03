@@ -1,0 +1,56 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>调整贷款每月还款额</title>
+    <link href="~/Content/jquery.mobile-1.4.5.css" rel="stylesheet" />
+    <script src="~/Script/jquery-1.10.2.min.js"></script>
+    <script src="~/Script/extensions/base.js"></script>
+    <script src="~/Script/jquery.mobile-1.4.5.js"></script>
+</head>
+<body>
+    <div data-role="page" style="background-color: #fff;">
+        <div>
+            <img src="~/Image/苏州市住房公积金管理中心.jpg" style="width:100%;" />
+        </div>
+        <div style="padding:0 10px;padding-bottom:10px;">
+            <div style="width:70px;float:right;z-index:2;font-size:13px;padding:0 10px;text-align:center;font-weight:bolder;word-break:keep-all;">
+                <img src="~/Image/地图.png" style="width:30px;height:30px;" onclick="Show()" />
+                <div><strong>办理网点</strong></div>
+            </div>
+            <div>
+                <p style="text-align:center;"><b>调整贷款每月还款额</b></p>
+                <p><b>办理流程</b></p>
+                <p>职工（借款人）带齐所需材料到办理场所申请办理→工作人员审核→符合条件的，办理相关业务</p>
+                <p><b>所需材料</b></p>
+                <p>1、借款合同；</p>
+                <p>2、身份证。</p>
+                <p>3、提高月还款额且超过借款人与共同借款人住房公积金月缴存额的，还需提供收入证明。</p>
+                <p><b>友情提示</b></p>
+                <p>1、借款人本人到场办理；</p>
+                <p>2、申请调整月还款额度时贷款帐户无逾期；</p>
+                <p>3、借款人申请调整月还款额度，应于约定还款日前申请，每年可申请调整一次；</p>
+                <p>4、借款人已缩短还款期限，因故需延长还款期限的，不得超过合同约定的还款期限。</p>
+            </div>
+    </div>
+    <script>
+        $(function () {
+            $("#image1").click(function () {
+                var url = $("#image1").attr("src");
+                window.location.href = "../ProvidentFund/ShowImage?url=" + url;
+            });
+        });
+        function Show() {
+            window.location.href = "../ProvidentFund/SelectPoint";
+        }
+    </script>
+    <div style="bottom:0px;">
+        <img src="~/Image/公积金官方微信.png" style="width:100%;" />
+    </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <Alias Key="Model" Value="CitServiceModel" />
+  <Alias Key="Target" Value="CitServiceModel.Store" />
+  <EntityContainerMapping CdmEntityContainer="CityServiceModelContainer" StorageEntityContainer="CitServiceModelStoreContainer">
+    <EntitySetMapping Name="TravalSpotView">
+      <EntityTypeMapping TypeName="CitServiceModel.TravalSpotView">
+        <MappingFragment StoreEntitySet="TravalSpotView">
+          <ScalarProperty Name="Y" ColumnName="Y" />
+          <ScalarProperty Name="X" ColumnName="X" />
+          <ScalarProperty Name="SpotName" ColumnName="SpotName" />
+          <ScalarProperty Name="PlaceName" ColumnName="PlaceName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TravalSpotDetailView">
+      <EntityTypeMapping TypeName="CitServiceModel.TravalSpotDetailView">
+        <MappingFragment StoreEntitySet="TravalSpotDetailView">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Sound" ColumnName="Sound" />
+          <ScalarProperty Name="SpotName" ColumnName="SpotName" />
+          <ScalarProperty Name="PlaceName" ColumnName="PlaceName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TravalPlaceView">
+      <EntityTypeMapping TypeName="CitServiceModel.TravalPlaceView">
+        <MappingFragment StoreEntitySet="TravalPlaceView">
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Y" ColumnName="Y" />
+          <ScalarProperty Name="X" ColumnName="X" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TravalPlaceDetail">
+      <EntityTypeMapping TypeName="CitServiceModel.TravalPlaceDetail">
+        <MappingFragment StoreEntitySet="TravalPlaceDetail">
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AgricultureDetailView">
+      <EntityTypeMapping TypeName="CitServiceModel.AgricultureDetailView">
+        <MappingFragment StoreEntitySet="AgricultureDetailView">
+          <ScalarProperty Name="CreateDay" ColumnName="CreateDay" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+          <ScalarProperty Name="MarketName" ColumnName="MarketName" />
+          <ScalarProperty Name="Createdt" ColumnName="Createdt" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AgricultureMarket">
+      <EntityTypeMapping TypeName="CitServiceModel.AgricultureMarket">
+        <MappingFragment StoreEntitySet="AgricultureMarket">
+          <ScalarProperty Name="Y" ColumnName="Y" />
+          <ScalarProperty Name="X" ColumnName="X" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AgricultureParticiple">
+      <EntityTypeMapping TypeName="CitServiceModel.AgricultureParticiple">
+        <MappingFragment StoreEntitySet="AgricultureParticiple">
+          <ScalarProperty Name="Participle" ColumnName="Participle" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SchoolDistrict">
+      <EntityTypeMapping TypeName="CitServiceModel.SchoolDistrict">
+        <MappingFragment StoreEntitySet="SchoolDistrict">
+          <ScalarProperty Name="SchoolDistricts" ColumnName="SchoolDistricts" />
+          <ScalarProperty Name="SchoolAddress" ColumnName="SchoolAddress" />
+          <ScalarProperty Name="SchoolType" ColumnName="SchoolType" />
+          <ScalarProperty Name="SchoolName" ColumnName="SchoolName" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Depart">
+      <EntityTypeMapping TypeName="CitServiceModel.Depart">
+        <MappingFragment StoreEntitySet="Depart">
+          <ScalarProperty Name="ChildAge" ColumnName="ChildAge" />
+          <ScalarProperty Name="DepartSex" ColumnName="DepartSex" />
+          <ScalarProperty Name="ClinicFee" ColumnName="ClinicFee" />
+          <ScalarProperty Name="RegistryFee" ColumnName="RegistryFee" />
+          <ScalarProperty Name="Limited" ColumnName="Limited" />
+          <ScalarProperty Name="DepartIntro" ColumnName="DepartIntro" />
+          <ScalarProperty Name="DepartType" ColumnName="DepartType" />
+          <ScalarProperty Name="DepartName" ColumnName="DepartName" />
+          <ScalarProperty Name="HospName" ColumnName="HospName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Doctor">
+      <EntityTypeMapping TypeName="CitServiceModel.Doctor">
+        <MappingFragment StoreEntitySet="Doctor">
+          <ScalarProperty Name="DocPhotoURL" ColumnName="DocPhotoURL" />
+          <ScalarProperty Name="ClinicFee" ColumnName="ClinicFee" />
+          <ScalarProperty Name="RegistryFee" ColumnName="RegistryFee" />
+          <ScalarProperty Name="IsExpert" ColumnName="IsExpert" />
+          <ScalarProperty Name="DocMajor" ColumnName="DocMajor" />
+          <ScalarProperty Name="DoctorInro" ColumnName="DoctorInro" />
+          <ScalarProperty Name="DocRank" ColumnName="DocRank" />
+          <ScalarProperty Name="DocSex" ColumnName="DocSex" />
+          <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
+          <ScalarProperty Name="DepartName" ColumnName="DepartName" />
+          <ScalarProperty Name="HospName" ColumnName="HospName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hospital">
+      <EntityTypeMapping TypeName="CitServiceModel.Hospital">
+        <MappingFragment StoreEntitySet="Hospital">
+          <ScalarProperty Name="Intro" ColumnName="Intro" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Kind" ColumnName="Kind" />
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
+          <ScalarProperty Name="HospName" ColumnName="HospName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="schedual">
+      <EntityTypeMapping TypeName="CitServiceModel.schedual">
+        <MappingFragment StoreEntitySet="schedual">
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="ExpertFee" ColumnName="ExpertFee" />
+          <ScalarProperty Name="WorkStatus" ColumnName="WorkStatus" />
+          <ScalarProperty Name="WorkType" ColumnName="WorkType" />
+          <ScalarProperty Name="WorkDate" ColumnName="WorkDate" />
+          <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
+          <ScalarProperty Name="DepartName" ColumnName="DepartName" />
+          <ScalarProperty Name="HospName" ColumnName="HospName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Member">
+      <EntityTypeMapping TypeName="CitServiceModel.Member">
+        <MappingFragment StoreEntitySet="Member">
+          <ScalarProperty Name="openID" ColumnName="openID" />
+          <ScalarProperty Name="Style" ColumnName="Style" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="IDCard" ColumnName="IDCard" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Register">
+      <EntityTypeMapping TypeName="CitServiceModel.Register">
+        <MappingFragment StoreEntitySet="Register">
+          <ScalarProperty Name="ClinicSerialNo" ColumnName="ClinicSerialNo" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="Style" ColumnName="Style" />
+          <ScalarProperty Name="DocRate" ColumnName="DocRate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="SN" ColumnName="SN" />
+          <ScalarProperty Name="RegisterFee" ColumnName="RegisterFee" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="ClinicDate" ColumnName="ClinicDate" />
+          <ScalarProperty Name="RegisteDate" ColumnName="RegisteDate" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
+          <ScalarProperty Name="DepartName" ColumnName="DepartName" />
+          <ScalarProperty Name="HospName" ColumnName="HospName" />
+          <ScalarProperty Name="OPenId" ColumnName="OPenId" />
+          <ScalarProperty Name="IDCard" ColumnName="IDCard" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ZWBST_ShfwzList">
+      <EntityTypeMapping TypeName="CitServiceModel.ZWBST_ShfwzList">
+        <MappingFragment StoreEntitySet="ZWBST_ShfwzList">
+          <ScalarProperty Name="ENTERPRICENAME" ColumnName="ENTERPRICENAME" />
+          <ScalarProperty Name="ENTERPRICEGUID" ColumnName="ENTERPRICEGUID" />
+          <ScalarProperty Name="SERVICENAME" ColumnName="SERVICENAME" />
+          <ScalarProperty Name="SERVICETYPEGUID" ColumnName="SERVICETYPEGUID" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ZWBST_EntDetail">
+      <EntityTypeMapping TypeName="CitServiceModel.ZWBST_EntDetail">
+        <MappingFragment StoreEntitySet="ZWBST_EntDetail">
+          <ScalarProperty Name="FWQYFW" ColumnName="FWQYFW" />
+          <ScalarProperty Name="FWCL" ColumnName="FWCL" />
+          <ScalarProperty Name="TJNR" ColumnName="TJNR" />
+          <ScalarProperty Name="JYFW" ColumnName="JYFW" />
+          <ScalarProperty Name="CONTACT" ColumnName="CONTACT" />
+          <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+          <ScalarProperty Name="ENTERPRICEINFO" ColumnName="ENTERPRICEINFO" />
+          <ScalarProperty Name="LOGO" ColumnName="LOGO" />
+          <ScalarProperty Name="ENTERPRICENAME" ColumnName="ENTERPRICENAME" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ZWBST_EntSfbz">
+      <EntityTypeMapping TypeName="CitServiceModel.ZWBST_EntSfbz">
+        <MappingFragment StoreEntitySet="ZWBST_EntSfbz">
+          <ScalarProperty Name="REMARK1" ColumnName="REMARK1" />
+          <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+          <ScalarProperty Name="PRICE2" ColumnName="PRICE2" />
+          <ScalarProperty Name="PRICE1" ColumnName="PRICE1" />
+          <ScalarProperty Name="UNIT" ColumnName="UNIT" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="ENTERPRICEGUID" ColumnName="ENTERPRICEGUID" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

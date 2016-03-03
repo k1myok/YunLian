@@ -1,0 +1,841 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>考试成绩查询</title>
+    <meta charset='UTF-8'>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <link href="../../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../../Content/alipay/amui-demo_files/toast.css" type="text/css" rel="stylesheet" />
+    <link href="../../Content/alipay/button.css" type="text/css" rel="stylesheet" />
+    <link href="../../Content/alipay/amui-demo_files/dialog.css" type="text/css" rel="stylesheet" />
+    <link href="../../Content/alipay/amui-demo_files/button-group.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="../../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../Scripts/extensions/base.js"></script>
+    <script type="text/javascript" src="../../Content/alipay/amui-demo_files/amui.js"></script>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="header" class="am-header" style="background-color:#EFEFF4;display:none;">
+        </div>
+        <div data-role="content" style="background-color:#EFEFF4">
+            <div class="am-list am-list-5lb" am-mode="flat chip form">
+                <div class="am-list-body" id="condition">
+                    <div class="am-list-item am-input-autoclear">
+                        <div class="am-list-label">年月：</div>
+                        <div class="am-list-control">
+                            <select id="date"></select>
+                        </div>
+                    </div>
+                </div>
+                <div style="padding-left:15px;padding-right:15px;margin-top:15PX;">
+                    <button id="searchButton" type="button" class="am-button" am-mode="blue disabled">查 询</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="fuwu" style="display: block;font-family:STHeitiSC;font-size: 12px; margin-bottom: 15px; margin-left: 0px; width: 100%; text-align: center;   position: absolute; bottom: 0px;z-index:-1;">
+        <div class="am-agreement am-ft-gray am-ft-sm">
+            <p>
+                本服务由苏州市教育局<br />苏州云联智慧信息技术应用有限公司提供支持
+            </p>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            //大类
+            var type = decodeURI(getQueryStringByName("Type"));
+            //小类
+            var classification = decodeURI(getQueryStringByName("Classification"));
+            //通过大类和小类加载年月信息
+            GetTestDate(type, classification);
+            //通过类型加载页面
+            switch (type) {
+                //高考
+                case "NEMT":
+                    switch (classification) {
+                        //高考成绩查询
+                        case "gkcjcx":
+                            //修改title
+                            this.attr("title", "高考成绩查询");
+                            //添加查询字段
+                            $("#condition").append("<div class=\"am-list-item am-input-autoclear\">" +
+                                                        "<div class=\"am-list-label\">准考证号：</div>" +
+                                                        "<div class=\"am-list-control\">" +
+                                                            "<input id=\"inputZKZH\" type=\"text\" value=\"\">" +
+                                                        "</div>" +
+                                                    "</div>" +
+                                                    "<div class=\"am-list-item am-input-autoclear\">" +
+                                                        "<div class=\"am-list-label\">身份证号：</div>" +
+                                                        "<div class=\"am-list-control\">" +
+                                                            "<input id=\"inputSFZH\" type=\"text\" value=\"\">" +
+                                                        "</div>" +
+                                                    "</div>");
+                            //加载条件非空验证
+                            window.setInterval("GKCJCXCheckButtonState()", 200);
+                            //给按钮添加点击事件
+                            $("#searchButton").click(function () {
+                                //判断查询条件是否满足
+                                var date = $.trim($("#date option:selected").val());
+                                var zkzh = $.trim($("#inputZKZH").val());
+                                var sfzh = $.trim($("#inputSFZH").val());
+                                if (zkzh != null && zkzh != "" && zkzh != "undefined" && xm != null && xm != "" && xm != "undefined") {
+                                    window.location.href = "QueryResult.html?Type=" + type + "&Classification=" + classification + "&zkzh=" + zkzh + "&sfzh=" + sfzh+"&date="+date;
+                                }
+                                else {
+                                    alert("查询条件请填写完整");
+                                }
+                            });
+                            break;
+                        //高考考点查询
+                        case "gkkdcx":
+                            //修改title
+                            $(document).attr("title", "高考考点查询");
+                            //添加查询字段
+                            $("#condition").append("<div class=\"am-list-item am-input-autoclear\">" +
+                                                        "<div class=\"am-list-label\">考生号：</div>" +
+                                                        "<div class=\"am-list-control\">" +
+                                                            "<input id=\"inputKSH\" type=\"text\" value=\"\">" +
+                                                        "</div>" +
+                                                    "</div>" +
+                                                    "<div class=\"am-list-item am-input-autoclear\">" +
+                                                        "<div class=\"am-list-label\">证件号码：</div>" +
+                                                        "<div class=\"am-list-control\">" +
+                                                            "<input id=\"inputSFZH\" type=\"text\" value=\"\">" +
+                                                        "</div>" +
+                                                    "</div>");
+                            //加载条件非空验证
+                            window.setInterval("GKKDCXCheckButtonState()", 200);
+                            //给按钮添加点击事件
+                            $("#searchButton").click(function () {
+                                //判断查询条件是否满足
+                                var date = $.trim($("#date option:selected").val());
+                                var ksh = $.trim($("#inputKSH").val());
+                                var sfzh = $.trim($("#inputSFZH").val());
+                                if (zkzh != null && zkzh != "" && zkzh != "undefined" && xm != null && xm != "" && xm != "undefined") {
+                                    window.location.href = "QueryResult.html?Type=" + type + "&Classification=" + classification + "&ksh=" + ksh + "&sfzh=" + sfzh + "&date=" + date;
+                                }
+                                else {
+                                    alert("查询条件请填写完整");
+                                }
+                            });
+                            break;
+                            //高考考籍号考生号查询
+                        case "gkkjhkshcx":
+                            //修改title
+                            $(document).attr("title", "高考考籍号考生号查询");
+                            //添加查询字段
+                            $("#condition").append("<div class=\"am-list-item am-input-autoclear\">" +
+                                                        "<div class=\"am-list-label\">证件号码：</div>" +
+                                                        "<div class=\"am-list-control\">" +
+                                                            "<input id=\"inputSFZH\" type=\"text\" value=\"\">" +
+                                                        "</div>" +
+                                                    "</div>" +
+                                                    "<div class=\"am-list-item am-input-autoclear\">" +
+                                                        "<div class=\"am-list-label\">姓名：</div>" +
+                                                        "<div class=\"am-list-control\">" +
+                                                            "<input id=\"inputXM\" type=\"text\" value=\"\">" +
+                                                        "</div>" +
+                                                    "</div>");
+                            //加载条件非空验证
+                            window.setInterval("GKKJHKSHCXCheckButtonState()", 200);
+                            //给按钮添加点击事件
+                            $("#searchButton").click(function () {
+                                //判断查询条件是否满足
+                                var date = $.trim($("#date option:selected").val());
+                                var sfzh = $.trim($("#inputSFZH").val());
+                                var xm = $.trim($("#inputXM").val());
+                                if (zjhm != null && zjhm != "" && zjhm != "undefined" && xm != null && xm != "" && xm != "undefined") {
+                                    window.location.href = "QueryResult.html?Type=" + type + "&Classification=" +classification + "&sfzh=" + sfzh + "&xm=" + xm + "&date=" + date;
+                                }
+                                else {
+                                    alert("查询条件请填写完整");
+                                }
+                            });
+                            break;
+                            //口语成绩查询
+                        case "kycjcx":
+                            //修改title
+                            $(document).attr("title", "口语成绩查询");
+                            //添加查询字段
+                            $("#condition").append("<div class=\"am-list-item am-input-autoclear\">" +
+                                                        "<div class=\"am-list-label\">考籍号：</div>" +
+                                                        "<div class=\"am-list-control\">" +
+                                                            "<input id=\"inputKJH\" type=\"text\" value=\"\">" +
+                                                        "</div>" +
+                                                    "</div>" +
+                                                    "<div class=\"am-list-item am-input-autoclear\">" +
+                                                        "<div class=\"am-list-label\">姓名：</div>" +
+                                                        "<div class=\"am-list-control\">" +
+                                                            "<input id=\"inputXM\" type=\"text\" value=\"\">" +
+                                                        "</div>" +
+                                                    "</div>");
+                            //加载条件非空验证
+                            window.setInterval("GKKYCJCXCheckButtonState()", 200);
+                            //给按钮添加点击事件
+                            $("#searchButton").click(function () {
+                                //判断查询条件是否满足
+                                var date = $.trim($("#date option:selected").val());
+                                var kjh = $.trim($("#inputKJH").val());
+                                var xm = $.trim($("#inputXM").val());
+                                if (kjh != null && kjh != "" && kjh != "undefined" && xm != null && xm != "" && xm != "undefined") {
+                                    window.location.href = "QueryResult.html?Type=" + type + "&Classification=" + classification + "&kjh=" + kjh + "&xm=" + xm + "&date=" + date;
+                                }
+                                else {
+                                    alert("查询条件请填写完整");
+                                }
+                            });
+                            break;
+                            //学业水平测试查询
+                        case "xyspcscx":
+                            //修改title
+                            $(document).attr("title", "学业水平测试查询");
+                            //添加查询字段
+                            $("#condition").append("<div class=\"am-list-item am-input-autoclear\">" +
+                                                        "<div class=\"am-list-label\">考籍号：</div>" +
+                                                        "<div class=\"am-list-control\">" +
+                                                            "<input id=\"inputKJH\" type=\"text\" value=\"\">" +
+                                                        "</div>" +
+                                                    "</div>" +
+                                                    "<div class=\"am-list-item am-input-autoclear\">" +
+                                                        "<div class=\"am-list-label\">身份证号：</div>" +
+                                                        "<div class=\"am-list-control\">" +
+                                                            "<input id=\"inputSFZH\" type=\"text\" value=\"\">" +
+                                                        "</div>" +
+                                                    "</div>" +
+                                                    "<div class=\"am-list-item am-input-autoclear\">" +
+                                                        "<div class=\"am-list-label\">姓名：</div>" +
+                                                        "<div class=\"am-list-control\">" +
+                                                            "<input id=\"inputXM\" type=\"text\" value=\"\">" +
+                                                        "</div>" +
+                                                    "</div>");
+                            //加载条件非空验证
+                            window.setInterval("GKXYSPCSCXCheckButtonState()", 200);
+                            //给按钮添加点击事件
+                            $("#searchButton").click(function () {
+                                //判断查询条件是否满足
+                                var date = $.trim($("#date option:selected").val());
+                                var kjh = $.trim($("#inputKJH").val());
+                                var sfzh = $.trim($("#inputSFZH").val());
+                                var xm = $.trim($("#inputXM").val());
+                                if (kjh != null && kjh != "" && kjh != "undefined" && sfzh != null && sfzh != "" && sfzh != "undefined" && xm != null && xm != "" && xm != "undefined") {
+                                    window.location.href = "QueryResult.html?Type=" + type + "&Classification=" + classification + "&kjh=" + kjh + "&sfzh=" + sfzh + "&xm=" + xm + "&date=" + date;
+                                }
+                                else {
+                                    alert("查询条件请填写完整");
+                                }
+                            });
+                            break;
+                    }
+                    break;
+                    //中考
+                case "JuniorHigh":
+                    switch (classification) {
+                        case "zkcjcx":
+                            //修改title
+                            $(document).attr("title", "中考成绩查询");
+                            //中考成绩查询
+                            $("#condition").append("<div class=\"am-list-item am-input-autoclear\">" +
+                                                        "<div class=\"am-list-label\">准考证号：</div>" +
+                                                        "<div class=\"am-list-control\">" +
+                                                            "<input id=\"inputZKZH\" type=\"text\" value=\"\">" +
+                                                        "</div>" +
+                                                    "</div>" +
+                                                    "<div class=\"am-list-item am-input-autoclear\">" +
+                                                        "<div class=\"am-list-label\">姓名：</div>" +
+                                                        "<div class=\"am-list-control\">" +
+                                                            "<input id=\"inputXM\" type=\"text\" value=\"\">" +
+                                                        "</div>" +
+                                                    "</div>");
+                            //加载条件非空验证
+                            window.setInterval("ZKCJCXCheckButtonState()", 200);
+                            //给按钮添加点击事件
+                            $("#searchButton").click(function () {
+                                //判断查询条件是否满足
+                                var date = $.trim($("#date option:selected").val());
+                                var zkzh = $.trim($("#inputZKZH").val());
+                                var xm = $.trim($("#inputXM").val());
+                                if (zkzh != null && zkzh != "" && zkzh != "undefined" && xm != null && xm != "" && xm != "undefined") {
+                                    window.location.href = "QueryResult.html?Type=" + type + "&Classification=" + classification + "&zkzh=" + zkzh + "&xm=" + xm + "&date=" + date;
+                                }
+                                else {
+                                    alert("查询条件请填写完整");
+                                }
+                            });
+                            break;
+                        case "zkkccx":
+                            //修改title
+                            $(document).attr("title", "中考考场查询");
+                            //中考考场查询
+                            $("#condition").append("<div class=\"am-list-item am-input-autoclear\">" +
+                                                        "<div class=\"am-list-label\">准考证号：</div>" +
+                                                        "<div class=\"am-list-control\">" +
+                                                            "<input id=\"inputZKZH\" type=\"text\" value=\"\">" +
+                                                        "</div>" +
+                                                    "</div>" +
+                                                    "<div class=\"am-list-item am-input-autoclear\">" +
+                                                        "<div class=\"am-list-label\">姓名：</div>" +
+                                                        "<div class=\"am-list-control\">" +
+                                                            "<input id=\"inputXM\" type=\"text\" value=\"\">" +
+                                                        "</div>" +
+                                                    "</div>");
+                            //加载条件非空验证
+                            window.setInterval("ZKKCCXCheckButtonState()()", 200);
+                            //给按钮添加点击事件
+                            $("#searchButton").click(function () {
+                                //判断查询条件是否满足
+                                var date = $.trim($("#date option:selected").val());
+                                var zkzh = $.trim($("#inputZKZH").val());
+                                var xm = $.trim($("#inputXM").val());
+                                if (zkzh != null && zkzh != "" && zkzh != "undefined" && xm != null && xm != "" && xm != "undefined") {
+                                    window.location.href = "QueryResult.html?Type=" + type + "&Classification=" + classification + "&zkzh=" + zkzh + "&xm=" + xm + "&date=" + date;
+                                }
+                                else {
+                                    alert("查询条件请填写完整");
+                                }
+                            });
+                            break;
+                        case "zkrjdhcjcx":
+                            //修改title
+                            $(document).attr("title", "中考人机对话成绩查询");
+                            //中考人机对话成绩查询
+                            $("#condition").append("<div class=\"am-list-item am-input-autoclear\">" +
+                                                        "<div class=\"am-list-label\">考号：</div>" +
+                                                        "<div class=\"am-list-control\">" +
+                                                            "<input id=\"inputKH\" type=\"text\" value=\"\">" +
+                                                        "</div>" +
+                                                    "</div>" +
+                                                    "<div class=\"am-list-item am-input-autoclear\">" +
+                                                        "<div class=\"am-list-label\">姓名：</div>" +
+                                                        "<div class=\"am-list-control\">" +
+                                                            "<input id=\"inputXM\" type=\"text\" value=\"\">" +
+                                                        "</div>" +
+                                                    "</div>");
+                            //加载条件非空验证
+                            window.setInterval("ZKRJDHCJCXCheckButtonState()", 200);
+                            //给按钮添加点击事件
+                            $("#searchButton").click(function () {
+                                //判断查询条件是否满足
+                                var date = $.trim($("#date option:selected").val());
+                                var kh = $.trim($("#inputKH").val());
+                                var xm = $.trim($("#inputXM").val());
+                                if (kh != null && kh != "" && kh != "undefined" && xm != null && xm != "" && xm != "undefined") {
+                                    window.location.href = "QueryResult.html?Type=" + type + "&Classification=" + classification + "&kh=" + kh + "&xm=" + xm + "&date=" + date;
+                                }
+                                else {
+                                    alert("查询条件请填写完整");
+                                }
+                            });
+                            break;
+                    }
+                    break;
+                    //自考
+                case "SelfStudy":
+                    switch (classification) {
+                        //考试通知查询
+                        case "ziktzcx":
+                            //修改title
+                            $(document).attr("title", "考试通知查询");
+                            //添加查询字段
+                            $("#condition").append("<div class=\"am-list-item am-input-autoclear\">"+
+                                                        "<div class=\"am-list-label\">准考证号：</div>"+
+                                                        "<div class=\"am-list-control\">"+
+                                                            "<input id=\"inputZKZH\" type=\"text\" value=\"\">"+
+                                                        "</div>"+
+                                                    "</div>"+
+                                                    "<div class=\"am-list-item am-input-autoclear\">" +
+                                                        "<div class=\"am-list-label\">姓名：</div>" +
+                                                        "<div class=\"am-list-control\">" +
+                                                            "<input id=\"inputXM\" type=\"text\" value=\"\">" +
+                                                        "</div>" +
+                                                    "</div>");
+                            //加载条件非空验证
+                            window.setInterval("ZIKTZCXCheckButtonState()", 200);
+                            //给按钮添加点击事件
+                            $("#searchButton").click(function () {
+                                //判断查询条件是否满足
+                                var date = $.trim($("#date option:selected").val());
+                                var zkzh = $.trim($("#inputZKZH").val());
+                                var xm = $.trim($("#inputXM").val());
+                                if (zkzh != null && zkzh != "" && zkzh != "undefined" && xm != null && xm != "" && xm != "undefined") {
+                                    window.location.href = "QueryResult.html?Type=" + type + "&Classification=" + classification + "&zkzh=" + zkzh + "&xm=" + xm + "&date=" + date;
+                                }
+                                else {
+                                    alert("查询条件请填写完整");
+                                }
+                            });
+                            break;
+                        //自考成绩查询
+                        case "zikcjcx":
+                            //修改title
+                            $(document).attr("title", "自考成绩查询");
+                            //添加查询字段
+                            $("#condition").append("<div class=\"am-list-item am-input-autoclear\">" +
+                                                        "<div class=\"am-list-label\">准考证号：</div>" +
+                                                        "<div class=\"am-list-control\">" +
+                                                            "<input id=\"inputZKZH\" type=\"text\" value=\"\">" +
+                                                        "</div>" +
+                                                    "</div>" +
+                                                    "<div class=\"am-list-item am-input-autoclear\">" +
+                                                        "<div class=\"am-list-label\">姓名：</div>" +
+                                                        "<div class=\"am-list-control\">" +
+                                                            "<input id=\"inputXM\" type=\"text\" value=\"\">" +
+                                                        "</div>" +
+                                                    "</div>");
+                            //加载条件非空验证
+                            window.setInterval("ZIKCJCXCheckButtonState()", 200);
+                            //给按钮添加点击事件
+                            $("#searchButton").click(function () {
+                                //判断查询条件是否满足
+                                var date = $.trim($("#date option:selected").val());
+                                var zkzh = $.trim($("#inputZKZH").val());
+                                var xm = $.trim($("#inputXM").val());
+                                if (zkzh != null && zkzh != "" && zkzh != "undefined" && xm != null && xm != "" && xm != "undefined") {
+                                    window.location.href = "QueryResult.html?Type=" + type + "&Classification=" + classification + "&zkzh=" + zkzh + "&xm=" + xm + "&date=" + date;
+                                }
+                                else {
+                                    alert("查询条件请填写完整");
+                                }
+                            });
+                            break;
+                        //自考材料信息查询
+                        case "zikclxxcx":
+                            //修改title
+                            $(document).attr("title", "自考材料信息查询");
+                            //添加查询字段
+                            $("#condition").append("<div class=\"am-list-item am-input-autoclear\">" +
+                                                        "<div class=\"am-list-label\">课程代号：</div>" +
+                                                        "<div class=\"am-list-control\">" +
+                                                            "<input id=\"inputKCDH\" type=\"text\" value=\"\">" +
+                                                        "</div>" +
+                                                    "</div>");
+                            //加载条件非空验证
+                            window.setInterval("ZIKCLXXCXCheckButtonState()", 200);
+                            //给按钮添加点击事件
+                            $("#searchButton").click(function () {
+                                //判断查询条件是否满足
+                                var date = $.trim($("#date option:selected").val());
+                                var kcdh = $.trim($("#inputKCDH").val());
+                                if (kcdh != null && kcdh != "" && kcdh != "undefined") {
+                                    window.location.href = "QueryResult.html?Type=" + type + "&Classification=" + classification + "&kcdh=" + kcdh + "&date=" + date;
+                                }
+                                else {
+                                    alert("查询条件请填写完整");
+                                }
+                            });
+                            break;
+                        //自考考试日程查询
+                        case "zikksrccx":
+                            //修改title
+                            $(document).attr("title", "自考考试日程查询");
+                            //添加查询字段
+                            $("#condition").append("<div class=\"am-list-item am-input-autoclear\">" +
+                                                        "<div class=\"am-list-label\">专业代码：</div>" +
+                                                        "<div class=\"am-list-control\">" +
+                                                            "<input id=\"inputZYDM\" type=\"text\" value=\"\">" +
+                                                        "</div>" +
+                                                    "</div>");
+                            //加载条件非空验证
+                            window.setInterval("ZIKKSRCCXCheckButtonState()", 200);
+                            //给按钮添加点击事件
+                            $("#searchButton").click(function () {
+                                //判断查询条件是否满足
+                                var date = $.trim($("#date option:selected").val());
+                                var zydm = $.trim($("#inputZYDM").val());
+                                if (zydm != null && zydm != "" && zydm != "undefined") {
+                                    window.location.href = "QueryResult.html?Type=" + type + "&Classification=" + classification + "&zydm=" + zydm + "&date=" + date;
+                                }
+                                else {
+                                    alert("查询条件请填写完整");
+                                }
+                            });
+                            break;
+                    }
+                    break;
+                    //证书
+                case "Certificate":
+                    switch (classification) {
+                        case "NCRE":
+                            //修改title
+                            $(document).attr("title", "NCRE成绩查询");
+                            //NCRE成绩查询（计算机）
+                            //添加查询字段
+                            $("#condition").append("<div class=\"am-list-item am-input-autoclear\">" +
+                                                        "<div class=\"am-list-label\">准考证号：</div>" +
+                                                        "<div class=\"am-list-control\">" +
+                                                            "<input id=\"inputZKZH\" type=\"text\" value=\"\">" +
+                                                        "</div>" +
+                                                    "</div>" +
+                                                    "<div class=\"am-list-item am-input-autoclear\">" +
+                                                        "<div class=\"am-list-label\">证件号：</div>" +
+                                                        "<div class=\"am-list-control\">" +
+                                                            "<input id=\"inputZJH\" type=\"text\" value=\"\">" +
+                                                        "</div>" +
+                                                    "</div>");
+                            //加载条件非空验证
+                            window.setInterval("ZSJSJKSCheckButtonState()", 200);
+                            //给按钮添加点击事件
+                            $("#searchButton").click(function () {
+                                //判断查询条件是否满足
+                                var date = $.trim($("#date option:selected").val());
+                                var zkzh = $.trim($("#inputZKZH").val());
+                                var zjh = $.trim($("#inputZJH").val());
+                                if ((zkzh != null && zkzh != "" && zkzh != "undefined") || (zjh != null && zjh != "" && zjh != "undefined")) {
+                                    window.location.href = "QueryResult.html?Type=" + type + "&Classification=" + classification + "&zkzh=" + zkzh + "&zjh=" + zjh + "&date=" + date;
+                                }
+                                else {
+                                    alert("查询条件请填写完整");
+                                }
+                            });
+                            break;
+                        case "PETS":
+                            //修改title
+                            $(document).attr("title", "PETS成绩查询");
+                            //PETS成绩查询（英语）
+                            //添加查询字段
+                            $("#condition").append("<div class=\"am-list-item am-input-autoclear\">" +
+                                                        "<div class=\"am-list-label\">准考证号：</div>" +
+                                                        "<div class=\"am-list-control\">" +
+                                                            "<input id=\"inputZKZH\" type=\"text\" value=\"\">" +
+                                                        "</div>" +
+                                                    "</div>" +
+                                                    "<div class=\"am-list-item am-input-autoclear\">" +
+                                                        "<div class=\"am-list-label\">证件号：</div>" +
+                                                        "<div class=\"am-list-control\">" +
+                                                            "<input id=\"inputZJH\" type=\"text\" value=\"\">" +
+                                                        "</div>" +
+                                                    "</div>");
+                            //加载条件非空验证
+                            window.setInterval("ZSYYKSCheckButtonState()", 200);
+                            //给按钮添加点击事件
+                            $("#searchButton").click(function () {
+                                //判断查询条件是否满足
+                                var date = $.trim($("#date option:selected").val());
+                                var zkzh = $.trim($("#inputZKZH").val());
+                                var zjh = $.trim($("#inputZJH").val());
+                                if ((zkzh != null && zkzh != "" && zkzh != "undefined") || (zjh != null && zjh != "" && zjh != "undefined")) {
+                                    window.location.href = "QueryResult.html?Type=" + type + "&Classification=" + classification + "&zkzh=" + zkzh + "&zjh=" + zjh + "&date=" + date;
+                                }
+                                else {
+                                    alert("查询条件请填写完整");
+                                }
+                            });
+                            break;
+                        case "jszgkscx":
+                            //修改title
+                            $(document).attr("title", "教师资格考试查询");
+                            //教师资格考试查询
+                            //添加查询字段
+                            $("#condition").append("<div class=\"am-list-item am-input-autoclear\">" +
+                                                        "<div class=\"am-list-label\">身份证号：</div>" +
+                                                        "<div class=\"am-list-control\">" +
+                                                            "<input id=\"inputSFZH\" type=\"text\" value=\"\">" +
+                                                        "</div>" +
+                                                    "</div>" +
+                                                    "<div class=\"am-list-item am-input-autoclear\">" +
+                                                        "<div class=\"am-list-label\">姓名：</div>" +
+                                                        "<div class=\"am-list-control\">" +
+                                                            "<input id=\"inputXM\" type=\"text\" value=\"\">" +
+                                                        "</div>" +
+                                                    "</div>");
+                            //加载条件非空验证
+                            window.setInterval("ZSJSZGZCheckButtonState()", 200);
+                            //给按钮添加点击事件
+                            $("#searchButton").click(function () {
+                                //判断查询条件是否满足
+                                var date = $.trim($("#date option:selected").val());
+                                var sfzh = $.trim($("#inputSFZH").val());
+                                var xm = $.trim($("#inputXM").val());
+                                if (sfzh != null && sfzh != "" && sfzh != "undefined" && xm != null && xm != "" && xm != "undefined") {
+                                    window.location.href = "QueryResult.html?Type=" + type + "&Classification=" + classification + "&sfzh=" + sfzh + "&xm=" + xm + "&date=" + date;
+                                }
+                                else {
+                                    alert("查询条件请填写完整");
+                                }
+                            });
+                            break;
+                    }
+                    break;
+                    //研究生
+                case "Postgraduate":
+                    switch (classification) {
+                        //研究生考场查询
+                        case "yjskccx":
+                            //修改title
+                            $(document).attr("title", "研究生考场查询");
+                            //添加查询字段
+                            $("#condition").append("<div class=\"am-list-item am-input-autoclear\">" +
+                                                        "<div class=\"am-list-label\">姓名：</div>" +
+                                                        "<div class=\"am-list-control\">" +
+                                                            "<input id=\"inputXM\" type=\"text\" value=\"\">" +
+                                                        "</div>" +
+                                                    "</div>"+
+                                                    "<div class=\"am-list-item am-input-autoclear\">" +
+                                                        "<div class=\"am-list-label\">报名号：</div>" +
+                                                        "<div class=\"am-list-control\">" +
+                                                            "<input id=\"inputBMH\" type=\"text\" value=\"\">" +
+                                                        "</div>" +
+                                                    "</div>");
+                            //加载条件非空验证
+                            window.setInterval("YJSKCCXCheckButtonState()", 200);
+                            //给按钮添加点击事件
+                            $("#searchButton").click(function () {
+                                //判断查询条件是否满足
+                                var date = $.trim($("#date option:selected").val());
+                                var bmh = $.trim($("#inputBMH").val());
+                                var xm = $.trim($("#inputXM").val());
+                                if (bmh != null && bmh != "" && bmh != "undefined" && xm != null && xm != "" && xm != "undefined") {
+                                    window.location.href = "QueryResult.html?Type=" + type + "&Classification=" + classification + "&bmh=" + bmh + "&xm=" + xm + "&date=" + date;
+                                }
+                                else {
+                                    alert("查询条件请填写完整");
+                                }
+                            });
+                            break;
+                    }
+                    break;
+                    //成人高考
+                case "Adult":
+                    switch (classification) {
+                        case "ckcjcx":
+                            //成人高考成绩查询
+                            //修改title
+                            $(document).attr("title", "成人高考成绩查询");
+                            //添加查询字段
+                            $("#condition").append("<div class=\"am-list-item am-input-autoclear\">" +
+                                                        "<div class=\"am-list-label\">准考证号：</div>" +
+                                                        "<div class=\"am-list-control\">" +
+                                                            "<input id=\"inputZKZH\" type=\"text\" value=\"\">" +
+                                                        "</div>" +
+                                                    "</div>" +
+                                                    "<div class=\"am-list-item am-input-autoclear\">" +
+                                                        "<div class=\"am-list-label\">姓名：</div>" +
+                                                        "<div class=\"am-list-control\">" +
+                                                            "<input id=\"inputXM\" type=\"text\" value=\"\">" +
+                                                        "</div>" +
+                                                    "</div>");
+                            //加载条件非空验证
+                            window.setInterval("CKCJCXCheckButtonState()", 200);
+                            //给按钮添加点击事件
+                            $("#searchButton").click(function () {
+                                //判断查询条件是否满足
+                                var date = $.trim($("#date option:selected").val());
+                                var zkzh = $.trim($("#inputZKZH").val());
+                                var xm = $.trim($("#inputXM").val());
+                                if (zkzh != null && zkzh != "" && zkzh != "undefined" && xm != null && xm != "" && xm != "undefined") {
+                                    window.location.href = "QueryResult.html?Type=" + type + "&Classification=" + classification + "&zkzh=" + zkzh + "&xm=" + xm + "&date=" + date;
+                                }
+                                else {
+                                    alert("查询条件请填写完整");
+                                }
+                            });
+                            break;
+                        case "ckkccx":
+                            //成人高考考场查询
+                            //修改title
+                            $(document).attr("title", "成人高考考场查询");
+                            //添加查询字段
+                            $("#condition").append("<div class=\"am-list-item am-input-autoclear\">" +
+                                                        "<div class=\"am-list-label\">准考证号：</div>" +
+                                                        "<div class=\"am-list-control\">" +
+                                                            "<input id=\"inputZKZH\" type=\"text\" value=\"\">" +
+                                                        "</div>" +
+                                                    "</div>" +
+                                                    "<div class=\"am-list-item am-input-autoclear\">" +
+                                                        "<div class=\"am-list-label\">姓名：</div>" +
+                                                        "<div class=\"am-list-control\">" +
+                                                            "<input id=\"inputXM\" type=\"text\" value=\"\">" +
+                                                        "</div>" +
+                                                    "</div>");
+                            //加载条件非空验证
+                            window.setInterval("CKKCCXCheckButtonState()", 200);
+                            //给按钮添加点击事件
+                            $("#searchButton").click(function () {
+                                //判断查询条件是否满足
+                                var date = $.trim($("#date option:selected").val());
+                                var zkzh = $.trim($("#inputZKZH").val());
+                                var xm = $.trim($("#inputXM").val());
+                                if (zkzh != null && zkzh != "" && zkzh != "undefined" && xm != null && xm != "" && xm != "undefined") {
+                                    window.location.href = "QueryResult.html?Type=" + type + "&Classification=" + classification + "&zkzh=" + zkzh + "&xm=" + xm + "&date=" + date;
+                                }
+                                else {
+                                    alert("查询条件请填写完整");
+                                }
+                            });
+                            break;
+                    }
+                    //预留
+                    break;
+            }
+        });
+
+        //获取日期的方法
+        function GetTestDate(Type, Classification) {
+            if (Type != "" && Classification != "") {
+                var url = "../../../CityService.Service/EducationCJService.svc/GetTestDate?testType=" + Type + "&classification=" + Classification;
+                $.ajax(url,{
+                    type: 'get',
+                    contentType: 'text/json',
+                    success: function (msg) {
+                        if (msg.d != null && msg.d != "") {
+                            //JSON格式标准化
+                            var myJson = jQuery.parseJSON(msg.d);
+                            $.each(myJson, function (index,item) {
+                                $("#date").append("<option value=\""+item.Date+"\">"+item.Date+"</option>");
+                            });
+                        }
+                        else {
+                            return;
+                        }
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert(XMLHttpRequest.status);
+                        alert(XMLHttpRequest.readyState);
+                        alert(textStatus);
+                    },
+                    complete: function () {
+                    }
+                });
+            }
+        }
+
+        //高考成绩条件非空验证
+        function GKCJCXCheckButtonState()
+        {
+            if ($.trim($("#date option:selected").val()) && $.trim($("#inputZKZH").val()) && $.trim($("#inputSFZH").val()))
+                $("#searchButton").attr("am-mode", "blue");
+            else
+                $("#searchButton").attr("am-mode", "blue disabled");
+        }
+        //高考考点条件非空验证
+        function GKKDCXCheckButtonState() {
+            if ($.trim($("#date option:selected").val())&&$.trim($("#inputKSH").val())&&$.trim($("#inputSFZH").val()))
+                $("#searchButton").attr("am-mode", "blue");
+            else
+                $("#searchButton").attr("am-mode", "blue disabled");
+        }
+        //高考考籍号考生号条件非空验证
+        function GKKJHKSHCXCheckButtonState() {
+            if ($.trim($("#date option:selected").val()) && $.trim($("#inputSFZH").val()) && $.trim($("#inputXM").val()))
+                $("#searchButton").attr("am-mode", "blue");
+            else
+                $("#searchButton").attr("am-mode", "blue disabled");
+        }
+        //高考口语成绩条件非空验证
+        function GKKYCJCXCheckButtonState() {
+            if ($.trim($("#date option:selected").val()) && $.trim($("#inputKJH").val()) && $.trim($("#inputXM").val()))
+                $("#searchButton").attr("am-mode", "blue");
+            else
+                $("#searchButton").attr("am-mode", "blue disabled");
+        }
+        //高考学业水平测试条件非空验证
+        function GKXYSPCSCXCheckButtonState() {
+            if ($.trim($("#date option:selected").val())&&$.trim($("#inputKJH").val())&&$.trim($("#inputSFZH").val())&&$.trim($("#inputXM").val()))
+                $("#searchButton").attr("am-mode", "blue");
+            else
+                $("#searchButton").attr("am-mode", "blue disabled");
+        }
+        //自考通知条件非空验证
+        function ZIKTZCXCheckButtonState() {
+            if ($.trim($("#date option:selected").val()) && $.trim($("#inputZKZH").val()) && $.trim($("#inputXM").val()))
+                $("#searchButton").attr("am-mode", "blue");
+            else
+                $("#searchButton").attr("am-mode", "blue disabled");
+        }
+        //自考成绩条件非空验证
+        function ZIKCJCXCheckButtonState() {
+            if ($.trim($("#date option:selected").val())&&$.trim($("#inputZKZH").val())&&$.trim($("#inputXM").val()))
+                $("#searchButton").attr("am-mode", "blue");
+            else
+                $("#searchButton").attr("am-mode", "blue disabled");
+        }
+        //自考材料信息条件非空验证
+        function ZIKCLXXCXCheckButtonState() {
+            if ($.trim($("#date option:selected").val())&&$.trim($("#inputKCDH").val()))
+                $("#searchButton").attr("am-mode", "blue");
+            else
+                $("#searchButton").attr("am-mode", "blue disabled");
+        }
+        //自考考试日程条件非空验证
+        function ZIKKSRCCXCheckButtonState() {
+            if ($.trim($("#date option:selected").val())&&$.trim($("#inputZYDM").val()))
+                $("#searchButton").attr("am-mode", "blue");
+            else
+                $("#searchButton").attr("am-mode", "blue disabled");
+        }
+        //研究生考场条件非空验证
+        function YJSKCCXCheckButtonState() {
+            if ($.trim($("#date option:selected").val())&&$.trim($("#inputBMH").val())&&$.trim($("#inputXM").val()))
+                $("#searchButton").attr("am-mode", "blue");
+            else
+                $("#searchButton").attr("am-mode", "blue disabled");
+        }
+        //全国计算机等级考试条件非空验证
+        function ZSJSJKSCheckButtonState() {
+            if (($.trim($("#date option:selected").val()) && $.trim($("#inputZKZH").val())) || ($.trim($("#date option:selected").val()) && $.trim($("#inputZJH").val())))
+                $("#searchButton").attr("am-mode", "blue");
+            else
+                $("#searchButton").attr("am-mode", "blue disabled");
+        }
+        //全国英语等级考试条件非空验证
+        function ZSYYKSCheckButtonState() {
+            if (($.trim($("#date option:selected").val()) && $.trim($("#inputZKZH").val())) || ($.trim($("#date option:selected").val()) && $.trim($("#inputZJH").val())))
+                $("#searchButton").attr("am-mode", "blue");
+            else
+                $("#searchButton").attr("am-mode", "blue disabled");
+        }
+        //教师资格证考试条件非空验证
+        function ZSJSZGZCheckButtonState() {
+            if ($.trim($("#date option:selected").val()) && $.trim($("#inputSFZH").val()) && $.trim($("#inputXM").val()))
+                $("#searchButton").attr("am-mode", "blue");
+            else
+                $("#searchButton").attr("am-mode", "blue disabled");
+        }
+        //中考成绩查询条件非空验证
+        function ZKCJCXCheckButtonState() {
+            if ($.trim($("#date option:selected").val()) && $.trim($("#inputZKZH").val()) && $.trim($("#inputXM").val()))
+                $("#searchButton").attr("am-mode", "blue");
+            else
+                $("#searchButton").attr("am-mode", "blue disabled");
+        }
+        //中考考场查询条件非空验证
+        function ZKKCCXCheckButtonState() {
+            if ($.trim($("#date option:selected").val()) && $.trim($("#inputZKZH").val()) && $.trim($("#inputXM").val()))
+                $("#searchButton").attr("am-mode", "blue");
+            else
+                $("#searchButton").attr("am-mode", "blue disabled");
+        }
+        //中考查询条件非空验证
+        function ZKKCCXCheckButtonState() {
+            if ($.trim($("#date option:selected").val()) && $.trim($("#inputZKZH").val()) && $.trim($("#inputXM").val()))
+                $("#searchButton").attr("am-mode", "blue");
+            else
+                $("#searchButton").attr("am-mode", "blue disabled");
+        }
+        //中考人机对话成绩查询条件非空验证
+        function ZKRJDHCJCXCheckButtonState() {
+            if ($.trim($("#date option:selected").val()) && $.trim($("#inputKH").val()) && $.trim($("#inputXM").val()))
+                $("#searchButton").attr("am-mode", "blue");
+            else
+                $("#searchButton").attr("am-mode", "blue disabled");
+        }
+        //成考成绩查询条件非空验证
+        function CKCJCXCheckButtonState() {
+            if ($.trim($("#date option:selected").val()) && $.trim($("#inputZKZH").val()) && $.trim($("#inputXM").val()))
+                $("#searchButton").attr("am-mode", "blue");
+            else
+                $("#searchButton").attr("am-mode", "blue disabled");
+        }
+        //成考考场查询条件非空验证
+        function CKKCCXCheckButtonState() {
+            if ($.trim($("#date option:selected").val()) && $.trim($("#inputZKZH").val()) && $.trim($("#inputXM").val()))
+                $("#searchButton").attr("am-mode", "blue");
+            else
+                $("#searchButton").attr("am-mode", "blue disabled");
+        }
+    </script>
+</body>
+</html>

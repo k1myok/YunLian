@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>景点导游</title>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+
+    <link href="../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/toast.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/button.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/dialog.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/button-group.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/bootstrap.min.css"type="text/css" rel="stylesheet">
+    <link href="../Content/alipay/amui-demo_files/top-notice.css" type="text/css" rel="stylesheet" />
+
+    <script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../Scripts/extensions/base.js"></script>
+    <script type="text/javascript" src="../Content/alipay/amui-demo_files/amui.js"></script>
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=2ffb8bddf5f3620892d0bb3051b23777"></script>
+
+    <style type="text/css">
+        body {
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+        }
+
+        #mapContainer {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="content" style="background-color:#EFEFF4">
+            <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:white;margin-bottom:12px;border-color:white;width:100%;">
+                
+                    <div class="am-tab" id="tabHeader">
+                        <a id="tab1" href="javascript:switchPanel('1')" class="am-tab-item" data-tab="selected">景点列表</a>
+                        <a id="tab2" href="javascript:switchPanel('2')" class="am-tab-item">景点地图</a>
+                    </div>
+                <div class="container">
+                    <div class="am-top-notice" am-mode="normal" id="notice" style="display:none">
+                        <div class="am-top-notice-content" style="width:100%">点击查看每个景点，该景点的内部景点提供在线收听景点介绍哦</div>
+                    </div>
+                </div>
+            </div>
+            <div id="tab1Panel" class="am-list am-list-5lb" am-mode="flat chip form" style="display:none; ">
+                <div class="am-list" am-mode="radius">
+                    <div class="am-list-body" id="list" style="margin-top:10px;">
+                    </div>
+                </div>
+                </div>
+            <div id="tab2Panel" class="am-list am-list-5lb" am-mode="flat chip form" style="display:none;">
+                <div class="am-list-body">
+                    <div id="mapContainer"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="fuwu" style="display: block;font-family:STHeitiSC  ;font-size: 12px; margin-bottom: 15px; margin-left: 0px; width: 100%; text-align: center; bottom: 0px;z-index:-1;margin-top:20px;">
+        <div class="am-agreement am-ft-gray am-ft-sm">
+            <p>
+                本服务由苏州市旅游局<br />苏州云联智慧信息技术应用有限公司提供支持
+            </p>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    var map = null;
+    var geolocation = null
+    $(function () {
+        initMap();
+        addPlaces();
+        switchPanel(1);
+    });
+
+    function switchPanel(index) {
+        $("#notice").css("display", index == "1" ? "inline" : "none");
+        $("#tab1Panel").css("display", index == "1" ? "inline" : "none");
+        $("#tab2Panel").css("display", index == "2" ? "inline" : "none");
+        $("#tab1").attr("data-tab", index == "1" ? "selected" : "");
+        $("#tab2").attr("data-tab", index == "2" ? "selected" : "");
+    }
+
+    function initMap()
+    {
+        map = new AMap.Map('mapContainer', {
+            resizeEnable: true,
+            //rotateEnable: true,
+            //dragEnable: true,
+            //zoomEnable: true,
+            //设置可缩放的级别
+            //zooms: [3,18],
+            //传入2D视图，设置中心点和缩放级别
+            view: new AMap.View2D({
+                center: new AMap.LngLat(120.627442, 31.324373),
+                zoom: 18
+            })
+        });
+        $("#mapContainer").height(window.innerHeight - $("#tabHeader").height());
+        AMap.event.addListener(map, 'complete', function () {
+            addSpots();
+            map.plugin('AMap.Geolocation', function () {
+                geolocation = new AMap.Geolocation({
+                    enableHighAccuracy: true,//是否使用高精度定位，默认:true
+                    timeout: 10000,          //超过10秒后停止定位，默认：无穷大
+                    maximumAge: 0,           //定位结果缓存0毫秒，默认：0
+                    convert: true,           //自动偏移坐标，偏移后的坐标为高德坐标，默认：true
+                    showButton: true,        //显示定位按钮，默认：true
+                    buttonPosition: 'LB',    //定位按钮停靠位置，默认：'LB'，左下角
+                    buttonOffset: new AMap.Pixel(10, 20),//定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
+                    showMarker: true,        //定位成功后在定位到的位置显示点标记，默认：true
+                    showCircle: true,        //定位成功后用圆圈表示定位精度范围，默认：true
+                    panToLocation: true,     //定位成功后将定位到的位置作为地图中心点，默认：true
+                    zoomToAccuracy: true      //定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
+                });
+                map.addControl(geolocation);
+            });
+            var x = getQueryStringByName("x");
+            var y = getQueryStringByName("y");
+            if (x != "" && y != "")
+                flyToTarget(x, y, 18);
+            else
+                geolocation.getCurrentPosition();
+        });
+
+    }
+
+    function flyToTarget(x,y,level)
+    {
+        switchPanel(2);
+        map.setZoomAndCenter(level, new AMap.LngLat(x, y));
+    }
+
+    function addPlaces() {
+        var url = "../../CityService.Service/TravalService.svc/GetTravalPlaces";
+        $.ajax(url, {
+            type: 'get',
+            contentType: 'text/json',
+            success: function (msg) {
+                if (msg.d == null)
+                    return;
+                addPlacesToList(msg.d);
+            },
+            error: function (xhr) {
+            },
+            complete: function () {
+                $("#toast").hide();
+            }
+        });
+    }
+
+    function addPlacesToList(entityList)
+    {
+        var content = "";
+        $.each(entityList, function () {
+            var pics = this.Picture.toString().split(";");
+            var pic = pics[0].toLowerCase();
+            pic = pic.substring(0, pic.indexOf(".jpg")) + "_32.jpg";
+            var picUrl = "../Content/Traval/" + pic;
+
+            content += '<a href="PlaceDetail.html?id=' + this.ID + '" class="am-list-item">' +
+                                   '<div class="am-list-thumb"><img src="' + picUrl + '" width="32" height="32" alt=""></div>' +
+                                   '<div class="am-list-content">' + this.Name + '</div>' +
+                                   '<div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>' +
+                                '</a>';
+            });
+        $("#list").html(content);
+
+    }
+
+    function addSpots()
+    {
+        var url = "../../CityService.Service/TravalService.svc/GetTravalSpots";
+        $.ajax(url, {
+            type: 'get',
+            contentType: 'text/json',
+            success: function (msg) {
+                if (msg.d == null)
+                    return;
+                addToList(msg.d);
+            },
+            error: function (xhr) {
+            },
+            complete: function () {
+                $("#toast").hide();
+            }
+        });
+    }
+
+    function addToList(entityList)
+    {
+        $.each(entityList, function () {
+            var marker = new AMap.Marker({
+                //复杂图标
+                icon: new AMap.Icon({
+                    //图标大小
+                    size: new AMap.Size(24, 24),
+                    //大图地址
+                    image: "../Images/info.png",
+                    imageOffset: new AMap.Pixel(0, 0)
+                }),
+                //在地图上添加点
+                position: new AMap.LngLat(this.X, this.Y)
+            });
+            marker.setMap(map);
+            var item = this;
+            AMap.event.addListener(marker, 'click', function () {
+                window.location.href = "Detail.html?id=" + item.ID;
+            });
+        });
+    }
+</script>
+
+
+</html>

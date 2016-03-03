@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+
+    <link href="../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/toast.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/card.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/button.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/dialog.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/button-group.css" type="text/css" rel="stylesheet" />
+
+    <script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../Scripts/extensions/base.js"></script>
+    <script type="text/javascript" src="../Content/alipay/amui-demo_files/amui.js"></script>
+    <link href="../Content/jPlayer-2.9.2/dist/skin/pink.flag/css/jplayer.pink.flag.min.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../Content/jPlayer-2.9.2/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../Content/jPlayer-2.9.2/dist/jplayer/jquery.jplayer.min.js"></script>
+
+    <style type="text/css">
+        body {
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+        }
+
+        #mapContainer {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="am-card">
+        <div class="am-card-item">
+            <div class="am-card-item-header">
+                <h3 class="am-card-item-title" id="title">景点介绍</h3>
+            </div>
+            <div class="am-card-item-content">
+                <div class="am-card-item-subject" id="content"></div>
+            </div>
+        </div>
+        <div class="am-card-item">
+            <div class="am-card-item-header">
+                <h3 class="am-card-item-title" id="title">在线导游</h3>
+            </div>
+            <div class="am-card-item-content">
+                <div style="margin-top:10px;" id="playContainer">
+                    <div id="jquery_jplayer_1" class="jp-jplayer"></div>
+                    <div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
+                        <div class="jp-type-single">
+                            <div class="jp-gui jp-interface">
+                                <div class="jp-volume-controls">
+                                    <button class="jp-mute" role="button" tabindex="0">mute</button>
+                                    <button class="jp-volume-max" role="button" tabindex="0">max volume</button>
+                                    <div class="jp-volume-bar">
+                                        <div class="jp-volume-bar-value"></div>
+                                    </div>
+                                </div>
+                                <div class="jp-controls-holder">
+                                    <div class="jp-controls">
+                                        <button class="jp-play" role="button" tabindex="0">play</button>
+                                        <button class="jp-stop" role="button" tabindex="0">stop</button>
+                                    </div>
+                                    <div class="jp-progress">
+                                        <div class="jp-seek-bar">
+                                            <div class="jp-play-bar"></div>
+                                        </div>
+                                    </div>
+                                    <div class="jp-current-time" role="timer" aria-label="time">&nbsp;</div>
+                                    <div class="jp-duration" role="timer" aria-label="duration">&nbsp;</div>
+                                    <div class="jp-toggles">
+                                        <button class="jp-repeat" role="button" tabindex="0">repeat</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="jp-details">
+                            <div class="jp-title" aria-label="title">&nbsp;</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="padding-left:15px;padding-right:15px;margin-top:15px;">
+        <button id="searchButton" type="button" class="am-button" am-mode="blue" onclick="turn()">完成查询</button>
+    </div>
+
+    <div id="fuwu" style="display: block;font-family:STHeitiSC  ;font-size: 12px; margin-bottom:15px;margin-top:15px;margin-left: 0px; width: 100%; text-align: center;z-index:-1;">
+        <div class="am-agreement am-ft-gray am-ft-sm">
+            <p>
+                本服务由苏州市旅游局<br />苏州云联智慧信息技术应用有限公司提供支持
+            </p>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    var map = null;
+    $(function () {
+        var left = $(window).width() - 202;
+        $("#playContainer").css("marginLeft", left / 2 - 36);
+        getDetail(getQueryStringByName("id"));
+    });
+
+    function getDetail(id) {
+        var url = "../../CityService.Service/TravalService.svc/GetTravalSpotDetail?id=" + id;
+        $.ajax(url, {
+            type: 'get',
+            contentType: 'text/json',
+            success: function (msg) {
+                if (msg.d == null)
+                    return;
+                loadPage(msg.d);
+            },
+            error: function (xhr) {
+            },
+            complete: function () {
+                $("#toast").hide();
+            }
+        });
+    }
+
+    function loadPage(entity) {
+        document.title = entity.SpotName;
+        $("#content").html(entity.Description == null ? "暂缺文字介绍，请聆听在线导游讲解！" : entity.Description);
+        play(entity.Sound);
+    }
+
+    function play(file) {
+        var url = window.location.href.substring(0, window.location.href.indexOf("/Traval/")) + "/Content/Traval/" + file;
+        $("#jquery_jplayer_1").jPlayer({
+            ready: function (event) {
+                $(this).jPlayer("setMedia", {
+                    title: "在线讲解",
+                    m4a: url
+                });
+                $("#jquery_jplayer_1").jPlayer("play")
+            },
+            supplied: "m4a",
+            wmode: "window",
+            useStateClassSkin: true,
+            autoBlur: false,
+            smoothPlayBar: true,
+            keyEnabled: true,
+            remainingDuration: true,
+            toggleDuration: true
+        });
+    }
+    function turn() {
+        location.href = "https://city.weixin.qq.com/cgi-bin/entry?result_data=%7b%22template_id%22%3a%22suzhoushixinxizhongxin_zaixiandaoyou%22%7d#wechat_redirect";
+    }
+</script>
+
+
+</html>

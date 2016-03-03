@@ -1,0 +1,217 @@
+﻿<!--已退号-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>已退号信息</title>
+    <meta charset='UTF-8'>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link href="../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/button.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/toast.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/dialog.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/button-group.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/top-notice.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../Scripts/extensions/base.js"></script>
+    <script type="text/javascript" src="../Content/alipay/amui-demo_files/amui.js"></script>
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=2ffb8bddf5f3620892d0bb3051b23777"></script>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="content" style="background-color:#EFEFF4">
+            <!--<img src="../Images/register.png" style="width:100%">-->
+            <div class="am-list am-list-5lb" am-mode="flat chip form">
+                <div class="am-top-notice" am-mode="normal">
+                    <div class="am-top-notice-content">*同一个人十天内三次退号，将被记入黑名单</div>
+                </div>
+                <div class="am-list-body" id="HaveretiredDetails">
+                    <div class="am-toast" id="toast">
+                        <div class="am-toast-text">
+                            <span class="am-toast-icon am-icon" am-mode="toast-loading"></span> 正在努力查询...
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+    </div>
+
+    <div data-role="page">
+        <div data-role="content" style="background-color:#EFEFF4;">
+                <div class="am-flexbox">
+                    <div class="am-flexbox-item"><a href="RegisterList.html">挂号清单</a></div>
+                    <div class="am-flexbox-item"><a href="Comuserlist.html">常用成员</a></div>
+                    <div class="am-flexbox-item"><a href="News.html">预约提醒</a></div>
+                </div>
+            </div>
+          </div>
+
+    <div id="fuwu" style="display: block;font-family:STHeitiSC  ;font-size: 12px; margin-bottom: 15px; margin-left: 0px; width: 100%; text-align: center; bottom: 0px;margin-top:20px">
+        <div class="am-agreement am-ft-gray am-ft-sm">
+            <p>
+                本服务由苏州市卫生局<br />苏州云联智慧信息技术应用有限公司提供支持
+            </p>
+        </div>
+    </div>
+
+ </body>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#toast").show();
+        GetHaveretired();
+    })
+    $(function () {
+        
+    });
+    function GetHaveretired() {
+        var OpenID = document.cookie.split(";")[0].split("=")[1];
+        var url = "../../CityService.Service/HospitalInfoService.svc/GetHaveretired?OpenID=" + OpenID;
+        $.ajax(url, {
+            type: 'GET',
+            dataType: "json",
+            success: function (result) {
+                if (result.d.length == 0) {
+                    content =
+                        '<div style="text-align:center;padding-top:80px;">' +
+                     '<img src="../Images/empty.png" style="width:140px;height:140px" />' +
+                     '<div style="margin-top:24px; text-align:center;font-family:STHeitiSC;font-size: 16px;color:#8f8f95;" id="Msg"> 无匹配结果</div>' +
+                     '</div>';
+                    $("#HaveretiredDetails").html(content);
+                }
+                else
+                {
+                    AddHaveretiredInfo(result.d);
+                }
+
+            },
+            complete: function () {
+                $("#toast").hide();
+            },
+            error: function (msg)
+            {
+                return;
+            }
+           
+        })
+    }
+
+    function AddHaveretiredInfo(result) {
+        var html = ""
+        $.each(result, function () {
+            var regDate = new Date(parseInt(this.RegisterDate.replace("/Date(", "").replace(")/", ""), 10));
+            var regTime = regDate.getFullYear() + "-" + (regDate.getMonth() + 1 < 10 ? "0" + (regDate.getMonth() + 1) : regDate.getMonth() + 1) + "-" + (regDate.getDate() < 10 ? "0" + regDate.getDate() : regDate.getDate());
+            var clinicDate = new Date(parseInt(this.ClinicDate.replace("/Date(", "").replace(")/", ""), 10));
+            var clinicTime = clinicDate.getFullYear() + "-" + (clinicDate.getMonth() + 1 < 10 ? "0" + (clinicDate.getMonth() + 1) : clinicDate.getMonth() + 1) + "-" + (clinicDate.getDate() < 10 ? "0" + clinicDate.getDate() : clinicDate.getDate());
+            if (this.DoctorName =="") {
+                html +=
+		'<div style="padding-top:20px">'+
+            '<div class="am-list-item am-input-autoclear">' +
+            '<div class="am-list-label">挂 号 人</div>' +
+            ' <div class="am-list-control" id="IDcard">' +
+                          '' + this.Name + '' +
+            '  </div>' +
+            ' </div>' +
+             '<div class="am-list-item am-input-autoclear">' +
+            '<div class="am-list-label">挂号医院</div>' +
+            ' <div class="am-list-control" id="IDcard">' +
+                          '' + this.HospName + '' +
+            '  </div>' +
+            ' </div>' +
+ 		'<div class="am-list-item am-input-autoclear">' +
+            '<div class="am-list-label">挂号科室</div>' +
+            ' <div class="am-list-control" id="IDcard">' +
+                          '' + this.DepartName + '' +
+            '  </div>' +
+            ' </div>' +
+             '<div class="am-list-item am-input-autoclear">' +
+            '<div class="am-list-label">挂号时间</div>' +
+            ' <div class="am-list-control" id="IDcard">' +
+                          '' + regTime + '' +
+            '  </div>' +
+            ' </div>' +
+
+             '<div class="am-list-item am-input-autoclear">' +
+            '<div class="am-list-label">就诊时间</div>' +
+            ' <div class="am-list-control" id="IDcard">' +
+                          '' + this.ClinicDateTime +''+
+            '  </div>' +
+            ' </div>' +
+            '<div class="am-list-item am-input-autoclear">' +
+            '<div class="am-list-label">挂号费用</div>' +
+            ' <div class="am-list-control" id="IDcard">' +
+                          '' + this.RegisterFee + ' 元' +
+            '  </div>' +
+            ' </div>' +
+            '<div class="am-list-item am-input-autoclear">' +
+            '<div class="am-list-label">就诊序号</div>' +
+            ' <div class="am-list-control" id="IDcard">' +
+                          '' + this.ClinicSerialNo + '' +
+            '  </div>' +
+            ' </div>'+
+            '</div>';               
+            } else {
+                    html +=
+                    '<div style="padding-top:20px">' +
+            '<div class="am-list-item am-input-autoclear">' +
+            '<div class="am-list-label">挂 号 人</div>' +
+            ' <div class="am-list-control" id="IDcard">' +
+                          '' + this.Name + '' +
+            '  </div>' +
+            ' </div>' +
+             '<div class="am-list-item am-input-autoclear">' +
+            '<div class="am-list-label">挂号医院</div>' +
+            ' <div class="am-list-control" id="IDcard">' +
+                          '' + this.HospName + '' +
+            '  </div>' +
+            ' </div>' +
+            '<div class="am-list-item am-input-autoclear">' +
+            '<div class="am-list-label">挂号科室</div>' +
+            ' <div class="am-list-control" id="IDcard">' +
+                          '' + this.DepartName + '' +
+            '  </div>' +
+            ' </div>' +
+            '<div class="am-list-item am-input-autoclear">' +
+            '<div class="am-list-label">医生姓名</div>' +
+            ' <div class="am-list-control" id="IDcard">' +
+                          '' + this.DoctorName + '' +
+            '  </div>' +
+            ' </div>' +
+             '<div class="am-list-item am-input-autoclear">' +
+            '<div class="am-list-label">挂号时间</div>' +
+            ' <div class="am-list-control" id="IDcard">' +
+                          '' + regTime + '' +
+            '  </div>' +
+            ' </div>' +
+
+             '<div class="am-list-item am-input-autoclear">' +
+            '<div class="am-list-label">就诊时间</div>' +
+            ' <div class="am-list-control" id="IDcard">' +
+                          '' + this.ClinicDateTime + '' +
+            '  </div>' +
+            ' </div>' +
+            '<div class="am-list-item am-input-autoclear">' +
+            '<div class="am-list-label">挂号费用</div>' +
+            ' <div class="am-list-control" id="IDcard">' +
+                          '' + this.RegisterFee + ' 元' +
+            '  </div>' +
+            ' </div>' +
+            '<div class="am-list-item am-input-autoclear">' +
+            '<div class="am-list-label">就诊序号</div>' +
+            ' <div class="am-list-control" id="IDcard">' +
+                          '' + this.ClinicSerialNo + '' +
+            '  </div>' +
+            ' </div>' +
+            '</div>';
+            }
+        });
+        $("#HaveretiredDetails").html(html);
+    }
+</script>
+
+</html>

@@ -1,0 +1,50 @@
+﻿<!--办事咨询-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>办事咨询</title>
+    <meta charset='UTF-8'>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <link href="../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/button.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/toast.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/dialog.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/button-group.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../Scripts/extensions/base.js"></script>
+    <script type="text/javascript" src="../Content/alipay/amui-demo_files/amui.js"></script>
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=2ffb8bddf5f3620892d0bb3051b23777"></script>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="content" style="background-color:#EFEFF4;padding-top:15PX;">
+                <div class="am-list" am-mode="flat form">
+                     <div class="am-list-body" id="Questions">
+                            <div class="am-list-item am-input-autoclear">
+                                <div class="am-list-label">问题关键字</div>
+                                <div class="am-list-control">
+                                    <input type="text" id="keyword" placeholder="问题关键字" value="">
+                                    <input type="hidden" placeholder="" value="">
+                                </div>
+                                <div class="am-list-clear"><i class="am-icon-clear am-icon" am-mode="clear"></i></div>
+                            </div>
+                     </div>
+                        <div style="padding-left:15px;padding-right:15px;margin-top:15PX;">
+                            <button  type="button" class="am-button" am-mode="blue" onclick="Search()">查询</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<script type="text/javascript">
+    function Search()
+    {
+        var keyword = $("#keyword").val();
+        location.href = "ConsultingserviceResult.html?keyword="+ keyword;
+    }
+</script>
+</body>
+</html>

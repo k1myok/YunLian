@@ -1,0 +1,50 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>购买公有住房产权、使用权、分期付款</title>
+    <link href="~/Content/jquery.mobile-1.4.5.css" rel="stylesheet" />
+    <script src="~/Script/jquery-1.10.2.min.js"></script>
+    <script src="~/Script/extensions/base.js"></script>
+    <script src="~/Script/jquery.mobile-1.4.5.js"></script>
+</head>
+<body>
+    <div data-role="page" style="background-color: #fff;">
+        <div>
+            <img src="~/Image/苏州市住房公积金管理中心.jpg" style="width:100%;" />
+        </div>
+        <div style="padding:0 10px;padding-bottom:10px;">
+            <div style="width:70px;float:right;z-index:2;font-size:13px;padding:0 10px;text-align:center;font-weight:bolder;word-break:keep-all;">
+                <img src="~/Image/地图.png" style="width:30px;height:30px;" onclick="Show()" />
+                <div><strong>办理网点</strong></div>
+            </div>
+            <p style="text-align:center;"><b id="title"></b></p>
+            <p><b>办理流程</b></p>
+            <p>职工带齐材料至办理场所进行提取申请→工作人员进行审核→符合提取条件,把提取的住房公积金实时划转至职工关联的银行借记卡中</p>
+        </div>
+        <div style="padding:0 10px;">
+            <p><b>办理要件</b></p>
+            <img src="~/Image/购买公有住房产权、使用权、分期付款.PNG" id="image1" style="width:100%" onclick="srcipt:ShowImage();" />
+        </div>
+        <script>
+            $(function () {
+                var title = decodeURI(getQueryStringByName("title"));
+                $("#title").html(title);
+            });
+            function ShowImage() {
+                var url = $("#image1").attr("src");
+                window.location.href = "../ProvidentFund/ShowImage?url=" + url;
+            }
+            function Show() {
+                window.location.href = "../ProvidentFund/SelectCardPoint";
+            }
+        </script>
+        <div style="bottom:0px;">
+            <img src="~/Image/公积金官方微信.png" style="width:100%;" />
+        </div>
+    </div>
+</body>
+</html>

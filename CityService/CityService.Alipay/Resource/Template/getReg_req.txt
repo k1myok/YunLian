@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+    <S:Body>
+        <GetRegInfoReq xmlns="http://new.webservice.namespace">
+            <AuthInfo>
+                <UserName>SZYunLian</UserName>
+                <Password>YunLian1156</Password>
+            </AuthInfo>
+            <PatientIdentify>
+                <SN>{2}</SN>
+                <IdCard>{3}</IdCard>
+                <Other>
+                    <Name>{4}</Name>
+                    <Phone>{5}</Phone>
+                </Other>
+            </PatientIdentify>
+            <Filter>
+                <BeginDate>{6}</BeginDate>
+                <EndDate>{7}</EndDate>
+                <HospName>{8}</HospName>
+                <DepartName>{9}</DepartName>
+                <DoctorName>{10}</DoctorName>
+            </Filter>
+        </GetRegInfoReq>
+    </S:Body>
+</S:Envelope>

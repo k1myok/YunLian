@@ -1,0 +1,205 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CityService.Service", "CityService.Service\CityService.Service.csproj", "{D864D570-0817-4E84-B5DE-2AD8D67D116B}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CityService.Alipay", "http://localhost/CityService/CityService.Alipay", "{C02B1053-FBFC-4C46-AB6F-9CE4501E6FA7}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "SAK"
+		SccAuxPath = "SAK"
+		SccLocalPath = "SAK"
+		SccProvider = "SAK"
+		UseIISExpress = "false"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/CityService.Alipay"
+		Debug.AspNetCompiler.PhysicalPath = "CityService.Alipay\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\CityService.Alipay\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/CityService.Alipay"
+		Release.AspNetCompiler.PhysicalPath = "CityService.Alipay\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\CityService.Alipay\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "CityService.Alipay\"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CityService.WeiXin", "http://localhost/CityService/CityService.WeiXin", "{37390DAE-2248-4B7C-B39E-AE043644969F}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "SAK"
+		SccAuxPath = "SAK"
+		SccLocalPath = "SAK"
+		SccProvider = "SAK"
+		UseIISExpress = "false"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/CityService.WeiXin"
+		Debug.AspNetCompiler.PhysicalPath = "CityService.WeiXin\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\CityService.WeiXin\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/CityService.WeiXin"
+		Release.AspNetCompiler.PhysicalPath = "CityService.WeiXin\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\CityService.WeiXin\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "CityService.WeiXin\"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Alipay", "Alipay", "{D54CAEBD-BB2D-411B-AFCC-AB029C366BCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CityService.Alipay.Aop", "CityService.Alipay.Aop\CityService.Alipay.Aop.csproj", "{9C11CAE5-5188-4E71-825B-68FC3135728A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WeiXin", "WeiXin", "{DC3A6293-4B0B-4BD1-8076-AAD42A51C2E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CityService.DataAccess", "CityService.DataAccess\CityService.DataAccess.csproj", "{24EA58FF-BA57-4211-ABCC-F0EDA89FB065}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CityService.WeiXin.Mvc", "CityService.WeiXin.Mvc\CityService.WeiXin.Mvc.csproj", "{3D8CE7AC-BCAB-45A8-A405-CEF1C1A78401}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CityService.Alipay.Mvc.ProvidentFund", "CityService.Alipay.Mvc.ProvidentFund\CityService.Alipay.Mvc.ProvidentFund.csproj", "{1AC28EC9-B72C-4920-BD88-80F5AFC946BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CityService.Service.Controllers", "CityService.Service.Controllers\CityService.Service.Controllers.csproj", "{54B2E70A-BB78-4FF1-B0C1-293FECD77600}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 9
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs.china-ccw.com:58080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccWebProject1 = true
+		SccProjectUniqueName1 = http://localhost/CityService/CityService.WeiXin
+		SccProjectTopLevelParentUniqueName1 = CityService..sln
+		SccProjectName1 = CityService.WeiXin
+		SccLocalPath1 = CityService.WeiXin
+		SccProjectEnlistmentChoice1 = 2
+		SccProjectUniqueName2 = CityService.Alipay.Aop\\CityService.Alipay.Aop.csproj
+		SccProjectTopLevelParentUniqueName2 = CityService..sln
+		SccProjectName2 = CityService.Alipay.Aop
+		SccLocalPath2 = CityService.Alipay.Aop
+		SccProjectUniqueName3 = CityService.Service\\CityService.Service.csproj
+		SccProjectName3 = CityService.Service
+		SccLocalPath3 = CityService.Service
+		SccProjectUniqueName4 = CityService.DataAccess\\CityService.DataAccess.csproj
+		SccProjectName4 = CityService.DataAccess
+		SccLocalPath4 = CityService.DataAccess
+		SccWebProject5 = true
+		SccProjectUniqueName5 = http://localhost/CityService/CityService.Alipay
+		SccProjectTopLevelParentUniqueName5 = CityService..sln
+		SccProjectName5 = CityService.Alipay
+		SccLocalPath5 = CityService.Alipay
+		SccProjectEnlistmentChoice5 = 2
+		SccProjectUniqueName6 = CityService.WeiXin.Mvc\\CityService.WeiXin.Mvc.csproj
+		SccProjectTopLevelParentUniqueName6 = CityService..sln
+		SccProjectName6 = CityService.WeiXin.Mvc
+		SccLocalPath6 = CityService.WeiXin.Mvc
+		SccProjectUniqueName7 = CityService.Alipay.Mvc.ProvidentFund\\CityService.Alipay.Mvc.ProvidentFund.csproj
+		SccProjectTopLevelParentUniqueName7 = CityService..sln
+		SccProjectName7 = CityService.Alipay.Mvc.ProvidentFund
+		SccLocalPath7 = CityService.Alipay.Mvc.ProvidentFund
+		SccProjectUniqueName8 = CityService.Service.Controllers\\CityService.Service.Controllers.csproj
+		SccProjectName8 = CityService.Service.Controllers
+		SccLocalPath8 = CityService.Service.Controllers
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		32|Any CPU = 32|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D864D570-0817-4E84-B5DE-2AD8D67D116B}.32|Any CPU.ActiveCfg = Debug|Any CPU
+		{D864D570-0817-4E84-B5DE-2AD8D67D116B}.32|Any CPU.Build.0 = Debug|Any CPU
+		{D864D570-0817-4E84-B5DE-2AD8D67D116B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D864D570-0817-4E84-B5DE-2AD8D67D116B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D864D570-0817-4E84-B5DE-2AD8D67D116B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D864D570-0817-4E84-B5DE-2AD8D67D116B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C02B1053-FBFC-4C46-AB6F-9CE4501E6FA7}.32|Any CPU.ActiveCfg = Debug|Any CPU
+		{C02B1053-FBFC-4C46-AB6F-9CE4501E6FA7}.32|Any CPU.Build.0 = Debug|Any CPU
+		{C02B1053-FBFC-4C46-AB6F-9CE4501E6FA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C02B1053-FBFC-4C46-AB6F-9CE4501E6FA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C02B1053-FBFC-4C46-AB6F-9CE4501E6FA7}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{C02B1053-FBFC-4C46-AB6F-9CE4501E6FA7}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{37390DAE-2248-4B7C-B39E-AE043644969F}.32|Any CPU.ActiveCfg = Debug|Any CPU
+		{37390DAE-2248-4B7C-B39E-AE043644969F}.32|Any CPU.Build.0 = Debug|Any CPU
+		{37390DAE-2248-4B7C-B39E-AE043644969F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37390DAE-2248-4B7C-B39E-AE043644969F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37390DAE-2248-4B7C-B39E-AE043644969F}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{37390DAE-2248-4B7C-B39E-AE043644969F}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{9C11CAE5-5188-4E71-825B-68FC3135728A}.32|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C11CAE5-5188-4E71-825B-68FC3135728A}.32|Any CPU.Build.0 = Debug|Any CPU
+		{9C11CAE5-5188-4E71-825B-68FC3135728A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C11CAE5-5188-4E71-825B-68FC3135728A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C11CAE5-5188-4E71-825B-68FC3135728A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C11CAE5-5188-4E71-825B-68FC3135728A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24EA58FF-BA57-4211-ABCC-F0EDA89FB065}.32|Any CPU.ActiveCfg = Debug|Any CPU
+		{24EA58FF-BA57-4211-ABCC-F0EDA89FB065}.32|Any CPU.Build.0 = Debug|Any CPU
+		{24EA58FF-BA57-4211-ABCC-F0EDA89FB065}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24EA58FF-BA57-4211-ABCC-F0EDA89FB065}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24EA58FF-BA57-4211-ABCC-F0EDA89FB065}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24EA58FF-BA57-4211-ABCC-F0EDA89FB065}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D8CE7AC-BCAB-45A8-A405-CEF1C1A78401}.32|Any CPU.ActiveCfg = Release|Any CPU
+		{3D8CE7AC-BCAB-45A8-A405-CEF1C1A78401}.32|Any CPU.Build.0 = Release|Any CPU
+		{3D8CE7AC-BCAB-45A8-A405-CEF1C1A78401}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D8CE7AC-BCAB-45A8-A405-CEF1C1A78401}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D8CE7AC-BCAB-45A8-A405-CEF1C1A78401}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D8CE7AC-BCAB-45A8-A405-CEF1C1A78401}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AC28EC9-B72C-4920-BD88-80F5AFC946BD}.32|Any CPU.ActiveCfg = Release|Any CPU
+		{1AC28EC9-B72C-4920-BD88-80F5AFC946BD}.32|Any CPU.Build.0 = Release|Any CPU
+		{1AC28EC9-B72C-4920-BD88-80F5AFC946BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AC28EC9-B72C-4920-BD88-80F5AFC946BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AC28EC9-B72C-4920-BD88-80F5AFC946BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AC28EC9-B72C-4920-BD88-80F5AFC946BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54B2E70A-BB78-4FF1-B0C1-293FECD77600}.32|Any CPU.ActiveCfg = Release|Any CPU
+		{54B2E70A-BB78-4FF1-B0C1-293FECD77600}.32|Any CPU.Build.0 = Release|Any CPU
+		{54B2E70A-BB78-4FF1-B0C1-293FECD77600}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54B2E70A-BB78-4FF1-B0C1-293FECD77600}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54B2E70A-BB78-4FF1-B0C1-293FECD77600}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54B2E70A-BB78-4FF1-B0C1-293FECD77600}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C02B1053-FBFC-4C46-AB6F-9CE4501E6FA7} = {D54CAEBD-BB2D-411B-AFCC-AB029C366BCF}
+		{37390DAE-2248-4B7C-B39E-AE043644969F} = {DC3A6293-4B0B-4BD1-8076-AAD42A51C2E1}
+		{9C11CAE5-5188-4E71-825B-68FC3135728A} = {D54CAEBD-BB2D-411B-AFCC-AB029C366BCF}
+		{3D8CE7AC-BCAB-45A8-A405-CEF1C1A78401} = {DC3A6293-4B0B-4BD1-8076-AAD42A51C2E1}
+		{1AC28EC9-B72C-4920-BD88-80F5AFC946BD} = {D54CAEBD-BB2D-411B-AFCC-AB029C366BCF}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs.china-ccw.com:58080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccWebProject1 = true
+		SccProjectUniqueName1 = http://localhost/CityService/CityService.WeiXin
+		SccProjectTopLevelParentUniqueName1 = CityService..sln
+		SccProjectName1 = CityService.WeiXin
+		SccLocalPath1 = CityService.WeiXin
+		SccProjectEnlistmentChoice1 = 2
+		SccProjectUniqueName2 = CityService.Service\\CityService.Service.csproj
+		SccProjectName2 = CityService.Service
+		SccLocalPath2 = CityService.Service
+		SccWebProject3 = true
+		SccProjectUniqueName3 = http://localhost/CityService/CityService.Alipay
+		SccProjectTopLevelParentUniqueName3 = CityService..sln
+		SccProjectName3 = CityService.Alipay
+		SccLocalPath3 = CityService.Alipay
+		SccProjectEnlistmentChoice3 = 2
+		SccProjectUniqueName4 = CityService.Alipay.Aop\\CityService.Alipay.Aop.csproj
+		SccProjectTopLevelParentUniqueName4 = CityService..sln
+		SccProjectName4 = CityService.Alipay.Aop
+		SccLocalPath4 = CityService.Alipay.Aop
+		SccProjectUniqueName5 = CityService.DataAccess\\CityService.DataAccess.csproj
+		SccProjectName5 = CityService.DataAccess
+		SccLocalPath5 = CityService.DataAccess
+	EndGlobalSection
+EndGlobal

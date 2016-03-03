@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>存取款查询</title>
+    <meta charset='UTF-8'>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <link href="../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/toast.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/button.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/dialog.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/button-group.css" type="text/css" rel="stylesheet" />
+
+    <script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../Scripts/extensions/base.js"></script>
+    <script type="text/javascript" src="../Content/alipay/amui-demo_files/amui.js"></script>
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/mobiscroll.custom-2.6.2.min.css" media="all">
+    <script type="text/javascript" src="../Scripts/mobiscroll.custom-2.6.2.min.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            window.setInterval("checkButtonState()", 200);
+            var currYear = (new Date()).getFullYear();
+            var opt = {};
+            opt.date = { preset: 'date' };
+            //opt.datetime = { preset : 'datetime', minDate: new Date(2012,3,10,9,22), maxDate: new Date(2014,7,30,15,44), stepMinute: 5  };
+            opt.datetime = { preset: 'datetime' };
+            opt.time = { preset: 'time' };
+            opt.default = {
+                theme: 'android-ics light', //皮肤样式
+                display: 'modal', //显示方式
+                mode: 'scroller', //日期选择模式
+                dateFormat: 'yy-mm-dd', // 日期格式
+                dateOrder: 'yymmdd', //面板中日期排列格式
+                lang: 'zh',
+                startYear: currYear - 10, //开始年份
+                endYear: currYear + 10 //结束年份
+            };
+
+            $("#startDate").val('').scroller('destroy').scroller($.extend(opt['date'], opt['default']));
+            $("#endDate").val('').scroller('destroy').scroller($.extend(opt['date'], opt['default']));
+
+            //下面注释部分是上面的参数可以替换改变它的样式
+            //希望一起研究插件的朋友加我个人QQ也可以，本人也建个群 291464597 欢迎进群交流。哈哈。这个不能算广告。
+            // 直接写参数方法
+            //$("#scroller").mobiscroll(opt).date();
+            // Shorthand for: $("#scroller").mobiscroll({ preset: 'date' });
+            //具体参数定义如下
+            //{
+            //preset: 'date', //日期类型--datatime --time,
+            //theme: 'ios', //皮肤其他参数【android-ics light】【android-ics】【ios】【jqm】【sense-ui】【sense-ui】【sense-ui】
+            //【wp light】【wp】
+            //mode: "scroller",//操作方式【scroller】【clickpick】【mixed】
+            //display: 'bubble', //显示方【modal】【inline】【bubble】【top】【bottom】
+            //dateFormat: 'yyyy-mm-dd', // 日期格式
+            //setText: '确定', //确认按钮名称
+            //cancelText: '清空',//取消按钮名籍我
+            //dateOrder: 'yymmdd', //面板中日期排列格
+            //dayText: '日',
+            //monthText: '月',
+            //yearText: '年', //面板中年月日文字
+            //startYear: (new Date()).getFullYear(), //开始年份
+            //endYear: (new Date()).getFullYear() + 9, //结束年份
+            //showNow: true,
+            //nowText: "明天",  //
+            //showOnFocus: false,
+            //height: 45,
+            //width: 90,
+            //rows: 3}
+
+        });
+    </script>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="header" class="am-header" style="background-color:#EFEFF4;display:none;">
+        </div>
+        <div style='display:none;'>
+            <select name="demo" id="demo" class="changes">
+                <option value="date" selected>Date</option>
+            </select>
+        </div>
+        <div style='display:none;'>
+            <select name="demo2" id="demo2" class="changes">
+                <option value="date" selected>Date</option>
+            </select>
+        </div>
+        <div data-role="content" style="background-color:#EFEFF4">
+            <div class="am-list am-list-5lb" am-mode="flat chip form">
+                <div class="am-list-body">
+                    <div class="am-list-item am-input-autoclear">
+                        <div class="am-list-label">开始时间</div>
+                        <div class="am-list-control">
+                            <input type="text" name="startDate" id="startDate" />
+                        </div>
+                    </div>
+                    <div class="am-list-item am-input-autoclear">
+                        <div class="am-list-label">结束时间</div>
+                        <div class="am-list-control">
+                            <input type="text" name="endDate" id="endDate" />
+                        </div>
+                    </div>
+                    <div style="padding-left:15px;padding-right:15px;margin-top:15PX;">
+                        <button id="searchButton" type="button" class="am-button" am-mode="blue disabled" onclick="SubmitDate();">确 认</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="fuwu" style="display: block;font-family:STHeitiSC  ;font-size: 12px; margin-bottom: 15px; margin-left: 0px; width: 100%; text-align: center; position: absolute; bottom: 0px;z-index:-1;">
+            <div class="am-agreement am-ft-gray am-ft-sm">
+                <p>
+                    本服务由苏州市教育局<br />苏州云联智慧信息技术应用有限公司提供支持
+                </p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function checkButtonState() {
+            if ($("#startDate").val() && $("#endDate").val())
+                $("#searchButton").attr("am-mode", "blue");
+            else
+                $("#searchButton").attr("am-mode", "blue disabled");
+        }
+
+        function SubmitDate()
+        {
+            var usercode = decodeURI(getQueryStringByName("userCode"));
+            var start = $("#startDate").val();
+            var end = $("#endDate").val();
+            var startTime = new Date(start);
+            var endTime = new Date(end);
+            if (startTime > endTime) {
+                alert("开始时间不能大于结束时间");
+            } else
+            {
+                window.location.href = 'eCardDepositAndDrawResult.html?start=' + $("#startDate").val() + '&end=' + end + '&userCode=' + usercode;
+            }
+        }
+    </script>
+</body>
+</html>

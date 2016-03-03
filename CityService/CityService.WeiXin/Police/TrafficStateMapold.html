@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <script type="text/javascript" name="baidu-tc-cerfication" data-appid="7154397" src="http://apps.bdimg.com/cloudaapi/lightapp.js"></script>
+
+    <script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../Scripts/extensions/base.js"></script>
+    <link href="../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/button.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="../Content/alipay/amui-demo_files/amui.js"></script>
+
+    <style type="text/css">
+        body, html, #map {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            margin: 0;
+            font-family: "微软雅黑";
+        }
+        .anchorBL a{  
+            display:none;  
+        }  
+        .BMap_noprint{  
+            margin-top:40px;  
+        }  
+    </style>
+
+    <script type="text/javascript" name="baidu-tc-cerfication" data-appid="7154397" src="http://apps.bdimg.com/cloudaapi/lightapp.js"></script>
+
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=KS7NwGTwKvGwI9WwO9Sy46xo"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
+    <link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
+
+
+    <title>交通路况</title>
+    <script type="text/javascript">
+        var map = null;
+        $(document).ready(function () {
+            // 百度地图API功能
+            map = new BMap.Map("map");    // 创建Map实例
+            //map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);  // 初始化地图,设置中心点坐标和地图级别
+            //map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
+            map.addControl(new BMap.MapTypeControl({ mapTypes: [BMAP_NORMAL_MAP, BMAP_HYBRID_MAP] }));     //2D图，卫星图
+
+            map.centerAndZoom("苏州", 15);           // 设置地图显示的城市 此项是必须设置的
+            map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+
+            var geolocationControl = new BMap.GeolocationControl();
+            geolocationControl.addEventListener("locationSuccess", function (e) {
+            });
+            geolocationControl.addEventListener("locationError", function (e) {
+                // 定位失败事件
+                alert(e.message);
+            });
+            map.addControl(geolocationControl);
+            updatePlaces("");
+
+            $("#searchButton").on("click", function () {
+                updatePlaces($("#searchText").val());
+            });
+        });
+
+        function updatePlaces(keywords)
+        {
+            var url = "../../CityService.Service/PoliceService.svc/GetAllTrafficMonitors";
+            $.ajax(url, {
+                type: 'get',
+                contentType: 'text/json',
+                success: function (msg) {
+                    if (msg.d == null)
+                        return;
+                    addPlacesToList($.parseJSON(msg.d), keywords);
+                },
+                error: function (xhr) {
+                },
+                complete: function () {
+                    
+                }
+            });
+
+        }
+        function addPlacesToList(result, keywords)
+        {
+            map.clearOverlays();
+            if (result == null || result.succ != true || result.data.length == 0)
+                return;
+
+            $.each(result.data, function () {
+                if(keywords == "" || keywords == null)
+                    addPoint(this);
+                else if(this.devName.indexOf(keywords) > -1)
+                    addPoint(this);
+            });
+        }
+        function addPoint(info)
+        {
+            if (!info.lng || !info.lat)
+                return;
+
+            var point = new BMap.Point(info.lng, info.lat);
+            var icon = new BMap.Icon("../Images/video.png", new BMap.Size(24, 24));
+            var marker = new BMap.Marker(point, { icon: icon });  // 创建标注
+            marker.addEventListener("click", function () {
+                var url = "../../CityService.Service/PoliceService.svc/GeTrafficMonitorInfo?id=" + info.devId;
+
+                $.ajax(url, {
+                    type: 'get',
+                    contentType: 'text/json',
+                    success: function (msg) {
+                        if (msg.d == null)
+                            return;
+                        $("#imgInfo").show();
+                        var item = $.parseJSON(msg.d);
+                        //$("#image").css("background-image","url(" + item.data + ")")
+                        $("#image").attr("src", item.data)
+                        $("#title").html(info.devName);
+                    },
+                    error: function (xhr) {
+                    },
+                    complete: function () {
+                    
+                    }
+                });
+
+            });
+            map.addOverlay(marker);
+        }
+
+    </script>
+</head>
+<body>
+    <div id="map">
+
+    </div>
+    <div id="imgInfo" style="width:100%; height:100%; float:left; position:absolute; right:0; bottom:0; background-color:white;opacity:0.95; display:none;z-index:1000">
+        <div style="width:100%; height:32px; background-color:lightgray; text-align:center; line-height:32px;" id="title">
+            
+        </div>
+        <img src="../Images/close.png" style="width:24px;height:24px; float:right; right:5px; top:5px;position:absolute;" onclick="javascript: $('#imgInfo').hide()"/>
+        <div style="width:100%;height:100%; text-align:center; position:absolute; bottom:0;top:32px;float:left" id="image1">
+            <img id="image" style="max-width:100%;" />
+        </div>
+    </div>
+    <div id="imgInfo" style="width:100%; height:32px; float:left; position:absolute; right:0; top:0; background-color:white;opacity:0.95;">
+        <div class="am-search am-input-autoclear">
+            <div class="am-search-input">
+                <div class="am-search-icon"><i class="am-icon" am-mode="search"></i></div>
+                <input id="searchText" class="am-search-value" type="text" placeholder="监控的名称关键字" value=" ">
+                <div class="am-search-clear"><i class="am-icon-clear am-icon" am-mode="clear clear-tiny" style="visibility: hidden;"></i></div>
+            </div>
+            <div class="am-search-button" style="display: none;">
+                <button type="button" class="am-button" am-mode="little blue" id="searchButton">确定</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="fuwu" style="display: block;font-family:STHeitiSC;font-size: 12px; margin-top:-55px; margin-left: 0px; width: 100%;opacity:1.0; text-align: center;position:absolute">
+        <div class="am-agreement am-ft-gray am-ft-sm">
+            <p>
+                本服务由苏州市公安局<br />苏州云联智慧信息技术应用有限公司提供支持
+            </p>
+        </div>
+    </div>
+</body>
+</html>

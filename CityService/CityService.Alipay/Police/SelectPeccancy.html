@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8;" />
+    <title>车辆违法查询</title>
+    <meta charset='UTF-8'>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <link href="../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/toast.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/button.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/dialog.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/button-group.css" type="text/css" rel="stylesheet" />
+
+    <script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../Scripts/extensions/base.js"></script>
+    <script type="text/javascript" src="../Content/alipay/amui-demo_files/amui.js"></script>
+    <style>
+        .ui-block-a, .ui-block-b, .ui-block-c, .ui-block-d {
+            padding: 10px 0 10px 0;
+            text-align: center;
+        }
+
+            .ui-block-a img, .ui-block-b img, .ui-block-c img, .ui-block-d img {
+                width: 43%;
+                padding-top: 10%;
+            }
+
+        .am-button {
+            padding-LEFT: 15PX;
+        }
+    </style>
+
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="content" style="background-color:#EFEFF4;padding-top:15PX">
+            <div class="am-list" am-mode="flat form">
+                <div class="am-list-body">
+                    <div class="am-toast" id="toast">
+                        <div class="am-toast-text">
+                            <span class="am-toast-icon am-icon" am-mode="toast-loading"></span> 正在查询...
+                        </div>
+                    </div>   
+                    <div class="am-list-item am-input-autoclear">
+                                    <div class="am-list-label">车牌号</div>
+                                    <div class="am-list-content">
+                                        苏E<input type="text"style="text-transform:uppercase;" id="inputLicense" value="">
+                                        <input type="hidden" placeholder="" value="">
+                                    </div>
+                                    <div class="am-list-clear"><i class="am-icon-clear am-icon" am-mode="clear"></i></div>
+                </div>
+                    <div class="am-list-item am-input-autoclear">
+                        <div class="am-list-label">车架号</div>
+                        <div class="am-list-control">
+                            <input type="text" id="inputVin" placeholder="车架号后七位" value="">
+                            <input type="hidden" placeholder="" value="">
+                        </div>
+                        <div class="am-list-clear"><i class="am-icon-clear am-icon" am-mode="clear"></i></div>
+                    </div>
+                    <div style="padding-left:15px;padding-right:15px;margin-top:15PX;">
+                                <button id="searchButton" type="button" class="am-button" am-mode="blue disabled">查询</button>
+                            </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+        <div id="fuwu" style="display: block;font-family:STHeitiSC  ;font-size: 12px; margin-bottom: 15px; margin-left: 0px; width: 100%; text-align: center; position: absolute; bottom: 0px;z-index:-1;">
+            <div class="am-agreement am-ft-gray am-ft-sm">
+                <p>
+                    本服务由苏州市公安局<br />苏州云联智慧信息技术应用有限公司提供支持
+                </p>
+            </div>
+        </div>
+    <script>
+        $(function () {
+            $("#toast").hide();
+            window.setInterval("checkButtonState()", 200);
+            $("#searchButton").click(function () {
+                var lic = $("#inputLicense").val();
+                var vin = $("#inputVin").val();
+                if (lic&&vin)
+                {
+                     if (vin.length!= 7)
+                    {
+                        alert("车架号输入格式错误");
+                    }
+                    else
+                    {
+                        $("#toast").show();
+                        result();
+                    }
+               
+                }
+            });
+        });
+
+        function checkButtonState() {
+            if ($("#inputLicense").val() && $("#inputVin").val())
+                $("#searchButton").attr("am-mode", "blue");
+            else
+                $("#searchButton").attr("am-mode", "blue disabled");
+        }
+        function result() {
+            var url = "../../CityService.Service/PoliceService.svc/SelectPeccancyInfo";
+            var lic = "苏E"+$("#inputLicense").val();
+            var vin = $("#inputVin").val();
+            $.ajax(url, {
+                type: 'get',
+                contentType: 'text/json',
+                data: "lic=" + lic + "&vin=" + vin,
+                success: function (msg) {
+                    var temp=JSON.parse(msg);
+                    if (temp.succ == true)
+                    {
+                        if(msg.d.data.length > 0) {
+                            window.location.href = 'PeccancyResult.html?lic=' + lic + '&vin=' + vin;
+                        }
+                        else
+                        {
+                            alert("未查到交通违法信息!");
+                        }
+                    }
+                },
+                error: function (xhr) {
+                },
+                complete: function () {
+                    $("#toast").hide();
+                }
+            });
+        }
+
+    </script>
+</body>
+</html>

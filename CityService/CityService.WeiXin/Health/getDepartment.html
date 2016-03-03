@@ -1,0 +1,238 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>预约挂号</title>
+    <meta charset='UTF-8'>
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+     <meta http-equiv="Expires" content="0" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+   <link href="../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/weui-master/dist/style/weui.css" rel="stylesheet" />
+    <link href="../Content/wechat.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/weixin.css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/toast.css" rel="stylesheet" />
+    <script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../Scripts/extensions/base.js"></script>
+    <script type="text/javascript" src="../Content/alipay/amui-demo_files/amui.js"></script>
+    </head>
+<body>
+    <div class="am-tab" id="tabHeader">
+        <a id="tab1" href="javascript:switchPanel('1')" class="am-tab-item" data-tab="selected">普通挂号</a>
+        <a id="tab2" href="javascript:switchPanel('2')" class="am-tab-item">专家挂号</a>
+    </div>
+    <div class="am-toast" id="toast">
+        <div class="am-toast-text">
+            <span class="am-toast-icon am-icon" am-mode="toast-loading"></span> 正在加载...
+        </div>
+    </div>
+    <!--普通挂号-->
+    <div id="tab1Panel" class="sample" style="display:none;">
+
+        <div class="tmt-search-bar tmt-search-bar_active">
+            <div class="tmt-search-bar__box tmt-ui-flex">
+                <i class="tmt-search-bar__icon"></i>
+                <input type="text" class="tmt-search-bar__input tmt-ui-flex__item" id="Depart" placeholder="科室">
+            </div>
+        </div>
+        <div class="sample__box">
+            <a href="#" class="tmt-btn tmt-btn_l tmt-btn_positive tmt-btn_disable" onclick="getComDepartDoc()">查询</a>
+        </div>
+        <div class="weui_cells weui_cells_access">
+            <div id="CommonDepartlist">
+            </div>
+        </div>
+    </div>
+    <!--end 普通挂号-->
+    <!--专家号-->
+    <div id="tab2Panel" class="sample" style="display:none;">
+        <div class="tmt-search-bar tmt-search-bar_active">
+            <div class="tmt-search-bar__box tmt-ui-flex">
+                <i class="tmt-search-bar__icon"></i>
+                <input type="text" class="tmt-search-bar__input tmt-ui-flex__item" id="exDepart" placeholder="搜索科室">
+            </div>
+        </div>
+        <!--搜索专家-->
+        <div class="tmt-search-bar tmt-search-bar_active">
+            <div class="tmt-search-bar__box tmt-ui-flex">
+                <i class="tmt-search-bar__icon"></i>
+                <input type="text" class="tmt-search-bar__input tmt-ui-flex__item" id="Doctor" placeholder="搜索专家">
+            </div>
+        </div>
+
+        <div class="sample__box">
+            <a href="#" class="tmt-btn tmt-btn_l tmt-btn_positive tmt-btn_disable" onclick="getExDepartDoc()">查询</a>
+        </div>
+        <div class="weui_cells weui_cells_access">
+            <div id="ExpertDepartlist">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="nav" style="background-color:#EFEFF4">
+        <div class="am-flexbox">
+            <div class="am-flexbox-item"><a href="RegisterList.html">挂号清单</a></div>
+            <div class="am-flexbox-item am-ft-ellipsis">
+                <a href="Comuserlist.html">常用成员</a>
+            </div>
+            <div class="am-flexbox-item">
+                <a href="News.html">预约提醒</a>
+            </div>
+           </div>
+        </div>
+        <div class="footer">
+            <p>
+                本服务由苏州市卫生局<br />苏州云联智慧信息技术应用有限公司提供支持
+            </p>
+        </div>
+</body>
+<script type="text/javascript">
+    $(function () {
+        $("#toast").show();
+        switchPanel(2);
+        GetCommonDepart();
+        GetExpertDepart();
+    });
+    function switchPanel(index) {
+        $("#tab1Panel").css("display", index == "1" ? "inline" : "none");
+        $("#tab2Panel").css("display", index == "2" ? "inline" : "none");
+        $("#tab1").attr("data-tab", index == "1" ? "selected" : "");
+        $("#tab2").attr("data-tab", index == "2" ? "selected" : "");
+    }
+    function GetCommonDepart()
+    {
+        var url = "../../CityService.Service/HospitalInfoService.svc/GetCommonDepart";
+        $.ajax(url,{
+            type:"GET",
+            data:{
+                HospName: decodeURI(getQueryStringByName("HospName")),
+    },
+    dataType:"Json",
+            success:function(result)
+            {
+                addToCommonDepartlist(result.d);
+            },
+            error:function()
+            {
+                return;
+            }
+        })
+    }
+     function GetExpertDepart()
+      {
+         var url = "../../CityService.Service/HospitalInfoService.svc/GetExpertDepart";
+        $.ajax(url,{
+            type: "GET",
+            data: {
+                HospName: decodeURI(getQueryStringByName("HospName")),
+            },
+            dataType: "Json",
+            success: function (result) {
+              addToExpertDepartlist(result.d);
+            },
+            error: function () {
+                return;
+            },
+            complete: function ()
+            {
+                $("#toast").hide();
+            }
+        })
+     }
+
+     function getComDepartDoc()
+     {
+         var HospName = decodeURI(getQueryStringByName("HospName"));
+         var search = $("#Depart").val();
+         if (search.toString().trim() != "") {
+             var url = "../../CityService.Service/HospitalInfoService.svc/GetSearchCommonDepart";
+             $.ajax(url, {
+                 type: "GET",
+                 data: {
+                     HospName: decodeURI(getQueryStringByName("HospName")),
+                     SearchDepartName: $("#Depart").val().toString().trim()
+                 },
+                 dataType: "Json",
+                 success: function (result) {
+                     addToCommonDepartlist(result.d);
+                 },
+                 error: function () {
+                     return;
+                 }
+             })
+         }
+         else
+         {
+             GetCommonDepart();
+         }
+     }
+
+     function getExDepartDoc() {
+         var HospName = decodeURI(getQueryStringByName("HospName"));
+         var DepSearch = $("#exDepart").val();
+         var DocSearch = $("#Doctor").val();
+	 if(DepSearch =="" && DocSearch =="")
+	{ 
+          var msg="没有相应的信息";
+         location.href = "Message.html?msg="+msg;
+	 }
+	 else {
+         location.href = 'ExDepartDocList.html?HospName=' + HospName + '&DepName=' + DepSearch + '&DocName=' + DocSearch;
+	}
+     }
+
+     function addToCommonDepartlist(DepartList)
+     {
+         var HospName = decodeURI(getQueryStringByName("HospName"));
+         content = "";
+         if (DepartList == null || DepartList.length == 0) {
+             content =
+
+             '<a class="weui_cell" href=ComDepartDetail.html?HospName=' + HospName + '&DepartName='+ this + '>' +
+                       '<div class="weui_cell_bd weui_cell_primary">' +
+                           '<p> 暂未查到可用信息</p>' +
+                       '</div>' +
+              '</a>';
+
+             $("#CommonDepartlist").html(content);
+         }
+         else
+         {
+             $.each(DepartList, function () {
+                 content = content +
+             '<a class="weui_cell" href=ComDepartDetail.html?HospName=' + HospName + '&DepartName=' + this + '>' +
+                        '<div class="weui_cell_bd weui_cell_primary">' +
+                            '<p>' + this + '</p>' +
+                        '</div>' +
+                  ' <div class="weui_cell_ft">' +
+                       ' </div>' +
+                       '</a>';
+             });
+             $("#CommonDepartlist").html(content);
+         }
+     }
+     function addToExpertDepartlist(DepartList) {
+         var HospName = decodeURI(getQueryStringByName("HospName"));
+         if (DepartList == null || DepartList.length == 0)
+             return;
+         content ="";
+         $.each(DepartList, function () {
+             content = content +
+             '<a class="weui_cell" href=ExDepartDocList.html?HospName=' + HospName + '&DepartName=' + this +'>' +
+                       '<div class="weui_cell_bd weui_cell_primary">' +
+                           '<p>' + this + '</p>' +
+                       '</div>' +
+                 ' <div class="weui_cell_ft">' +
+                      ' </div>' +
+                      '</a>';
+         });
+         $("#ExpertDepartlist").html(content);
+      }
+</script>
+</html>
+

@@ -1,0 +1,9 @@
+E:\Projects\PreProjects\Source\CityService\CityService.DataAccess\bin\Debug\AlipaySystem.DataAccess.dll.config
+E:\Projects\PreProjects\Source\CityService\CityService.DataAccess\bin\Debug\AlipaySystem.DataAccess.dll
+E:\Projects\PreProjects\Source\CityService\CityService.DataAccess\bin\Debug\AlipaySystem.DataAccess.pdb
+E:\Projects\PreProjects\Source\CityService\CityService.DataAccess\bin\Debug\EntityFramework.dll
+E:\Projects\PreProjects\Source\CityService\CityService.DataAccess\bin\Debug\EntityFramework.xml
+E:\Projects\PreProjects\Source\CityService\CityService.DataAccess\bin\Debug\zh-Hans\EntityFramework.resources.dll
+E:\Projects\PreProjects\Source\CityService\CityService.DataAccess\obj\Debug\AlipaySystem.DataAccess.csprojResolveAssemblyReference.cache
+E:\Projects\PreProjects\Source\CityService\CityService.DataAccess\obj\Debug\AlipaySystem.DataAccess.dll
+E:\Projects\PreProjects\Source\CityService\CityService.DataAccess\obj\Debug\AlipaySystem.DataAccess.pdb

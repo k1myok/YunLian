@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{54B2E70A-BB78-4FF1-B0C1-293FECD77600}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CityService.Service.Controllers</RootNamespace>
+    <AssemblyName>CityService.Service.Controllers</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;UnLogin1</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AFG.Map.Transform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AFG.Map.Transform.dll</HintPath>
+    </Reference>
+    <Reference Include="CityService.Alipay.Aop">
+      <HintPath>..\CityService.Alipay.Aop\bin\Debug\CityService.Alipay.Aop.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Senparc.Weixin, Version=3.3.6.23850, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Senparc.Weixin.4.5.7\lib\net45\Senparc.Weixin.dll</HintPath>
+    </Reference>
+    <Reference Include="Senparc.Weixin.MP, Version=11.3.2.17164, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\getOpenID\CityService.Alipay.Aop\bin\Debug\Senparc.Weixin.MP.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\GetOpenID.cs" />
+    <Compile Include="Common\HttpHelper.cs" />
+    <Compile Include="Common\ServiceContext.cs" />
+    <Compile Include="Common\StringHelper.cs" />
+    <Compile Include="Common\XmlHelper.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProvidentFund\AlipayProvidentFundController.cs" />
+    <Compile Include="Controllers\ProvidentFund\ProvidentFundController.cs" />
+    <Compile Include="Models\AlipayUser.cs">
+      <DependentUpon>ProvidentFund.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GJJCenterUsers.cs">
+      <DependentUpon>ProvidentFund.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProvidentFund.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProvidentFund.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProvidentFund.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProvidentFund.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProvidentFund.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProvidentFund.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProvidentFundModel\Deposit.cs" />
+    <Compile Include="Models\ProvidentFundModel\Loan.cs" />
+    <Compile Include="Models\ProvidentFundModel\Map.cs" />
+    <Compile Include="Models\ProvidentFundModel\Repayment.cs" />
+    <Compile Include="Models\ProvidentFundModel\UserInfo.cs" />
+    <Compile Include="Models\User.cs">
+      <DependentUpon>ProvidentFund.tt</DependentUpon>
+    </Compile>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DateTransformServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Models\ProvidentFund.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ProvidentFund.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Models\ProvidentFund.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ProvidentFund.edmx</DependentUpon>
+      <LastGenOutput>ProvidentFund.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Models\ProvidentFund.edmx.diagram">
+      <DependentUpon>ProvidentFund.edmx</DependentUpon>
+    </None>
+    <None Include="Models\ProvidentFund.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ProvidentFund.edmx</DependentUpon>
+      <LastGenOutput>ProvidentFund.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DateTransformServiceReference\CityService.Service.Controllers.DateTransformServiceReference.CheckCodeResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DateTransformServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\DateTransformServiceReference\configuration.svcinfo" />
+    <None Include="Service References\DateTransformServiceReference\DataTransformService11.wsdl" />
+    <None Include="Service References\DateTransformServiceReference\DataTransformService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DateTransformServiceReference\DataTransformService31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DateTransformServiceReference\DataTransformService32.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DateTransformServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\DateTransformServiceReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+    <Folder Include="obj\Debug\edmxResourcesToEmbed\Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DateTransformServiceReference\DataTransformService11.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="obj\Debug\TempPE\Models.ProvidentFund.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Models.ProvidentFund.Designer.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Service References.DateTransformServiceReference.Reference.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Service References.LocalDateTransformServiceReference.Reference.cs.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

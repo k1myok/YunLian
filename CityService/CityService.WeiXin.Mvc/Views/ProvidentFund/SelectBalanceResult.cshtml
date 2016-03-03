@@ -1,0 +1,250 @@
+﻿@model CityService.Service.Controllers.UserInfo
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset='UTF-8'>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <link href="../Content/alipay/amui-demo_files/toast.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/dialog.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/button-group.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/button.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/button.css" type="text/css" rel="stylesheet" />
+    <script src="~/Script/jquery-1.10.2.min.js"></script>
+    <script src="~/Script/extensions/base.js"></script>
+    <script src="~/Script/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="../Content/alipay/amui-demo_files/amui.js"></script>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="content" style="padding:0px;overflow-y:scroll;">
+            <div>
+                <img src="~/Image/苏州市住房公积金管理中心.jpg" style="width:100%;" />
+            </div>
+            <div class="am-tab">
+                <a id="tab1" href="javascript:ClickTab1();" class="am-tab-item" data-tab="selected">账户基本信息</a>
+                <a id="tab2" href="javascript:ClickTab2();" class="am-tab-item">公积金账户明细</a>
+            </div>
+            <div id="one" class="am-list am-list-5lb" am-mode="flat chip form" style="display:none;">
+                <div data-role="content" style="background-color:#EFEFF4;padding:0px;">
+                    <div class="am-list am-list-5lb" am-mode="flat chip form">
+                        <div class="am-list-body">
+                            <div class="am-list-item am-input-autoclear">
+                                <div class="am-list-label">公积金账户</div>
+                                <div class="am-list-control am-ft-right">@Model.CustAcNo</div>
+                            </div>
+                            <div class="am-list-item am-input-autoclear">
+                                <div class="am-list-label">姓名</div>
+                                <div class="am-list-control am-ft-right">@Model.CustName</div>
+                            </div>
+                            @if (Model.PaperId.Length >=6)
+                            {
+                                <div class="am-list-item am-input-autoclear">
+                                    <div class="am-list-label">证件号码</div>
+                                    <div class="am-list-control am-ft-right">@Model.PaperId.Substring(0, 3)@string.Join("", @Model.PaperId.Substring(3, @Model.PaperId.Length - 6).Select(p => "*").ToArray())@Model.PaperId.Substring(@Model.PaperId.Length - 3)</div>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="am-list-item am-input-autoclear">
+                                    <div class="am-list-label">证件号码</div>
+                                    <div class="am-list-control am-ft-right">@Model.PaperId</div>
+                                </div>
+                            }
+                            <div class="am-list-item am-input-autoclear">
+                                <div class="am-list-label">缴存银行</div>
+                                <div class="am-list-control am-ft-right">@Model.JcBankName</div>
+                            </div>
+                            <div class="am-list-item am-input-autoclear">
+                                <div class="am-list-label">缴存基数</div>
+                                <div class="am-list-control am-ft-right">@Model.MonthInco</div>
+                            </div>
+                            <div class="am-list-item am-input-autoclear">
+                                <div class="am-list-label">月应缴额</div>
+                                <div class="am-list-control am-ft-right">@Model.SumAmt</div>
+                            </div>
+                            <div class="am-list-item am-input-autoclear">
+                                <div class="am-list-label">帐户余额</div>
+                                <div class="am-list-control am-ft-right">@Model.Bal</div>
+                            </div>
+                            <div class="am-list-item am-input-autoclear">
+                                <div class="am-list-label">缴至年月</div>
+                                <div class="am-list-control am-ft-right">@Model.LastSaveMonth</div>
+                            </div>
+                            <div class="am-list-item am-input-autoclear">
+                                <div class="am-list-label">账户状态</div>
+                                <div class="am-list-control am-ft-right">@Model.CustAcStat</div>
+                            </div>
+                            @*<div class="am-list-item am-input-autoclear">
+                                    <div class="am-list-label" style="width:40%">单位缴存比例</div>
+                                    <div class="am-list-control am-ft-right" style="width:60%">@Model.CorpPerc%</div>
+                                </div>
+                                <div class="am-list-item am-input-autoclear">
+                                    <div class="am-list-label" style="width:40%">个人缴存比例</div>
+                                    <div class="am-list-control am-ft-right" style="width:60%">@Model.CustPerc%</div>
+                                </div>*@
+                            @*<div class="am-list-item am-input-autoclear">
+                                    <div class="am-list-label">开户日期</div>
+                                    <div class="am-list-control am-ft-right">@Model.OperDate</div>
+                                </div>*@
+                            <div class="am-list-item am-input-autoclear">
+                                <div class="am-list-label">发卡状态</div>
+                                <div class="am-list-control am-ft-right">@Model.CardFlag</div>
+                            </div>
+
+                            @if (!string.IsNullOrEmpty(Model.BankCardNo))
+                            {
+                                @*<div class="am-list-item am-input-autoclear">
+                                    <div class="am-list-label" style="width:40%">关联银行</div>
+                                    <div class="am-list-control am-ft-right" style="width:60%">@Model.BindBankType</div>
+                                </div>*@
+                                <div class="am-list-item am-input-autoclear">
+                                    <div class="am-list-label" style="width:40%">关联银行卡号</div>
+                                    <div class="am-list-control am-ft-right" style="width:60%">@Model.BindBankType@Model.BankCardNo.Substring(0, 4)@string.Join("", @Model.BankCardNo.Substring(4, @Model.BankCardNo.Length - 8).Select(p => "*").ToArray())@Model.BankCardNo.Substring(@Model.BankCardNo.Length - 4)</div>
+                                </div>
+                            }
+                            else
+                            {
+                                @*<div class="am-list-item am-input-autoclear">
+                                    <div class="am-list-label" style="width:40%">关联银行</div>
+                                    <div class="am-list-control am-ft-right" style="width:60%">@Model.BindBankType</div>
+                                </div>*@
+                                <div class="am-list-item am-input-autoclear">
+                                    <div class="am-list-label" style="width:40%">关联银行卡号</div>
+                                    <div class="am-list-control am-ft-right" style="width:60%">@Model.BindBankType@Model.BankCardNo</div>
+                                </div>
+                            }
+                            @if (!string.IsNullOrEmpty(Model.accuorgaid))
+                            {
+                                <div class="am-list-item am-input-autoclear">
+                                    <div class="am-list-label">缴存地区</div>
+                                    <div class="am-list-control am-ft-right">@Model.accuorgaid</div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div style="padding-bottom:0px;">
+                        <img src="~/Image/公积金官方微信.png" style="width:100%;" />
+                    </div>
+                </div>
+            </div>
+            <script>
+                $(function () {
+                    ClickTab1();
+                });
+
+                function ClickTab1() {
+                    $("#one").css("display", "block");
+                    $("#two").css("display", "none");
+                    $("#tab1").attr("data-tab", "selected");
+                    $("#tab1").css("color", "#f8a657");
+                    $("#tab1").css("border-bottom", "2px solid #f8a657");
+                    $("#tab2").css("border-bottom", "");
+                    $("#tab2").css("color", "#666");
+                    $("#tab2").attr("data-tab", "none");
+                }
+
+                function ClickTab2() {
+                    $("#one").css("display", "none");
+                    $("#two").css("display", "block");
+                    $("#tab1").attr("data-tab", "");
+                    $("#tab2").attr("data-tab", "selected");
+                    $("#tab2").css("color", "#f8a657");
+                    $("#tab2").css("border-bottom", "2px solid #f8a657");
+                    $("#tab1").css("border-bottom", "");
+                    $("#tab1").css("color", "#666");
+                }
+            </script>
+            <div id="two" class="am-list am-list-5lb" am-mode="flat chip form" style="display:none;">
+                <div data-role="content" style="background-color:#EFEFF4;padding:0px;">
+                    <div class="am-list am-list-5lb" am-mode="flat chip form">
+                        <div class="am-list-body">
+                            <div class="am-list-item">
+                                <div class="am-list-content">入账日期</div>
+                                <div class="am-list-content am-ft-center">业务类别</div>
+                                <div class="am-list-content am-ft-right">发生额</div>
+                                <div class="am-list-content am-ft-right">余额</div>
+                            </div>
+                            @if (Model.depList != null && Model.depList.Count > 0)
+                            {
+                                for (var i = 0; i < Model.depList.Count; i++)
+                                {
+                                    <div class="am-list-item">
+                                        <div class="am-list-content">@Model.depList[i].AcDate</div>
+                                        <div class="am-list-content am-ft-center">@Model.depList[i].BusiDetailType</div>
+                                        @if(Model.depList[i].BusiDetailType=="支出"){
+                                        <div class="am-list-content am-ft-right" style="color:#cc0033">@Model.depList[i].Amt</div>
+                                        }else{
+                                        <div class="am-list-content am-ft-right">@Model.depList[i].Amt</div>
+                                        }
+                                        <div class="am-list-content am-ft-right">@Model.depList[i].Bal</div>
+                                    </div>
+                                }
+                                if (Convert.ToInt32(Model.page) < Convert.ToInt32(Model.pages))
+                                {
+                                    <div style="padding:0 10px;text-align:center;" id="moreDeposit">
+                                        @*idCard, string idPF,string pages,string page,string total*@
+                                        <input type="button" class="am-button" value="查看更多" onclick="MoreDeposit('@Model.PaperId', '@Model.CustAcNo', '@Model.pages', '@Model.page', '@Model.total')" am-mode="middle white" style="background-image:none;background-color:#f8a657;color:white;border:1px solid #f8a657;" />
+                                    </div>
+                                }
+                                <script>
+                                    var currentPage = null;
+                                    function MoreDeposit(idCard, idPF, pages, page, total) {
+                                        $.mobile.loading("show");
+                                        if (currentPage == null)
+                                            currentPage = page;
+                                        var data = "idCard=" + idCard + "&idPF=" + idPF + "&pages=" + pages + "&page=" + currentPage + "&total=" + total;
+                                        $.ajax({
+                                            type: "get",
+                                            url: "../ProvidentFund/MoreDeposit?" + data,
+                                            dataType: "json",
+                                            success: function (data) {
+                                                currentPage = data.page;
+                                                var html = "";
+                                                for (var i = 0; i < data.depList.length; i++) {
+                                                    if (data.depList[i].BusiDetailType == "支出") {
+                                                        html += "<div class='am-list-item'><div class='am-list-content'>" + data.depList[i].AcDate + "</div> <div class='am-list-content am-ft-center'>" + data.depList[i].BusiDetailType + "</div>"
+                                            + "<div class='am-list-content am-ft-right' style='color:#cc0033'>" + data.depList[i].Amt + "</div><div class='am-list-content am-ft-right'>" + data.depList[i].Bal + "</div></div>";
+                                                    } else {
+                                                        html += "<div class='am-list-item'><div class='am-list-content'>" + data.depList[i].AcDate + "</div> <div class='am-list-content am-ft-center'>" + data.depList[i].BusiDetailType + "</div>"
+                                            + "<div class='am-list-content am-ft-right'>" + data.depList[i].Amt + "</div><div class='am-list-content am-ft-right'>" + data.depList[i].Bal + "</div></div>";
+                                                    }                                                    
+                                                }
+                                                $("#moreDeposit").before(html);
+                                                if (data.page == data.pages) {
+                                                    $("#moreDeposit").hide();
+                                                }
+
+                                            },
+                                            complete: function () { $.mobile.loading("hide"); }
+                                        });
+                                    }
+                                </script>
+                            }
+                            else
+                            {
+                                <div style="padding:20px;text-align:center;">
+                                    <h3 style="color:gray">暂无信息!</h3>
+                                </div>
+                            }
+                            
+                        </div>
+                    </div>
+                    <div style="padding-bottom:0px;">
+                        <img src="~/Image/公积金官方微信.png" style="width:100%;" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

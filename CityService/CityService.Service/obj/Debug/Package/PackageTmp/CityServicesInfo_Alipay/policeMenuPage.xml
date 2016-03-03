@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <title>
+    苏州公安
+  </title>
+  <menus>
+    <menu>
+      <content>交通出行</content>
+      <url>../Police/SelectTrafficList.html</url>
+      <image>../Images/交通.png</image>
+    </menu>
+    <menu>
+      <content>警务地图</content>
+      <url>../Police/PoliceMap.html</url>
+      <image>../Images/警务地图.png</image>
+    </menu>
+    <menu>
+      <content>便民查询</content>
+      <url>../Police/FacilitatePeopleList.html</url>
+      <image>../Images/便民查询.png</image>
+    </menu>
+    <menu>
+      <content>办事指南</content>
+      <url>../Police/WorkDirectory.html</url>
+      <image>../Images/办事指南.png</image>
+      <submenu></submenu>
+    </menu>
+    <menu>
+      <content>办事咨询</content>
+      <url>../Police/ConsultingserviceResult.html</url>
+      <image>../Images/办事咨询.png</image>
+      <submenu></submenu>
+    </menu>
+  </menus>
+  <foot>
+    <div class='am-agreement am-ft-gray am-ft-sm'>
+      <p id='footValue'>
+        本服务由<br />苏州云联智慧信息技术应用有限公司提供支持
+      </p>
+    </div>
+  </foot>
+  <type>
+    type_jgg
+  </type>
+</root>

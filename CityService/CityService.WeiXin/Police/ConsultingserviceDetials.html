@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>详细信息</title>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+
+    <link href="../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/toast.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/button.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/dialog.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/button-group.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/card.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../Scripts/extensions/base.js"></script>
+    <script type="text/javascript" src="../Content/alipay/amui-demo_files/amui.js"></script>
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=2ffb8bddf5f3620892d0bb3051b23777"></script>
+
+    <style type="text/css">
+        body {
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+        }
+
+        #mapContainer {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="content" style="background-color:#EFEFF4">
+            <div class="am-mobile">
+                <div class="am-card">
+                    <div class="am-card-item">
+                        <div class="am-card-item-header">
+                            <h3 class="am-card-item-title" id="title"></h3>
+                        </div>
+                        <div class="am-card-item-content">
+                            <div class="am-card-item-subject">
+                                <br />
+                                <p class="am-ft-orange" id="context"></p>
+                                <br />
+                            </div>
+                            <div class="am-card-item-brief am-ft-left" id="other">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="fuwu" style="display: block;font-family:STHeitiSC  ;font-size: 12px; margin-bottom: 15px; margin-left: 0px; width: 100%; text-align: center; bottom: 0px;z-index:-1;margin-top:20px;">
+        <div class="am-agreement am-ft-gray am-ft-sm">
+            <p>
+                本服务由苏州市公安局<!--<br />苏州云联智慧信息技术应用有限公司-->提供支持
+            </p>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+
+    $(function () {
+        var context = decodeURI(getQueryStringByName("context"));
+        $("#title").html(context);
+        Answer();
+    })
+    function Answer()
+    {
+        var url = "../../CityService.Service/PoliceService.svc/GetAnswer";
+        $.ajax(url, {
+            type: "get",
+            data: {
+                Guid: decodeURI(getQueryStringByName("Guid")),
+            },
+            success: function (msg)
+            {
+                if (msg.d.succ == "True") {
+                    $("#context").html(msg.d.data.Context);
+                }
+                else
+
+                {
+                    var context = "等待回复。。。。";
+                    $("#context").html(context);
+                }
+
+            },
+            error:function(){}
+       });
+    }
+
+
+</script>
+
+</html>
+

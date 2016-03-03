@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+    <S:Body>
+        <GetNewsReq xmlns="http://new.webservice.namespace">
+            <AuthInfo>
+                <UserName>SZYunLian</UserName>
+                <Password>YunLian1156</Password>
+            </AuthInfo>
+            <NewsStartTime>{0}</NewsStartTime>
+            <NewsEndTime>{1}</NewsEndTime>
+        </GetNewsReq>
+    </S:Body>
+</S:Envelope>

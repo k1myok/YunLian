@@ -1,0 +1,112 @@
+﻿<!--办事咨询-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>办事咨询</title>
+    <meta charset='UTF-8'>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <link href="../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/toast.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/button.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/dialog.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/button-group.css" type="text/css" rel="stylesheet" />
+
+    <script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../Scripts/extensions/base.js"></script>
+    <script type="text/javascript" src="../Content/alipay/amui-demo_files/amui.js"></script>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="content" style="background-color:#EFEFF4">
+            <div class="am-toast" id="toast">
+                <div class="am-toast-text">
+                    <span class="am-toast-icon am-icon" am-mode="toast-loading"></span> 正在努力查询...
+                </div>
+            </div>
+            <div class="am-list am-list-5lb" am-mode="flat chip form">
+                <div class="am-list-footer am-ft-right" style="font-size:12px">
+                    <a href="AskQuestion.html">我要咨询</a>
+                </div>
+                <div class="am-list-body" id="Questions">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="padding-left:15px;padding-right:15px;margin-top:15PX;margin-bottom:20px;">
+        <button class="am-button am-button-light" id="moreButton" style="visibility:visible;">更多</button>
+    </div>
+   
+
+
+    <script type="text/javascript">
+        $(function () {
+            $("#toast").show();
+            search();
+            $("#moreButton").click(function () {
+                page_index++;
+                search();
+            });
+        });
+        var page_index = 1;
+        function search()
+        {
+            var url = "../../CityService.Service/PoliceService.svc/Consultingservices";
+            var keyword = decodeURI(getQueryStringByName("keyword"));
+            $.ajax(url, {
+                type: "get",
+                data: {
+                    keyword: keyword,
+                    page_index:page_index
+                },
+                success: function (msg)
+                {  
+                    if (msg.d.succ == "True") {
+                        var total =parseInt(msg.d.data.totals);
+                        if (total> 0) {
+                            addTolist(msg.d.data.list);
+                            if (total > page_index) {
+                                $("#moreButton").css("visibility", "visible");
+                            }
+                            else {
+                                $("#moreButton").css("visibility", "hidden");
+                            }
+                        }
+                    }
+                    else {
+                        alert("未查到相关内容，请重新查询");
+                        $("#moreButton").css("visibility", "hidden");
+                    }
+                },
+                error:function(){ },
+                complete: function () {
+                    $("#toast").hide();
+                }
+            });
+        }
+        function addTolist(result)
+        {
+            var content = "";
+            for (var i = 0; i <result.length; i++)
+            {
+                var temp = result[i].context;
+                //var context = temp.replace("%","ken");
+                var context = encodeURI(temp);
+                content+=
+                    '<a class="am-list-item" href="ConsultingserviceDetials.html?context=' + context + '&Guid=' + result[i].Guid + '">' +
+                                '<div class="am-list-content">' + result[i].context + '</div>' +
+                                '<div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>' +
+                   '</a>';
+            }
+            $("#Questions").append(content);
+        }
+        function turn()
+        {
+            location.href = "AskQuestion.html";
+        }
+    </script>
+</body>
+</html>

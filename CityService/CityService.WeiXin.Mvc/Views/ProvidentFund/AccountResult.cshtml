@@ -1,0 +1,90 @@
+﻿@model CityService.Service.Controllers.Models.User
+@{
+    Layout = null;
+}
+<html>
+<head>    
+    <title>注册用户详情</title>    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset='UTF-8'>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <link href="../Content/alipay/button.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/toast.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/dialog.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/button-group.css" type="text/css" rel="stylesheet" />
+    <script src="~/Script/jquery-1.10.2.min.js"></script>
+    <script src="~/Script/extensions/base.js"></script>
+    <script src="~/Script/jquery.mobile-1.4.5.min.js"></script>
+    <link href="../Content/alipay/button.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="content" style="padding:0px;">
+            <div>
+                <img src="~/Image/苏州市住房公积金管理中心.jpg" style="width:100%;" />
+            </div>
+            <div class="am-list am-list-5lb" am-mode="flat chip form">
+                <div class="am-list-header">注册账户信息</div>
+                <div class="am-list-body">
+                    <div class="am-list-item am-input-autoclear">
+                        <div class="am-list-label">公积金账户</div>
+                        <div class="am-list-control am-ft-right">@Model.PFID</div>
+                    </div>
+                    <div class="am-list-item am-input-autoclear">
+                        <div class="am-list-label">证件号码</div>
+                        <div class="am-list-control am-ft-right">@Model.IDCard.Substring(0, 3)@string.Join("", @Model.IDCard.Substring(3, @Model.IDCard.Length - 6).Select(p => "*").ToArray())@Model.IDCard.Substring(@Model.IDCard.Length - 3)</div>
+                    </div>
+                    <div class="am-list-item am-input-autoclear">
+                        <div class="am-list-label">手机号码</div>
+                        <div class="am-list-control am-ft-right">@Model.Phone.Replace(Model.Phone.Substring(3, 5), "*****")</div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                $(function () {
+                    $("#del").bind("click", function () {
+                        var r = confirm('确定要删除该用户吗?');
+                        if (r == true) {
+                            $.mobile.loading("show");
+                            var url = "../ProvidentFund/DeleteAccount";
+                            $.ajax(url, {
+                                type: 'post',
+                                contentType: 'text/json',
+                                success: function (msg) {
+                                    alert("成功解除绑定！");
+                                    window.location.href = "../ProvidentFund/AddAccount";
+                                },
+                                error: function (xhr) {
+                                },
+                                complete: function () {
+                                    $.mobile.loading("hide");
+                                }
+                            });
+                        }
+                    });
+                    $("#back").bind("click", function () {
+                        window.location.href = "../ProvidentFund/SelectBalanceResult";
+                    });
+                });
+            </script>
+            <div style="padding:0 10px;text-align:center;">
+                <div class="am-flexbox" am-mode="average">
+                    <div class="am-flexbox-item" style="padding:5px;">
+                        <button type="button" id="back" class="am-button" am-mode="middle white" style="background-image:none;background-color:#f8a657;color:white;border:1px solid #f8a657;">账户查询</button>
+                    </div>
+                    <div class="am-flexbox-item" style="padding:5px;">
+                        <button type="button" id="del" class="am-button" am-mode="middle white" style="background-image:none;background-color:#f8a657;color:white;border:1px solid #f8a657;">取消注册</button>
+                    </div>
+                </div>
+            </div>
+            <div style="position:fixed;bottom:5px;">
+                <img src="~/Image/公积金官方微信.png"style="width:100%;"/>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

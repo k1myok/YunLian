@@ -1,0 +1,202 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>公积金贷款额度试算</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+    <link href="~/Content/jquery-loanscalculate-1.0.1.css" rel="stylesheet" />
+    <script src="~/Script/jquery-loanscalculate-1.0.1.js"></script>
+
+</head>
+<body>
+    <div class="navbar navbar-myInverse navbar-fixed-top">
+        <div class="container">
+            <h2 class="text-center">公积金贷款额度试算</h2>
+        </div>
+    </div>
+    <div class="container" style="padding-top:80px;">
+        <div class="row">
+            <div class="col-xs-6 firstDiv">贷款申请人数：</div>
+            <div class="col-xs-6 secondDiv">
+                <label for="input-radio-loanerType-1">单人</label>
+                <input tabindex="1" type="radio" id="input-radio-loanerType-1" name="input-radio-loanerType" />
+                &nbsp;&nbsp;
+                <label for="input-radio-loanerType-2">多人</label>
+                <input tabindex="2" type="radio" id="input-radio-loanerType-2" name="input-radio-loanerType" />
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-xs-6 firstDiv">主贷人距退休年限：</div>
+            <div class="col-xs-6 secondDiv">
+                <div class="input-group">
+                    <input type="tel" class="form-control" id="input-number-loanerYear" placeholder="必填项">
+                    <span class="input-group-addon">年</span>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-xs-6 firstDiv">贷款人公积金余额<br />（合计）：</div>
+            <div class="col-xs-6 secondDiv">
+                <div class="input-group">
+                    <input type="number" class="form-control" id="input-number-loanerYe" placeholder="必填项">
+                    <span class="input-group-addon">元</span>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-xs-6 firstDiv">贷款人缴存工资基数<br />（合计）：</div>
+            <div class="col-xs-6 secondDiv">
+                <div class="input-group">
+                    <input type="number" class="form-control" id="input-number-loanerJfe" placeholder="必填项">
+                    <span class="input-group-addon">元</span>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-xs-6 firstDiv">房屋类型：</div>
+            <div class="col-xs-6 secondDiv">
+                <label for="input-radio-houseType-1">新建房</label>
+                <input tabindex="1" type="radio" id="input-radio-houseType-1" name="input-radio-houseType" />
+                &nbsp;&nbsp;
+                <label for="input-radio-houseType-2">存量房</label>
+                <input tabindex="2" type="radio" id="input-radio-houseType-2" name="input-radio-houseType" />
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-xs-6 firstDiv">本次贷款申请为：</div>
+            <div class="col-xs-6 secondDiv">
+                <label for="input-radio-loanType-1">首次</label>
+                <input tabindex="1" type="radio" id="input-radio-loanType-1" name="input-radio-loanType" />
+                &nbsp;&nbsp;
+                <label for="input-radio-loanType-2">二次</label>
+                <input tabindex="2" type="radio" id="input-radio-loanType-2" name="input-radio-loanType" />
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-xs-6 firstDiv">住房面积：</div>
+            <div class="col-xs-6 secondDiv">
+                <div class="input-group">
+                    <input type="number" class="form-control" id="input-number-houseTotalArea" placeholder="必填项">
+                    <span class="input-group-addon">m²</span>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-xs-6 firstDiv">住房总价：</div>
+            <div class="col-xs-6 secondDiv">
+                <div class="input-group">
+                    <input type="number" class="form-control" id="input-number-fundTotalPrices" placeholder="必填项">
+                    <span class="input-group-addon">万元</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <hr />
+            <div class="text-center" style="padding-bottom:20px;">
+                <input id="btnCalculate" class="btn btn-warning btn-orage" type="button" value="计算" data-target=".bs-example-modal-lg" />
+                <input id="btnReset" class="btn btn-default" type="button" value="清空" />
+            </div>
+        </div>
+    </div>
+    <!-- 计算结果模态窗体  -->
+    <div tabindex="-1" id="myModal" class="modal fade bs-example-modal-lg" role="dialog" aria-labelledby="myLargeModalLabel" style="display: none; top:20%;">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" aria-label="Close" type="button" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+                    <h3 class="modal-title" id="myLargeModalLabel">试算结果</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-xs-8" style="font-size:18px;">公积金最大贷款额度：</div>
+                        <div id="gjjkdedjg" class="col-xs-4" style="text-align:right; color:darkred;font-size:18px;">
+                            0 万元
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer textLeft">
+                    <p style="line-height:20px;">该计算器查询结果仅供参考，请以贷款窗口按照贷款政策要求受理审核的结果为准。如有疑问请致电&nbsp;（<a href="tel:12329">12329</a>）</p>
+                    <div class="text-center">
+                        <button type="button" id="divClose" class="btn btn-default" data-dismiss="modal">重新计算</button>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+    <!-- 错误信息提示模态窗体 -->
+    <div tabindex="-1" id="myMessageModal" class="modal fade bs-example-modal-lg" role="dialog" aria-labelledby="myLargeModalLabel" style="display: none; top:25%;">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" aria-label="Close" type="button" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title" id="myLargeModalLabel">消息提示</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div id="msg" style="color:#ff0000; font-size:18px;">
+                                error
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center" style="padding-top:25px;">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">确定</button>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+    <script>
+        //初始化样式
+        $('input').on('ifChecked', function (event) {
+            switch (this.id) {
+                case "input-radio-loanerType-1":
+                    own.loanerType = "个人";
+                    own.loanerLimitedmaxamt = config.limitedmaxamt1;
+                    break;
+                case "input-radio-loanerType-2":
+                    own.loanerType = "多人";
+                    own.loanerLimitedmaxamt = config.limitedmaxamt2;
+                    break;
+                case "input-radio-houseType-1":
+                    own.loanerHouseType = "新建房";
+                    own.maxloanterm = config.maxloantermNew;
+                    own.loanerLoanamtProportion = config.loanamtProportion1;
+                    break;
+                case "input-radio-houseType-2":
+                    own.loanerHouseType = "存量房";
+                    own.maxloanterm = config.maxloantermOld;
+                    own.loanerLoanamtProportion = config.loanamtProportion2;
+                    break;
+                case "input-radio-loanType-1":
+                    own.loanType = "首次";
+                    break;
+                case "input-radio-loanType-2":
+                    own.loanType = "二次";
+                    break;
+            }
+        }).iCheck({
+            checkboxClass: 'icheckbox_square-orange',
+            radioClass: 'iradio_square-orange',
+            increaseArea: '100%'
+        });
+        //默认选中
+        $('#input-radio-houseType-1,#input-radio-loanerType-1,#input-radio-loanType-1').iCheck('check');
+    </script>
+</body>
+</html>

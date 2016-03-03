@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="04e81669e4cb4208a5a7ad81b7d624f1" Name="Diagram1" ZoomLevel="72" >
+        <EntityTypeShape EntityType="CitServiceModel.TravalSpotView" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CitServiceModel.TravalSpotDetailView" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="CitServiceModel.TravalPlaceView" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="CitServiceModel.TravalPlaceDetail" Width="1.5" PointX="3.375" PointY="3.75" />
+        <EntityTypeShape EntityType="CitServiceModel.AgricultureDetailView" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="CitServiceModel.AgricultureMarket" Width="1.5" PointX="5.375" PointY="3.75" />
+        <EntityTypeShape EntityType="CitServiceModel.AgricultureParticiple" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="CitServiceModel.SchoolDistrict" Width="1.5" PointX="3.375" PointY="6.75" />
+        <EntityTypeShape EntityType="CitServiceModel.Depart" Width="1.5" PointX="5.375" PointY="6.75" />
+        <EntityTypeShape EntityType="CitServiceModel.Doctor" Width="1.5" PointX="7.375" PointY="3.75" />
+        <EntityTypeShape EntityType="CitServiceModel.Hospital" Width="1.5" PointX="7.375" PointY="8.75" />
+        <EntityTypeShape EntityType="CitServiceModel.schedual" Width="1.5" PointX="9.375" PointY="0.75" />
+        <EntityTypeShape EntityType="CitServiceModel.Member" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="CitServiceModel.Register" Width="1.5" PointX="9.375" PointY="4.75" />
+        <EntityTypeShape EntityType="CitServiceModel.ZWBST_ShfwzList" Width="1.5" PointX="3.375" PointY="10.75" />
+        <EntityTypeShape EntityType="CitServiceModel.ZWBST_EntDetail" Width="1.5" PointX="9.375" PointY="10.75" />
+        <EntityTypeShape EntityType="CitServiceModel.ZWBST_EntSfbz" Width="1.5" PointX="11.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

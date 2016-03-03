@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>考勤详情</title>
+    <meta charset='UTF-8'>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <link href="../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/toast.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/button.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/dialog.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/button-group.css" type="text/css" rel="stylesheet" />
+
+    <script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../Scripts/extensions/base.js"></script>
+    <script type="text/javascript" src="../Content/alipay/amui-demo_files/amui.js"></script>
+</head>
+<body>
+    <div data-role="page" id="detailDiv">
+        <div data-role="content" style="background-color:#EFEFF4">
+            <div class="am-list am-list-5lb" am-mode="flat chip form">
+                <div class="am-list-header" id="headInfo"></div>
+                <div class="am-list" am-mode="radius">
+                    <div class="am-list-body" id="resultInfo">
+                    </div>
+                </div>
+                </div>
+        </div>
+    </div>
+    <div style="padding-left:15px;padding-right:15px;margin-top:15PX;margin-bottom:15px; display:none" id="showMore">
+        <button id="loseButton" type="button" class="am-button" am-mode="blue" onclick="IsShow()">查看更多</button>
+    </div>
+    <div style="display:none;"><input type="text" name="pi" id="pi" value="1" /></div>
+    
+    <script>
+        $(function () {
+            var start = decodeURI(getQueryStringByName("start"));
+            var end = decodeURI(getQueryStringByName("end"));
+            var usercode = decodeURI(getQueryStringByName("userCode"));
+            var pageIndex = $("#pi").val();
+            var Count = 10;
+
+            var pi = decodeURI(getQueryStringByName("pi"));
+            if (pi !=null && Number(pi) >1)
+            {
+                Count = Number(pi) * 10;
+                $("#pi").val(pi);
+            }
+
+            $("#showMore").css("display", "none");
+
+            var url = "../../CityService.Service/EducationService.svc/GetAttendanceResult?idNumber=" + usercode + "&start=" + start + "&end=" + end + "&pageIndex=" + pageIndex + "&Count=" + Count;
+            $.ajax(url, {
+                type: 'get',
+                contentType: 'text/json',
+                success: function (msg) {
+                    var result = $(msg.d);
+
+                    $("#headInfo").html(start +" -- "+ end +" 考勤流水")
+
+                    var htm = $("#resultInfo").html();
+
+                    htm += "<div class='am-list-item'>" +
+                                  "<div class='am-list-content'>考勤日期</div>" +
+                                  "<div class='am-list-content am-ft-center'>出勤情况</div>" +
+                                  "<div class='am-list-content am-ft-right'></div>" +
+                                  "</div>";
+
+                    $(result).each(function () {
+
+                        if (result.length > 0)
+                        {
+                            htm +=
+                               '<a class="am-list-item" href="eCardAttendanceDetailed.html?time=' + this.time + '&attTime=' + this.attTime + '&role=' + this.ruleName + '&date=' + this.date + '&status=' + this.status + '&start=' + start + '&end=' + end + '&pi=' + $("#pi").val() + '&userCode=' + usercode + '" >' +
+                               "<div class='am-list-content'>" + this.date + "</div>" +
+                               "<div class='am-list-content'>" + this.status + "</div>" +
+                               "<div class='am-list-arrow'><span class='am-icon' am-mode='arrow-horizontal'></span></div>" +
+                               "</a>";
+                        }
+                    });
+
+                    if (result.length == 0 && $("#pi").val() == 1) {
+                        htm +=
+                        "<div class='am-list-item'>" +
+                               "<div class='am-list-content am-ft-center'> 暂无考勤记录 </div>" +
+                        "</div>";
+                    } else if (result.length % 10 == 0) {
+
+                        $("#showMore").css("display", "block");
+                    }
+
+                    $("#resultInfo").html(htm);
+                },
+                error: function (xhr) {
+                },
+                complete: function () {
+                }
+            });
+        });
+
+        function IsShow() {
+            var usercode = decodeURI(getQueryStringByName("userCode"));
+            var start = decodeURI(getQueryStringByName("start"));
+            var end = decodeURI(getQueryStringByName("end"));
+            var usercode = decodeURI(getQueryStringByName("userCode"));
+            var Count = 10;
+
+            var pageIndex = Number($("#pi").val());
+
+            var pi = pageIndex + 1;
+            $("#pi").val(pi);
+
+            var url = "../../CityService.Service/EducationService.svc/GetAttendanceResult?idNumber=" + usercode + "&start=" + start + "&end=" + end + "&pageIndex=" + pi + "&Count=" + Count;
+            $.ajax(url, {
+                type: 'get',
+                contentType: 'text/json',
+                success: function (msg) {
+                    var result = $(msg.d);
+                    var htm = $("#resultInfo").html();
+
+                    $(result).each(function () {
+
+                        if (result.length > 0) {
+                            htm +=
+                               '<a class="am-list-item" href="eCardAttendanceDetailed.html?time=' + this.time + '&attTime=' + this.attTime + '&role=' + this.ruleName + '&date=' + this.date + '&status=' + this.status + '&start=' + start + '&end=' + end + '&pi=' + $("#pi").val() + '&userCode=' + usercode + '" >' +
+                               "<div class='am-list-content'>" + this.date + "</div>" +
+                               "<div class='am-list-content'>" + this.status + "</div>" +
+                               "<div class='am-list-arrow'><span class='am-icon' am-mode='arrow-horizontal'></span></div>" +
+                               "</a>";
+                        }
+                    });
+
+                    if (result.length % 10 == 0
+                        ) {
+
+                        $("#showMore").css("display", "block");
+
+                    } else {
+                        $("#showMore").css("display", "none");
+                    }
+
+                    $("#resultInfo").html(htm);
+                }
+            });
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>详细信息</title>
+    <meta charset='UTF-8'>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <meta content="Washington Botelho" name="author">
+    <meta content="jQuery Raty - A Star Rating Plugin" name="description">
+    <meta content="jquery,plugin,rating,raty,voto,star,staring,classificacao,classificar,votar,plugin" name="keywords">
+    <link href="../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/toast.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/button.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/dialog.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/button-group.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/card.css" type="text/css" rel="stylesheet" />
+    <link href="../Scripts/jQuery Raty/demo/css/application.css" rel="stylesheet" />
+    <script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../Scripts/extensions/base.js"></script>
+    <script type="text/javascript" src="../Content/alipay/amui-demo_files/amui.js"></script>
+    <script src="../Scripts/jQuery Raty/lib/jquery.raty.js"></script>
+    <link href="../Scripts/jQuery Raty/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <script src="../Scripts/myEase64.js"></script>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="content" style="background-color:#EFEFF4">
+            <div class="am-toast" id="toast">
+                <div class="am-toast-text">
+                    <span class="am-toast-icon am-icon" am-mode="toast-loading"></span> 正在努力查询...
+                </div>
+            </div>
+            <div class="am-list" am-mode="flat chip">
+                <div class="am-list-body">
+                    <div class="am-card">
+                        <div class="am-card-item">
+                            <div class="am-card-item-header">
+                                <h3 class="am-card-item-title" id="INFOTITLE"></h3>
+                            </div>
+                            <div class="am-card-item-content">
+                                <div class="am-card-item-subject"><p class="am-ft-black" id="PUBLICCONTENTHTML" style="word-break:break-all"></p></div>
+                                <div class="am-card-item-footnote">
+                                    <div class="am-card-item-tims" id="ORGNAMEUPDATETIME" style="text-align:right;"></div>
+                                </div>
+                            </div>
+                            <div class="am-card-item-header">
+                            </div>
+                            <div class="am-card-item-content">
+                                <div class="am-card-item-subject"></div>
+                                <div class="am-card-item-footnote" style="color:black;">
+                                    <div class="am-flexbox" style="font-size:14px; text-align:left;">
+                                        <div class="am-flexbox-item" style="width:85px;">总体评价：</div>
+                                        <div class="am-flexbox-item"><div id="allStar"></div></div>
+                                        <div class="am-flexbox-item" style="text-align:right;" id="cnt">共有0人评价</div>
+                                    </div>
+                                    <div class="am-flexbox" style="font-size:14px; text-align:left; padding-top:5px;">
+                                        <div class="am-flexbox-item" style="width:85px;">本次评价：</div>
+                                        <div class="am-flexbox-item"><div id="theStar"></div></div>
+                                        <div class="am-flexbox-item" style="text-align:right;">
+                                            <button type="button" style="width:60px;" class="am-button" id="btnSubmit" am-mode="little blue" disabled="disabled">提交</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="fuwu" style="display: block;font-family:STHeitiSC  ;font-size: 12px; margin-left: 0px; width: 100%; text-align: center; bottom: 10px; position:relative;z-index:-1;margin-top:20px">
+        <div class="am-agreement am-ft-gray am-ft-sm">
+            <p>
+                 本服务由苏州市人民政府便民服务中心提供<!--<br />苏州云联智慧信息技术应用有限公司提供支持-->
+            </p>
+        </div>
+    </div>
+    <script>
+        //参数集合
+        var value = {
+            listUrl: "../../CityService.Service/KnowAllService.svc/GetZwbst_GetInfoDetail",
+            getStarUrl: "../../CityService.Service/KnowAllService.svc/GetZwbst_GetInfoEvalList",
+            setStarUrl: "../../CityService.Service/KnowAllService.svc/GetZwbst_AddEval",
+            guid: ""
+        }
+        value.guid = decodeURI(getQueryStringByName("GUID"));
+        //初始化数据
+        $(document).ready(function () {
+            $('#theStar').raty({
+                click: function (score, evt) {
+                    if (score != "0") {
+                        $("#btnSubmit").removeAttr("disabled");
+                    }
+                    else {
+                        $("#btnSubmit").attr("disabled", "disabled");
+                    }
+                }, score: 0
+            });
+            $("#btnSubmit").click(function () {
+                var value = $("#theStar input").val();
+                SetStar(value);
+            });
+            GetList();
+        });
+        //加载详细信息
+        function GetList() {
+            $("#toast").show();
+            $.ajax(value.listUrl, {
+                type: "get",
+                data: { Id: value.guid },
+                success: function (result) {
+                    var json = JSON.parse(result.d);
+                    if (json.succ != "false" && json.data != null) {
+                        alert(formatContent(json.data.PUBLICCONTENT));
+                        $("#INFOTITLE").html(formatContent(json.data.INFOTITLE));
+                        $("#PUBLICCONTENTHTML").html(formatContent(json.data.PUBLICCONTENT));
+                        $("#ORGNAMEUPDATETIME").html(json.data.ORGNAME + "&nbsp;&nbsp;&nbsp;&nbsp;" + json.data.UPDATETIME);
+                        //加载总体评价的
+                        GetStar();
+                    }
+                    else {
+                        $("#toast").hide();
+                    }
+                },
+                error: function (x) {
+                    $("#toast").hide();
+                },
+                complete: function () {
+                    $("#toast").hide();
+                },
+            });
+        }
+        //加载总体评价的信息
+        function GetStar() {
+            $.ajax(value.getStarUrl, {
+                type: "get",
+                data: { Id: value.guid },
+                success: function (result) {
+                    //按钮样式设定成不可点击
+                    var json = JSON.parse(result.d);
+                    if (json.succ == true && json.data != null) {
+                        var avgScore = parseFloat(json.data.AVG_SCORE);
+                        $('#allStar').raty({ readOnly: true, score: avgScore });
+                        $("#cnt").html("共有"+json.data.CNT+"人评价");
+                    }
+                    else {
+                        $("#cnt").html("共有0人评价");
+                        $('#allStar').raty({ readOnly: true, score:0});
+                        $("#toast").hide();
+                    }
+                },
+                error: function (x) {
+                    $("#toast").hide();
+                },
+                complete: function () {
+                    $("#toast").hide();
+                },
+            });
+        }
+        //提交评价的方法
+        function SetStar(score) {
+            $("#toast").show();
+            $.ajax(value.setStarUrl, {
+                type: "get",
+                data: { Id: value.guid, Score: score },
+                success: function (result) {
+                    //按钮样式设定成不可点击
+                    var json = JSON.parse(result.d);
+                    if (json.succ == true) {
+                        alert("评价成功");
+                        //调用重新加载总评价的方法
+                        GetStar();
+                    }
+                    else {
+                        alert(json.msg);
+                        $("#toast").hide();
+                    }
+                },
+                error: function (x) {
+                    $("#toast").hide();
+                },
+                complete: function () {
+                    $("#toast").hide();
+                },
+            });
+        }
+        //格式化文本内容的方法
+        function formatContent(value) {
+            //内容不为空判断
+            if (value!=null&&value!="") {
+                //调用BASE64转码
+                var unicode = decode64(value);
+                if (unicode != null && unicode != "") {
+                    //return unicode.replace(/@/gm, '<br>');
+                    return unicode;
+                }
+            }
+            else {
+                return "";
+            }
+        }
+    </script>
+</body>
+</html>

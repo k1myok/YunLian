@@ -1,0 +1,338 @@
+﻿<!--快撤理赔图片上传-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>理赔图片上传</title>
+    <meta charset='UTF-8'>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <link href="../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/toast.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/button.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/dialog.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/button-group.css" type="text/css" rel="stylesheet" />
+
+    <script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../Scripts/extensions/base.js"></script>
+    <!--<script type="text/javascript" src="../Content/alipay/amui-demo_files/amui.js"></script>
+    <script type="text/javascript"src="../Scripts/AjaxUpload.js"></script>-->
+    <script src="../Scripts/jquery-verification-1.0.1.js"></script>
+    <style>
+        .outdiv {
+            width:148px;
+            height:118px;
+            border:1px #bbb8b8 solid;
+        }
+        .yl-padding-left
+        {
+            padding-left:15px;
+        }
+        .yl-padding-right {
+            padding-right:15px;
+        }
+        .yl-padding-top{
+            padding-top:15px;
+        }
+        .yl-padding-bottom{
+            padding-bottom:15px;
+        }
+        #canvaHeader,#canvaTail,#canvaBody {
+            width: 148px;
+            height: 118px;
+            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
+        }
+        /*a  upload */
+        .a-upload {
+            height: 118px;
+            position: relative;
+            cursor: pointer;
+            width: 200%;
+            overflow: hidden;
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+        }
+        .a-upload input {
+            position: absolute;
+            font-size: 100px;
+            right: 0;
+            top: 0;
+            opacity: 0;
+            filter: alpha(opacity=0);
+            cursor: pointer;
+            height:118px;
+            width: 200%;
+        }
+    </style>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="content" class="yl-padding-top">
+            <div class="yl-padding-left">现场照片</div>
+            <div class="am-list" am-mode="flat form">
+                <div class="am-list-body">
+                    <div class="am-list-item" style="padding:15px 15px;">
+                        <div class="am-list-thumb am-list-thumb-radius outdiv">
+                            <a href="javascript:;" class="a-upload">
+                                <div id="canvaHeader" style="text-align:center;display:table-cell; margin:5px; background-image:url(../Images/polic/img_pay_car_largel_head.png); background-size:148px 118px;">
+                                </div>
+                                <input id="fileHeader" type="file" name="fileHeader" accept="image/*" />
+                            </a>
+                        </div>
+                        <div class="am-list-control">
+                            <div class="am-list-title">上传车头方向照片</div>
+                            <div class="am-card-item-brief">要求拍照清晰,反应事故全貌，体现周边环境,道路标线,过错,(如变道占线)</div>
+                        </div>
+                    </div>
+                    <div class="am-list-item" style="padding:15px 15px;">
+                        <div class="am-list-thumb am-list-thumb-radius outdiv">
+                            <a href="javascript:;" class="a-upload">
+                                <div id="canvaTail" style="text-align:center;display:table-cell; margin:5px; background-image:url(../Images/polic/img_pay_car_largel_trail.png); background-size:148px 118px;">
+                                </div>
+                                <input id="fileTail" type="file" name="fileTail" accept="image/*" />
+                            </a>
+                        </div>
+                        <div class="am-list-control">
+                            <div class="am-list-title">上传车尾方向照片</div>
+                            <div class="am-card-item-brief">要求：细节照片一张，体现碰撞接触部位,刮擦痕迹与损失。</div>
+                        </div>
+                    </div>
+                    <div class="am-list-item" style="padding:15px 15px;">
+                        <div class="am-list-thumb am-list-thumb-radius outdiv">
+                            <a href="javascript:;" class="a-upload">
+                                <div id="canvaBody" style="text-align:center;display:table-cell; margin:5px; background-image:url(../Images/polic/img_pay_car_large_body.png); background-size:148px 118px;">
+                                </div>
+                                <input id="fileBody" type="file" name="fileBody" accept="image/*">
+                            </a>
+                        </div>
+                        <div class="am-list-control">
+                            <div class="am-list-title">上传碰撞部位照片</div>
+                            <div class="am-card-item-brief">要求：细节照片一张，体现碰撞接触部位，刮痕痕迹与损失。</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="am-flexbox yl-padding-top yl-padding-left yl-padding-right">
+                    <div class="am-flexbox-item">
+                        <button type="button" class="am-button" am-mode="blue">下一步</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div id="fuwu" style="display: block;font-family:STHeitiSC;font-size: 12px;margin-top:15px; margin-bottom: 15px; margin-left: 0px; width: 100%; text-align: center;   bottom: 0px;z-index:-1;">
+            <div class="am-agreement am-ft-gray am-ft-sm">
+                <p>
+                    本服务由苏州市公安局提供
+                </p>
+            </div>
+        </div>
+        <script type="text/javascript">
+            /* 存储图片的层 */
+            var divs = {
+                header: document.getElementById("canvaHeader"),
+                tail: document.getElementById("canvaTail"),
+                body: document.getElementById("canvaBody")
+            }
+            /* 上传控件 */
+            var inputs = {
+                fileHeader: document.getElementById("fileHeader"),
+                fileTail: document.getElementById("fileTail"),
+                fileBody: document.getElementById("fileBody")
+            }
+            /* 存放图片的Base64的URL地址 */
+            var fileUrls = {
+                header: "",
+                tail: "",
+                body: ""
+            }
+            $(document).ready(function () {
+                /* 程序开始 */
+                if (typeof FileReader === 'undefined') {
+                    alert("抱歉，你的手机不支持 FileReader");
+                    input.setAttribute('disabled', 'disabled');
+                } else {
+                    inputs.fileHeader.addEventListener('change', readFile, false);
+                    inputs.fileTail.addEventListener('change', readFile, false);
+                    inputs.fileBody.addEventListener('change', readFile, false);
+                }
+                function readFile() {
+                    var file = this.files[0];
+                    if (!/image\/\w+/.test(file.type)) {
+                        alert("文件必须为图片！");
+                        return false;
+                    }
+                    var reader = new FileReader();
+                    reader.readAsDataURL(file);
+                    //通过Name判断，图片存放在哪个画布内
+                    var inputName = this.name;
+                    if (!isNullOrEmpty(inputName)) {
+                        reader.onload = function (e) {
+                            switch (inputName) {
+                                case "fileHeader":
+                                    var img = new Image();
+                                    img.src = this.result;
+                                    /* 加载完图片触发的事件 */
+                                    img.onload = function () {
+                                        var imgWidth = img.width;
+                                        var imgHeight = img.height;
+                                        /* 大于100万像素压缩图片 */
+                                        if (imgWidth * imgHeight > 1000000) {
+                                            var myCanvas = convertImageToCanvas(img);
+                                            img = convertCanvasToImage(myCanvas);
+                                        }
+                                        /* 设定图片显示时的尺寸 */
+                                        img.style.width = (divs.header.offsetWidth).toString() + "px";
+                                        img.style.height = (divs.header.offsetHeight).toString() + "px";
+                                        /* 存储数据 */
+                                        fileUrls.header = urlReplace(img.src.toString());
+                                        divs.header.innerHTML = "";
+                                        divs.header.appendChild(img);
+                                    }
+                                    break;
+                                case "fileTail":
+                                    var img = new Image();
+                                    img.src = this.result;
+                                    /* 加载完图片触发的事件 */
+                                    img.onload = function () {
+                                        var imgWidth = img.width;
+                                        var imgHeight = img.height;
+                                        /* 大于100万像素压缩图片 */
+                                        if (imgWidth * imgHeight > 1000000) {
+                                            var myCanvas = convertImageToCanvas(img);
+                                            img = convertCanvasToImage(myCanvas);
+                                        }
+                                        /* 设定图片显示时的尺寸 */
+                                        img.style.width = (divs.tail.offsetWidth).toString() + "px";
+                                        img.style.height = (divs.tail.offsetHeight).toString() + "px";
+                                        /* 存储数据 */
+                                        fileUrls.tail = urlReplace(img.src.toString());
+                                        divs.tail.innerHTML = "";
+                                        divs.tail.appendChild(img);
+                                    }
+                                    break;
+                                default:
+                                    var img = new Image();
+                                    img.src = this.result;
+                                    /* 加载完图片触发的事件 */
+                                    img.onload = function () {
+                                        var imgWidth = img.width;
+                                        var imgHeight = img.height;
+                                        /* 大于100万像素压缩图片 */
+                                        if (imgWidth * imgHeight > 1000000) {
+                                            var myCanvas = convertImageToCanvas(img);
+                                            img = convertCanvasToImage(myCanvas);
+                                        }
+                                        /* 设定图片显示时的尺寸 */
+                                        img.style.width = (divs.body.offsetWidth).toString() + "px";
+                                        img.style.height = (divs.body.offsetHeight).toString() + "px";
+                                        /* 存储数据 */
+                                        fileUrls.body = urlReplace(img.src.toString());
+                                        divs.body.innerHTML = "";
+                                        divs.body.appendChild(img);
+                                    }
+                                    break;
+                            }
+                        }
+                    }
+                    else {
+                        alert("上传图片时发生错误，请重新上传！");
+                    }
+                }
+                $("button").click(function () {
+                    /* 判断是否是三张图片 */
+                    if (isNullOrEmpty(fileUrls.header)) {
+                        alert("请上传第一张图片");
+                    }
+                    else if (isNullOrEmpty(fileUrls.tail)) {
+                        alert("请上传第二张图片");
+                    }
+                    else if (isNullOrEmpty(fileUrls.body)) {
+                        alert("请上传第三张图片");
+                    }
+                    else {
+                        //alert("第一张图片长度：" + fileUrls.header.length + "\n第二张图片长度：" + fileUrls.tail.length + "\n第三张图片长度：" + fileUrls.body.length);
+                        upload();
+                    }
+                });
+            });
+
+            function convertImageToCanvas(image) {
+                // 创建canvas DOM元素，并设置其宽高和图片一样   
+                var canvas = document.createElement("canvas");
+                canvas.width = image.width;
+                canvas.height = image.height;
+                // 坐标(0,0) 表示从此处开始绘制，相当于偏移。  
+                canvas.getContext("2d").drawImage(image, 0, 0);
+                return canvas;
+            }
+
+            function convertCanvasToImage(canvas) {
+                //新Image对象，可以理解为DOM  
+                var image = new Image();
+                // canvas.toDataURL 返回的是一串Base64编码的URL，当然,浏览器自己肯定支持
+                image.src = canvas.toDataURL("image/jpeg", 0.05);
+                return image;
+            }
+          
+            function urlReplace(value) {
+                if (!isNullOrEmpty(value)) {
+                    return value.replace("data:image/jpeg;base64,", "")
+                }
+                return "";
+            }
+
+            function upload()
+            {
+                var takerName = "刘乐乐";
+                var real_lon = getQueryStringByName("real_lon");
+                var real_lat = getQueryStringByName("real_lat");
+                var position = decodeURI(getQueryStringByName("address"));
+                var timestamp = Date.parse(new Date());
+                var userId = "1693335";
+                var coord = real_lon + "," + real_lat;
+                var takerName = "胡";
+                var args = {};
+                //args.fileData1 = window.localStorage.getItem("header");
+                //args.fileData2 = window.localStorage.getItem("header");
+                //args.fileData3 = window.localStorage.getItem("header");
+                args.fileData1 = fileUrls.header;
+                args.fileData2 = fileUrls.tail;
+                args.fileData3 = fileUrls.body;
+                args.takerName = takerName;
+                args.position = position;
+                args.shootTime = timestamp;
+                args.coord = coord;
+                args.userId = userId;
+
+                var argsText = JSON.stringify(args);
+                alert(argsText);
+                $.ajax("../../CityService.Service/PoliceService.svc/UploadFile",{
+                    type: 'post',
+                    contentType: 'text/json',
+                    data: argsText,
+                    success: function (msg) {
+                        var temp = JSON.parse(msg.d);
+                        alert(temp);
+                        if (temp.succ == true)
+                        {
+                            location.href = "Trafficsubmit.html?accidentid=" + temp.data.msg;
+                        }
+                        else
+                        {
+                            alert("图片上传失败，请重新上传");
+                        }
+                    },
+                    error: function (ex) {
+                        alert("fail");
+                    },
+                    complete: function () {  
+                    }
+                });
+            }
+        </script>
+</body>
+
+</html>

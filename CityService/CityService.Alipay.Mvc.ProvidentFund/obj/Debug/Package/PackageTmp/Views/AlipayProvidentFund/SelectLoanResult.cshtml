@@ -1,0 +1,252 @@
+﻿@model CityService.Service.Controllers.Models.AlipayProvidentFundModel.Loan
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset='UTF-8'>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <link href="../Content/alipay/amui-demo_files/toast.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/dialog.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/button-group.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/button.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/button.css" type="text/css" rel="stylesheet" />
+    <script src="~/Script/jquery-1.10.2.min.js"></script>
+    <script src="~/Script/extensions/base.js"></script>
+    <script src="~/Script/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="../Content/alipay/amui-demo_files/amui.js"></script>
+    <style>
+        th {
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="content" style="padding:0px;overflow-y:scroll;">
+            <div>
+                <img src="~/Images/苏州市住房公积金管理中心.jpg" style="width:100%;" />
+            </div>
+            <div class="am-tab">
+                <a id="tab1" href="javascript:ClickTab1();" class="am-tab-item" data-tab="selected">贷款基本信息</a>
+                <a id="tab2" href="javascript:ClickTab2();" class="am-tab-item">贷款账户明细</a>
+            </div>
+            <div id="one" class="am-list am-list-5lb" am-mode="flat chip form" style="display:none;">
+                <div data-role="content" style="background-color:#EFEFF4;padding:0px;">
+                    <div class="am-list am-list-5lb" am-mode="flat chip form">
+                        <div class="am-list-body">
+                            <div class="am-list-item am-input-autoclear">
+                                <div class="am-list-label">贷款账号</div>
+                                <div class="am-list-control am-ft-right">@Model.LoanAcNo</div>
+                            </div>
+                            <div class="am-list-item am-input-autoclear">
+                                <div class="am-list-label">借款人</div>
+                                <div class="am-list-control am-ft-right">@Model.CustName</div>
+                            </div>
+                            @if (!string.IsNullOrEmpty(Model.PaperId) && Model.PaperId.Length > 13)
+                            {
+                                <div class="am-list-item am-input-autoclear">
+                                    <div class="am-list-label">证件号码</div>
+                                    <div class="am-list-control am-ft-right">@Model.PaperId.Substring(0, 3)@string.Join("", @Model.PaperId.Substring(3, @Model.PaperId.Length - 6).Select(p => "*").ToArray())@Model.PaperId.Substring(@Model.PaperId.Length - 3)</div>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="am-list-item am-input-autoclear">
+                                    <div class="am-list-label">证件号码</div>
+                                    <div class="am-list-control am-ft-right">@Model.PaperId</div>
+                                </div>
+                            }
+                            <div class="am-list-item am-input-autoclear">
+                                <div class="am-list-label">贷款银行</div>
+                                <div class="am-list-control am-ft-right">@Model.BankName</div>
+                            </div>
+                            <div class="am-list-item am-input-autoclear">
+                                <div class="am-list-label">扣款卡号</div>
+                                <div class="am-list-control am-ft-right">
+                                    @if (!string.IsNullOrEmpty(Model.SubsAcNo))
+                                    {
+                                        <div>@Model.SubsAcNo.Substring(0, 4)@string.Join("", @Model.SubsAcNo.Substring(4, @Model.SubsAcNo.Length - 8).Select(p => "*").ToArray())@Model.SubsAcNo.Substring(@Model.SubsAcNo.Length - 4)</div>
+
+                                    }
+                                    else
+                                    {
+                                        <div>@Model.SubsAcNo</div>
+                                    }
+                                </div>
+                            </div>
+                            <div class="am-list-item am-input-autoclear">
+                                <div class="am-list-label">还款方式</div>
+                                <div class="am-list-control am-ft-right">@Model.RetuKind</div>
+                            </div>
+                            <div class="am-list-item am-input-autoclear">
+                                <div class="am-list-label">月还款额</div>
+                                <div class="am-list-control am-ft-right">@Model.Amt</div>
+                            </div>
+                            <div class="am-list-item am-input-autoclear">
+                                <div class="am-list-label">贷款余额</div>
+                                <div class="am-list-control am-ft-right">@Model.Bal</div>
+                            </div>
+                            <div class="am-list-item am-input-autoclear">
+                                <div class="am-list-label" style="width:40%">放款日期</div>
+                                <div class="am-list-control am-ft-right" style="width:60%">@Model.ReleDate</div>
+                            </div>
+                            <div class="am-list-item am-input-autoclear">
+                                <div class="am-list-label" style="width:40%">月还款日</div>
+                                <div class="am-list-control am-ft-right" style="width:60%">@Model.RetuDay</div>
+                            </div>
+                            <div class="am-list-item am-input-autoclear">
+                                <div class="am-list-label">还款状态</div>
+                                @if ("未逾期" == Model.OverFlag)
+                                {
+                                    <div class="am-list-control am-ft-right">正常</div>
+                                }
+                                else
+                                {
+                                    <div class="am-list-control am-ft-right">@Model.OverFlag</div>
+                                }
+                            </div>
+                            <div class="am-list-item am-input-autoclear">
+                                <div class="am-list-label">拖欠本金</div>
+                                <div class="am-list-control am-ft-right">@Model.OverBal</div>
+                            </div>
+                            <div class="am-list-item am-input-autoclear">
+                                <div class="am-list-label" style="width:40%">拖欠利息</div>
+                                <div class="am-list-control am-ft-right" style="width:60%">@Model.OverInte</div>
+                            </div>
+                            <div class="am-list-item am-input-autoclear">
+                                <div class="am-list-label">贷款地区</div>
+                                <div class="am-list-control am-ft-right">@Model.AreaKind</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="padding-bottom:0px;">
+                        <img src="~/Images/公积金官方微信.png" style="width:100%;" />
+                    </div>
+                </div>
+            </div>
+            <script>
+                $(function () {
+                    ClickTab1();
+                });
+
+                function ClickTab1() {
+                    $("#one").css("display", "block");
+                    $("#two").css("display", "none");
+                    $("#tab1").attr("data-tab", "selected");
+                    $("#tab1").css("color", "#f8a657");
+                    $("#tab1").css("border-bottom", "2px solid #f8a657");
+                    $("#tab2").css("border-bottom", "");
+                    $("#tab2").css("color", "#666");
+                    $("#tab2").attr("data-tab", "none");
+                }
+
+                function ClickTab2() {
+                    $("#one").css("display", "none");
+                    $("#two").css("display", "block");
+                    $("#tab1").attr("data-tab", "");
+                    $("#tab2").attr("data-tab", "selected");
+                    $("#tab2").css("color", "#f8a657");
+                    $("#tab2").css("border-bottom", "2px solid #f8a657");
+                    $("#tab1").css("border-bottom", "");
+                    $("#tab1").css("color", "#666");
+                }
+            </script>
+            <div id="two" class="am-list am-list-5lb" am-mode="flat chip form" style="display:none;">
+                <div data-role="content" style="background-color:#EFEFF4;padding:0px;">
+                    <div class="am-list am-list-5lb" am-mode="flat chip form">
+                        <div class="am-list-body">
+                            @*
+                                Remark:
+                                基于苏州公积金中心提出需求变更，原以时间作为分类展现，现以列表形式展示“个人贷款还款信息”
+                                Andy Qian 修改于2015年12月10日
+                                注释部分为钱之悦源代码
+                            *@
+                            @*@for (int i = 0; i < Model.RepList.Count(); i++)
+                                {
+                                    <a href="../AlipayProvidentFund/SelectRepaymentInfo?date=@Model.RepList[i].rDate&sa=@Model.RepList[i].SumAmt&rc=@Model.RepList[i].RCapi&ri=@Model.RepList[i].rInte&bal=@Model.RepList[i].Bal" class="am-list-item">
+                                        <div class="am-list-content">@Model.RepList[i].rDate</div>
+                                        <div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>
+                                    </a>
+                                }*@
+                            <div class="am-list-item">
+                                <div class="am-list-content">还款日期</div>
+                                <div class="am-list-content am-ft-right">还款金额</div>
+                                <div class="am-list-content am-ft-right">归还本金</div>
+                                <div class="am-list-content am-ft-right">归还利息</div>
+                            </div>
+                            @if (Model.RepList != null && Model.RepList.Count > 0)
+                            {
+                                foreach (var item in Model.RepList)
+                                {
+                                    <div class="am-list-item">
+                                        <div class="am-list-content">@item.rDate</div>
+                                        <div class="am-list-content am-ft-right">@item.SumAmt</div>
+                                        <div class="am-list-content am-ft-right">@item.RCapi</div>
+                                        <div class="am-list-content am-ft-right">@item.rInte</div>
+                                    </div>
+                                }
+                                if (Convert.ToInt32(Model.page) < Convert.ToInt32(Model.pages))
+                                {
+                                    <div style="padding:0 10px;text-align:center;" id="moreRepayment">
+                                        @*string idCard,string page,string total,string pages*@
+                                        <input type="button" class="am-button" value="查看更多" onclick="MoreRepayment('@Model.PaperId','@Model.page','@Model.total','@Model.pages')" am-mode="middle white" style="background-Images:none;background-color:#f8a657;color:white;border:1px solid #f8a657;" />
+                                    </div>
+                                }
+                                <script>
+                                    var currentPage2 = null;
+                                    function MoreRepayment(idCard, page, total, pages) {
+                                        $.mobile.loading("show");
+                                        if (currentPage2 == null)
+                                            currentPage2 = page;
+                                        var data = "idCard=" + idCard + "&page=" + currentPage2 + "&total=" + total + "&pages=" + pages;
+                                        $.ajax({
+                                            type: "get",
+                                            url: "../AlipayProvidentFund/MoreRepayment?" + data,
+                                            dataType: "json",
+                                            success: function (msg) {
+                                                currentPage2 = msg.page;
+                                                var html = "";
+                                                for (var i = 0; i < msg.RepList.length; i++) {
+                                                    html += "<div class='am-list-item'><div class='am-list-content'>" + msg.RepList[i].rDate + "</div> <div class='am-list-content am-ft-right'>" + msg.RepList[i].SumAmt + "</div>"
+                                        + "<div class='am-list-content am-ft-right'>" + msg.RepList[i].RCapi + "</div><div class='am-list-content am-ft-right'>" + msg.RepList[i].rInte + "</div></div>";
+
+                                                }
+                                                $("#moreRepayment").before(html);
+                                                if (msg.page == msg.pages) {
+                                                    $("#moreRepayment").hide();
+                                                }
+                                            },
+                                            complete: function () { $.mobile.loading("hide"); }
+                                        });
+                                    }
+                                </script>
+                            }
+                            else
+                            {
+                                <div style="padding:20px;text-align:center;">
+                                    <h3 style="color:gray">暂无信息!</h3>
+                                </div>
+                            }
+                            
+                        </div>
+                    </div>
+                    <div style="padding-bottom:0px;">
+                        <img src="~/Images/公积金官方微信.png" style="width:100%;" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

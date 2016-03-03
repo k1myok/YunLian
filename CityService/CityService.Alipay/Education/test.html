@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/toast.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/button.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/dialog.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/button-group.css" type="text/css" rel="stylesheet" />
+
+    <script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../Scripts/extensions/base.js"></script>
+    <script type="text/javascript" src="../Content/alipay/amui-demo_files/amui.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        $(function () {
+            var code = decodeURI(getQueryStringByName("code"));
+            var url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=wx33cfa168b97bde1b&secret=88626508ef000750214526005b12cb7c&code=" + code + "&grant_type=authorization_code";
+            alert(url);
+            $.ajax(url, {
+                type: 'get',
+                success: function (msg) {
+                    var temp =Json.parse(msg);
+                    alert(temp.appid);
+                },
+                error: function () {
+                    alert("fail")
+                }
+            });
+
+        });
+</script>
+</body>
+</html>
+wx33cfa168b97bde1b

@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset='UTF-8'>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <link href="../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/toast.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/button.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/dialog.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/button-group.css" type="text/css" rel="stylesheet" />
+
+    <script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../Scripts/extensions/base.js"></script>
+    <script type="text/javascript" src="../Content/alipay/amui-demo_files/amui.js"></script>
+</head>
+<body>
+    <div data-role="page" style="padding-top:10px;">
+        <div data-role="content" style="background-color:#EFEFF4" id="content">
+
+        </div>
+        <div id="fuwu" style=" display: block;font-family:STHeitiSC;font-size:12px; margin-bottom: 15px; margin-left: 0px; width: 100%; text-align: center;   position: absolute; bottom: 0px;z-index:-1;">
+
+        </div>
+    </div>
+    <script>
+        $(function () {
+
+        var count = 3;
+        var url = "../../CityService.Service/Service2.svc/GetMenu?type=police";
+        $.ajax(url, {
+            type: 'get',
+            contentType: 'text/json',
+            success: function (msg) {
+                $(document).attr("title", msg.d.title);
+                $("#fuwu").html(msg.d.foot);
+
+                if (msg.d.type == "type_jgg")
+                {
+                    var htm = "";
+                    for (var i = 0; i < msg.d.menuList.length; i++)
+                    {
+                        var s = i % count;
+
+                        if (s == 0) {
+                            if (i == 0) {
+                                htm += '<div class="am-flexbox" id="flexbox" style="background-color:#fff;border-top:1px solid #d2d2d2;">';
+                            } else
+                            {
+                                htm += '<div class="am-flexbox" id="flexbox" style="background-color:#fff;">';
+                            }
+
+
+                        }
+
+                        htm += "<div class='am-flexbox-item' style='height:80px;padding:9.5px;border-right:1px solid #d2d2d2;border-bottom:1px solid #d2d2d2;' onclick='reload(\"" + msg.d.menuList[i].url + "\")'>" +
+                                    '<p style="height:40px;"><img src="' + msg.d.menuList[i].image + '" style="width:30px;height:30px;padding-top:5px;"/></p>' +
+                                    '<p style="height:40px;font-size:14px;color:#09f;">' + msg.d.menuList[i].content + '</p>' +
+                                    '</div>';
+                        if (i + 1 == msg.d.menuList.length && msg.d.menuList.length % count!= 0) {
+
+                            var len = count - msg.d.menuList.length % count;
+
+                            for (var j = 0; j < len; j++)
+                            {
+                                htm += '<div class="am-flexbox-item" style="padding:10px;"></div>';
+                            }
+                        }
+                        var e = (i+1) % count;
+
+                        if (e == 0)
+                        {
+                            htm += "</div>"
+                        }
+                    }
+
+                    $("#content").html(htm);
+                }
+            },
+            error: function (xhr) {
+            },
+            complete: function () {
+            }
+        });
+    });
+
+        function reload(ref)
+        {
+            if (ref != "") {
+                window.location.href = ref;
+            }
+        }
+    </script>
+
+</body>
+</html>
+

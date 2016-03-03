@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CitServiceModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="CityServiceModelContainer" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+    <EntitySet Name="TravalSpotView" EntityType="CitServiceModel.TravalSpotView" />
+    <EntitySet Name="TravalSpotDetailView" EntityType="CitServiceModel.TravalSpotDetailView" />
+    <EntitySet Name="TravalPlaceView" EntityType="CitServiceModel.TravalPlaceView" />
+    <EntitySet Name="TravalPlaceDetail" EntityType="CitServiceModel.TravalPlaceDetail" />
+    <EntitySet Name="AgricultureDetailView" EntityType="CitServiceModel.AgricultureDetailView" />
+    <EntitySet Name="AgricultureMarket" EntityType="CitServiceModel.AgricultureMarket" />
+    <EntitySet Name="AgricultureParticiple" EntityType="CitServiceModel.AgricultureParticiple" />
+    <EntitySet Name="SchoolDistrict" EntityType="CitServiceModel.SchoolDistrict" />
+    <EntitySet Name="Depart" EntityType="CitServiceModel.Depart" />
+    <EntitySet Name="Doctor" EntityType="CitServiceModel.Doctor" />
+    <EntitySet Name="Hospital" EntityType="CitServiceModel.Hospital" />
+    <EntitySet Name="schedual" EntityType="CitServiceModel.schedual" />
+    <EntitySet Name="Member" EntityType="CitServiceModel.Member" />
+    <EntitySet Name="Register" EntityType="CitServiceModel.Register" />
+    <EntitySet Name="ZWBST_ShfwzList" EntityType="CitServiceModel.ZWBST_ShfwzList" />
+    <EntitySet Name="ZWBST_EntDetail" EntityType="CitServiceModel.ZWBST_EntDetail" />
+    <EntitySet Name="ZWBST_EntSfbz" EntityType="CitServiceModel.ZWBST_EntSfbz" />
+  </EntityContainer>
+  <EntityType Name="TravalSpotView">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="PlaceName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SpotName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="X" Type="Double" />
+    <Property Name="Y" Type="Double" />
+  </EntityType>
+  <EntityType Name="TravalSpotDetailView">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="PlaceName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SpotName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Sound" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+  </EntityType>
+  <EntityType Name="TravalPlaceView">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="X" Type="Double" />
+    <Property Name="Y" Type="Double" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Picture" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TravalPlaceDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Picture" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="AgricultureDetailView">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="ProductName" />
+      <PropertyRef Name="Createdt" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="ProductName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Createdt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MarketName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="UnitName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Price" Type="Double" />
+    <Property Name="CreateDay" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="AgricultureMarket">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="X" Type="Double" />
+    <Property Name="Y" Type="Double" />
+  </EntityType>
+  <EntityType Name="AgricultureParticiple">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Participle" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SchoolDistrict">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Region" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SchoolName" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="SchoolType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SchoolAddress" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="SchoolDistricts" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Depart">
+    <Key>
+      <PropertyRef Name="HospName" />
+      <PropertyRef Name="DepartName" />
+    </Key>
+    <Property Name="HospName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DepartName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DepartType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DepartIntro" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Limited" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="RegistryFee" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ClinicFee" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DepartSex" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="ChildAge" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Doctor">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="HospName" />
+      <PropertyRef Name="DepartName" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HospName" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="DepartName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DoctorName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DocSex" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DocRank" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DoctorInro" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="DocMajor" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="IsExpert" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="RegistryFee" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ClinicFee" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DocPhotoURL" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Hospital">
+    <Key>
+      <PropertyRef Name="HospName" />
+    </Key>
+    <Property Name="HospName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Grade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Kind" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Intro" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="schedual">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="HospName" />
+      <PropertyRef Name="DepartName" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HospName" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="DepartName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DoctorName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="WorkDate" Type="DateTime" Precision="3" />
+    <Property Name="WorkType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="WorkStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ExpertFee" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Remark" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Member">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="IDCard" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Style" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="openID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Register">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IDCard" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OPenId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HospName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DepartName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DoctorName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RegisteDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ClinicDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="StartTime" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="EndTime" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="RegisterFee" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SN" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DocRate" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Style" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="comment" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ClinicSerialNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ZWBST_ShfwzList">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GUID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SERVICETYPEGUID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SERVICENAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ENTERPRICEGUID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ENTERPRICENAME" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ZWBST_EntDetail">
+    <Key>
+      <PropertyRef Name="GUID" />
+      <PropertyRef Name="ENTERPRICENAME" />
+      <PropertyRef Name="LOGO" />
+      <PropertyRef Name="ENTERPRICEINFO" />
+    </Key>
+    <Property Name="GUID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ENTERPRICENAME" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="LOGO" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="ENTERPRICEINFO" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="ADDRESS" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="CONTACT" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="JYFW" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="TJNR" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="FWCL" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="FWQYFW" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ZWBST_EntSfbz">
+    <Key>
+      <PropertyRef Name="GUID" />
+      <PropertyRef Name="ENTERPRICEGUID" />
+    </Key>
+    <Property Name="GUID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ENTERPRICEGUID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UNIT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="PRICE1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PRICE2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="REMARK" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="REMARK1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

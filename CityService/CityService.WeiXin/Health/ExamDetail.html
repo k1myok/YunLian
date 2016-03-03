@@ -1,0 +1,220 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+
+    <title>检查报告信息</title>
+    <link href="../Content/amui-demo_files/demo.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../Content/alipay/amui-demo_files/amui.js"></script>
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/amui.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/agreement.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/article.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/city-select.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/timeline.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/page-result.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/iconfont.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/button-group.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/search.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/top-notice.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/toast.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/message.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/dialog.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/card.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/header.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/switch.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/simple-password.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/form.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/message(1).css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/demo.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/button.css" media="all">
+    <script charset="utf-8" src="../Content/alipay/amui-demo_files/zepto.js"></script>
+    <script charset="utf-8" src="../Content/alipay/amui-demo_files/amui.js"></script>
+    <script type="text/javascript" src="../Scripts/extensions/base.js"></script>
+    <style>
+        .am-list-content{
+            color:rgb(102,102,102);
+        }
+    </style>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="header" class="am-header" style="display:none;">
+        </div>
+        <div data-role="content">
+            <div class="am-toast" id="toast">
+                <div class="am-toast-text">
+                    <span class="am-toast-icon am-icon" am-mode="toast-loading"></span> 正在努力查询...
+                </div>
+            </div>
+            <div class="am-card" id="cardContainer">
+                <div id="resultDiv" class="am-page-result-wrap" style="margin-top:125px; text-align:center;display:none">
+                    <div class="am-page-result-pic">
+                        <img src="../Images/empty.png" width="138" height="138">
+                    </div>
+                    <div class="am-page-result-title" style="color:#8F8F95; font-size:16px; margin-top:25px;font-family:stheitisc">未查询到记录</div>
+                    <div class="am-page-result-brief" style="color:#8F8F95; font-size:16px; margin-top:8px;font-family:stheitisc">请返回并重新查询报告信息</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-role="page" id="detailDiv" style="display:none">
+        <div data-role="content">
+            <div class="am-list" am-mode="flat chip">
+                <div class="am-list-header">报告基本信息</div>
+                <div class="am-list-body">
+                    <div class="am-list-item">
+                        <div class="am-list-content">检查单号：</div>
+                        <div class="am-list-control" id="detailNumber"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">审核医师：</div>
+                        <div class="am-list-control" id="detailCheckDoc"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="am-list" am-mode="flat chip">
+                <div class="am-list-header">个人信息</div>
+                <div class="am-list-body">
+                    <div class="am-list-item">
+                        <div class="am-list-content">姓名：</div>
+                        <div class="am-list-control" id="detailName"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">性别：</div>
+                        <div class="am-list-control" id="detailSex"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">年龄：</div>
+                        <div class="am-list-control" id="detailAge"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="am-list" am-mode="flat chip">
+                <div class="am-list-header">检查信息</div>
+                <div class="am-list-body">
+                    <div class="am-list-item">
+                        <div class="am-list-content">检查仪器名称：</div>
+                        <div class="am-list-control" id="detailEQPTName"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">检查方法：</div>
+                        <div class="am-list-control" id="detailCheckMethod"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">检查机构：</div>
+                        <div class="am-list-control" id="detailCheckUnit"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="am-list" am-mode="flat chip">
+                <div class="am-list-header">检查报告信息</div>
+                <div class="am-list-body">
+                    <div class="am-list-item">
+                        <div class="am-list-content">检查项目名称：</div>
+                        <div class="am-list-control" id="detailCheckPrjName"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">检查部位名称：</div>
+                        <div class="am-list-control" id="detailCheckPlace" style="margin-left:140px"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">主要诊断疾病名称：</div>
+                        <div class="am-list-control" id="detailCheckEailName"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="am-list" am-mode="flat chip">
+                <div class="am-list-header">检查结果描述</div>
+                <div class="am-list-body">
+                    <div class="am-list-item">
+                        <div class="am-list-control" id="detailCheckResult"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="am-list" am-mode="flat chip">
+                <div class="am-list-header">其它信息</div>
+                <div class="am-list-body">
+                    <div class="am-list-item">
+                        <div class="am-list-content">审核者：</div>
+                        <div class="am-list-control" id="detailHeChaName"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">检查时间：</div>
+                        <div class="am-list-control" id="detailCheckTime"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">报告时间：</div>
+                        <div class="am-list-control" id="detailReportTime"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        $(function () {
+            $("#detailDiv").hide();
+
+            search();
+        })
+
+        function search() {
+            $("#toast").show();
+            var url = "../../CityService.Service/HospitalInfoService.svc/GetExamReport";
+
+            var idCard = decodeURI(getQueryStringByName("idCard"));
+            var examNumber = decodeURI(getQueryStringByName("examNumber"));
+
+            var args = $.parseJSON('{"idCard":"' + idCard + '","examNumber":"' + examNumber + '"}');
+            $.ajax(url, {
+                type: 'get',
+                contentType: 'text/json',
+                data: args,
+                success: function (msg) {
+                    if (msg.d == "")
+                        return;
+                    var reuslt = $(msg.d);
+                    var isSucess = reuslt.find('Result').find('ResultCode').text();
+                    if (isSucess != "1")
+                        $("#resultDiv").show();
+                    else {
+                        $("#detailDiv").show();
+
+                        var person = reuslt.find('Person');
+                        document.getElementById("detailName").innerHTML = person.find("Name").text();
+                        document.getElementById("detailSex").innerHTML = person.find("Sex").text();
+                        document.getElementById("detailAge").innerHTML = person.find("Age").text();
+                        addToList($(msg.d).find('Documents').find('ExamDocument').first());
+                    }
+                },
+                error: function (xhr) {
+                },
+                complete: function () {
+                    $("#toast").hide();
+                }
+            });
+        }
+
+        function addToList(ele) {
+            var element = $(ele);
+            document.getElementById("detailNumber").innerHTML = element.find("RPT_NO").text();
+            document.getElementById("detailCheckDoc").innerHTML = element.find("RV_NAME").text();
+            document.getElementById("detailEQPTName").innerHTML = element.find("EQPT_NAME").text();
+            document.getElementById("detailCheckMethod").innerHTML = element.find("CHK_METHODNAME").text();
+            document.getElementById("detailCheckUnit").innerHTML = element.find("CHK_ORGAN_CODE").text();
+            document.getElementById("detailCheckPrjName").innerHTML = element.find("PROJ_NAME").text();
+            document.getElementById("detailCheckPlace").innerHTML = element.find("CKPT_NAME").text();
+            document.getElementById("detailCheckResult").innerHTML = element.find("RPT_DESCRIP").text();
+            document.getElementById("detailCheckEailName").innerHTML = element.find("MAIN_DIS_NAME").text();
+            document.getElementById("detailHeChaName").innerHTML = element.find("RV_NAME").text();
+            document.getElementById("detailCheckTime").innerHTML = element.find("CHK_DT").text();
+            document.getElementById("detailReportTime").innerHTML = element.find("RPT_DT").text();
+        }
+    </script>
+</body>
+</html>

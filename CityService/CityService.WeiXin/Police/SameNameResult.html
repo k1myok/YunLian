@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>重名查询结果</title>
+    <meta charset='UTF-8'>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <link href="../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/toast.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/button.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/dialog.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/button-group.css" type="text/css" rel="stylesheet" />
+
+    <script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../Scripts/extensions/base.js"></script>
+    <script type="text/javascript" src="../Content/alipay/amui-demo_files/amui.js"></script>
+</head>
+<body>
+    <div data-role="page" id="detailDiv">
+        <div data-role="content" style="background-color:#EFEFF4">
+            <div class="am-list" am-mode="flat chip">
+<div class="am-toast" id="toast">
+                    <div class="am-toast-text">
+                        <span class="am-toast-icon am-icon" am-mode="toast-loading"></span> 正在查询...
+                    </div>
+                </div>
+                <div class="am-list-header">重名信息</div>
+                <div class="am-list-body">
+                    <div class="am-list-item">
+                        <div class="am-list-content">重名数量</div>
+                        <div class="am-list-control" id="snCount"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="padding-left:15px;padding-right:15px;margin-top:15PX;">
+        <button id="searchButton" type="button" class="am-button" am-mode="blue" onclick="turn()">完成查询</button>
+    </div>
+    <div id="fuwu" style="display: block;font-family:STHeitiSC  ;font-size: 12px;position:absolute; margin-bottom: 15px; margin-left: 0px; width: 100%; text-align: center; bottom: 0px;z-index:-1;">
+        <div class="am-agreement am-ft-gray am-ft-sm">
+            <p>
+                本服务由苏州市公安局提供
+            </p>
+        </div>
+    </div>
+    <script>
+        $(function () {
+             $("#toast").show();
+            var name = decodeURI(getQueryStringByName("name"));
+            var url = "../../CityService.Service/PoliceService.svc/SelectSameNameInfo";
+            $.ajax(url, {
+                type: 'get',
+                contentType: 'text/json',
+                data: "name=" + name ,
+                success: function (msg) {
+                    var temp = JSON.parse(msg);
+                    if (temp != null) {
+                        if (temp.succ == true) {
+                            $("#snCount").html(temp.data);
+                        }
+                        else {
+                            return;
+                        }
+
+                    } else {
+                        return;
+                    }
+                },
+                error: function (xhr) {
+                },
+                complete: function () {
+$("#toast").hide();
+                }
+            });
+        });
+        function turn()
+        {//location.href ="https://city.weixin.qq.com/cgi-bin/entry?result_data=%7b%22template_id%22%3a%22suzhoushixinxizhongxin_chongmingchaxun%22%7d#wechat_redirect";
+		location.href = "https://city.weixin.qq.com/cgi-bin/entry?result_data=%7b%22template_id%22%3a%22suzhougongan_chongmingchaxun%22%7d#wechat_redirect";
+        }
+    </script>
+</body>
+</html>

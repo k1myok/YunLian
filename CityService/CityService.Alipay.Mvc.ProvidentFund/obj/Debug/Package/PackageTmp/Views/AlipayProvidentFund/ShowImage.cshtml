@@ -1,0 +1,27 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <link href="~/Content/jquery.mobile-1.4.5.css" rel="stylesheet" />
+    <script src="~/Script/jquery-1.10.2.min.js"></script>
+    <script src="~/Script/extensions/base.js"></script>
+    <script src="~/Script/jquery.mobile-1.4.5.js"></script>
+</head>
+<body>
+    <div data-role="page" style="background-color: #fff;">
+        <div>
+            <img src="" id="image1" style="width:100%;" />
+        </div>
+    </div>
+    <script>
+        $(function () {
+            var url = decodeURI(getQueryStringByName("url"));
+            $("#image1").attr("src", url);
+        });
+    </script>
+</body>
+</html>

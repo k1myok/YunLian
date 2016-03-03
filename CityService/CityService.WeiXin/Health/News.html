@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>新闻</title>
+    <meta charset='UTF-8'>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <link href="../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/weui-master/dist/style/weui.css" rel="stylesheet" />
+    <link href="../Content/wechat.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/weixin.css" rel="stylesheet" />
+    <script src="../Content/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <script src="../Content/weui-master/dist/example/zepto.min.js"></script>
+    <script src="../Content/weui-master/dist/example/example.js"></script>
+    <script src="../Scripts/extensions/base.js" type="text/javascript"></script>
+    <script src="../Scripts/wechatOpenID.js" type="text/javascript"></script>
+    <script src="../Scripts/jquery-guid.js" type="text/javascript"></script>
+    <script src="../Scripts/jquery-verification-1.0.1.js" type="text/javascript"></script>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="content" style="background-color:#EFEFF4">
+            <img src="../Images/register.png" style="width:100%">
+            <!--the Hospital List,use the style like (Traval/Default.html)-->
+            <div class="am-list am-list-5lb" am-mode="flat chip form">
+                <div class="am-list-body">
+                    <a href="Blacklist.html" class="am-list-item">
+
+                        <div class="am-list-content">黑名单制度</div>
+                        <div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>
+                    </a>
+                    <a class="am-list-item" href="RegTimeRule.html">
+                        <div class="am-list-content">就诊时间提醒</div>
+                        <div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>
+                    </a>
+                </div>
+                <div class="am-list-body" id="list">
+
+                </div>
+            </div>
+            <div class="nav" style="background-color:#EFEFF4">
+                <div class="am-flexbox">
+                    <div class="am-flexbox-item"><a href="getHospitallist.html">轻松挂号</a></div>
+                    <div class="am-flexbox-item am-ft-ellipsis"><a href="Comuserlist.html">常用成员</a></div>
+                    <div class="am-flexbox-item"><a href="RegisterList.html">挂号清单</a></div>
+                </div>
+          
+        </div>
+
+    <div class="footer">
+            <p>
+                本服务由苏州市卫生局<br />苏州云联智慧信息技术应用有限公司提供支持
+            </p>
+        </div>
+    </div>
+
+<script type="text/javascript">
+ 
+$(function(){
+GetNews()
+});
+function GetNews()
+{
+    var url = "../../CityService.Service/HospitalInfoService.svc/GetNews";
+    $.ajax({
+        type: "get",
+        url: url,
+        success: function (result)
+        {
+
+            addToList(result.d);
+        },
+        error: function ()
+        { return;}
+
+    })
+
+}
+function addToList(result)
+{
+    if (result == null || result.length == 0)
+        return;
+    var content = "";
+        $(result).find("News").each(function () {
+            var Title = $(this).children("Title").text();
+            var NewsURL = $(this).children("NewsURL").text();
+            content =
+            '<a class="am-list-item" href=' + NewsURL + '>' +
+               '<div class="am-list-content">' + Title + '</div>' +
+               '<div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>' +
+           '</a>' +
+            content;
+        });
+    $("#list").html(content);
+}
+ </script>
+</body>
+</html>

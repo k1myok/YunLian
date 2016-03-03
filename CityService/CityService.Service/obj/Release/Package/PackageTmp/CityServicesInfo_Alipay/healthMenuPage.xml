@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <title>
+    苏州卫生
+  </title>
+  <menus>
+    <menu>
+      <content>报告查询</content>
+      <url>../Health/Default.html</url>
+      <image>../Images/检查检验报告查询.png</image>
+    </menu>
+    <menu>
+      <content>预约挂号</content>
+      <url>../Health/GetOpenId.html</url>
+      <image>../Images/预约挂号.png</image>
+    </menu>
+  </menus>
+  <foot>
+    <div class='am-agreement am-ft-gray am-ft-sm'>
+      <p id='footValue'>
+        本服务由苏州市卫生和计划生育委员会<br />苏州云联智慧信息技术应用有限公司提供支持
+      </p>
+    </div>
+  </foot>
+  <type>
+    type_jgg
+  </type>
+</root>

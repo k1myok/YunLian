@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../Scripts/extensions/base.js"></script>
+    <script type="text/javascript" src="../Content/alipay/amui-demo_files/amui.js"></script>
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=2ffb8bddf5f3620892d0bb3051b23777"></script>
+    <title>登陆</title>
+</head>
+<body>
+    <!--<a href="https://openauth.alipay.com/oauth2/publicAppAuthorize.htm?
+
+    app_id=2015060100099966&auth_skip=false&scope=auth_base&redirect_uri=http%3A%2F%2Fwww.china-ccw.com
+
+    %2FAlipayCityService_Debug%2FCityService.Alipay%2FHealth%2FGetOpenID.html" style="font-size:40px;">test</a>-->
+    <span id="openID"></span>
+  </body>
+    <script type="text/javascript">
+        $(function () {
+            code = decodeURI(getQueryStringByName("auth_code"));
+            if (code != "") {
+                GetOpenID();
+            }
+            else {
+                location.href = "https://openauth.alipay.com/oauth2/publicAppAuthorize.htm?app_id=2015060100099966&auth_skip=false&scope=auth_base&redirect_uri=http%3A%2F%2Flocalhost%2FCityService%2FCityService.Alipay%2FPolice%2FTrafficGetOpenID.html";
+            }
+        });
+        function GetOpenID() {
+            var code = decodeURI(getQueryStringByName("auth_code"));
+            var url = "../../CityService.Service/HospitalInfoService.svc/GetOpenID";
+            $.ajax(url, {
+                type: "GET",
+                data: {
+                    code: code,
+                },
+                dataType: "Json",
+                success: function (result) {
+                   // alert(result.d);
+                    //获取openID 或查询是否在数据库中存在，如果存在直接跳转到getHOspitaillist.html/否则跳转到LoginRegister.html
+                    ExistOpenID(result.d)
+                },
+                error: function () {
+                    return;
+                },
+            });
+        }
+        function ExistOpenID(openID)
+        {
+            openID = "20880091942803002851322451119970";
+            document.cookie = "openID=" + openID;
+            var url = "../../CityService.Service/PoliceService.svc/ExsitOpenID";
+            $.ajax(url, {
+                type: "GET",
+                data:
+                    {
+                        openId: openID,
+                    },
+                dataType:"json",
+                success: function (result) {
+                    alert(result);
+                    var temp = JSON.parse(result);
+                    if (temp.succ == false) {
+                        location.href = "TrafficLogin.html";
+                    }
+                    else
+                    {
+                        var guid = temp.data.id;
+                        document.cookie = "userId=" + guid;
+                        document.cookie ="takerName=" + temp.data.realName;
+                        location.href = "TrafficList.html";
+                    }
+                },
+                error: function(){
+                    return;
+                }
+            });
+        }
+    </script>
+    </html>
+

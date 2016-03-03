@@ -1,0 +1,258 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>地图导航</title>
+    <link href="~/Content/jquery.mobile-1.4.5.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/extensions/base.js"></script>
+    <script src="~/Scripts/jquery.mobile-1.4.5.js"></script>
+    <script charset="utf-8" src="http://map.qq.com/api/js?v=2.exp"></script>
+    <script>
+        var map;
+        var city;
+        var mylocation;
+        var myMarker = [];
+        var car = null;
+        var isDraw = false;
+        var drawMarkers = [];
+        var length = 0;
+        var polylineAll = [];
+        var markerJLAll = [];
+        var pano;
+        var citylocation = new qq.maps.CityService({
+            complete: function (results) {
+                city = results.detail.name;
+            }
+        });
+
+        var directionsService = new qq.maps.DrivingService({
+            complete: function (response) {
+
+                var start = response.detail.start,
+                    end = response.detail.end;
+                start_marker && start_marker.setMap(null);
+                end_marker && end_marker.setMap(null);
+                clearOverlays(route_lines);
+
+                var anchor = new qq.maps.Point(8, 30);
+                var origin = new qq.maps.Point(0, 0);
+                var size = new qq.maps.Size(25, 34);
+                var icon = new qq.maps.MarkerImage('../Images/origin_start.png', size, origin, anchor);
+
+                start_marker = new qq.maps.Marker({
+                    position: start.latLng,
+                    map: map,
+                    zIndex: 1,
+                    icon: icon
+                });
+
+                var icon2 = new qq.maps.MarkerImage('../Images/end.png', size, origin, anchor);
+                end_marker = new qq.maps.Marker({
+                    position: end.latLng,
+                    map: map,
+                    zIndex: 1,
+                    icon: icon2
+                });
+                directions_routes = response.detail.routes;
+
+                var routes_desc = [];
+                //所有可选路线方案
+                for (var i = 0; i < directions_routes.length; i++) {
+                    var route = directions_routes[i],
+                        legs = route;
+                    //调整地图窗口显示所有路线
+                    map.fitBounds(response.detail.bounds);
+                    //所有路程信息
+                    var steps = legs.steps;
+                    route_steps = steps;
+                    polyline = new qq.maps.Polyline(
+                        {
+                            path: route.path,
+                            strokeColor: '#3893F9',
+                            strokeWeight: 6,
+                            map: map
+                        }
+                    )
+                    route_lines.push(polyline);
+                    //所有路段信息
+                    for (var k = 0; k < steps.length; k++) {
+                        var step = steps[k];
+                        //路段途经地标
+                        //debugger;
+                        directions_placemarks.push(step.placemarks);
+                        //转向
+                        var turning = step.turning,
+                            img_position;;
+                        switch (turning.text) {
+                            case '左转':
+                                img_position = '0px 0px'
+                                break;
+                            case '右转':
+                                img_position = '-19px 0px'
+                                break;
+                            case '直行':
+                                img_position = '-38px 0px'
+                                break;
+                            case '偏左转':
+                            case '靠左':
+                                img_position = '-57px 0px'
+                                break;
+                            case '偏右转':
+                            case '靠右':
+                                img_position = '-76px 0px'
+                                break;
+                            case '左转调头':
+                                img_position = '-95px 0px'
+                                break;
+                            default:
+                                mg_position = ''
+                                break;
+                        }
+                        var turning_img = '&nbsp;&nbsp;<span' +
+                            ' style="margin-bottom: -4px;' +
+                            'display:inline-block;background:' +
+                            'url(img/turning.png) no-repeat ' +
+                            img_position + ';width:19px;height:' +
+                            '19px"></span>&nbsp;';
+                        var p_attributes = [
+                            'onclick="renderStep(' + k + ')"',
+                            'onmouseover=this.style.background="#eee"',
+                            'onmouseout=this.style.background="#fff"',
+                            'style="margin:5px 0px;cursor:pointer"'
+                        ].join(' ');
+                        routes_desc.push('<p ' + p_attributes + ' ><b>' + (k + 1) +
+                        '.</b>' + turning_img + step.instructions);
+                    }
+                }
+            }
+        }), directions_routes,
+        directions_placemarks = [],
+        directions_labels = [],
+        start_marker,
+        end_marker,
+        route_lines = [],
+        step_line,
+        route_steps = [];
+
+        window.onload = function () {
+
+            $("#container").css("height", ($(document.body).height() - $("#header").outerHeight()));
+            $("#container").css("padding", 0);
+
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            }
+
+            map = new qq.maps.Map(document.getElementById('container'), {
+                center: new qq.maps.LatLng(31.300262, 120.585938),
+                mapTypeControlOptions: {
+                    position: qq.maps.ControlPosition.RIGHT_BOTTOM
+                },
+                zoom: 14
+            });
+        }
+        function renderStep(index) {
+            var step = route_steps[index];
+            //clear overlays;
+            step_line && step_line.setMap(null);
+            //draw setp line
+            step_line = new qq.maps.Polyline(
+                {
+                    path: step.path,
+                    strokeColor: '#ff0000',
+                    strokeWeight: 6,
+                    map: map
+                }
+            )
+        }
+
+        //重新返回中心坐标
+        function reSet() {
+            clearOverlays(myMarker);
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            }
+
+        }
+        //清除标记
+        function clearOverlays(overlays) {
+            var overlay;
+            while (overlay = overlays.pop()) {
+                overlay.setMap(null);
+            }
+        }
+
+        //显示当前目标
+        function showPosition(position) {
+            if (position.coords.latitude != 0) {
+                $.ajax({
+                    type: "post",
+                    url: "../AlipayProvidentFund/getQQMapLocation",
+                    datatype: "json",
+                    data: "lat=" + position.coords.latitude + "&lng=" + position.coords.longitude,
+                    success: function (msg) {
+                        if (msg != null) {
+                            map.setCenter(new qq.maps.LatLng(msg["Lng"], msg["Lat"]));
+                            var anchor = new qq.maps.Point(6, 6);
+                            var origin = new qq.maps.Point(0, 0);
+                            var size = new qq.maps.Size(36, 36);
+                            var icon = new qq.maps.MarkerImage('../Image/定位起点.png', size, origin, anchor);
+                            var marker = new qq.maps.Marker({
+                                position: new qq.maps.LatLng(msg["Lng"], msg["Lat"]),
+                                icon: icon,
+                                map: map,
+                                title: "当前所在位置"
+                            });
+                            mylocation = new qq.maps.LatLng(map.center.lat, map.center.lng);
+                            myMarker.push(marker);
+                            city = citylocation.searchCityByLatLng(mylocation);
+
+                            searchRoute(mylocation, getQueryStringByName("address"));
+                        }
+                    }
+                });
+            }
+        }
+
+        function searchRoute(startPostion, targetName) {
+            //调用地址解析类
+            var geocoder = new qq.maps.Geocoder({
+                complete: function (result) {
+                    var targetPostion = result.detail.location;
+                    var marker = new qq.maps.Marker({
+                        map: map,
+                        position: result.detail.location,
+                        title: decodeURI(getQueryStringByName("address"))
+                    });
+
+                    var policy = "LEAST_DISTANCE";
+                    route_steps = [];
+                    if (city == null) {
+                        city = "苏州";
+                    }
+                    directionsService.setLocation(city);
+                    directionsService.setPolicy(qq.maps.DrivingPolicy[policy]);
+                    directionsService.search(startPostion, targetPostion);
+                }
+            });
+
+            var address = decodeURI(targetName);
+            geocoder.getLocation(address);
+
+        }
+    </script>
+</head>
+<body>
+    <div data-role="page">
+        <div style="top:1%; left:90%; position: absolute;z-index:3;">
+            <img src="../Images/定位起点.png" onclick="reSet()" />
+        </div>
+        <div id="container" style="width:100%;">
+        </div>
+    </div>
+</body>
+</html>

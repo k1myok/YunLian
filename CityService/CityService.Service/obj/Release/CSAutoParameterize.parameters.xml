@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="CityServiceModelContainer-Web.config Connection String" description="CityServiceModelContainer 由应用程序在 web.config 中用来访问数据库的连接字符串。" defaultValue="metadata=res://*/CityServiceModel.csdl|res://*/CityServiceModel.ssdl|res://*/CityServiceModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=121.40.171.35;initial catalog=CityService;persist security info=True;user id=sa;password=db@126.com;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="E:\\Projects\\PreProjects\\Source\\CityService\\CityService\.Service\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='CityServiceModelContainer']/@connectionString" />
+  </parameter>
+  <parameter name="CityServiceModelContainerByDB-Web.config Connection String" description="CityServiceModelContainerByDB 由应用程序在 web.config 中用来访问数据库的连接字符串。" defaultValue="Data Source=db.china-ccw.com;Initial Catalog=TestDB;Integrated Security=false;User ID=sa;Password=db@126.com;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="E:\\Projects\\PreProjects\\Source\\CityService\\CityService\.Service\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='CityServiceModelContainerByDB']/@connectionString" />
+  </parameter>
+  <parameter name="PageSize-Web.config Connection String" description="PageSize 由应用程序在 web.config 中用来访问数据库的连接字符串。" defaultValue="10" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="E:\\Projects\\PreProjects\\Source\\CityService\\CityService\.Service\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='PageSize']/@connectionString" />
+  </parameter>
+</parameters>

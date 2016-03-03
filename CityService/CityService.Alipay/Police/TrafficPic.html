@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>理赔图片</title>
+    <meta charset="utf-8" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <link href="../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/toast.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/button.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/dialog.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/button-group.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../Scripts/extensions/base.js"></script>
+    <script type="text/javascript" src="../Content/alipay/amui-demo_files/amui.js"></script>
+</head>
+<body>
+    <!-- 此页面暂时不用  -->
+    <div data-role="page">
+        <div data-role="content" style="background-color:#EFEFF4;padding-top:15px;">
+            <div class="am-list am-list-5lb" am-mode="flat form">
+                <div class="am-list-body">
+                </div>
+           </div>
+         </div>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+
+        })
+        function accidentPhoto()
+        {
+            var accident_id= decodeURI(getQueryStringByName("accident_id"));
+            var url = "../../Cityservice.Service/PoliceService.svc/accidentphotos";
+            $.ajax(url, {
+                type: "Get",
+                dataType: 'Json',
+                data:{
+                    accident_id: accident_id,
+                },
+                success: function ()
+                {
+                 
+
+                }
+
+
+
+            });
+        }
+
+
+
+
+
+    </script>
+</body>
+</html>

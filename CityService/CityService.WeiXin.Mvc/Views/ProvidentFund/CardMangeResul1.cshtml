@@ -1,0 +1,52 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>个人账户转移</title>
+    <link href="~/Content/jquery.mobile-1.4.5.css" rel="stylesheet" />
+    <script src="~/Script/jquery-1.10.2.js"></script>
+    <script src="~/Script/extensions/base.js"></script>
+    <script src="~/Script/jquery.mobile-1.4.5.js"></script>
+</head>
+<body>
+    <div data-role="page" style="background-color: #fff;">
+        <div>
+            <img src="~/Image/苏州市住房公积金管理中心.jpg" style="width:100%;" />
+        </div>
+        <div style="padding:0 10px;padding-bottom:10px;">
+            <div style="width:70px;float:right;z-index:2;font-size:13px;padding:0 10px;text-align:center;font-weight:bolder;word-break:keep-all;">
+                <img src="~/Image/地图.png" style="width:30px;height:30px;" onclick="Show()" />
+                <div><strong>办理网点</strong></div>
+            </div>
+            <p style="text-align:center;"><b>账户转移</b></p>
+            <p><b>办理流程</b></p>
+            <p>职工带齐材料至办理场所进行业务申请→工作人员审核材料→进行业务处理</p>
+        </div>
+        <div style="padding:0 10px;">
+            <p><b>办理要件</b></p>
+            <img src="~/Image/账户转移_1.PNG" id="image1" style="width:100%" />
+            <img src="~/Image/个人账户转移_2.PNG" id="image1" style="width:100%" />
+        </div>
+        <script>
+            $(function () {
+                $("#image1").click(function () {
+                    var url = $("#image1").attr("src");
+                    window.location.href = "../ProvidentFund/ShowImage?url=" + url;
+                });
+            });
+
+            function Show() {
+                window.location.href = "../ProvidentFund/SelectCardPoint";
+            }
+        </script>
+        <div style="bottom:0px;">
+            <img src="~/Image/公积金官方微信.png" style="width:100%;" />
+        </div>
+    </div>
+</body>
+</html>

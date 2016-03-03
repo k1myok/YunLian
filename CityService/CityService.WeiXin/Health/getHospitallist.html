@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui"/>
+    <title>预约挂号</title>
+    <link href="../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/weui-master/dist/style/weui.css" rel="stylesheet" />
+    <link href="../Content/wechat.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/weixin.css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/toast.css" rel="stylesheet" />
+    <script src="../Content/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <script src="../Content/weui-master/dist/example/zepto.min.js"></script>
+    <script src="../Content/weui-master/dist/example/example.js"></script>
+   <script src="../Scripts/extensions/base.js" type="text/javascript"></script>
+    <script src="../Scripts/wechatOpenID.js" type="text/javascript"></script>
+    <script src="../Scripts/jquery-guid.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="am-toast" id="toast">
+        <div class="am-toast-text">
+            <span class="am-toast-icon am-icon" am-mode="toast-loading"></span> 正在加载...
+        </div>
+    </div>
+    <img src="../Images/register.png" style="width:100%">
+    <div class="weui_cells weui_cells_access">
+            <div id="list">
+
+            </div>
+    </div>
+    <div class="nav" style="background-color:#EFEFF4">
+            <div class="am-flexbox">
+                <div class="am-flexbox-item"><a onclick="ExistOpenID(1)">挂号清单</a></div>
+                <div class="am-flexbox-item am-ft-ellipsis"><a onclick="ExistOpenID(2)">常用成员</a></div>
+                <div class="am-flexbox-item"><a href="News.html">预约提醒</a></div>
+            </div>
+    </div>
+    <div class="footer">
+            <p>
+                本服务由苏州市卫生局<br />苏州云联智慧信息技术应用有限公司提供支持
+            </p>
+    </div>
+</body>
+<script type="text/javascript">
+    //跳转到getDepartment(获取科室列表）
+    $(function () {
+        $("#toast").show();
+        getHospital();
+        setCookie();
+        //var url = "getHospitallist.html?Guid=" + getGuid();
+        //auth_codehospital();
+    });
+    function setCookie()
+    {
+        var ID = "20880017993394846389023240619970";
+        document.cookie = "OpenID=" + ID;
+        alert(ID);
+    }
+    function getHospital() {
+        //var OpenID = document.cookie.split(";")[0].split("=")[1];
+        var url = "../../CityService.Service/HospitalInfoService.svc/GetHospitalList";
+        $.ajax({
+            type: "get",
+            url: url,
+            success: function (result) {
+                addToList(result.d);
+            },
+            error: function () {
+                return;
+            },
+            complete:function()
+           {},
+        })
+    }
+    function addToList(hospitalList) {
+        if (hospitalList == null || hospitalList.length == 0)
+            return;
+        var content = "";
+        $.each(hospitalList, function () {
+            content = content +
+            //'<a class="am-list-item" href="getDepartment.html?HospName='+this+'">' +
+            //    '<div class="am-list-content">' + this + '</div>' +
+            //    '<div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>' +
+            //'</a>';
+           // '<a class="am-list-item" id=' + this + ' onclick= turn("' + this + '")>' +
+           //    '<div class="am-list-content">' + this + '</div>' +
+           //    '<div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>' +
+           //'</a>';
+            '<a class="weui_cell" href="getDepartment.html?HospName=' + this + '">' +
+                        '<div class="weui_cell_bd weui_cell_primary">'+
+                            '<p>'+this+'</p>'+
+                        '</div>'+
+                  ' <div class="weui_cell_ft">'+
+                       ' </div>'+
+                       '</a>';
+        });
+        $("#list").html(content);
+        $("#toast").hide();
+    }
+    function turn(c) {
+        ExistOpenIDcheck(c);
+    }
+    function ExistOpenID(type) {
+       
+        var openID = getCookie("OpenID");
+      
+        var url = "../../CityService.Service/HospitalInfoService.svc/ExistOpenID";
+        $.ajax(url, {
+            type: "GET",
+            data:
+                {
+                    openId: openID,
+                    Guid: getGuid()
+                },
+            dataType: "json",
+            success: function (result) {
+                if (result.d == "")
+                    location.href = 'AddMember.html?type=' + type + '&Guid=' + getGuid();
+                else
+                    switch (type) {
+                        case 1:
+                            location.href = "RegisterList.html?Guid=" + getGuid();
+                            break;
+                        case 2:
+                            location.href = "Comuserlist.html?Guid=" + getGuid();
+                            break;
+                    }
+            },
+            error: function () {
+                return;
+            }
+        });
+    }
+    function getCookie(key) {
+        var keyValues = document.cookie.split(";");
+        for (var index = 0; index < keyValues.length; index++) {
+            var keyValue = keyValues[index].split("=");
+            if (keyValue[0].trim() == key)
+                return keyValue[1];
+        }
+
+        return null;
+    }
+    function ExistOpenIDcheck(type) {
+        //var openID = getCookie("openID");
+        var storage = window.localStorage;
+        var OpenID = storage.getItem("openID");
+        // alert(openID);
+        var url = "../../CityService.Service/HospitalInfoService.svc/ExistOpenID";
+        $.ajax(url, {
+            type: "GET",
+            data:
+                {
+                    openId: OpenID,
+                },
+            dataType: "json",
+            success: function (result) {
+                if (result.d == "")
+                    location.href = 'AddMember.html?type=' + type + '&Guid=' + getGuid();
+                else {
+
+                    location.href = 'getDepartment.html?HospName=' + type + '&Guid=' + getGuid();
+                }
+            },
+            error: function () {
+                return;
+            }
+        });
+    }
+</script>
+</html>

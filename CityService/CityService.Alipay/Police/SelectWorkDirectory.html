@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>事项列表</title>
+    <meta charset='UTF-8'>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <link href="../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/toast.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/button.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/dialog.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/button-group.css" type="text/css" rel="stylesheet" />
+
+    <script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../Scripts/extensions/base.js"></script>
+    <script type="text/javascript" src="../Content/alipay/amui-demo_files/amui.js"></script>
+</head>
+<body>
+    <div data-role="content" style="background-color:#EFEFF4;padding-top:15px;">
+        <div class="am-list" am-mode="flat form">
+            <div class="am-list-body" id="list">
+            </div>
+
+        </div>
+        <div style="padding-left:15px;padding-right:15px;margin-top:15PX;margin-bottom:15px;display:none" id="showMore">
+            <button id="loseButton" type="button" class="am-button" am-mode="blue" onclick="IsShow()">查看更多</button>
+        </div>
+        <div style="display:none;"><input type="text" name="pi" id="pi" value="1" /></div>
+    </div>
+                <script>
+                    $(function () {
+
+                        var ty = decodeURI(getQueryStringByName("ty"));
+                        var bi = decodeURI(getQueryStringByName("bi"));
+                        var ca = decodeURI(getQueryStringByName("ca"));
+                        var kw = decodeURI(getQueryStringByName("kw"));
+                        var pi = decodeURI(getQueryStringByName("pi"));
+                        var su = decodeURI(getQueryStringByName("su"));
+                        var fj = decodeURI(getQueryStringByName("fj"));
+                        var pageIndex = 1;
+                        var pageCount = 10;
+
+                        var url = "../../CityService.Service/PoliceService.svc/WorkDirectoryInfo?pageCount=" + pageCount + "&pageIndex=" + pageIndex + "&ty=" + ty + "&bi=" + bi + "&ca=" + ca + "&kw=" + kw + "&pi=" + pi + "&su=" + su;
+                        $.ajax(url, {
+                            type: 'get',
+                            contentType: 'text/json',
+                            success: function (msg) {
+                                if (msg.d.msg != null) {
+                                    alert(msg.d.msg);
+                                    window.location.href = "WorkDirectory.html";
+                                }
+                                else {
+                                    var htm = "";
+                                    for (var i = 0; i < msg.d.data.list.length; i++) {
+                                        var ac = msg.d.data.list[i].AppCase;
+                                        var AppCase = "";
+                                        if (ac == 1) {
+                                            AppCase = "可申报";
+                                        } else {
+                                            AppCase = "不可申报";
+                                        }
+
+                                        var typ = "";
+                                        if (msg.d.data.list[i].Type == 2) {
+                                            typ = fj;
+                                        } else {
+                                            typ = "市局";
+                                        }
+                                        htm += '<a class="am-list-item" href="SelectWorkDirectoryResult.html?pcg=' + msg.d.data.list[i].ProjectCaseGuid + '&pcdg=' + msg.d.data.list[i].ProjectCaseDepGuid + '&type=' + msg.d.data.list[i].Type + '&name=' + msg.d.data.list[i].ProjectCaseName + '">' +
+                                           '<div class="am-list-content">' + msg.d.data.list[i].ProjectCaseName +
+                                           '<div class="am-list-brief">' + typ + ' / ' + AppCase + '</div>' + '</div>' +
+                                           ' <div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>' +
+                                        '</a>';
+                                    }
+                                    $("#list").html(htm);
+
+                                    if (pageIndex <= msg.d.data.totalPage) {
+                                        $("#showMore").css("display", "block");
+                                    } else {
+                                        $("#showMore").css("display", "none");
+                                    }
+
+                                    if (msg.d.data.list.length < pageCount) {
+                                        $("#showMore").css("display", "none");
+                                    }
+                                }
+                            },
+                            error: function (xhr) {
+                            },
+                            complete: function () {
+                            }
+                        });
+                    });
+
+                    function IsShow()
+                    {
+                        var ty = decodeURI(getQueryStringByName("ty"));
+                        var bi = decodeURI(getQueryStringByName("bi"));
+                        var ca = decodeURI(getQueryStringByName("ca"));
+                        var kw = decodeURI(getQueryStringByName("kw"));
+                        var pi = decodeURI(getQueryStringByName("pi"));
+                        var su = decodeURI(getQueryStringByName("su"));
+                        var fj = decodeURI(getQueryStringByName("fj"));
+                        var pageIndex = Number($("#pi").val()) + 1;
+                        $("#pi").val(pageIndex);
+                        var pageCount = 10;
+
+                        var url = "../../CityService.Service/PoliceService.svc/WorkDirectoryInfo?pageCount=" + pageCount + "&pageIndex=" + pageIndex + "&ty=" + ty + "&bi=" + bi + "&ca=" + ca + "&kw=" + kw + "&pi=" + pi + "&su=" + su;
+                        $.ajax(url, {
+                            type: 'get',
+                            contentType: 'text/json',
+                            success: function (msg) {
+                                if (msg.d.msg != null)
+                                {
+                                    $("#showMore").css("display", "none");
+                                    return;
+                                } else {
+                                    var htm = $("#list").html();
+                                    for (var i = 0; i < msg.d.data.list.length; i++) {
+                                        var ac = msg.d.data.list[i].AppCase;
+                                        var AppCase = "";
+                                        if (ac == 1) {
+                                            AppCase = "可申报";
+                                        } else {
+                                            AppCase = "不可申报";
+                                        }
+
+                                        var typ = "";
+                                        if (msg.d.data.list[i].Type == 2) {
+                                            typ = fj;
+                                        } else {
+                                            typ = "市局";
+                                        }
+                                        htm += '<a class="am-list-item" href="SelectWorkDirectoryResult.html?pcg=' + msg.d.data.list[i].ProjectCaseGuid + '&pcdg=' + msg.d.data.list[i].ProjectCaseDepGuid + '&type=' + msg.d.data.list[i].Type + '&name=' + msg.d.data.list[i].ProjectCaseName + '">' +
+                                           '<div class="am-list-content">' + msg.d.data.list[i].ProjectCaseName +
+                                           '<div class="am-list-brief">' + typ + ' / ' + AppCase + '</div>' + '</div>' +
+                                           ' <div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>' +
+                                        '</a>';
+                                    }
+                                    $("#list").html(htm);
+
+                                    if (pageIndex < msg.d.data.totalPage) {
+                                        $("#showMore").css("display", "block");
+                                    } else {
+                                        $("#showMore").css("display", "none");
+                                    }
+
+                                    if (msg.d.data.list.length < pageCount)
+                                    {
+                                        $("#showMore").css("display", "none");
+                                    }
+                                }
+                            },
+                            error: function (xhr) {
+                            },
+                            complete: function () {
+                            }
+                        });
+                    }
+                </script>
+</body>
+</html>
+

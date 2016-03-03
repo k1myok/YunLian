@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <title>
+    苏州便民
+  </title>
+  <menus>
+    <menu>
+      <content>物价查询</content>
+      <url>../GoodsPriceQuery/Default.html</url>
+      <image>../Images/物价.png</image>
+    </menu>
+    <menu>
+      <content>政务百事通</content>
+      <url>../KnowAll/Default.html</url>
+      <image>../Images/政务百事通.png</image>
+    </menu>
+  </menus>
+  <foot>
+    <div class='am-agreement am-ft-gray am-ft-sm'>
+      <p id='footValue'>
+        本服务由<br />苏州云联智慧信息技术应用有限公司提供支持
+      </p>
+    </div>
+  </foot>
+  <type>
+    type_jgg
+  </type>
+</root>

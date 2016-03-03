@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>信息核对</title>
+    <meta charset='UTF-8'>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <link href="../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/toast.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/button.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/dialog.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/button-group.css" type="text/css" rel="stylesheet" />
+
+    <script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../Scripts/extensions/base.js"></script>
+    <script type="text/javascript" src="../Content/alipay/amui-demo_files/amui.js"></script>
+    
+</head>
+<body>
+    <div data-role="page" id="page">
+        <div data-role="content" style="background-color:#EFEFF4">
+            <div style="font-family:STHeitiSC; font-size:12PX; color:rgb(153,153,153);">
+                <p style="margin:10px 10px 0 10px;">
+                    <span style="color:#b71414;">注</span>：请核对学生信息是否正确，如果有误，请联系所在学校的管理员修改信息后，再申请制卡
+                </p>
+                <p style="text-align:center;padding-top:6px;" id="zp">
+                </p>
+            </div>
+            <div class="am-list" am-mode="flat chip">
+                <div id="container" style="display:none">
+                    <div class="am-list" am-mode="flat chip">
+                        <div class="am-list-header">个人信息</div>
+                        <div class="am-list-body">
+                            <div class="am-list-item">
+                                <div class="am-list-content" style="color:rgb(102,102,102)">学校：</div>
+                                <div class="am-list-control" id="schoolDiv"></div>
+                            </div>
+                            <div class="am-list-item">
+                                <div class="am-list-content" style="color:rgb(102,102,102)">年级：</div>
+                                <div class="am-list-control" id="gradeDiv"></div>
+                            </div>
+                            <div class="am-list-item">
+                                <div class="am-list-content" style="color:rgb(102,102,102)">班级：</div>
+                                <div class="am-list-control" id="classDiv"></div>
+                            </div>
+                            <div class="am-list-item">
+                                <div class="am-list-content" style="color:rgb(102,102,102)">姓名：</div>
+                                <div class="am-list-control" id="nameDiv"></div>
+                            </div>
+                            <div class="am-list-item">
+                                <div class="am-list-content" style="color:rgb(102,102,102)">性别：</div>
+                                <div class="am-list-control" id="sexDiv"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="padding-left:15px;padding-right:15px;margin-top:15PX;">
+                    <button id="searchButton" type="button" class="am-button" am-mode="blue" onclick="Save()">信息正确，制卡申请</button>
+                    <button id="cancelButton" type="button" class="am-button" am-mode="blue" onclick="Cancel()" style="display:none;">返 回</button>
+                </div>
+                <div style="padding-left:15px;padding-right:15px;margin-top:15PX;">
+                    <button id="errorButton" type="button" class="am-button" am-mode="red" onclick="ShowErrorMsg()">信息错误</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="fuwu" style="display: block;font-family:STHeitiSC;font-size: 12px; margin-bottom: 15px; margin-left: 0px; width: 100%; text-align: center;  bottom: 0px;">
+        <div class="am-agreement am-ft-gray am-ft-sm">
+            <p>
+                本服务由苏州市教育局<br />苏州云联智慧信息技术应用有限公司提供支持
+            </p>
+        </div>
+    </div>
+    <!--<div id="dialog"style="top:40%;text-align:center;display:none;">
+        <div class='am-dialog' am-mode='show'>
+            <div class='am-dialog-wrap'>
+                <div class='am-dialog-body'>
+                    <p class='am-dialog-brief'>信息正确，请制卡</p>
+                </div>
+                <div class='am-dialog-footer'>
+                    <button type='button' class='am-dialog-button' onclick="CancelBtn()">取消</button>
+                    <button type='button' class='am-dialog-button' onclick="doBtn()">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>-->
+  
+<script>
+    $(function () {
+        $("#page").css("display", "none");
+        $("#fuwu").css("display", "none");
+        GeteCardInfo();
+    });
+
+    function GeteCardInfo()
+    {
+        var usercode = decodeURI(getQueryStringByName("usercode"));
+        var url = "../../CityService.Service/EducationService.svc/GetCardConfirm";
+        $.ajax(url, {
+            type: 'get',
+            contentType: 'text/json',
+            data: "userCode=" + usercode,
+            success: function (msg) {
+                if (msg.d == "") {
+                    return;
+                }
+                var result = $(msg.d);
+                var isSucess = $(result.find("return__code")).text();
+                if (isSucess == "SUCCESS") {
+                    if ($(result.find("return__msg")).text() == "该学生已经发卡") {
+                        alert($(result.find("return__msg")).text());
+                        window.location.href = "selectLoginWay.html";
+                    } else
+                    {
+                        $("#page").css("display", "block");
+                        $("#fuwu").css("display", "block");
+                    }
+
+                    var zpurl = "http://www.szzhjy.net:80/" + $(result.find('zp')).text().replace("ypt_std_photos", "photos");
+                    $("#zp").html('<img src="' + zpurl + '" style="width:280px;height:380px;"/>');
+
+                    var sex = "女";
+                    if ($(result.find("sex")).text() == "否") {
+                        sex = "男";
+                    }
+
+                    $("#schoolDiv").html($(result.find("schoolname")).text());
+                    $("#gradeDiv").html($(result.find("gradename")).text());
+                    $("#classDiv").html($(result.find("classname")).text());
+                    $("#nameDiv").html(decodeURI(getQueryStringByName("name")));
+                    $("#sexDiv").html(sex);
+                    $("#container").css("display", "block");
+                } else
+                {
+                    alert($(result.find("return__msg")).text());
+                }
+            },
+            error: function (xhr) {
+            },
+            complete: function () {
+            }
+        });
+    }
+
+    function ShowErrorMsg() {
+        alert("学生信息有误,请联系所在学校的管理员修改信息后，再申请制卡");
+    }
+
+    //返回
+    function Cancel()
+    {
+        window.location.href = "selectLoginWay.html";
+    }
+
+    function Save()
+    {
+        //$("#page").css("display", "none");
+        //$("#fuwu").css("display", "none");
+        //$("#dialog").css("display", "block");
+        alert("信息正确，请制卡");
+        doBtn();
+    }
+
+    //取消
+    //function CancelBtn()
+    //{
+    //    $("#page").css("display", "block");
+    //    $("#fuwu").css("display", "block");
+    //    $("#dialog").css("display", "none");
+    //}
+
+    function doBtn()
+    {
+        //CancelBtn();
+        var usercode = decodeURI(getQueryStringByName("usercode"));
+        var url = "../../CityService.Service/EducationService.svc/doCardConfirm";
+        $.ajax(url, {
+            type: 'get',
+            contentType: 'text/json',
+            data: "userCode=" + usercode,
+            success: function (msg) {
+                if (msg.d == "") {
+                    return;
+                }
+                var result = $(msg.d);
+
+                var isSucess = $(result.find("return__code")).text();
+
+                if (isSucess == "SUCCESS") {
+                    alert("发卡成功");
+                    $("#searchButton").css("display", "none");
+                    $("#errorButton").css("display", "none");
+                    $("#cancelButton").css("display", "block");
+                }
+            },
+            error: function (xhr) {
+            },
+            complete: function () {
+            }
+        });
+    }
+
+</script>
+</body>
+</html>

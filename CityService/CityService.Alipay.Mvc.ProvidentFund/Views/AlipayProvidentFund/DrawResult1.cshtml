@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "购买新房、二手房";
+}
+<div data-role="content" style="background-color:#fff">
+    <div class="am-list" am-mode="flat  chip">
+            
+            <div style="padding:0 10px;padding-bottom:10px;">
+                <div style="width:70px;float:right;z-index:2;font-size:13px;padding:0 10px;text-align:center;font-weight:bolder;word-break:keep-all;">
+                    <img src="~/Images/地图.png" style="width:30px;height:30px;" onclick="Show()" />
+                    <div><strong>办理网点</strong></div>
+                </div>
+                <p style="text-align:center;"><b id="title"></b></p>
+                <div style="margin-top:15px;"><b>办理流程</b></div>
+                <div style="margin-top:15px;">职工带齐材料至办理场所进行提取申请→工作人员进行审核→符合提取条件,把提取的住房公积金实时划转至职工关联的银行借记卡中</div>
+            </div>
+            <div style="padding:0 10px;">
+                <p><b>办理要件</b></p>
+                <img src="~/Images/购买新房、二手房.PNG" id="Images1" style="width:100%" onclick="srcipt:ShowImages();" />
+            </div>
+            <script>
+                $(function () {
+                    var title = decodeURI(getQueryStringByName("title"));
+                    $("#title").html(title);
+                });
+                function ShowImages() {
+                    var url = $("#Images1").attr("src");
+                    window.location.href = "../AlipayProvidentFund/ShowImages?url=" + url;
+                }
+                function Show() {
+                    window.location.href = "../AlipayProvidentFund/SelectCardPoint";
+                }
+            </script>
+        </div>
+    </div>
+

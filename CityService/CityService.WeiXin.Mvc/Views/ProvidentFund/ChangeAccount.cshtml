@@ -1,0 +1,75 @@
+﻿@model CityService.Service.Controllers.Models.User
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>修改用户</title>
+    <link href="~/Content/jquery.mobile-1.4.5.css" rel="stylesheet" />
+    <script src="~/Script/jquery-1.10.2.min.js"></script>
+    <script src="~/Script/extensions/base.js"></script>
+    <script src="~/Script/jquery.mobile-1.4.5.js"></script>
+    <script src="~/Script/jquery.validate-vsdoc.js"></script>
+    <script src="~/Script/jquery.validate.js"></script>
+    <script src="~/Script/jquery.validate.min.js"></script>
+    <script src="~/Script/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Script/jquery.validate.unobtrusive.min.js"></script>
+    <style>
+        .field-validation-error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="content" style="padding:0px;">
+            <div>
+                <img src="~/Image/苏州市住房公积金管理中心.jpg" style="width:100%;" />
+            </div>
+            <div>
+                @using (Html.BeginForm("ChangeAccount", "ProvidentFund", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <div>
+                        <table border="0" cellpadding="0" cellspacing="0" style="width:100%;line-height:48px;font-size:16px;">
+                            <thead>
+                                <tr>
+                                    <td colspan="2" style="padding-left:10px;font-size:20px;"><b>注册用户信息</b></td>
+                                </tr>
+                            </thead>
+                            <tbody style="background-color:#fff;">
+                                <tr>
+                                    <td width="30%" style="border-bottom:1px solid #ddd;padding-left:10px;">身份证号码</td>
+                                    <td width="65%" style="text-align:left;border-bottom:1px solid #ddd;padding-right:15px;">
+                                        @Html.DisplayFor(model => model.IDCard)
+                                    </td>
+                                </tr>
+                                <tr style="padding:0 10px;">
+                                    <td width="30%" style="border-bottom:1px solid #ddd;padding-left:10px;">公积金账户</td>
+                                    <td width="65%" style="text-align:right;border-bottom:1px solid #ddd;padding-right:15px;">
+                                        @Html.TextBoxFor(model => model.PFID, new { style = "width:70%;" })
+                                        @Html.ValidationMessageFor(model => model.PFID)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="30%" style="border-bottom:1px solid #ddd;padding-left:10px;">手机号码</td>
+                                    <td width="65%" style="text-align:right;border-bottom:1px solid #ddd;padding-right:15px;">
+                                        @Html.TextBoxFor(model => model.Phone)
+                                        @Html.ValidationMessageFor(model => model.Phone)
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <input type="text" value="@Session["OpenID"]" style="display:none;" />
+                    <div data-inline="true" style="padding-left:10px;padding-right:10px;">
+                        <input type="submit" value="提    交" style="opacity: .7;background-color:#f8a657;" />
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetInfoMgt">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetInfoMgtResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInfoMgtResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetcaseinfoByGuid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="guid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetcaseinfoByGuidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetcaseinfoByGuidResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServiceCompany">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetServiceCompanyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetServiceCompanyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServiceEquipment">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetServiceEquipmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetServiceEquipmentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Zwbst_GetInfoList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="time" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pi" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ps" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Zwbst_GetInfoListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Zwbst_GetInfoListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Zwbst_GetInfoDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Zwbst_GetInfoDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Zwbst_GetInfoDetailResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Zwbst_GetInfoEvalList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fk" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Zwbst_GetInfoEvalListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Zwbst_GetInfoEvalListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Zwbst_AddEval">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fk" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="score" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Zwbst_AddEvalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Zwbst_AddEvalResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Zwbst_GetBmdtType">
+        <s:complexType />
+      </s:element>
+      <s:element name="Zwbst_GetBmdtTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Zwbst_GetBmdtTypeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Zwbst_GetBmdtList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="typeguid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Zwbst_GetBmdtListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Zwbst_GetBmdtListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Zwbst_GetBmdtDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Zwbst_GetBmdtDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Zwbst_GetBmdtDetailResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Zwbst_GetShfwzList">
+        <s:complexType />
+      </s:element>
+      <s:element name="Zwbst_GetShfwzListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Zwbst_GetShfwzListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Zwbst_GetEntDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Zwbst_GetEntDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Zwbst_GetEntDetailResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Zwbst_GetEntSfbz">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Zwbst_GetEntSfbzResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Zwbst_GetEntSfbzResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Zwbst_Register">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Zwbst_RegisterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Zwbst_RegisterResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Zwbst_LoginAndBindAlipay">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="alipayId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Zwbst_LoginAndBindAlipayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Zwbst_LoginAndBindAlipayResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Zwbst_LoginByAlipay">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="alipayId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Zwbst_LoginByAlipayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Zwbst_LoginByAlipayResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetInfoMgtSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInfoMgt" />
+  </wsdl:message>
+  <wsdl:message name="GetInfoMgtSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInfoMgtResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetcaseinfoByGuidSoapIn">
+    <wsdl:part name="parameters" element="tns:GetcaseinfoByGuid" />
+  </wsdl:message>
+  <wsdl:message name="GetcaseinfoByGuidSoapOut">
+    <wsdl:part name="parameters" element="tns:GetcaseinfoByGuidResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceCompanySoapIn">
+    <wsdl:part name="parameters" element="tns:GetServiceCompany" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceCompanySoapOut">
+    <wsdl:part name="parameters" element="tns:GetServiceCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceEquipmentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServiceEquipment" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceEquipmentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServiceEquipmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="Zwbst_GetInfoListSoapIn">
+    <wsdl:part name="parameters" element="tns:Zwbst_GetInfoList" />
+  </wsdl:message>
+  <wsdl:message name="Zwbst_GetInfoListSoapOut">
+    <wsdl:part name="parameters" element="tns:Zwbst_GetInfoListResponse" />
+  </wsdl:message>
+  <wsdl:message name="Zwbst_GetInfoDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:Zwbst_GetInfoDetail" />
+  </wsdl:message>
+  <wsdl:message name="Zwbst_GetInfoDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:Zwbst_GetInfoDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="Zwbst_GetInfoEvalListSoapIn">
+    <wsdl:part name="parameters" element="tns:Zwbst_GetInfoEvalList" />
+  </wsdl:message>
+  <wsdl:message name="Zwbst_GetInfoEvalListSoapOut">
+    <wsdl:part name="parameters" element="tns:Zwbst_GetInfoEvalListResponse" />
+  </wsdl:message>
+  <wsdl:message name="Zwbst_AddEvalSoapIn">
+    <wsdl:part name="parameters" element="tns:Zwbst_AddEval" />
+  </wsdl:message>
+  <wsdl:message name="Zwbst_AddEvalSoapOut">
+    <wsdl:part name="parameters" element="tns:Zwbst_AddEvalResponse" />
+  </wsdl:message>
+  <wsdl:message name="Zwbst_GetBmdtTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:Zwbst_GetBmdtType" />
+  </wsdl:message>
+  <wsdl:message name="Zwbst_GetBmdtTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:Zwbst_GetBmdtTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="Zwbst_GetBmdtListSoapIn">
+    <wsdl:part name="parameters" element="tns:Zwbst_GetBmdtList" />
+  </wsdl:message>
+  <wsdl:message name="Zwbst_GetBmdtListSoapOut">
+    <wsdl:part name="parameters" element="tns:Zwbst_GetBmdtListResponse" />
+  </wsdl:message>
+  <wsdl:message name="Zwbst_GetBmdtDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:Zwbst_GetBmdtDetail" />
+  </wsdl:message>
+  <wsdl:message name="Zwbst_GetBmdtDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:Zwbst_GetBmdtDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="Zwbst_GetShfwzListSoapIn">
+    <wsdl:part name="parameters" element="tns:Zwbst_GetShfwzList" />
+  </wsdl:message>
+  <wsdl:message name="Zwbst_GetShfwzListSoapOut">
+    <wsdl:part name="parameters" element="tns:Zwbst_GetShfwzListResponse" />
+  </wsdl:message>
+  <wsdl:message name="Zwbst_GetEntDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:Zwbst_GetEntDetail" />
+  </wsdl:message>
+  <wsdl:message name="Zwbst_GetEntDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:Zwbst_GetEntDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="Zwbst_GetEntSfbzSoapIn">
+    <wsdl:part name="parameters" element="tns:Zwbst_GetEntSfbz" />
+  </wsdl:message>
+  <wsdl:message name="Zwbst_GetEntSfbzSoapOut">
+    <wsdl:part name="parameters" element="tns:Zwbst_GetEntSfbzResponse" />
+  </wsdl:message>
+  <wsdl:message name="Zwbst_RegisterSoapIn">
+    <wsdl:part name="parameters" element="tns:Zwbst_Register" />
+  </wsdl:message>
+  <wsdl:message name="Zwbst_RegisterSoapOut">
+    <wsdl:part name="parameters" element="tns:Zwbst_RegisterResponse" />
+  </wsdl:message>
+  <wsdl:message name="Zwbst_LoginAndBindAlipaySoapIn">
+    <wsdl:part name="parameters" element="tns:Zwbst_LoginAndBindAlipay" />
+  </wsdl:message>
+  <wsdl:message name="Zwbst_LoginAndBindAlipaySoapOut">
+    <wsdl:part name="parameters" element="tns:Zwbst_LoginAndBindAlipayResponse" />
+  </wsdl:message>
+  <wsdl:message name="Zwbst_LoginByAlipaySoapIn">
+    <wsdl:part name="parameters" element="tns:Zwbst_LoginByAlipay" />
+  </wsdl:message>
+  <wsdl:message name="Zwbst_LoginByAlipaySoapOut">
+    <wsdl:part name="parameters" element="tns:Zwbst_LoginByAlipayResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebService1Soap">
+    <wsdl:operation name="GetInfoMgt">
+      <wsdl:input message="tns:GetInfoMgtSoapIn" />
+      <wsdl:output message="tns:GetInfoMgtSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetcaseinfoByGuid">
+      <wsdl:input message="tns:GetcaseinfoByGuidSoapIn" />
+      <wsdl:output message="tns:GetcaseinfoByGuidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceCompany">
+      <wsdl:input message="tns:GetServiceCompanySoapIn" />
+      <wsdl:output message="tns:GetServiceCompanySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceEquipment">
+      <wsdl:input message="tns:GetServiceEquipmentSoapIn" />
+      <wsdl:output message="tns:GetServiceEquipmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Zwbst_GetInfoList">
+      <wsdl:input message="tns:Zwbst_GetInfoListSoapIn" />
+      <wsdl:output message="tns:Zwbst_GetInfoListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Zwbst_GetInfoDetail">
+      <wsdl:input message="tns:Zwbst_GetInfoDetailSoapIn" />
+      <wsdl:output message="tns:Zwbst_GetInfoDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Zwbst_GetInfoEvalList">
+      <wsdl:input message="tns:Zwbst_GetInfoEvalListSoapIn" />
+      <wsdl:output message="tns:Zwbst_GetInfoEvalListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Zwbst_AddEval">
+      <wsdl:input message="tns:Zwbst_AddEvalSoapIn" />
+      <wsdl:output message="tns:Zwbst_AddEvalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Zwbst_GetBmdtType">
+      <wsdl:input message="tns:Zwbst_GetBmdtTypeSoapIn" />
+      <wsdl:output message="tns:Zwbst_GetBmdtTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Zwbst_GetBmdtList">
+      <wsdl:input message="tns:Zwbst_GetBmdtListSoapIn" />
+      <wsdl:output message="tns:Zwbst_GetBmdtListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Zwbst_GetBmdtDetail">
+      <wsdl:input message="tns:Zwbst_GetBmdtDetailSoapIn" />
+      <wsdl:output message="tns:Zwbst_GetBmdtDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Zwbst_GetShfwzList">
+      <wsdl:input message="tns:Zwbst_GetShfwzListSoapIn" />
+      <wsdl:output message="tns:Zwbst_GetShfwzListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Zwbst_GetEntDetail">
+      <wsdl:input message="tns:Zwbst_GetEntDetailSoapIn" />
+      <wsdl:output message="tns:Zwbst_GetEntDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Zwbst_GetEntSfbz">
+      <wsdl:input message="tns:Zwbst_GetEntSfbzSoapIn" />
+      <wsdl:output message="tns:Zwbst_GetEntSfbzSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Zwbst_Register">
+      <wsdl:input message="tns:Zwbst_RegisterSoapIn" />
+      <wsdl:output message="tns:Zwbst_RegisterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Zwbst_LoginAndBindAlipay">
+      <wsdl:input message="tns:Zwbst_LoginAndBindAlipaySoapIn" />
+      <wsdl:output message="tns:Zwbst_LoginAndBindAlipaySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Zwbst_LoginByAlipay">
+      <wsdl:input message="tns:Zwbst_LoginByAlipaySoapIn" />
+      <wsdl:output message="tns:Zwbst_LoginByAlipaySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetInfoMgt">
+      <soap:operation soapAction="http://tempuri.org/GetInfoMgt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetcaseinfoByGuid">
+      <soap:operation soapAction="http://tempuri.org/GetcaseinfoByGuid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceCompany">
+      <soap:operation soapAction="http://tempuri.org/GetServiceCompany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceEquipment">
+      <soap:operation soapAction="http://tempuri.org/GetServiceEquipment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zwbst_GetInfoList">
+      <soap:operation soapAction="http://tempuri.org/Zwbst_GetInfoList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zwbst_GetInfoDetail">
+      <soap:operation soapAction="http://tempuri.org/Zwbst_GetInfoDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zwbst_GetInfoEvalList">
+      <soap:operation soapAction="http://tempuri.org/Zwbst_GetInfoEvalList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zwbst_AddEval">
+      <soap:operation soapAction="http://tempuri.org/Zwbst_AddEval" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zwbst_GetBmdtType">
+      <soap:operation soapAction="http://tempuri.org/Zwbst_GetBmdtType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zwbst_GetBmdtList">
+      <soap:operation soapAction="http://tempuri.org/Zwbst_GetBmdtList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zwbst_GetBmdtDetail">
+      <soap:operation soapAction="http://tempuri.org/Zwbst_GetBmdtDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zwbst_GetShfwzList">
+      <soap:operation soapAction="http://tempuri.org/Zwbst_GetShfwzList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zwbst_GetEntDetail">
+      <soap:operation soapAction="http://tempuri.org/Zwbst_GetEntDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zwbst_GetEntSfbz">
+      <soap:operation soapAction="http://tempuri.org/Zwbst_GetEntSfbz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zwbst_Register">
+      <soap:operation soapAction="http://tempuri.org/Zwbst_Register" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zwbst_LoginAndBindAlipay">
+      <soap:operation soapAction="http://tempuri.org/Zwbst_LoginAndBindAlipay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zwbst_LoginByAlipay">
+      <soap:operation soapAction="http://tempuri.org/Zwbst_LoginByAlipay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetInfoMgt">
+      <soap12:operation soapAction="http://tempuri.org/GetInfoMgt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetcaseinfoByGuid">
+      <soap12:operation soapAction="http://tempuri.org/GetcaseinfoByGuid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceCompany">
+      <soap12:operation soapAction="http://tempuri.org/GetServiceCompany" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceEquipment">
+      <soap12:operation soapAction="http://tempuri.org/GetServiceEquipment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zwbst_GetInfoList">
+      <soap12:operation soapAction="http://tempuri.org/Zwbst_GetInfoList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zwbst_GetInfoDetail">
+      <soap12:operation soapAction="http://tempuri.org/Zwbst_GetInfoDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zwbst_GetInfoEvalList">
+      <soap12:operation soapAction="http://tempuri.org/Zwbst_GetInfoEvalList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zwbst_AddEval">
+      <soap12:operation soapAction="http://tempuri.org/Zwbst_AddEval" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zwbst_GetBmdtType">
+      <soap12:operation soapAction="http://tempuri.org/Zwbst_GetBmdtType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zwbst_GetBmdtList">
+      <soap12:operation soapAction="http://tempuri.org/Zwbst_GetBmdtList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zwbst_GetBmdtDetail">
+      <soap12:operation soapAction="http://tempuri.org/Zwbst_GetBmdtDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zwbst_GetShfwzList">
+      <soap12:operation soapAction="http://tempuri.org/Zwbst_GetShfwzList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zwbst_GetEntDetail">
+      <soap12:operation soapAction="http://tempuri.org/Zwbst_GetEntDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zwbst_GetEntSfbz">
+      <soap12:operation soapAction="http://tempuri.org/Zwbst_GetEntSfbz" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zwbst_Register">
+      <soap12:operation soapAction="http://tempuri.org/Zwbst_Register" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zwbst_LoginAndBindAlipay">
+      <soap12:operation soapAction="http://tempuri.org/Zwbst_LoginAndBindAlipay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zwbst_LoginByAlipay">
+      <soap12:operation soapAction="http://tempuri.org/Zwbst_LoginByAlipay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService1">
+    <wsdl:port name="WebService1Soap" binding="tns:WebService1Soap">
+      <soap:address location="http://58.210.227.103:8085/WebService1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1Soap12" binding="tns:WebService1Soap12">
+      <soap12:address location="http://58.210.227.103:8085/WebService1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

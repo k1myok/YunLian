@@ -1,0 +1,288 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>我的理赔列表</title>
+<meta charset="utf-8"/>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <link href="../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/toast.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/button.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/dialog.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/button-group.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../Scripts/extensions/base.js"></script>
+    <script type="text/javascript" src="../Content/alipay/amui-demo_files/amui.js"></script>
+    <style>
+        .am-list-label {
+            min-width:28%;
+        }
+        .am-list-control {
+          text-align:left;
+        }
+    </style>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="content" style="background-color:#EFEFF4;padding-top:15px;">
+            <div class="am-list am-list-5lb" am-mode="flat form">
+                <div class="am-list-body" id="result">
+                
+                
+  
+
+                </div>
+                </div>
+            </div>
+        </div>
+    <div id="fuwu" style="display: block;font-family:STHeitiSC;font-size: 12px; margin-bottom: 15px;margin-top:20px; margin-left: 0px; width: 100%; text-align: center;bottom: 0px;z-index:-1;">
+        <div class="am-agreement am-ft-gray am-ft-sm">
+            <p>
+                本服务由苏州市公安局<br />苏州云联智慧信息技术应用有限公司提供支持
+            </p>
+        </div>
+    </div>
+ <script type="text/javascript">
+    $(function (){ GetMyHistory() });
+    function GetMyHistory() {
+        var start_date = getQueryStringByName("start_date");
+        var end_date = getQueryStringByName("end_date");
+        var card_num = decodeURI(getQueryStringByName("card_num"));
+        var page_index = 1;
+        var url = "../../Cityservice.Service/PoliceService.svc/TrafficHistory";
+        $.ajax(url, {
+            type: 'Get',
+            datatype: 'json',
+            data: {
+                userid: 1693335,
+                page_index: 1,
+                start_date: start_date,
+                end_date: end_date,
+                card_num: card_num
+            },
+            success: function (msg) {
+                //addtolist(msg);
+                alert(msg);
+                var temp = JSON.parse(msg);
+                if (temp.succ == true && temp.data.list != "") {
+                    addTolist(temp.data.list);
+                }
+                else {
+                    alert("未查到相关信息");
+                }
+            },
+            error: function () {
+
+            },
+            complete: function () {
+            },
+        });
+    }
+ function addTolist(msg)
+  {
+     var ht = "";
+     $.each(msg, function () {
+         ht+= '<div class="am-list" am-mode="radius">' +
+             '<div class="am-list-item am-input-autoclear">' +
+                         '<div class="am-list-label">事故编号</div>' +
+                         '<div class="am-list-control" id="+this.accidentId+"">' +
+                         "" + this.accidentId + "" +
+                         '</div>' +
+                         '<div class="am-list-clear"><i class="am-icon-clear am-icon" am-mode="clear"></i></div>' +
+                       ' </div>' +
+                       '<div class="am-list-item am-input-autoclear">' +
+                         '<div class="am-list-label">事故时间</div>' +
+                         '<div class="am-list-control">' +
+                         "" + format(this.occurTime) + "" +
+                         '</div>' +
+                         '<div class="am-list-clear"><i class="am-icon-clear am-icon" am-mode="clear"></i></div>' +
+                         ' </div>' +
+                         '<div class="am-list-item am-input-autoclear">' +
+                         '<div class="am-list-label">事故地点</div>' +
+                         '<div class="am-list-control">' +
+                         "" + this.position + "" +
+                         '</div>' +
+                         '<div class="am-list-clear"><i class="am-icon-clear am-icon" am-mode="clear"></i></div>' +
+                         ' </div>' +
+                         '<div class="am-list-item am-input-autoclear" >' +
+                         '<div class="am-list-label"style="am-ft-left">事故原因</div>' +
+                         '<div class="am-list-control">' +
+                         "" + this.description + "" +
+                         '</div>' +
+                         '<div class="am-list-clear"><i class="am-icon-clear am-icon" am-mode="clear"></i></div>' +
+                         ' </div>' +
+                         '<div class="am-list-item am-input-autoclear">' +
+                         '<div class="am-list-label">个人驾驶证号</div>' +
+                         '<div class="am-list-control">' +
+                         "" + this.licenseA + "" +
+                         '</div>' +
+                         '<div class="am-list-clear"><i class="am-icon-clear am-icon" am-mode="clear"></i></div>' +
+                         ' </div>' +
+                         '<div class="am-list-item am-input-autoclear">' +
+                         '<div class="am-list-label">个人手机号码</div>' +
+                         '<div class="am-list-control">' +
+                         "" + this.telA + "" +
+                         '</div>' +
+                         '<div class="am-list-clear"><i class="am-icon-clear am-icon" am-mode="clear"></i></div>' +
+                         ' </div>' +
+                         '<div class="am-list-item am-input-autoclear">' +
+                         '<div class="am-list-label">个人车牌号</div>' +
+                         '<div class="am-list-control">' +
+                         "" + this.lpnA + "" +
+                         '</div>' +
+                         '<div class="am-list-clear"><i class="am-icon-clear am-icon" am-mode="clear"></i></div>' +
+                         ' </div>' +
+                         '<div class="am-list-item am-input-autoclear">' +
+                         '<div class="am-list-label">个人事故责任</div>' +
+                         '<div class="am-list-control">' +
+                         "" + liability(this.liabilityA) + "" +
+                         '</div>' +
+                         '<div class="am-list-clear"><i class="am-icon-clear am-icon" am-mode="clear"></i></div>' +
+                       ' </div>' +
+                        "<a class='am-list-item'  href=TrafficPic.html?accident_id=" + encodeURI(this.accidentId) + ">" +
+                         '<div class="am-list-label">强制保险标志背面照</div>' +
+                         '<div class="am-list-control">' +
+                         "" +  + "" +
+                         '</div>' +
+                        '<div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>' +
+                       ' </a>' +
+
+       '<div class="am-list-item am-input-autoclear">' +
+                         '<div class="am-list-label">对方驾驶证号</div>' +
+                         '<div class="am-list-control">' +
+                         "" + this.licenseB + "" +
+                         '</div>' +
+                         '<div class="am-list-clear"><i class="am-icon-clear am-icon" am-mode="clear"></i></div>' +
+                       ' </div>' +
+
+       '<div class="am-list-item am-input-autoclear">' +
+                         '<div class="am-list-label">对方手机号码</div>' +
+                         '<div class="am-list-control">' +
+                         "" + this.telB + "" +
+                         '</div>' +
+                         '<div class="am-list-clear"><i class="am-icon-clear am-icon" am-mode="clear"></i></div>' +
+                       ' </div>' +
+
+       '<div class="am-list-item am-input-autoclear">' +
+                         '<div class="am-list-label">对方车牌号</div>' +
+                         '<div class="am-list-control">' +
+                         "" + this.lpnB + "" +
+                         '</div>' +
+                         '<div class="am-list-clear"><i class="am-icon-clear am-icon" am-mode="clear"></i></div>' +
+                       ' </div>' +
+
+                        '<div class="am-list-item am-input-autoclear">' +
+                         '<div class="am-list-label">对方事故责任</div>' +
+                         '<div class="am-list-control">' +
+                         "" + liability(this.liabilityB) + "" +
+                         '</div>' +
+                         '<div class="am-list-clear"><i class="am-icon-clear am-icon" am-mode="clear"></i></div>' +
+                       ' </div>' +
+
+                        '<div class="am-list-item am-input-autoclear">' +
+                         '<div class="am-list-label">强制保险表示背面照</div>' +
+                         '<div class="am-list-control">' +
+                         "" +  + "" +
+                         '</div>' +
+                         '<div class="am-list-clear"><i class="am-icon-clear am-icon" am-mode="clear"></i></div>' +
+                       ' </div>' +
+
+                         '</div>';
+                     });
+                   $("#result").html(ht);
+            }
+ function status(type)
+                        {
+     var res = "";
+     switch (type)
+     {
+         case 1:
+             res = "上报成功，等对方上传";
+             break;
+         case 2:
+             res = "状态完成";
+             break;
+         case 3:
+             res = "状态过期";
+             break;;
+     }
+     return res;
+                        }
+ function liability(type)
+                        {
+     var liability = "";
+     switch (type)
+     {
+         case 1:
+             liability = "无责";
+             break;
+         case 2:
+             liability = "同责";
+             break;
+         case 3:
+             liability = "全责";
+             break;
+     }
+     return liability;
+                        }
+ function getDate(tm)
+                        {
+     //var tt = new Date(parseInt(tm)).toLocaleString().replace(/年|月/g, "-").replace(/日/g, " ")
+      var tt = new Date(tm).toLocaleString()
+     return tt;
+                        }
+ function add0(m) { return m < 10 ? '0' + m : m }
+ function format(shijianchuo) {
+     //shijianchuo是整数，否则要parseInt转换
+     var time = new Date(shijianchuo);
+     var y = time.getFullYear();
+     var m = time.getMonth() + 1;
+     var d = time.getDate();
+     var h = time.getHours();
+     var mm = time.getMinutes();
+     var s = time.getSeconds();
+     return y + '-' + add0(m) + '-' + add0(d) + ' ' + add0(h) + ':' + add0(mm) + ':' + add0(s);
+                        }
+                        function filePath(type)
+                        {
+     var filePath = "";
+     switch (type)
+     {
+         case "1":
+             filePath = "本人驾驶证照片";
+             break;
+         case "2":
+             filePath = "本人保险照片";
+             break;
+         case "3":
+             filePath = "对方驾驶证照片";
+             break;
+         case "4":
+             filePath = "对方保险标志背面朝片";
+             break;
+         case "5":
+             filePath = "车头方向照片";
+             break;
+         case "6":
+             filePath = "车位方向照片";
+             break;
+         case "7":
+             filePath = "碰撞部位照片";
+             break;
+           
+
+     }
+
+
+
+
+
+
+                        }
+
+                    </script>
+
+</body>
+</html>

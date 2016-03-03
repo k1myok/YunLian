@@ -1,0 +1,56 @@
+﻿  @{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>贷款业务受理点</title>
+    <link href="~/Content/jquery.mobile-1.4.5.css" rel="stylesheet" />
+    <script src="~/Script/jquery-1.10.2.min.js"></script>
+    <script src="~/Script/extensions/base.js"></script>
+    <script src="~/Script/jquery.mobile-1.4.5.js"></script>
+    <style>
+        .ui-page-theme-a .ui-btn, html .ui-bar-a .ui-btn, html .ui-body-a .ui-btn, html body .ui-group-theme-a .ui-btn, html head + body .ui-btn.ui-btn-a, .ui-page-theme-a .ui-btn:visited, html .ui-bar-a .ui-btn:visited, html .ui-body-a .ui-btn:visited, html body .ui-group-theme-a .ui-btn:visited, html head + body .ui-btn.ui-btn-a:visited {
+            background-color: #fff;
+            border-color: #ddd;
+            color: #333;
+            text-shadow: 0 1px 0 #f3f3f3;
+        }
+    </style>
+</head>
+<body>
+    <div data-role="page">
+        <script>
+            function Show(address) {
+                window.location.href = '../ProvidentFund/SelectPointResult?address=' + address;
+            }
+        </script>
+        <div data-role="content" style="padding:0 0 10px 0;">
+            <div>
+                <img src="~/Image/苏州市住房公积金管理中心.jpg" style="width:100%;" />
+            </div>
+            <div style="padding-top:10px;">
+                <div style="padding-bottom:10px;padding-left:10px;">
+                    <span style="font-size:20px;"><b>贷款业务受理点</b></span>
+                </div>
+                <ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow" style="margin:0px;">
+                    <li><a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('苏州干将东路877号')"><h2>姑苏分中心</h2><p>地址：干将东路877号</p><p>热线：12329</p></a></li>
+                    <li><a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('苏州高新区狮山路2号')"><h2>虎丘分中心</h2>  <p>地址：高新区狮山路2号，新创大厦一楼(门朝运河路)</p><p>热线：12329</p></a></li>
+                    <li><a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('张家港杨舍镇人民中路5号')"><h2>张家港分中心</h2> <p>地址：杨舍镇人民中路5号</p><p>热线：12345</p></a></li>
+                    <li><a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('常熟虞山镇海虞北路36号')"><h2>常熟分中心</h2> <p>地址：虞山镇海虞北路36号</p><p>热线：12345</p></a></li>
+                    <li><a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('昆山开发区前进东路586号')"><h2>昆山分中心</h2> <p>地址：开发区前进东路586号</p><p>热线：12345</p></a></li>
+                    <li><a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('太仓市县府东街99号')"><h2>太仓分中心</h2> <p>地址：太仓市县府东街99号</p><p>热线：12345</p></a></li>
+                    <li><a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('苏州吴江开平路789号金城大厦二楼')"><h2>吴江分中心</h2> <p>地址：开平路789号金城大厦二楼</p><p>热线：12329</p></a></li>
+                    <li><a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('苏州吴江盛泽镇舜湖西路2099号')"><h2>盛泽管理部</h2> <p>地址：盛泽镇舜湖西路2099号</p><p>热线：12329</p></a></li>
+                    <li><a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('苏州吴中区天灵路98号')"><h2>吴中分中心</h2> <p>地址：吴中区天灵路98号</p><p>热线：12329</p></a></li>
+                    <li><a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('苏州相城区采莲路1122号')"><h2>相城分中心</h2> <p>地址：相城区采莲路1122号</p><p>热线：12329</p></a></li>
+                </ul>
+            </div>
+            <div style="bottom:0px;">
+                <img src="~/Image/公积金官方微信.png" style="width:100%;" />
+            </div>
+        </div>
+    </div>
+</body>
+</html>

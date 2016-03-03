@@ -1,0 +1,330 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+
+    <title>检验报告信息</title>
+    <link href="../Content/amui-demo_files/demo.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../Content/alipay/amui-demo_files/amui.js"></script>
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/amui.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/agreement.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/article.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/city-select.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/timeline.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/page-result.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/iconfont.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/button-group.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/search.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/top-notice.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/toast.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/message.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/dialog.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/card.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/header.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/switch.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/simple-password.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/form.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/message(1).css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/amui-demo_files/demo.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../Content/alipay/button.css" media="all">
+    <script charset="utf-8" src="../Content/alipay/amui-demo_files/zepto.js"></script>
+    <script charset="utf-8" src="../Content/alipay/amui-demo_files/amui.js"></script>
+    <script type="text/javascript" src="../Scripts/extensions/base.js"></script>
+    <style>
+        [data-tag=labinfo] {
+            color:black
+        }
+        .am-list-content{
+            color:rgb(102,102,102);
+        }
+
+    </style>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="header" class="am-header" style="display:none;">
+        </div>
+        <div data-role="content">
+            <div class="am-toast" id="toast">
+                <div class="am-toast-text">
+                    <span class="am-toast-icon am-icon" am-mode="toast-loading"></span> 正在努力查询...
+                </div>
+            </div>
+            <div class="am-card" id="cardContainer">
+                <div id="resultDiv" class="am-page-result-wrap" style="margin-top:125px; text-align:center;display:none">
+                    <div class="am-page-result-pic">
+                        <img src="../Images/empty.png" width="138" height="138">
+                    </div>
+                    <div class="am-page-result-title" style="color:#8F8F95; font-size:16px; margin-top:25px;font-family:stheitisc">未查询到记录</div>
+                    <div class="am-page-result-brief" style="color:#8F8F95; font-size:16px; margin-top:8px;font-family:stheitisc">请返回并重新查询报告信息</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-role="page" id="detailDiv" style="display:none">
+        <div data-role="content">
+            <div class="am-list" am-mode="flat chip">
+                <div class="am-list-header">个人信息</div>
+                <div class="am-list-body">
+                    <div class="am-list-item">
+                        <div class="am-list-content">姓名</div>
+                        <div class="am-list-control" id="detailName"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">性别</div>
+                        <div class="am-list-control" id="detailSex"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">年龄</div>
+                        <div class="am-list-control" id="detailAge"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="am-list" am-mode="flat chip">
+                <div class="am-list-header">就医卡信息</div>
+                <div class="am-list-body">
+                    <div class="am-list-item">
+                        <div class="am-list-content">类型</div>
+                        <div class="am-list-control" id="OTHERCARDTYPE" data-tag="labinfo"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">号码</div>
+                        <div class="am-list-control" id="OTHERCARDNO" data-tag="labinfo"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="am-list" am-mode="flat chip">
+                <div class="am-list-header">就医卡地点信息</div>
+                <div class="am-list-body">
+                    <div class="am-list-item">
+                        <div class="am-list-content">门诊/急诊/住院/体检</div>
+                        <div class="am-list-control" id="OP_EM_HP_EX_MARK" data-tag="labinfo"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">申请机构</div>
+                        <div class="am-list-control" id="APP_ORGAN_CODE" data-tag="labinfo"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="am-list" am-mode="flat chip">
+                <div class="am-list-header">报告基本信息</div>
+                <div class="am-list-body">
+                    <div class="am-list-item">
+                        <div class="am-list-content">检验报告单号</div>
+                        <div class="am-list-control" id="RPT_CODE" data-tag="labinfo"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">报告单类别代码</div>
+                        <div class="am-list-control" id="RPT_CAT_TYPE" data-tag="labinfo"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">报告单类别名称</div>
+                        <div class="am-list-control" id="RPT_CAT_NAME" data-tag="labinfo"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">申请医生</div>
+                        <div class="am-list-control" id="APP_DOC_IDCARD" data-tag="labinfo"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">申请日期和时间</div>
+                        <div class="am-list-control" id="APPLY_DT" data-tag="labinfo"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">接收标本时间</div>
+                        <div class="am-list-control" id="ACCEPT_DT" data-tag="labinfo"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="am-list" am-mode="flat chip">
+                <div class="am-list-header">设备仪器信息</div>
+                <div class="am-list-body">
+                    <div class="am-list-item">
+                        <div class="am-list-content">设备类别代码</div>
+                        <div class="am-list-control" id="EQPT_CAT_CODE" data-tag="labinfo"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">仪器编号</div>
+                        <div class="am-list-control" id="EQPT_NO" data-tag="labinfo"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">仪器名称</div>
+                        <div class="am-list-control" id="EQPT_NAME" data-tag="labinfo"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="am-list" am-mode="flat chip">
+                <div class="am-list-header">检验审核信息</div>
+                <div class="am-list-body">
+                    <div class="am-list-item">
+                        <div class="am-list-content">检验方法</div>
+                        <div class="am-list-control" id="TESTMETHOD" data-tag="labinfo"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">检验机构</div>
+                        <div class="am-list-control" id="TEST_ORGAN_CODE" data-tag="labinfo"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">出具报告医师身份证</div>
+                        <div class="am-list-control" id="RPT_IDCARD" data-tag="labinfo"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">审核医师姓名</div>
+                        <div class="am-list-control" id="RV_NAME" data-tag="labinfo"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">审核医师身份证号</div>
+                        <div class="am-list-control" id="RV_IDCARD" data-tag="labinfo"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="am-list" am-mode="flat chip">
+                <div class="am-list-header">检验指标详细信息<a style="color:red">（红色数值代表不在正常值范围）</a></div>
+                <div class="am-list-body">
+                    <div class="am-card" id="cardCoainter">
+                        <div class="am-card-item">
+                            <div class="am-card-item-header">
+                                <h3 class="am-card-item-title">白细胞计数</h3>
+                            </div>
+                            <div class="am-card-item-content">
+                                <div class="am-card-item-brief">
+                                    <div class="am-card-item-brief" style="margin-top:15px;">检验结果</div>
+                                    <div class="am-card-item-brief" style="text-align:center; margin-top:-33px;">参考下限</div>
+                                    <div class="am-card-item-brief" style="text-align:right; margin-top:-33px">参考上限</div>
+
+                                    <div class="am-card-item-brief" style="margin-top:-10px;">检验结果</div>
+                                    <div class="am-card-item-brief" style="text-align:center; margin-top:-33px;">参考下限</div>
+                                    <div class="am-card-item-brief" style="text-align:right; margin-top:-33px">参考上限</div>
+
+                                </div>
+                                <div class="am-card-item-footnote">
+                                    <div class="am-card-item-origin">提示</div>
+                                    <div class="am-card-item-tims"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="am-list" am-mode="flat chip">
+                <div class="am-list-header">其它信息</div>
+                <div class="am-list-body">
+                    <div class="am-list-item">
+                        <div class="am-list-content">检验医生</div>
+                        <div class="am-list-control" id="TEST_DOC_IDCARD" data-tag="labinfo"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">审核者</div>
+                        <div class="am-list-control" id="RV_NAME" data-tag="labinfo"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">标本采样时间</div>
+                        <div class="am-list-control" id="SAMP_DT" data-tag="labinfo"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">检验时间</div>
+                        <div class="am-list-control" id="TEST_DT" data-tag="labinfo"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">报告时间</div>
+                        <div class="am-list-control" id="RPT_DT" data-tag="labinfo"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        $(function () {
+            $("#detailDiv").hide();
+
+            search();
+        })
+
+        function search() {
+            $("#toast").show();
+            var url = "../../CityService.Service/HospitalInfoService.svc/GetLabReport";
+
+            var idCard = decodeURI(getQueryStringByName("idCard"));
+            var labOrOutpatientNumber = decodeURI(getQueryStringByName("labOrOutpatientNumber"));
+
+            var args = $.parseJSON('{"idCard":"' + idCard + '","labOrOutpatientNumber":"' + labOrOutpatientNumber + '"}');
+            $.ajax(url, {
+                type: 'get',
+                contentType: 'text/json',
+                data: args,
+                success: function (msg) {
+                    if (msg.d == "")
+                        return;
+                    var reuslt = $(msg.d);
+                    var isSucess = reuslt.find('Result').find('ResultCode').text();
+                    if (isSucess != "1")
+                        $("#resultDiv").show();
+                    else {
+                        $("#detailDiv").show();
+
+                        var person = reuslt.find('Person');
+                        document.getElementById("detailName").innerHTML = person.find("Name").text();
+                        document.getElementById("detailSex").innerHTML = person.find("Sex").text();
+                        document.getElementById("detailAge").innerHTML = person.find("Age").text();
+                        addToList($(msg.d).find('Documents').find('LabDocument').first());
+                    }
+                },
+                error: function (xhr) {
+                },
+                complete: function () {
+                    $("#toast").hide();
+                }
+            });
+        }
+
+        function addToList(ele) {
+            var element = $(ele);
+            $.each($("div[data-tag='labinfo']"), function () {
+                var target = $(this);
+                var id = target[0].id;
+                target.html(element.find(id).text());
+            });
+            addHealth(element.find("JYJGMXs"));
+        }
+
+        function addHealth(parentXML) {
+            var elements = parentXML.find("JYJGMX");
+            var content = "";
+            $.each(elements, function () {
+                var element = $(this);
+                var value = parseFloat(element.find("NO_RPT").text());
+                var maxValue = parseFloat(element.find("UNL").text());
+                var minValue = parseFloat(element.find("LNL").text());
+                var unit = element.find("RPT_UNIT").text();
+                if (unit != "")
+                    unit = "(单位：" + unit + ")";
+                
+                var color = value < minValue || value > maxValue ? "red" : "black";
+                content = content +
+                    '<div class="am-card-item">' +
+                        '<div class="am-card-item-header">' +
+                            '<h3 class="am-card-item-title">' + element.find("EX_PROJ_NAME").text() + unit + '</h3>' +
+                        '</div>' +
+                        '<div class="am-card-item-content">' +
+                            '<div class="am-card-item-brief">' +
+                                '<div class="am-card-item-brief" style="margin-top:15px;color:rgb(102,102,102)">检验结果</div>' +
+                                '<div class="am-card-item-brief" style="text-align:center; margin-top:-33px;color:rgb(102,102,102)">参考下限</div>' +
+                                '<div class="am-card-item-brief" style="text-align:right; margin-top:-33px;color:rgb(102,102,102)">参考上限</div>' +
+
+                                '<div class="am-card-item-brief" style="margin-top:-10px;color:' + color + '">' + value + '</div>' +
+                                '<div class="am-card-item-brief" style="text-align:center; margin-top:-33px;color:balck' + '">' + minValue + '</div>' +
+                                '<div class="am-card-item-brief" style="text-align:right; margin-top:-33px;color:balck' + '">' + maxValue + '</div>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>';
+            });
+            $("#cardCoainter").html(content);
+        }
+    </script>
+</body>
+</html>

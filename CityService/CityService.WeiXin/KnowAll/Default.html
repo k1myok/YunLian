@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>政务百事通</title>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+
+    <link href="../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/toast.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/button.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/dialog.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/button-group.css" type="text/css" rel="stylesheet" />
+
+    <script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../Scripts/extensions/base.js"></script>
+    <script type="text/javascript" src="../Content/alipay/amui-demo_files/amui.js"></script>
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=2ffb8bddf5f3620892d0bb3051b23777"></script>
+
+    <style type="text/css">
+        body {
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+        }
+        #mapContainer {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="content" style="background-color:#EFEFF4">
+            <div class="am-list am-list-5lb" am-mode="flat chip form">
+                <div class="am-list">
+                    <div class="am-list-body" id="list">
+                        <a href="Convenient.html?Type=1" class="am-list-item">
+                            <div class="am-list-content">便民公告</div>
+                            <div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>
+                        </a>
+                        <a href="Convenient.html?Type=2" class="am-list-item">
+                            <div class="am-list-content">政务信息</div>
+                            <div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>
+                        </a>
+                        <!--<a href="ConvenientMap" class="am-list-item">
+                            <div class="am-list-content">便民地图</div>
+                            <div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>
+                        </a>-->
+                        <!--<a href="GetSHFWZList.html" class="am-list-item">
+                            <div class="am-list-content">生活服务站</div>
+                            <div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>
+                        </a>-->
+                    </div>
+                </div>
+                </div>
+        </div>
+    </div>
+
+    <div id="fuwu" style="display: block;font-family:STHeitiSC  ;font-size: 12px; margin-bottom: 15px; margin-left: 0px; width: 100%; text-align: center; bottom: 0px;z-index:-1;margin-top:20px;">
+        <div class="am-agreement am-ft-gray am-ft-sm">
+            <p>
+                本服务由<br />苏州云联智慧信息技术应用有限公司提供支持
+            </p>
+        </div>
+    </div>
+
+
+
+    <script>
+
+
+
+        //飞飞原代码
+        //var map;
+        //var geolocation;
+        //$(function () {
+        //    $("#toast").show();
+        //    addPlaces();
+        //});
+
+        //function addPlaces() {
+        //    var url = '../../CityService.Service/KnowAllService.svc/GetInfo';
+        //    $.ajax(url, {
+        //        type: 'get',
+        //        contentType: 'text/json',
+        //        success: function (msg) {
+        //            if (msg.d == null)
+        //                return;
+        //            addPlacesToList($.parseJSON(msg.d));
+        //        },
+        //        error: function (xhr) {
+        //        },
+        //        complete: function () {
+        //            $("#toast").hide();
+        //        }
+        //    });
+        //}
+
+        //function addPlacesToList(entityList) {
+        //    if (entityList == null)
+        //        return;
+
+        //    var content = "";
+        //    $.each(entityList.asim_info, function () {
+        //        content += '<a class="am-list-item" href=Detail.html?Guid='+this.GUID+ '&INFOTITLE='+ this.INFOTITLE +'>' +
+        //                        '<div class="am-list-content">' + this.INFOTITLE + '</div>' +
+        //                        '<div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>' +
+        //                    '</a>';
+        //    });
+        //    $("#list").html(content);
+
+        //}
+
+    </script>
+</body>
+
+</html>

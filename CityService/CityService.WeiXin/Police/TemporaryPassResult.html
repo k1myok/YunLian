@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>临时通行证查询结果</title>
+    <meta charset='UTF-8'>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <link href="../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/toast.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/button.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/dialog.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/button-group.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/card.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../Scripts/extensions/base.js"></script>
+    <script type="text/javascript" src="../Content/alipay/amui-demo_files/amui.js"></script>
+</head>
+<body>
+    <div data-role="page" id="detailDiv">
+        <div data-role="content" style="background-color:#EFEFF4">
+            <div class="am-list" am-mode="flat chip">
+                <div class="am-toast" id="toast">
+                    <div class="am-toast-text">
+                        <span class="am-toast-icon am-icon" am-mode="toast-loading"></span> 正在查询...
+                    </div>
+                </div>
+
+
+                <div class="am-list-header">临时通行证信息</div>
+                <div class="am-list" am-mode="radius">
+                    <div class="am-list-body">
+                        <div class="am-list-item">
+                            <div class="am-list-content">负责人</div>
+                            <div class="am-list-control" id="fzr"></div>
+                        </div>
+                        <div class="am-list-item">
+                            <div class="am-list-content">申请时段</div>
+                            <div class="am-list-control" id="yxq"></div>
+                        </div>
+                        <div class="am-list-item">
+                            <div class="am-list-content">工地所在地管辖大队</div>
+                            <div class="am-list-control" id="gxdx"></div>
+                        </div>
+                        <div class="am-list-item">
+                            <div class="am-list-content">运载物品</div>
+                            <div class="am-list-control" id="yzwp"></div>
+                        </div>
+                        <div class="am-list-item">
+                            <div class="am-list-content">行驶证车牌号</div>
+                            <div class="am-list-control" id="cph"></div>
+                        </div>
+                        <div class="am-list-item">
+                            <div class="am-list-content">联系电话</div>
+                            <div class="am-list-control" id="lxdh"></div>
+                        </div>
+                        <div class="am-list-item">
+                            <div class="am-list-content">申请说明和理由</div>
+                            <div class="am-list-control" id="sqsy"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="am-card" style="margin:0 10px;">
+                <div class="am-card-item">
+                    <div class="am-card-item-header">
+                        <h3 class="am-card-item-title">行驶路线</h3>
+                    </div>
+                    <div class="am-card-item-content">
+                        <div class="am-card-item-subject">
+                            <p class="am-ft-orange" id="xslx"></p>
+                        </div>
+                        <div class="am-card-item-brief">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="padding-left:15px;padding-right:15px;margin-top:15PX;">
+        <button id="searchButton" type="button" class="am-button" am-mode="blue" onclick="turn()">完成查询</button>
+    </div>
+
+    <div id="fuwu" style="display: block;font-family:STHeitiSC;font-size: 12px; margin-bottom: 15px; margin-top:10px;margin-left: 0px; width: 100%; text-align: center; bottom: 0px;z-index:-1;">
+        <div class="am-agreement am-ft-gray am-ft-sm">
+            <p>
+                本服务由苏州市公安局提供支持
+            </p>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            var tempPass = decodeURI(getQueryStringByName("tempPass"));
+            $("#toast").show();
+            var url = "../../CityService.Service/PoliceService.svc/SelectTemporaryPassInfo";
+            $.ajax(url, {
+                type: 'get',
+                contentType: 'text/json',
+                data: "tempPass=" + tempPass,
+                success: function (msg) {
+                    var temp = JSON.parse(msg);
+                    if (temp.succ != true) {
+                        window.location.href = "SelectTemporaryPass.html";
+                    } else {
+                        $("#fzr").html(temp.data.fzr);
+                        $("#yxq").html(temp.data.yxq);
+                        $("#gxdx").html(temp.data.gxdx);
+                        $("#yzwp").html(temp.data.yzwp);
+                        $("#cph").html(temp.data.cph);
+                        $("#lxdh").html(temp.data.lxdh);
+                        $("#sqsy").html(temp.data.sqsy);
+                        var xslx = temp.data.xslx.toString().replace("@", "<br/>");
+
+                        $("#xslx").html(xslx);
+                    }
+                },
+                error: function (xhr) {
+                },
+                complete: function () {
+                    $("#toast").hide();
+                }
+            });
+        });
+        function turn()
+        {
+
+            location.href = "https://city.weixin.qq.com/cgi-bin/entry?result_data=%7b%22template_id%22%3a%22suzhougongan_linshitongxingzhengchaxun%22%7d#wechat_redirect";
+
+        }
+    </script>
+</body>
+</html>

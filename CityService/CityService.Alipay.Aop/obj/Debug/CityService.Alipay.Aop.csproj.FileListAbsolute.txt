@@ -1,0 +1,4 @@
+E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Aop\bin\Debug\CityService.Alipay.Aop.dll
+E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Aop\bin\Debug\CityService.Alipay.Aop.pdb
+E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Aop\obj\Debug\CityService.Alipay.Aop.dll
+E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Aop\obj\Debug\CityService.Alipay.Aop.pdb

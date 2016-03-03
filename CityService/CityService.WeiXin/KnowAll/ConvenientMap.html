@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+        body, html, #allmap {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            margin: 0;
+            font-family: "微软雅黑";
+        }
+    </style>
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-1.10.2.js"></script>
+    <script type="text/javascript" name="baidu-tc-cerfication" data-appid="7154397" src="http://apps.bdimg.com/cloudaapi/lightapp.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=KS7NwGTwKvGwI9WwO9Sy46xo"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
+    <link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
+    <title>地图展示</title>
+</head>
+<body>
+    <div id="allmap"></div>
+    <div class="navbar navbar-inverse navbar-fixed-bottom" style="border:0px; filter:alpha(opacity=90); -moz-opacity:0.9;opacity:0.90;">
+        <div class="container">
+            <div class="row text-warning" style="padding-top:10px; padding-bottom:10px;">
+                <div class="col-xs-1">
+                    <img src="../Images/knowall/zxc.png" /></div>
+                <!--<div class="col-xs-1">公共自行车退卡点</div>
+                <div class="col-xs-1">市民卡客服网点</div>-->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    var map = null;
+    $(document).ready(function () {
+        // 百度地图API功能
+        map = new BMap.Map("allmap");        //创建Map实例
+        map.centerAndZoom("苏州", 15);       //设置为苏州地图
+        map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+    });
+
+    
+
+
+</script>

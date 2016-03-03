@@ -1,0 +1,2499 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>考试成绩查询结果</title>
+    <meta charset='UTF-8'>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <link href="../../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../../Content/alipay/amui-demo_files/toast.css" type="text/css" rel="stylesheet" />
+    <link href="../../Content/alipay/button.css" type="text/css" rel="stylesheet" />
+    <link href="../../Content/alipay/amui-demo_files/dialog.css" type="text/css" rel="stylesheet" />
+    <link href="../../Content/alipay/amui-demo_files/button-group.css" type="text/css" rel="stylesheet" />
+    <link href="../../Content/alipay/amui-demo_files/card.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="../../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../Scripts/extensions/base.js"></script>
+    <script type="text/javascript" src="../../Content/alipay/amui-demo_files/amui.js"></script>
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        .titlestyle {
+            width: 30%;
+            padding-right: 5px;
+        }
+
+        .textstyle {
+            width: 65%;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div data-role="page" id="detailDiv">
+        <div data-role="content" style="background-color:#EFEFF4">
+            <div class="am-list" am-mode="flat chip">
+                <div class="am-list-header"></div>
+                <!---  高招部分页面 --->
+                <div class="am-list-body hidden" id="gkcjcx">
+                    <div class="am-list-item">
+                        <div class="am-list-content">考籍号</div>
+                        <div class="am-list-control" id="gkcjkjh"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">考生号</div>
+                        <div class="am-list-control" id="gkcjksh"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">准考证号</div>
+                        <div class="am-list-control" id="gkcjzkzh"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">身份证号</div>
+                        <div class="am-list-control" id="gkcjsfzh"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">姓名</div>
+                        <div class="am-list-control" id="gkcjxm"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">性别</div>
+                        <div class="am-list-control" id="gkcjxb"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">语文</div>
+                        <div class="am-list-control" id="gkcjkm1"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">数学</div>
+                        <div class="am-list-control" id="gkcjkm2"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">外语</div>
+                        <div class="am-list-control" id="gkcjkm3"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">语文附加</div>
+                        <div class="am-list-control" id="gkcjkm1fjf"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">数学附加</div>
+                        <div class="am-list-control" id="gkcjkm2fjf"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">三门总分</div>
+                        <div class="am-list-control" id="gkcjsmzf"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">普通类总分</div>
+                        <div class="am-list-control" id="gkcjptlzf"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">体艺类文化总分</div>
+                        <div class="am-list-control" id="gkcjtylwhzf"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">选修科目名称</div>
+                        <div class="am-list-control" id="gkcjkm4mc"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">选修科目等第</div>
+                        <div class="am-list-control" id="gkcjkm4dd"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">选修科目名称</div>
+                        <div class="am-list-control" id="gkcjkm5mc"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">选修科目等第</div>
+                        <div class="am-list-control" id="gkcjkm5dd"></div>
+                    </div>
+                </div>
+                <div class="am-list-body hidden" id="gkkdcx">
+                    <div class="am-list-item">
+                        <div class="am-list-content">考籍号</div>
+                        <div class="am-list-control" id="gkkdkjh"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">考生号</div>
+                        <div class="am-list-control" id="gkkdksh"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">证件号码</div>
+                        <div class="am-list-control" id="gkkdsfzh"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">姓名</div>
+                        <div class="am-list-control" id="gkkdxm"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">考点名称</div>
+                        <div class="am-list-control" id="gkkdkdmc"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">考试科目</div>
+                        <div class="am-list-control" id="gkkdkm1"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">考试科目</div>
+                        <div class="am-list-control" id="gkkdkm1a"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">考试科目</div>
+                        <div class="am-list-control" id="gkkdkm2"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">考试科目</div>
+                        <div class="am-list-control" id="gkkdkm2a"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">考试科目</div>
+                        <div class="am-list-control" id="gkkdkm3"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">考试科目</div>
+                        <div class="am-list-control" id="gkkdkm4"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">考试科目</div>
+                        <div class="am-list-control" id="gkkdkm5"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">考试科目</div>
+                        <div class="am-list-control" id="gkkdkm6"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">考试科目</div>
+                        <div class="am-list-control" id="gkkdkm7"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">考试科目</div>
+                        <div class="am-list-control" id="gkkdkm8"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">考试科目</div>
+                        <div class="am-list-control" id="gkkdkm9"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">县区名称</div>
+                        <div class="am-list-control" id="gkkdxqmc"></div>
+                    </div>
+                </div>
+                <div class="am-list-body hidden" id="gkkjhkshcx">
+                    <div class="am-list-item">
+                        <div class="am-list-content">考籍号</div>
+                        <div class="am-list-control" id="gkkjhkshkjh"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">考生号</div>
+                        <div class="am-list-control" id="gkkjhkshksh"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">姓名</div>
+                        <div class="am-list-control" id="gkkjhkshxm"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">性别</div>
+                        <div class="am-list-control" id="gkkjhkshxb"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">证件号码</div>
+                        <div class="am-list-control" id="gkkjhkshsfzh"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">报考科类</div>
+                        <div class="am-list-control" id="gkkjhkshklmc"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">选修科目</div>
+                        <div class="am-list-control" id="gkkjhkshxxkm"></div>
+                    </div>
+                </div>
+                <div class="am-list-body hidden" id="kycjcx">
+                    <div class="am-list-item">
+                        <div class="am-list-content">考籍号</div>
+                        <div class="am-list-control" id="kycjkjh"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">姓名</div>
+                        <div class="am-list-control" id="kycjxm"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">性别</div>
+                        <div class="am-list-control" id="kycjxb"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">报考点代码</div>
+                        <div class="am-list-control" id="kycjbkddm"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">中学名称</div>
+                        <div class="am-list-control" id="kycjzxmc"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">班级代码</div>
+                        <div class="am-list-control" id="kycjbjdm"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">等级</div>
+                        <div class="am-list-control" id="kycjdj"></div>
+                    </div>
+                </div>
+                <div class="am-list-body hidden" id="xccjcx">
+                    <div class="am-list-item">
+                        <div class="am-list-content">身份证号</div>
+                        <div class="am-list-control" id="xccjcxsfzh"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">姓名</div>
+                        <div class="am-list-control" id="xccjcxxm"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">性别</div>
+                        <div class="am-list-control" id="xccjcxxb"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">物理</div>
+                        <div class="am-list-control" id="xccjcxwuli"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">化学</div>
+                        <div class="am-list-control" id="xccjcxhuaxue"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">历史</div>
+                        <div class="am-list-control" id="xccjcxlishi"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">地理</div>
+                        <div class="am-list-control" id="xccjcxdili"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">政治</div>
+                        <div class="am-list-control" id="xccjcxzhengzhi"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">生物</div>
+                        <div class="am-list-control" id="xccjcxshengwu"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">信息技术</div>
+                        <div class="am-list-control" id="xccjcxxxjs"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">报名点代码</div>
+                        <div class="am-list-control" id="xccjcxbmddm"></div>
+                    </div>
+                </div>
+                <!--- 自考部分页面 --->
+                <div class="am-list-body hidden" id="kstzscx">
+                    <div class="am-list-item">
+                        <div class="am-list-content">考试场次序号</div>
+                        <div class="am-list-control" id="kstzsksccxh"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">准考证号</div>
+                        <div class="am-list-control" id="kstzszkzh"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">姓名</div>
+                        <div class="am-list-control" id="kstzsxm"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">考试时间</div>
+                        <div class="am-list-control" id="kstzskssj"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">课程号</div>
+                        <div class="am-list-control" id="kstzskch"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">课程简称</div>
+                        <div class="am-list-control" id="kstzskc"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">考试号</div>
+                        <div class="am-list-control" id="kstzsk"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">考点名称</div>
+                        <div class="am-list-control" id="kstzskdm"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">考场号</div>
+                        <div class="am-list-control" id="kstzskkcdm"></div>
+                    </div>
+                </div>
+                <div class="am-list-body hidden" id="zikcjcx">
+                    <div class="am-list-item">
+                        <div class="am-list-content">准考证号</div>
+                        <div class="am-list-control" id="zkcjzkzh"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">姓名</div>
+                        <div class="am-list-control" id="zkcjxm"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">课程号</div>
+                        <div class="am-list-control" id="zkcjkch"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">课程名称</div>
+                        <div class="am-list-control" id="zkcjkcmc"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">成绩</div>
+                        <div class="am-list-control" id="zkcjcj"></div>
+                    </div>
+                </div>
+                <div class="am-list-body hidden" id="zikclxxcx">
+                    <div class="am-list-item">
+                        <div class="am-list-content">课程代号</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">备注</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">课程名称</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">教材代号</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">教材名称</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">作者</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">出版社</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">版次</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                </div>
+                <div class="am-list-body hidden" id="zikksrccx">
+                    <div class="am-list-item">
+                        <div class="am-list-content">专业名称</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">专业代码</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <!--<div class="am-list-item">
+                        <div class="am-list-content"></div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content"></div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content"></div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content"></div>
+                        <div class="am-list-control"></div>
+                    </div>-->
+                    <!--<div class="am-list-item">
+                        <div class="am-list-content">专业代码2</div>
+                        <div class="am-list-control"></div>
+                    </div>-->
+                </div>
+                <!--- 研究生部分页面 --->
+                <div class="am-list-body hidden" id="yjskccx">
+                    <div class="am-list-item">
+                        <div class="am-list-content">考试地点</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">考场号</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">座位号</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">姓名</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">报名号</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">考生编号</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">报考单位代码</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">报考单位名称</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">证件号码</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                </div>
+                <!-- 证书部分页面  -->
+                <div class="am-list-body hidden" id="zsjsj">
+                    <div class="am-list-item">
+                        <div class="am-list-content">姓名</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">证件号</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">准考证号</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">证书编号</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">等第</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                </div>
+                <div class="am-list-body hidden" id="zsyy">
+                    <div class="am-list-item">
+                        <div class="am-list-content">准考证号</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">姓名</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">证件号</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">报考级别</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">笔试成绩</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">口试成绩</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">证书编号</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                </div>
+                <div class="am-list-body hidden" id="zsjszgz">
+                    <div class="am-list-item">
+                        <div class="am-list-content">姓名</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">身份证号</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">准考证号</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">教育学</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">教育心理学</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                </div>
+                <!-- 中考部分页面 -->
+                <div class="am-list-body hidden" id="zkcjcx">
+                    <div class="am-list-item">
+                        <div class="am-list-content">准考证号</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">姓名</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">考场号</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">座位号</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">语文</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">数学</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">外语</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">物理</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">化学</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">政治</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">历史</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">体育</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">照顾加分</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">总分</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">语数外成绩</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                </div>
+                <div class="am-list-body hidden" id="zkkccx">
+                    <div class="am-list-item">
+                        <div class="am-list-content">准考证号</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">姓名</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">考场号</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">座位号</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">考点名称</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">考点地址</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                </div>
+                <div class="am-list-body hidden" id="zkrjdhcjcx">
+                    <div class="am-list-item">
+                        <div class="am-list-content">学校名称</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">考号</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">姓名</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">性别</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">听力</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">口语</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">总分</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                </div>
+                <!-- 成考部分页面 -->
+                <div class="am-list-body hidden" id="ckcjcx">
+                    <div class="am-list-item">
+                        <div class="am-list-content">考试号</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">报名号</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">准考证号</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">姓名</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">性别</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">科目一</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">科目二</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">科目三</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">科目四</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">照顾分</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">文化总分</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">总分</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">科类代码</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                </div>
+                <div class="am-list-body hidden" id="ckkccx">
+                    <div class="am-list-item">
+                        <div class="am-list-content">报名号</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">准号证号</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">姓名</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">考场号</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">座位号</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">报考科目一</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">科目一考试时间</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">报考科目二</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">科目二考试时间</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">报考科目三</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">科目三考试时间</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">报考科目四</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">科目四考试时间</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">考点</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">考点名称</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                    <div class="am-list-item">
+                        <div class="am-list-content">科类名称</div>
+                        <div class="am-list-control"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="fuwu" style="display: block;font-family:STHeitiSC;font-size: 12px; margin-bottom: 15px; margin-left: 0px; width: 100%; text-align: center;   position: absolute; bottom: 0px;z-index:-1;">
+        <div class="am-agreement am-ft-gray am-ft-sm" id="fuwubottom">
+            <p>
+                本服务由苏州市公安局<br />苏州云联智慧信息技术应用有限公司提供支持
+            </p>
+        </div>
+    </div>
+    <script>
+        //数据为空的时候提示语
+        var emptyValue = "未能查询到相关的数据！";
+        //初始化的方法
+        $(document).ready(function () {
+            //大类
+            var type = decodeURI(getQueryStringByName("Type"));
+            //小类
+            var classification = decodeURI(getQueryStringByName("Classification"));
+            //日期
+            var date = decodeURI(getQueryStringByName("date"));
+            //通过类型加载页面
+            switch (type) {
+                //高考
+                case "NEMT":
+                    switch (classification) {
+                        case "gkcjcx":
+                            //高考成绩查询
+                            LoadGKCJCX(type, classification, date);
+                            break;
+                        case "gkkdcx":
+                            //高考考点查询
+                            LoadGKKDCX(type, classification, date);
+                            break;
+                        case "gkkjhkshcx":
+                            //高考考籍号考生号查询
+                            LoadGKKJHKSHCX(type, classification, date);
+                            break;
+                        case "kycjcx":
+                            //口语成绩查询
+                            LoadGKKYCJCX(type, classification, date);
+                            break;
+                        case "xyspcscx":
+                            //学业水平测试查询
+                            LoadGKXYSPCSCX(type, classification, date);
+                            break;
+                    }
+                    break;
+                    //中考
+                case "JuniorHigh":
+                    switch (classification) {
+                        case "zkcjcx":
+                            LoadZKCJCX(type, classification, date);
+                            break;
+                        case "zkkccx":
+                            LoadZKKCCX(type, classification, date);
+                            break;
+                        case "zkrjdhcjcx":
+                            LoadZKRJDHCJCX(type, classification, date);
+                            break;
+                    }
+                    break;
+                    //自考
+                case "SelfStudy":
+                    switch (classification) {
+                        case "ziktzcx":
+                            //考试通知书查询
+                            LoadZIKTZSCX(type, classification, date);
+                            break;
+                        case "zikcjcx":
+                            //自考成绩查询
+                            LoadZIKCJCX(type, classification, date);
+                            break;
+                        case "zikclxxcx":
+                            //自考教材查询
+                            LoadZIKCLXXCX(type, classification, date);
+                            break;
+                        case "zikksrccx":
+                            //自考考试日程查询
+                            LoadZIKRICHCX(type, classification, date);
+                            break;
+                    }
+                    break;
+                    //证书
+                case "Certificate":
+                    switch (classification) {
+                        case "NCRE":
+                            //NCRE成绩查询（计算机）
+                            LoadNCRE(type, classification, date);
+                            break;
+                        case "PETS":
+                            //PETS成绩查询（英语）
+                            LoadPETS(type, classification, date);
+                            break;
+                        case "jszgkscx":
+                            //教师资格考试查询
+                            LoadJSZGKSCX(type, classification, date);
+                            break;
+                    }
+                    break;
+                    //研究生
+                case "Postgraduate":
+                    switch (classification) {
+                        case "yjskccx":
+                            //研究生考场查询
+                            LoadYJSKCCX(type, classification, date);
+                            break;
+                    }
+                    break;
+                    //成人高考
+                case "Adult":
+                    switch (classification) {
+                        case "ckcjcx":
+                            LoadCKCJCX(type, classification, date);
+                            break;
+                        case "ckkccx":
+                            LoadCKKCCX(type, classification, date);
+                            break;
+                    }
+                    break;
+            }
+        });
+        //加载 高考成绩查询的方法
+        function LoadGKCJCX(Type, Classification, Date) {
+            //设定标头
+            $(".am-list-header").append("高考成绩查询结果");
+            //获取准考证号和身份证号码
+            var zkzh = decodeURI(getQueryStringByName("zkzh"));
+            var sfzh = decodeURI(getQueryStringByName("sfzh"));
+            if (zkzh != null && zkzh != "" && zkzh != "undefined" && sfzh != null && sfzh != "" && sfzh != "undefined") {
+                //URL
+                var url = "../../../CityService.Service/EducationCJService.svc/GetGKCJCX?"
+                //参数
+                url += "TestType=" + Type
+                url += "&Classification=" + Classification;
+                url += "&ZKZH=" + zkzh;
+                url += "&SFZH=" + sfzh;
+                url += "&Date=" + Date;
+                //显示高考成绩层
+                $("#gkcjcx").removeClass("hidden");
+                //获取数据
+                $.ajax(url, {
+                    type: 'get',
+                    contentType: 'text/json',
+                    success: function (msg) {
+                        if (msg.d != null && msg.d != "") {
+                            //Json格式化
+                            var myJson = jQuery.parseJSON(msg.d);
+                            //隐藏层
+                            $("#gkcjcx").addClass("hidden");
+                            //加载数据
+                            $.each(myJson, function (index, item) {
+                                $(".am-list").append("<div class=\"am-list-body\" id=\"gkcjcx" + index + "\">" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">考籍号</div>" +
+                                                            "<div class=\"am-list-control\">" + item.KJH + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">考生号</div>" +
+                                                            "<div class=\"am-list-control\">" + item.KSH + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">准考证号</div>" +
+                                                            "<div class=\"am-list-control\">" + item.ZKZH + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">身份证号</div>" +
+                                                            "<div class=\"am-list-control\">" + item.SFZH + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">姓名</div>" +
+                                                            "<div class=\"am-list-control\">" + item.XM + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">性别</div>" +
+                                                            "<div class=\"am-list-control\">" + item.XB + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">语文</div>" +
+                                                            "<div class=\"am-list-control\">" + item.KM1 + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">数学</div>" +
+                                                            "<div class=\"am-list-control\">" + item.KM2 + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">外语</div>" +
+                                                            "<div class=\"am-list-control\">" + item.KM3 + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">语文附加</div>" +
+                                                            "<div class=\"am-list-control\">" + item.KM1FJF + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">数学附加</div>" +
+                                                            "<div class=\"am-list-control\">" + item.KM2FJF + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">三门总分</div>" +
+                                                            "<div class=\"am-list-control\">" + item.SMZF + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">普通类总分</div>" +
+                                                            "<div class=\"am-list-control\">" + item.PTLZF + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">体艺类文化总分</div>" +
+                                                            "<div class=\"am-list-control\">" + item.TYLWHZF + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">选修科目名称</div>" +
+                                                            "<div class=\"am-list-control\">" + item.KM4MC + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">选修科目等第</div>" +
+                                                            "<div class=\"am-list-control\">" + item.KM4DD + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">选修科目名称</div>" +
+                                                            "<div class=\"am-list-control\">" + item.KM5MC + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">选修科目等第</div>" +
+                                                            "<div class=\"am-list-control\">" + item.KM5DD + "</div>" +
+                                                        "</div>" +
+                                                    "</div><div style=\"height:10px;\"></div>");
+                            });
+                        }
+                        else {
+                            alert(emptyValue);
+                        }
+                    },
+                    error: function (xhr) {
+                        //测试的时候使用
+                        alert("error");
+                    },
+                    complete: function () {
+                    }
+                });
+            }
+        }
+        //加载 高考考点查询的方法
+        function LoadGKKDCX(Type, Classification, Date) {
+            //设定Title
+            $(".am-list-header").append("高考考点查询结果");
+            //获取准考证号和考生号
+            var zkzh = decodeURI(getQueryStringByName("zkzh"));
+            var ksh = decodeURI(getQueryStringByName("ksh"));
+            if (zkzh != null && zkzh != "" && zkzh != "undefined" && ksh != null && ksh != "" && ksh != "undefined") {
+                //加载详细页面信息
+                var url = "../../../CityService.Service/EducationCJService.svc/GetGKKDCX?";
+                url += "TestType=" + Type;
+                url += "&Classification=" + Classification;
+                url += "&KSH=" + ksh;
+                url += "&SFZH=" + sfzh;
+                url += "&Date=" + Date;
+                //显示高考考点层
+                $("#gkkdcx").removeClass("hidden");
+                $.ajax(url, {
+                    type: 'get',
+                    contentType: 'text/json',
+                    success: function (msg) {
+                        if (msg.d != null && msg.d != "") {
+                            //Json格式化
+                            var myJson = jQuery.parseJSON(msg.d);
+                            //影藏高考考点层
+                            $("#gkkdcx").addClass("hidden");
+                            //加载数据
+                            $.each(myJson, function (index, item) {
+                                $(".am-list").append("<div class=\"am-list-body\" id=\"gkkdcx" + index + "\">" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">考籍号</div>" +
+                                                    "<div class=\"am-list-control textstyle\">" + item.KJH + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">考生号</div>" +
+                                                    "<div class=\"am-list-control textstyle\">" + item.KSH + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">证件号码</div>" +
+                                                    "<div class=\"am-list-control textstyle\">" + item.SFZH + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">姓名</div>" +
+                                                    "<div class=\"am-list-control textstyle\">" + item.XM + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">考点名称</div>" +
+                                                    "<div class=\"am-list-control textstyle\">" + item.KDMC + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">考试科目</div>" +
+                                                    "<div class=\"am-list-control textstyle\">" + item.KM1 + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">考试科目</div>" +
+                                                    "<div class=\"am-list-control textstyle\">" + item.KM1A + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">考试科目</div>" +
+                                                    "<div class=\"am-list-control textstyle\">" + item.KM2 + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">考试科目</div>" +
+                                                    "<div class=\"am-list-control textstyle\">" + item.KM2A + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">考试科目</div>" +
+                                                    "<div class=\"am-list-control textstyle\">" + item.KM3 + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">考试科目</div>" +
+                                                    "<div class=\"am-list-control textstyle\">" + item.KM4 + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">考试科目</div>" +
+                                                    "<div class=\"am-list-control textstyle\">" + item.KM5 + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">考试科目</div>" +
+                                                    "<div class=\"am-list-control textstyle\">" + item.KM6 + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">考试科目</div>" +
+                                                    "<div class=\"am-list-control textstyle\">" + item.KM7 + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">考试科目</div>" +
+                                                    "<div class=\"am-list-control textstyle\">" + item.KM8 + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">考试科目</div>" +
+                                                    "<div class=\"am-list-control textstyle\">" + item.KM9 + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">县区名称</div>" +
+                                                    "<div class=\"am-list-control textstyle\">" + item.XQMC + "</div>" +
+                                                "</div>" +
+                                            "</div><div style=\"height:10px;\"></div>");
+                            });
+                        }
+                        else {
+                            alert(emptyValue);
+                        }
+                    },
+                    error: function (xhr) {
+                        //测试的时候使用
+                        alert("error");
+                    },
+                    complete: function () {
+                    }
+                });
+            }
+        }
+        //加载 高考考籍号考生号查询的方法
+        function LoadGKKJHKSHCX(Type, Classification, Date) {
+            //设定Title
+            $(".am-list-header").append("高考考籍号考生号查询结果");
+            //获取证件号码（身份证号）和姓名
+            var sfzh = decodeURI(getQueryStringByName("sfzh"));
+            var xm = decodeURI(getQueryStringByName("xm"));
+            if (xm != null && xm != "" && xm != "undefined" && sfzh != null && sfzh != "" && sfzh != "undefined") {
+                //加载详细页面信息
+                var url = "../../../CityService.Service/EducationCJService.svc/GetGKKJHKSHCX?";
+                //参数
+                url += "TestType=" + Type;
+                url += "&Classification=" + Classification;
+                url += "&SFZH=" + sfzh;
+                url += "&XM=" + xm;
+                url += "&Date=" + Date;
+                //显示高考考籍号考生号层
+                $("#gkkjhkshcx").removeClass("hidden");
+                //加载数据
+                $.ajax(url, {
+                    type: 'get',
+                    contentType: 'text/json',
+                    success: function (msg) {
+                        if (msg.d != null && msg.d != "") {
+                            //Json格式化
+                            var myJson = jQuery.parseJSON(msg.d);
+                            //隐藏高考考籍号考生号层
+                            $("#gkkjhkshcx").addClass("hidden");
+                            //加载数据
+                            $.each(myJson, function (index, item) {
+                                $(".am-list").append("<div class=\"am-list-body\" id=\"gkkjhkshcx" + index + "\">" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">考籍号</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.KJH + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">考生号</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.KSH + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">姓名</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.XM + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">性别</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.XB + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">证件号码</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.SFZH + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">报考科类</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.KLMC + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">选修科目</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.XXKM + "</div>" +
+                                                        "</div>" +
+                                                    "</div><div style=\"height:10px;\"></div>");
+                            });
+                        }
+                        else {
+                            alert(emptyValue);
+                        }
+                    },
+                    error: function (xhr) {
+                        //测试的时候使用
+                        alert("error");
+                    },
+                    complete: function () {
+                    }
+                });
+            }
+        }
+
+        //加载 高考口语成绩查询的方法
+        function LoadGKKYCJCX(Type, Classification, Date) {
+            //设定Title
+            $(".am-list-header").append("口语成绩查询结果");
+            //获取考籍号和姓名
+            var kjh = decodeURI(getQueryStringByName("kjh"));
+            var xm = decodeURI(getQueryStringByName("xm"));
+            if (xm != null && xm != "" && xm != "undefined" && kjh != null && kjh != "" && kjh != "undefined") {
+                //加载详细页面信息
+                var url = "../../../CityService.Service/EducationCJService.svc/GetGKYCJCX?";
+                url += "TestType=" + Type;
+                url += "&Classification=" + Classification;
+                url += "&KJH=" + kjh;
+                url += "&XM=" + xm;
+                url += "&Date=" + Date;
+                //显示口语成绩层
+                $("#kycjcx").removeClass("hidden");
+                $.ajax(url, {
+                    type: 'get',
+                    contentType: 'text/json',
+                    success: function (msg) {
+                        if (msg.d != null && msg.d != "") {
+                            //Json格式化
+                            var myJson = jQuery.parseJSON(msg.d);
+                            //影藏口语成绩层
+                            $("#kycjcx").addClass("hidden");
+                            //加载数据
+                            $.each(myJson, function (index, item) {
+                                $(".am-list").append("<div class=\"am-list-body\" id=\"kycjcx" + index + "\">" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">考籍号</div>" +
+                                                    "<div class=\"am-list-control textstyle\">" + item.KJH + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">姓名</div>" +
+                                                    "<div class=\"am-list-control textstyle\">" + item.XM + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">性别</div>" +
+                                                    "<div class=\"am-list-control textstyle\">" + item.XB + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">报考点代码</div>" +
+                                                    "<div class=\"am-list-control textstyle\">" + item.BMDDM + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">中学名称</div>" +
+                                                    "<div class=\"am-list-control textstyle\">" + item.ZXMC + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">班级代码</div>" +
+                                                    "<div class=\"am-list-control textstyle\">" + item.BJDM + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">等级</div>" +
+                                                    "<div class=\"am-list-control textstyle\">" + item.DJ + "</div>" +
+                                                "</div>" +
+                                            "</div><div style=\"height:10px;\"></div>");
+                            });
+                        }
+                        else {
+                            alert(emptyValue);
+                        }
+                    },
+                    error: function (xhr) {
+                        //测试的时候使用
+                        alert("error");
+                    },
+                    complete: function () {
+                    }
+                });
+            }
+        }
+
+        //加载 高考学业水平测试查询的方法
+        function LoadGKXYSPCSCX(Type, Classification, Date) {
+            //设定Title
+            $(".am-list-header").append("学业水平测试查询结果");
+            //获取考籍号、身份证号和姓名
+            var kjh = decodeURI(getQueryStringByName("kjh"));
+            var sfzh = decodeURI(getQueryStringByName("sfzh"));
+            var xm = decodeURI(getQueryStringByName("xm"));
+            if (xm != null && xm != "" && xm != "undefined" && sfzh != null && sfzh != "" && sfzh != "undefined" && kjh != null && kjh != "" && kjh != "undefined") {
+                //URL
+                var url = "../../../CityService.Service/EducationCJService.svc/GetGKXCCJCX?"
+                //参数
+                url += "TestType=" + Type;
+                url += "&Classification=" + Classification;
+                url += "&KJH=" + kjh;
+                url += "&SFZH=" + sfzh;
+                url += "&XM=" + xm;
+                url += "&Date=" + Date;
+                //显示学业水平测试层
+                $("#xccjcx").removeClass("hidden");
+                $.ajax(url, {
+                    type: 'get',
+                    contentType: 'text/json',
+                    success: function (msg) {
+                        if (msg.d != null && msg.d != "") {
+                            //Json格式化
+                            var myJson = jQuery.parseJSON(msg.d);
+                            //隐藏学业水平测试层
+                            $("#xccjcx").addClass("hidden");
+                            //加载数据
+                            $.each(myJson, function (index, item) {
+                                $(".am-list").append("<div class=\"am-list-body\" id=\"xccjcx" + index + "\">" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">身份证号</div>" +
+                                                    "<div class=\"am-list-control\">" + item.SFZH + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">姓名</div>" +
+                                                    "<div class=\"am-list-control\">" + item.XM + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">性别</div>" +
+                                                    "<div class=\"am-list-control\">" + item.XB + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">物理</div>" +
+                                                    "<div class=\"am-list-control\">" + item.WULI + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">化学</div>" +
+                                                    "<div class=\"am-list-control\">" + item.HUAXUE + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">历史</div>" +
+                                                    "<div class=\"am-list-control\">" + item.LISHI + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">地理</div>" +
+                                                    "<div class=\"am-list-control\">" + item.DILI + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">政治</div>" +
+                                                    "<div class=\"am-list-control\">" + item.ZHENGZHI + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">生物</div>" +
+                                                    "<div class=\"am-list-control\">" + item.SHENGWU + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">信息技术</div>" +
+                                                    "<div class=\"am-list-control\">" + item.XXJS + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">报名点代码</div>" +
+                                                    "<div class=\"am-list-control\">" + item.BMDDM + "</div>" +
+                                                "</div>" +
+                                            "</div><div style=\"height:10px;\"></div>");
+                            });
+                        }
+                        else {
+                            alert(emptyValue);
+                        }
+                    },
+                    error: function (xhr) {
+                        //测试的时候使用
+                        alert("error");
+                    },
+                    complete: function () {
+                    }
+                });
+            }
+        }
+
+        //加载 自考通知书查询的方法
+        function LoadZIKTZSCX(Type, Classification, Date) {
+            //设定Title
+            $(".am-list-header").append("考试通知书查询结果");
+            //获取准考证号和姓名
+            var zkzh = decodeURI(getQueryStringByName("zkzh"));
+            var xm = decodeURI(getQueryStringByName("xm"));
+            if (xm != null && xm != "" && xm != "undefined" && zkzh != null && zkzh != "" && zkzh != "undefined") {
+                //加载详细页面信息
+                var url = "../../../CityService.Service/EducationCJService.svc/GetZIKTZCX?";
+                url += "TestType=" + Type;
+                url += "&Classification=" + Classification;
+                url += "&ZKZH=" + zkzh;
+                url += "&XM=" + xm;
+                url += "&Date=" + Date;
+                //显示考试通知书层
+                $("#kstzscx").removeClass("hidden");
+                $.ajax(url, {
+                    type: 'get',
+                    contentType: 'text/json',
+                    success: function (msg) {
+                        if (msg.d != null && msg.d != "") {
+                            //Json格式化
+                            var myJson = jQuery.parseJSON(msg.d);
+                            //添加隐藏样式
+                            $("#kstzscx").addClass("hidden");
+                            //填充数据
+                            $.each(myJson, function (index, item) {
+                                $(".am-list").append("<div class=\"am-list-body\" id=\"kstzscx" + index + "\">" +
+                                            "<div class=\"am-list-item\">" +
+                                                "<div class=\"am-list-content titlestyle\">考试场次序号</div>" +
+                                                "<div class=\"am-list-control textstyle\">" + item.T + "</div>" +
+                                            "</div>" +
+                                            "<div class=\"am-list-item\">" +
+                                                "<div class=\"am-list-content titlestyle\">准考证号</div>" +
+                                                "<div class=\"am-list-control textstyle\">" + item.ZKZH + "</div>" +
+                                            "</div>" +
+                                            "<div class=\"am-list-item\">" +
+                                                "<div class=\"am-list-content titlestyle\">姓名</div>" +
+                                                "<div class=\"am-list-control textstyle\">" + item.XM + "</div>" +
+                                            "</div>" +
+                                            "<div class=\"am-list-item\">" +
+                                                "<div class=\"am-list-content titlestyle\">考试时间</div>" +
+                                                "<div class=\"am-list-control textstyle\">" + item.SJ + "</div>" +
+                                            "</div>" +
+                                            "<div class=\"am-list-item\">" +
+                                                "<div class=\"am-list-content titlestyle\">课程号</div>" +
+                                                "<div class=\"am-list-control textstyle\">" + item.KCH + "</div>" +
+                                            "</div>" +
+                                            "<div class=\"am-list-item\">" +
+                                                "<div class=\"am-list-content titlestyle\">课程简称</div>" +
+                                                "<div class=\"am-list-control textstyle\">" + item.KC + "</div>" +
+                                            "</div>" +
+                                            "<div class=\"am-list-item\">" +
+                                                "<div class=\"am-list-content titlestyle\">考试号</div>" +
+                                                "<div class=\"am-list-control textstyle\">" + item.K + "</div>" +
+                                            "</div>" +
+                                            "<div class=\"am-list-item\">" +
+                                                "<div class=\"am-list-content titlestyle\">考点名称</div>" +
+                                                "<div class=\"am-list-control textstyle\">" + item.KDM + "</div>" +
+                                            "</div>" +
+                                            "<div class=\"am-list-item\">" +
+                                                "<div class=\"am-list-content titlestyle\">考场号</div>" +
+                                                "<div class=\"am-list-control textstyle\">" + item.KCDM + "</div>" +
+                                            "</div>" +
+                                        "</div><div style=\"height:10px;\"></div>");
+                            });
+                        }
+                        else {
+                            alert(emptyValue);
+                        }
+                    },
+                    error: function (xhr) {
+                        //测试的时候使用
+                        alert("error");
+                    },
+                    complete: function () {
+                    }
+                });
+            }
+        }
+
+        //加载 自考成绩查询的方法
+        function LoadZIKCJCX(Type, Classification, Date) {
+            //设定Title
+            $(".am-list-header").append("自考成绩查询结果");
+            //获取准考证号和姓名
+            var zkzh = decodeURI(getQueryStringByName("zkzh"));
+            var xm = decodeURI(getQueryStringByName("xm"));
+            if (xm != null && xm != "" && xm != "undefined" && zkzh != null && zkzh != "" && zkzh != "undefined") {
+                //加载详细页面信息
+                var url = "../../../CityService.Service/EducationCJService.svc/GetZIKCJCX?";
+                //参数
+                url += "TestType=" + Type;
+                url += "&Classification=" + Classification;
+                url += "&ZKZH=" + zkzh;
+                url += "&XM=" + xm;
+                url += "&Date=" + Date;
+                //显示自考成绩查询层
+                $("#zikcjcx").removeClass("hidden");
+                $.ajax(url, {
+                    type: 'get',
+                    contentType: 'text/json',
+                    success: function (msg) {
+                        if (msg.d != null && msg.d != "") {
+                            //Json格式化
+                            var myJson = jQuery.parseJSON(msg.d);
+                            //隐藏自考成绩查询层
+                            $("#zikcjcx").addClass("hidden");
+                            $.each(myJson, function (index, item) {
+                                //加载数据
+                                $(".am-list").append("<div class=\"am-list-body\" id=\"zikcjcx" + index + "\">" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">准考证号</div>" +
+                                                    "<div class=\"am-list-control textstyle\">" + item.ZKZH + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">姓名</div>" +
+                                                    "<div class=\"am-list-control textstyle\">" + item.XM + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">课程号</div>" +
+                                                    "<div class=\"am-list-control textstyle\">" + item.KCH + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">课程名称</div>" +
+                                                    "<div class=\"am-list-control textstyle\">" + item.KCMC + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">成绩</div>" +
+                                                    "<div class=\"am-list-control textstyle\">" + item.CJ + "</div>" +
+                                                "</div>" +
+                                            "</div><div style=\"height:10px;\"></div>");
+
+                            });
+                        }
+                        else {
+                            alert(emptyValue);
+                        }
+                    },
+                    error: function (xhr) {
+                        //测试的时候使用
+                        alert("error");
+                    },
+                    complete: function () {
+                    }
+                });
+            }
+        }
+
+        //加载 自考教材查询的方法
+        function LoadZIKCLXXCX(Type, Classification, Date) {
+            //设定Title
+            $(".am-list-header").append("自考教材查询结果");
+            //获取考试代号
+            var kcdh = decodeURI(getQueryStringByName("kcdh"));
+            if (kcdh != null && kcdh != "" && kcdh != "undefined") {
+                //URL
+                var url = "../../../CityService.Service/EducationCJService.svc/GetZIKCLXXCX?";
+                //参数
+                url += "TestType=" + Type;
+                url += "&Classification=" + Classification;
+                url += "&KCDH=" + kcdh;
+                url += "&Date=" + Date;
+                //显示自考教材查询层
+                $("#zikclxxcx").removeClass("hidden");
+                //添加内容
+                var html = '<div style="font-family: STHeitiSC; font-size: 14PX; color: #b2b2b2; padding-left: 15px; padding-right: 15px; padding-bottom: 15px; text-align: left;">' +
+                   '<p>' +
+                   '1．备注为“●”号表示该课程拟于下一次考试时更换教材、修订大纲或该课程停考。本次建议有书的考生报考，没有书的考生改报其他课程。' +
+                    '</p>' +
+                    '<p style="padding-top: 5px">' +
+                    '2．备注为 “★”号表示该课程为新开考或所使用的教材、大纲为修订改版后首次启用。' +
+                    '</p>' +
+                    '<p style="padding-top: 5px">' +
+                    '3．备注为“﹡”号表示该课程使用教材和大纲内容及要求本次未变动，只是大纲格式或教材的版式及装帧有所变化。' +
+                    '</p>' +
+                    '<p style="padding-top: 5px">' +
+                    '4．部分实践课程使用教材及大纲请查阅相关主考学校实践考核办法。' +
+                    '</p>' +
+                '</div>';
+                //内容添加
+                $(html).prependTo("#fuwu");
+                $.ajax(url, {
+                    type: 'get',
+                    contentType: 'text/json',
+                    success: function (msg) {
+                        if (msg.d != null && msg.d != "") {
+                            //Json格式化
+                            var myJson = jQuery.parseJSON(msg.d);
+                            //隐藏自考教材查询层
+                            $("#zikclxxcx").addClass("hidden");
+                            $.each(myJson, function (index, item) {
+                                var bz = item.BZ;
+                                if (bz == null || bz == "NULL" || bz == "null") {
+                                    bz = "";
+                                }
+                                //加载数据
+                                $(".am-list").append("<div class=\"am-list-body\" id=\"zikclxxcx" + index + "\">" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">课程代号</div>" +
+                                                    "<div class=\"am-list-control textstyle\">" + item.KCDH + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">备注</div>" +
+                                                    "<div class=\"am-list-control textstyle\">" + bz + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">课程名称</div>" +
+                                                    "<div class=\"am-list-control textstyle\">" + item.KCMC + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">教材代号</div>" +
+                                                    "<div class=\"am-list-control textstyle\">" + item.JCDH + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">教材名称</div>" +
+                                                    "<div class=\"am-list-control textstyle\">" + item.JCMC + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">作者</div>" +
+                                                    "<div class=\"am-list-control textstyle\">" + item.ZZ + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">出版社</div>" +
+                                                    "<div class=\"am-list-control textstyle\">" + item.CBS + "</div>" +
+                                                "</div>" +
+                                                "<div class=\"am-list-item\">" +
+                                                    "<div class=\"am-list-content titlestyle\">版次</div>" +
+                                                    "<div class=\"am-list-control textstyle\">" + item.BC + "</div>" +
+                                                "</div>" +
+                                            "</div><div style=\"height:10px;\"></div>");
+                            });
+                        }
+                        else {
+                            alert(emptyValue);
+                        }
+                    },
+                    error: function (xhr) {
+                        //测试的时候使用
+                        alert("error");
+                    },
+                    complete: function () {
+                    }
+                });
+            }
+        }
+
+        //加载 自考日程查询的方法
+        function LoadZIKRICHCX(Type, Classification, Date) {
+            //设定Title
+            $(".am-list-header").append("自考考试日程查询结果");
+            //获取专业代码
+            var zydm = decodeURI(getQueryStringByName("zydm"));
+            if (zydm != null && zydm != "" && zydm != "undefined") {
+                //URL
+                var url = "../../../CityService.Service/EducationCJService.svc/GetZIKKSRCCX?";
+                //参数
+                url += "TestType=" + Type;
+                url += "&Classification=" + Classification;
+                url += "&ZYDM=" + zydm;
+                url += "&Date=" + Date;
+                //显示自考考试日程层
+                $("#zikksrccx").removeClass("hidden");
+                $.ajax(url, {
+                    type: 'get',
+                    contentType: 'text/json',
+                    success: function (msg) {
+                        if (msg.d != null && msg.d != "") {
+                            //Json格式化
+                            var myJson = jQuery.parseJSON(msg.d);
+                            //隐藏自考考试日程层
+                            $("#zikksrccx").addClass("hidden");
+                            //加载数据
+                            $.each(myJson, function (index, item) {
+                                var html = "<div class=\"am-list-body\" id=\"zikksrccx" + index + "\">" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">专业名称</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.ZYMC + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">专业代码</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.ZYDM + "</div>" +
+                                            "</div>";
+                                if (item.RQ1BM != null || item.RQ1BM != "") {
+                                    html += "<div class=\"am-list-item\">" +
+                                                "<div class=\"am-list-content titlestyle\">" + item.RQ1BM + "</div>" +
+                                                "<div class=\"am-list-control textstyle\">" + FormatStr(item.RQ1) + "</div>" +
+                                            "</div>";
+                                }
+                                if (item.RQ2BM != null || item.RQ2BM != "") {
+                                    html += "<div class=\"am-list-item\">" +
+                                                "<div class=\"am-list-content titlestyle\">" + item.RQ2BM + "</div>" +
+                                                "<div class=\"am-list-control textstyle\">" + FormatStr(item.RQ2) + "</div>" +
+                                            "</div>";
+                                }
+                                if (item.RQ3BM != null || item.RQ3BM != "") {
+                                    html += "<div class=\"am-list-item\">" +
+                                                "<div class=\"am-list-content titlestyle\">" + item.RQ3BM + "</div>" +
+                                                "<div class=\"am-list-control textstyle\">" + FormatStr(item.RQ3) + "</div>" +
+                                            "</div>";
+                                }
+                                if (item.RQ4BM != null || item.RQ4BM != "") {
+                                    html += "<div class=\"am-list-item\">" +
+                                                "<div class=\"am-list-content titlestyle\">" + item.RQ4BM + "</div>" +
+                                                "<div class=\"am-list-control textstyle\">" + FormatStr(item.RQ4) + "</div>" +
+                                            "</div>";
+                                }
+                                html += "<div style=\"height:10px;\"></div>";
+                                $(".am-list").append(html);
+                            });
+                        }
+                        else {
+                            alert(emptyValue);
+                        }
+                    },
+                    error: function (xhr) {
+                        //测试的时候使用
+                        alert("error");
+                    },
+                    complete: function () {
+                    }
+                });
+            }
+        }
+
+        //加载 研究生考场查询的方法
+        function LoadYJSKCCX(Type, Classification, Date) {
+            //设定Title
+            $(".am-list-header").append("研究生考场查询结果");
+            //获取姓名和报名号
+            var xm = decodeURI(getQueryStringByName("xm"));
+            var bmh = decodeURI(getQueryStringByName("bmh"));
+            if (xm != null && xm != "" && xm != "undefined" && bmh != null && bmh != "" && bmh != "undefined") {
+                //URL
+                var url = "../../../CityService.Service/EducationCJService.svc/GetYJSKCCX?";
+                //参数
+                url += "TestType=" + Type;
+                url += "&Classification=" + Classification;
+                url += "&XM=" + xm;
+                url += "&BMH=" + bmh;
+                url += "&Date=" + Date;
+                //显示研究生考场层
+                $("#yjskccx").removeClass("hidden");
+                $.ajax(url, {
+                    type: 'get',
+                    contentType: 'text/json',
+                    success: function (msg) {
+                        if (msg.d != null && msg.d != "") {
+                            //Json格式化
+                            var myJson = jQuery.parseJSON(msg.d);
+                            //隐藏研究生考场层
+                            $("#yjskccx").addClass("hidden");
+                            //加载数据
+                            $.each(myJson, function (index, item) {
+                                $(".am-list").append("<div class=\"am-list-body\" id=\"yjskccx" + index + "\">" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">考试地点</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.KSDD + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">考场号</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.KCH + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">座位号</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.ZWH + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">姓名</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.XM + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">报名号</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.BMH + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">考生编号</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.KSBH + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">报考单位代码</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.BKDWDM + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">报考单位名称</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.BKDWMC + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">证件号码</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.ZJHM + "</div>" +
+                                                        "</div>" +
+                                                    "</div><div style=\"height:10px;\"></div>");
+                            });
+                        }
+                        else {
+                            alert(emptyValue);
+                        }
+                    },
+                    error: function (xhr) {
+                        //测试的时候使用
+                        alert("error");
+                    },
+                    complete: function () {
+                    }
+                });
+            }
+        }
+
+        //加载 全国计算机等级考试成绩查询的方法
+        function LoadNCRE(Type, Classification, Date) {
+            //设定Title
+            $(".am-list-header").append("全国计算机等级考试成绩查询结果");
+            //获取姓名和报名号
+            var zkzh = decodeURI(getQueryStringByName("zkzh"));
+            var zjh = decodeURI(getQueryStringByName("zjh"));
+            if ((zkzh != null && zkzh != "" && zkzh != "undefined") || (zjh != null && zjh != "" && zjh != "undefined")) {
+                //URL
+                var url = "../../../CityService.Service/EducationCJService.svc/GetQGJSJDJKSCX?";
+                //参数
+                url += "TestType=" + Type;
+                url += "&Classification=" + Classification;
+                url += "&ZKZH=" + zkzh;
+                url += "&ZJH=" + zjh;
+                url += "&Date=" + Date;
+                //显示全国计算机等级考试成绩层
+                $("#zsjsj").removeClass("hidden");
+                $.ajax(url, {
+                    type: 'get',
+                    contentType: 'text/json',
+                    success: function (msg) {
+                        if (msg.d != null && msg.d != "") {
+                            //Json格式化
+                            var myJson = jQuery.parseJSON(msg.d);
+                            //隐藏全国英语等级考试成绩层
+                            $("#zsjsj").addClass("hidden");
+                            //加载数据
+                            $.each(myJson, function (index, item) {
+                                $(".am-list").append("<div class=\"am-list-body\" id=\"zsjsj" + index + "\">" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">姓名</div>" +
+                                                            "<div class=\"am-list-control\">" + item.XM + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">证件号</div>" +
+                                                            "<div class=\"am-list-control\">" + item.ZJ + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">准考证号</div>" +
+                                                            "<div class=\"am-list-control\">" + item.ZKZH + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">证书编号</div>" +
+                                                            "<div class=\"am-list-control\">" + (item.ZSBH == null ? '' : item.ZSBH) + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">等第</div>" +
+                                                            "<div class=\"am-list-control\">" + item.DD + "</div>" +
+                                                        "</div>" +
+                                                    "</div><div style=\"height:10px;\"></div>");
+                            });
+                        }
+                        else {
+                            alert(emptyValue);
+                        }
+                    },
+                    error: function (xhr) {
+                        //测试的时候使用
+                        alert("error");
+                    },
+                    complete: function () {
+                    }
+                });
+            }
+        }
+
+        //加载 全国英语等级考试成绩查询的方法
+        function LoadPETS(Type, Classification, Date) {
+            //设定Title
+            $(".am-list-header").append("全国英语等级考试成绩查询结果");
+            //获取姓名和报名号
+            var zkzh = decodeURI(getQueryStringByName("zkzh"));
+            var zjh = decodeURI(getQueryStringByName("zjh"));
+            if ((zkzh != null && zkzh != "" && zkzh != "undefined") || (zjh != null && zjh != "" && zjh != "undefined")) {
+                //URL
+                var url = "../../../CityService.Service/EducationCJService.svc/GetQGYYDJKSCJCX?";
+                //参数
+                url += "TestType=" + Type;
+                url += "&Classification=" + Classification;
+                url += "&ZKZH=" + zkzh;
+                url += "&ZJH=" + zjh;
+                url += "&Date=" + Date;
+                //显示全国英语等级考试成绩层
+                $("#zsyy").removeClass("hidden");
+                $.ajax(url, {
+                    type: 'get',
+                    contentType: 'text/json',
+                    success: function (msg) {
+                        if (msg.d != null && msg.d != "") {
+                            //Json格式化
+                            var myJson = jQuery.parseJSON(msg.d);
+                            //隐藏全国英语等级考试成绩层
+                            $("#zsyy").addClass("hidden");
+                            //加载数据
+                            $.each(myJson, function (index, item) {
+                                $(".am-list").append("<div class=\"am-list-body\" id=\"zsyy" + index + "\">" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">准考证号</div>" +
+                                                            "<div class=\"am-list-control\">" + item.ZKZH + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">姓名</div>" +
+                                                            "<div class=\"am-list-control\">" + item.XM + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">证件号</div>" +
+                                                            "<div class=\"am-list-control\">" + item.ZJH + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">报考级别</div>" +
+                                                            "<div class=\"am-list-control\">" + item.BKJB + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">笔试成绩</div>" +
+                                                            "<div class=\"am-list-control\">" + Format(item.BSCJ) + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">口试成绩</div>" +
+                                                            "<div class=\"am-list-control\">" + Format(item.KSCJ) + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">证书编号</div>" +
+                                                            "<div class=\"am-list-control\">" + (item.ZSBH == null ? '' : item.ZSBH) + "</div>" +
+                                                        "</div>" +
+                                                    "</div><div style=\"height:10px;\"></div>");
+                            });
+                        }
+                        else {
+                            alert(emptyValue);
+                        }
+                    },
+                    error: function (xhr) {
+                        //测试的时候使用
+                        alert("error");
+                    },
+                    complete: function () {
+                    }
+                });
+            }
+        }
+
+        //加载 教师资格证考试成绩查询的方法
+        function LoadJSZGKSCX(Type, Classification, Date) {
+            //设定Title
+            $(".am-list-header").append("教师资格证考试成绩查询结果");
+            //获取姓名和报名号
+            var sfzh = decodeURI(getQueryStringByName("sfzh"));
+            var xm = decodeURI(getQueryStringByName("xm"));
+            if (sfzh != null && sfzh != "" && sfzh != "undefined" && xm != null && xm != "" && xm != "undefined") {
+                //URL
+                var url = "../../../CityService.Service/EducationCJService.svc/QGJSZGZKSCX?";
+                //参数
+                url += "TestType=" + Type;
+                url += "&Classification=" + Classification;
+                url += "&SFZH=" + sfzh;
+                url += "&XM=" + xm;
+                url += "&Date=" + Date;
+                //显示教师资格证考试成绩层
+                $("#zsjszgz").removeClass("hidden");
+                $.ajax(url, {
+                    type: 'get',
+                    contentType: 'text/json',
+                    success: function (msg) {
+                        if (msg.d != null && msg.d != "") {
+                            //Json格式化
+                            var myJson = jQuery.parseJSON(msg.d);
+                            //隐藏全国英语等级考试成绩层
+                            $("#zsjszgz").addClass("hidden");
+                            //加载数据
+                            $.each(myJson, function (index, item) {
+                                $(".am-list").append("<div class=\"am-list-body\" id=\"zsjszgz" + index + "\">" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">姓名</div>" +
+                                                            "<div class=\"am-list-control\">" + item.XM + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">身份证号</div>" +
+                                                            "<div class=\"am-list-control\">" + item.SFZH + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">准考证号</div>" +
+                                                            "<div class=\"am-list-control\">" + item.ZKZH + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">教育学</div>" +
+                                                            "<div class=\"am-list-control\">" + item.CJ1 + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">教育心理学</div>" +
+                                                            "<div class=\"am-list-control\">" + item.CJ2 + "</div>" +
+                                                        "</div>" +
+                                                    "</div><div style=\"height:10px;\"></div>");
+                            });
+                        }
+                        else {
+                            alert(emptyValue);
+                        }
+                    },
+                    error: function (xhr) {
+                        //测试的时候使用
+                        alert("error");
+                    },
+                    complete: function () {
+                    }
+                });
+            }
+        }
+
+        //加载中考成绩查询的方法
+        function LoadZKCJCX(Type, Classification, Date) {
+            //设定Title
+            $(".am-list-header").append("中考成绩查询结果");
+            //获取姓名和报名号
+            var zkzh = decodeURI(getQueryStringByName("zkzh"));
+            var xm = decodeURI(getQueryStringByName("xm"));
+            if (zkzh != null && zkzh != "" && zkzh != "undefined" && xm != null && xm != "" && xm != "undefined") {
+                //URL
+                var url = "../../../CityService.Service/EducationCJService.svc/GetZKCJCX?";
+                //参数
+                url += "TestType=" + Type;
+                url += "&Classification=" + Classification;
+                url += "&ZKZH=" + zkzh;
+                url += "&XM=" + xm;
+                url += "&Date=" + Date;
+                //显示教师资格证考试成绩层
+                $("#zkcjcx").removeClass("hidden");
+                $.ajax(url, {
+                    type: 'get',
+                    contentType: 'text/json',
+                    success: function (msg) {
+                        if (msg.d != null && msg.d != "") {
+                            //Json格式化
+                            var myJson = jQuery.parseJSON(msg.d);
+                            //隐藏全国英语等级考试成绩层
+                            $("#zkcjcx").addClass("hidden");
+                            //加载数据
+                            $.each(myJson, function (index, item) {
+                                $(".am-list").append("<div class=\"am-list-body\" id=\"zkcjcx" + index + "\">" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">准考证号</div>" +
+                                                            "<div class=\"am-list-control\">" + item.ZKH + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">姓名</div>" +
+                                                            "<div class=\"am-list-control\">" + item.XM + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">考场号</div>" +
+                                                            "<div class=\"am-list-control\">" + item.KCH + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">座位号</div>" +
+                                                            "<div class=\"am-list-control\">" + item.ZWH + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">语文</div>" +
+                                                            "<div class=\"am-list-control\">" + item.YW + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">数学</div>" +
+                                                            "<div class=\"am-list-control\">" + item.SX + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">外语</div>" +
+                                                            "<div class=\"am-list-control\">" + item.WY + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">物理</div>" +
+                                                            "<div class=\"am-list-control\">" + item.WL + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">化学</div>" +
+                                                            "<div class=\"am-list-control\">" + item.HX + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">政治</div>" +
+                                                            "<div class=\"am-list-control\">" + item.ZZ + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">历史</div>" +
+                                                            "<div class=\"am-list-control\">" + item.LS + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">体育</div>" +
+                                                            "<div class=\"am-list-control\">" + item.TY + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">照顾加分</div>" +
+                                                            "<div class=\"am-list-control\">" + item.JF + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">总分</div>" +
+                                                            "<div class=\"am-list-control\">" + item.JFZF + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">语数外成绩</div>" +
+                                                            "<div class=\"am-list-control\">" + item.YSWCJ + "</div>" +
+                                                        "</div>" +
+                                                    "</div><div style=\"height:10px;\"></div>");
+                            });
+                        }
+                        else {
+                            alert(emptyValue);
+                        }
+                    },
+                    error: function (xhr) {
+                        //测试的时候使用
+                        alert("error");
+                    },
+                    complete: function () {
+                    }
+                });
+            }
+        }
+
+        //加载中考考场查询的方法
+        function LoadZKKCCX(Type, Classification, Date) {
+            //设定Title
+            $(".am-list-header").append("中考考场查询结果");
+            //获取姓名和报名号
+            var zkzh = decodeURI(getQueryStringByName("zkzh"));
+            var xm = decodeURI(getQueryStringByName("xm"));
+            if (zkzh != null && zkzh != "" && zkzh != "undefined" && xm != null && xm != "" && xm != "undefined") {
+                //URL
+                var url = "../../../CityService.Service/EducationCJService.svc/GetZKKCCX?";
+                //参数
+                url += "TestType=" + Type;
+                url += "&Classification=" + Classification;
+                url += "&ZKZH=" + zkzh;
+                url += "&XM=" + xm;
+                url += "&Date=" + Date;
+                //显示中考考场查询成绩层
+                $("#zkkccx").removeClass("hidden");
+                $.ajax(url, {
+                    type: 'get',
+                    contentType: 'text/json',
+                    success: function (msg) {
+                        if (msg.d != null && msg.d != "") {
+                            //Json格式化
+                            var myJson = jQuery.parseJSON(msg.d);
+                            //隐藏全国英语等级考试成绩层
+                            $("#zkkccx").addClass("hidden");
+                            //加载数据
+                            $.each(myJson, function (index, item) {
+                                $(".am-list").append("<div class=\"am-list-body\" id=\"zkkccx" + index + "\">" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">准考证号</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.ZKH + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">姓名</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.XM + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">考场号</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.KCH + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">座位号</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.ZWH + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">考点名称</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.KDMC + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">考点地址</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.KDDZ + "</div>" +
+                                                        "</div>" +
+                                                    "</div><div style=\"height:10px;\"></div>");
+                            });
+                        }
+                        else {
+                            alert(emptyValue);
+                        }
+                    },
+                    error: function (xhr) {
+                        //测试的时候使用
+                        alert("error");
+                    },
+                    complete: function () {
+                    }
+                });
+            }
+        }
+
+        //加载中考人机对话考试成绩查询的方法
+        function LoadZKRJDHCJCX(Type, Classification, Date) {
+            //设定Title
+            $(".am-list-header").append("中考人机对话考试成绩查询结果");
+            //获取姓名和报名号
+            var kh = decodeURI(getQueryStringByName("kh"));
+            var xm = decodeURI(getQueryStringByName("xm"));
+            if (kh != null && kh != "" && kh != "undefined" && xm != null && xm != "" && xm != "undefined") {
+                //URL
+                var url = "../../../CityService.Service/EducationCJService.svc/GetZKRJDHCJCX?";
+                //参数
+                url += "TestType=" + Type;
+                url += "&Classification=" + Classification;
+                url += "&KH=" + kh;
+                url += "&XM=" + xm;
+                url += "&Date=" + Date;
+                //显示中考人机对话考试成绩查询成绩层
+                $("#zkrjdhcjcx").removeClass("hidden");
+                $.ajax(url, {
+                    type: 'get',
+                    contentType: 'text/json',
+                    success: function (msg) {
+                        if (msg.d != null && msg.d != "") {
+                            //Json格式化
+                            var myJson = jQuery.parseJSON(msg.d);
+                            //隐藏中考人机对话考试成绩查询成绩层
+                            $("#zkrjdhcjcx").addClass("hidden");
+                            //加载数据
+                            $.each(myJson, function (index, item) {
+                                $(".am-list").append("<div class=\"am-list-body\" id=\"zkrjdhcjcx" + index + "\">" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">学校名称</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.学校名称 + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">考号</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.考号 + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">姓名</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.姓名 + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">性别</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.性别 + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">听力</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.听力 + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">口语</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.口语 + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">总分</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.总分 + "</div>" +
+                                                        "</div>" +
+                                                    "</div><div style=\"height:10px;\"></div>");
+                            });
+                        }
+                        else {
+                            alert(emptyValue);
+                        }
+                    },
+                    error: function (xhr) {
+                        //测试的时候使用
+                        alert("error");
+                    },
+                    complete: function () {
+                    }
+                });
+            }
+        }
+
+        //加载成考成绩查询的方法
+        function LoadCKCJCX(Type, Classification, Date) {
+            //设定Title
+            $(".am-list-header").append("成人高考成绩查询结果");
+            //获取姓名和报名号
+            var zkzh = decodeURI(getQueryStringByName("zkzh"));
+            var xm = decodeURI(getQueryStringByName("xm"));
+            if (zkzh != null && zkzh != "" && zkzh != "undefined" && xm != null && xm != "" && xm != "undefined") {
+                //URL
+                var url = "../../../CityService.Service/EducationCJService.svc/GetCKCJCX?";
+                //参数
+                url += "TestType=" + Type;
+                url += "&Classification=" + Classification;
+                url += "&ZKZH=" + zkzh;
+                url += "&XM=" + xm;
+                url += "&Date=" + Date;
+                //显示成考成绩查询成绩层
+                $("#ckcjcx").removeClass("hidden");
+                $.ajax(url, {
+                    type: 'get',
+                    contentType: 'text/json',
+                    success: function (msg) {
+                        if (msg.d != null && msg.d != "") {
+                            //Json格式化
+                            var myJson = jQuery.parseJSON(msg.d);
+                            //隐藏成考成绩查询成绩层
+                            $("#ckcjcx").addClass("hidden");
+                            //加载数据
+                            $.each(myJson, function (index, item) {
+                                var html = "<div class=\"am-list-body\" id=\"ckcjcx" + index + "\">" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">考试号</div>" +
+                                                            "<div class=\"am-list-control\">" + item.KSH + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">报名号</div>" +
+                                                            "<div class=\"am-list-control\">" + item.KSH2 + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">准考证号</div>" +
+                                                            "<div class=\"am-list-control\">" + item.ZKZH + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">姓名</div>" +
+                                                            "<div class=\"am-list-control\">" + item.XM + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">性别</div>" +
+                                                            "<div class=\"am-list-control\">" + item.XB + "</div>" +
+                                                        "</div>";
+                                if (item.KMC1 != null && item.KMC1 != "") {
+                                    html += "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">" + item.KMC1 + "</div>" +
+                                                            "<div class=\"am-list-control\">" + item.KM1 + "</div>" +
+                                                        "</div>";
+                                }
+                                if (item.KMC2 != null && item.KMC2 != "") {
+                                    html += "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">" + item.KMC2 + "</div>" +
+                                                            "<div class=\"am-list-control\">" + item.KM2 + "</div>" +
+                                                        "</div>";
+                                }
+                                if (item.KMC3 != null && item.KMC3 != "") {
+                                    html += "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">" + item.KMC3 + "</div>" +
+                                                            "<div class=\"am-list-control\">" + item.KM3 + "</div>" +
+                                                        "</div>";
+                                }
+                                if (item.KMC4 != null && item.KMC4 != "") {
+                                    html += "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">" + item.KMC4 + "</div>" +
+                                                            "<div class=\"am-list-control\">" + item.KM4 + "</div>" +
+                                                        "</div>";
+                                }
+                                html += "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">照顾分</div>" +
+                                                            "<div class=\"am-list-control\">" + item.ZGF + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">文化总分</div>" +
+                                                            "<div class=\"am-list-control\">" + item.ZF + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">总分</div>" +
+                                                            "<div class=\"am-list-control\">" + item.TZF + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">科类代码</div>" +
+                                                            "<div class=\"am-list-control\">" + item.KL + "</div>" +
+                                                        "</div>" +
+                                                  "</div><div style=\"height:10px;\"></div>";
+                                $(".am-list").append(html);
+                            });
+                        }
+                        else {
+                            alert(emptyValue);
+                        }
+                    },
+                    error: function (xhr) {
+                        //测试的时候使用
+                        alert("error");
+                    },
+                    complete: function () {
+                    }
+                });
+            }
+        }
+
+        //加载成考考场查询的方法
+        function LoadCKKCCX(Type, Classification, Date) {
+            //设定Title
+            $(".am-list-header").append("成考考场查询结果");
+            //获取姓名和报名号
+            var zkzh = decodeURI(getQueryStringByName("zkzh"));
+            var xm = decodeURI(getQueryStringByName("xm"));
+            if (zkzh != null && zkzh != "" && zkzh != "undefined" && xm != null && xm != "" && xm != "undefined") {
+                //URL
+                var url = "../../../CityService.Service/EducationCJService.svc/GetCKKCCX?";
+                //参数
+                url += "TestType=" + Type;
+                url += "&Classification=" + Classification;
+                url += "&ZKZH=" + zkzh;
+                url += "&XM=" + xm;
+                url += "&Date=" + Date;
+                //显示成考考场查询层
+                $("#ckkccx").removeClass("hidden");
+                $.ajax(url, {
+                    type: 'get',
+                    contentType: 'text/json',
+                    success: function (msg) {
+                        if (msg.d != null && msg.d != "") {
+                            //Json格式化
+                            var myJson = jQuery.parseJSON(msg.d);
+                            //隐藏成考考场查询层
+                            $("#ckkccx").addClass("hidden");
+                            //加载数据
+                            $.each(myJson, function (index, item) {
+                                var html = "<div class=\"am-list-body\" id=\"ckcjcx" + index + "\">" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">报名号</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.KSH2 + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">准考证号</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.ZKZH + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">姓名</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.XM + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">考场号</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.KCH + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">座位号</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.ZWH + "</div>" +
+                                                        "</div>";
+                                if (item.KC1 != null && item.KC1 != "") {
+                                    html += "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">报考科目一</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.KC1 + "</div>" +
+                                                        "</div>" +
+                                            "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">科目一时间</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.SJ1 + "</div>" +
+                                                        "</div>";
+                                }
+                                if (item.KC2 != null && item.KC2 != "") {
+                                    html += "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">报考科目二</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.KC2 + "</div>" +
+                                                        "</div>" +
+                                            "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">科目二时间</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.SJ2 + "</div>" +
+                                                        "</div>";
+                                }
+                                if (item.KC3 != null && item.KC3 != "") {
+                                    html += "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">报考科目三</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.KC3 + "</div>" +
+                                                        "</div>" +
+                                            "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">科目三时间</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.SJ3 + "</div>" +
+                                                        "</div>";
+                                }
+                                if (item.KC4 != null && item.KC4 != "") {
+                                    html += "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">报考科目四</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.KC4 + "</div>" +
+                                                        "</div>" +
+                                            "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">科目四时间</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.SJ4 + "</div>" +
+                                                        "</div>";
+                                }
+                                html += "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">考点</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.KD + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">考点名称</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.KDMC + "</div>" +
+                                                        "</div>" +
+                                                        "<div class=\"am-list-item\">" +
+                                                            "<div class=\"am-list-content titlestyle\">科类名称</div>" +
+                                                            "<div class=\"am-list-control textstyle\">" + item.KLMC + "</div>" +
+                                                        "</div>" +
+                                                  "</div><div style=\"height:10px;\"></div>";
+                                $(".am-list").append(html);
+                            });
+                        }
+                        else {
+                            alert(emptyValue);
+                        }
+                    },
+                    error: function (xhr) {
+                        //测试的时候使用
+                        alert("error");
+                    },
+                    complete: function () {
+                    }
+                });
+            }
+        }
+
+        //格式化数字类型的方法
+        function Format(value) {
+            if (value == null || value == "") {
+                return 0;
+            }
+            if (value == 0) {
+                return value;
+            }
+            //判断数字类型
+            if ($.isNumeric(value)) {
+                return value.toFixed(0);
+            }
+        }
+
+        //格式化特殊数据字符串的方法
+        function FormatStr(value) {
+            if (value != null && value != "") {
+                var values = value.split("；");
+                var html = "";
+                $.each(values, function (index, item) {
+                    if (item != null && item != "") {
+                        html += item + "；<br/>";
+                    }
+                });
+                return html;
+            }
+            else {
+                return "";
+            }
+        }
+    </script>
+</body>
+</html>

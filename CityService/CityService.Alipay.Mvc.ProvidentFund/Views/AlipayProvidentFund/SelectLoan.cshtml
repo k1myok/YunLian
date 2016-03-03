@@ -1,0 +1,61 @@
+﻿@model CityService.Service.Controllers.Models.User
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>贷款查询</title>
+    <link href="~/Content/jquery.mobile-1.4.5.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/extensions/base.js"></script>
+    <script src="~/Scripts/jquery.mobile-1.4.5.js"></script>
+    <script src="~/Scripts/jquery.validate-vsdoc.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <link href="../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/button.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/toast.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/dialog.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/button-group.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="../Content/alipay/amui-demo_files/amui.js"></script>
+    <style>
+        .field-validation-error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="content" style="padding:0px;">
+            <div>
+                <img src="~/Images/苏州市住房公积金管理中心.jpg" style="width:100%;" />
+            </div>
+            <div style="padding-top:10px;padding-left:10px;">
+                <span style="font-size:20px;"><b>贷款查询</b></span>
+            </div>
+            <div style="padding-left:10px;padding-right:10px;">
+                @using (Html.BeginForm("SelectLoan", "AlipayProvidentFund", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <div data-role="fieldcontain" class="ui-hide-label" style="padding:0px;">
+
+                        <div class="editor-field">
+                            <div>
+                                @Html.TextBoxFor(model => model.IDCard, new { placeholder = "请输入身份证号" })
+                                @Html.ValidationMessageFor(model => model.IDCard)
+                            </div>
+                        </div>
+                    </div>
+                    <div data-inline="true">
+                        <input type="submit" value="提    交" style="opacity: .7;background-color:#e96d31;" />
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</body>
+</html>

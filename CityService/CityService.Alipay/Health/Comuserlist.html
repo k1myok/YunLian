@@ -1,0 +1,102 @@
+﻿<!--常用联系人列表-->
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>常用联系人列表</title>
+    <meta charset='UTF-8'>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+   <meta http-equiv="Pragma" content="no-cache" />
+   <meta http-equiv="Expires" content="0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <link href="../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/toast.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/dialog.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/button-group.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../Scripts/extensions/base.js"></script>
+    <script type="text/javascript" src="../Content/alipay/amui-demo_files/amui.js"></script>
+    <link href="../Content/alipay/button.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+        <div data-role="page">
+            <div data-role="content" style="background-color:#EFEFF4">
+                <img src="../Images/register.png" style="width:100%">
+                <div class="am-list am-list-5lb" am-mode="flat chip form">
+                    <div class="am-list-body" id="list">
+                        <div class="am-toast" id="toast">
+                            <div class="am-toast-text">
+                                <span class="am-toast-icon am-icon" am-mode="toast-loading"></span> 正在努力加载...
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="Demo-mobile" style="background-color:#EFEFF4">
+                    <div class="am-flexbox">
+                        <div class="am-flexbox-item am-ft-ellipsis"><a href="RegisterList.html">挂号清单</a></div>
+                        <div class="am-flexbox-item am-ft-ellipsis"><a href="AddMember.html">添加常用联系人</a></div>
+                        <div class="am-flexbox-item"><a href="News.html">预约提醒</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="fuwu" style="display: block;font-family:STHeitiSC  ;font-size: 12px; margin-bottom: 15px; margin-left: 0px; width: 100%; text-align: center; bottom: 0px;z-index:-1;margin-top:20px;">
+            <div class="am-agreement am-ft-gray am-ft-sm">
+                <p>
+                    本服务由苏州市卫生局<br />苏州云联智慧信息技术应用有限公司提供支持
+                </p>
+            </div>
+        </div>
+    </body>
+<script type="text/javascript">
+    $(function () {
+        $("#toast").show();
+        getcomuser();
+    });
+    function getcomuser() {
+	//alert("1111");
+	var storage = window.localStorage;
+	var OpenID=storage.getItem("openID");
+
+
+        //var OpenID = document.cookie.split(";")[0].split("=")[1];
+		//alert(OpenID);
+        var url = "../../CityService.Service/HospitalInfoService.svc/GetMemberNameList";
+        $.ajax({
+            type: "get",
+            url: url,
+            data:
+                {
+                    OpenID: OpenID,
+                },
+            dataType:"json",
+            success: function (result) {
+                addToList(result.d);
+            },
+            complete: function () {
+                $("#toast").hide();
+            },
+            error: function () {
+                return;
+            }
+        })
+    }
+
+    function addToList(hospitalList) {
+        if (hospitalList == null || hospitalList.length == 0)
+            return;
+        var content = "";
+        $.each(hospitalList, function () {
+            content = content +
+             '<a class="am-list-item" href=userDetails.html?IDCard=' + this.IDCard + '>' +
+               '<div class="am-list-content">' + this.Name + '</div>' +
+               '<div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>' +
+           '</a>';
+        });
+        $("#list").html(content);
+    }
+</script>
+</html>

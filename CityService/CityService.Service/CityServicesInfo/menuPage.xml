@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <title>
+    城市服务
+  </title>
+  <menus>
+    <menu>
+      <content>苏州卫生</content>
+      <url>../CityServices/HealthRootPage.html</url>
+      <image>../Images/苏州卫生.png</image>
+    </menu>
+    <menu>
+      <content>苏州气象</content>
+      <url>../CityServices/SZQXRootPage.html</url>
+      <image>../Images/气象.png</image>
+    </menu>
+    <menu>
+      <content>苏州旅游</content>
+      <url>../CityServices/travalRootPage.html</url>
+      <image>../Images/旅游.png</image>
+    </menu>
+    <menu>
+      <content>苏州公安</content>
+      <url>../CityServices/policeRootPage.html</url>
+      <image>../Images/苏州公安.png</image>
+      <submenu></submenu>
+    </menu>
+    <menu>
+      <content>苏州教育</content>
+      <url>../CityServices/eduRootPage.html</url>
+      <image>../Images/教育.png</image>
+      <submenu></submenu>
+    </menu>
+    <menu>
+      <content>苏州便民</content>
+      <url>../CityServices/szbmRootPage.html</url>
+      <image>../Images/便民.png</image>
+      <submenu></submenu>
+    </menu>
+  </menus>
+  <foot>
+    <div class='am-agreement am-ft-gray am-ft-sm'>
+      <p id='footValue'>
+        本服务由<br />苏州云联智慧信息技术应用有限公司提供支持
+      </p>
+    </div>
+  </foot>
+  <type>
+    type_jgg
+  </type>
+</root>

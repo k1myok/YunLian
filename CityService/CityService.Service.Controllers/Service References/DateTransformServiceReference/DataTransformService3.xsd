@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://58.210.11.75:8012/DataTransformService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SelectProvidentFundService" />
+  <xs:element name="GetProvidentFund">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idCard" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="trancode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProvidentFundResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetProvidentFundResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProvidentFundDepositInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idCard" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="page" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="total" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pages" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="trancode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProvidentFundDepositInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetProvidentFundDepositInfoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProvidentFundLoanInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idCard" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="trancode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProvidentFundLoanInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetProvidentFundLoanInfoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProvidentFundRepayInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="loadNum" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="page" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="total" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pages" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="trancode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProvidentFundRepayInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetProvidentFundRepayInfoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendCheckCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="custAcNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paperId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mobile" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendCheckCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SelectProvidentFundService" minOccurs="0" name="SendCheckCodeResult" nillable="true" type="q1:CheckCodeResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

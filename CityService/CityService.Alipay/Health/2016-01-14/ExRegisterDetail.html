@@ -1,0 +1,302 @@
+﻿<!--特定专家的号源详情-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>专家号</title>
+    <meta charset='UTF-8'>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link href="../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/button.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/toast.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/dialog.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/button-group.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../Scripts/extensions/base.js"></script>
+    <script type="text/javascript" src="../Content/alipay/amui-demo_files/amui.js"></script>
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=2ffb8bddf5f3620892d0bb3051b23777"></script>
+</head>
+<body>
+        <div data-role="content" style="background-color:#EFEFF4">
+            <div class="am-tab" id="tabHeader">
+                <a id="tab1" href="javascript:switchPanel('1')" class="am-tab-item" data-tab="selected">介绍</a>
+                <a id="tab2" href="javascript:switchPanel('2')" class="am-tab-item">挂号</a>
+            </div>
+            <!--医生个人信息-->
+            <div id="tab1Panel" class="am-list am-list-5lb" am-mode="flat chip form" style="display:none;">
+                <div data-role="page">
+                    <div data-role="content" style="background-color:#EFEFF4">
+                        <div class="am-list am-list-5lb" am-mode="flat chip form">
+                            <div class="am-list-body" id="DocDetails">
+                                <div class="am-toast" id="toast">
+                                    <div class="am-toast-text">
+                                        <span class="am-toast-icon am-icon" am-mode="toast-loading"></span> 正在努力加载...
+                                    </div>
+                                </div>
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--医生个人信息结束-->
+            <!--号源详情信息-->
+            <div id="tab2Panel" class="am-list am-list-5lb" am-mode="flat chip form" style="display:none;">
+                <div data-role="page">
+                    <div data-role="content" style="background-color:#EFEFF4">
+                        <div class="am-list am-list-5lb" am-mode="flat chip form">
+                            <div class="am-list-item" id="Datelist">
+                                <div class="am-list-content" id="ClinicDate"></div>
+                            </div>
+                            <div class="am-list-body" id="RegisterDetails">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!--号源详情信息结束-->
+    </div>
+    <!--页脚-->
+    
+        <div data-role="content" style="background-color:#EFEFF4">
+                <div class="am-list-body" id="Depart"></div>
+        </div>
+                <div class="am-flexbox">
+                    <div class="am-flexbox-item"><a href="RegisterList.html">挂号清单</a></div>
+                    <div class="am-flexbox-item am-ft-ellipsis"><a href="Comuserlist.html">常用成员</a></div>
+                    <div class="am-flexbox-item"><a href="News.html">预约提醒</a></div>
+                </div>
+            <div id="fuwu" style="display: block;font-family:STHeitiSC  ;font-size: 12px; margin-bottom: 15px; margin-left: 0px; width: 100%; text-align: center; bottom: 0px;z-index:-1; position: static;margin-top:20px;">
+                <div class="am-agreement am-ft-gray am-ft-sm">
+                    <p>
+                        本服务由苏州市卫生局<br />苏州云联智慧信息技术应用有限公司提供支持
+                    </p>
+                </div>
+            </div>
+            <!--页脚结束-->
+            <script type="text/javascript">
+                $(function () {
+                    a = decodeURI(getQueryStringByName("a"));
+                    switchPanel(a);
+                    $("title").html(decodeURI(getQueryStringByName("DoctorName")));
+                    GetExDocIntro();
+                    ClinicDate();
+                    $("#toast").show();
+                });
+                function switchPanel(index) {
+                    $("#tab1Panel").css("display", index == "1" ? "inline" : "none");
+                    $("#tab2Panel").css("display", index == "2" ? "inline" : "none");
+                    $("#tab1").attr("data-tab", index == "1" ? "selected" : "");
+                    $("#tab2").attr("data-tab", index == "2" ? "selected" : "");
+                }
+                function ClinicDate() {
+                    var url = "../../CityService.Service/HospitalInfoService.svc/GetAvaliableschedual";
+                    $.ajax(url, {
+                        type: "GET",
+                        data: {
+                            HospName: decodeURI(getQueryStringByName("HospName")),
+                            DepartName: decodeURI(getQueryStringByName("DepartName")),
+                            DoctorName: decodeURI(getQueryStringByName("DoctorName")),
+                        },
+                        dataType: "json",
+                        success: function (result) {
+                            if (result.d.length<1)
+                            {
+                                content =
+                                      '<div style="text-align:center;padding-top:80px;">' +
+                    '<img src="../Images/empty.png" style="width:140px;height:140px" />' +
+                    '<div style="margin-top:24px; text-align:center;font-family:STHeitiSC;font-size: 16px;color:#8f8f95;">该医生暂无可用排班</div>' +
+                '</div>';
+                                $("#ClinicDate").html(content);
+                            }
+                            else {
+                                var ds = result.d.toString().split(",");
+                                var daily = '<div class="am-list-item" am-mode="select">' +
+                                           '<div class="am-list-content">' +
+                                           '<select id="Day" onChange="dateChange();">';
+                                selectDate = ds[0];
+                                for (var i = 0; i < ds.length; i++) {
+
+                                    if (ds[i] != "") {
+                                        var mydate = new Date(ds[i]);
+                                        var week = mydate.getDay();
+                                        var w = "";
+                                        switch (week) {
+                                            case 0: w = "星期日";
+                                                break;
+                                            case 1: w = "星期一";
+                                                break;
+                                            case 2: w = "星期二";
+                                                break;
+                                            case 3: w = "星期三";
+                                                break;
+                                            case 4: w = "星期四";
+                                                break;
+                                            case 5: w = "星期五";
+                                                break;
+                                            case 6: w = "星期六";
+                                                break;
+                                        }
+                                        daily += '<option value=' + ds[i] + '>' + ds[i] + " (" + w + ") " + '</option>';
+                                    } else {
+                                        daily += '</select>' +
+                                               '</div>' +
+                                               '<div class="am-list-arrow"><span class="am-icon" am-mode="arrow-vertical"></span></div>' +
+                                               '</div>';
+                                        break;
+                                    }
+                                }
+
+                                $("#ClinicDate").html(daily);
+                                GetRegister();
+                            }
+
+                        },
+                        error: function () {
+                            return;
+                        }
+                    });
+
+                }
+
+                function dateChange() {
+                    GetRegister();
+                }
+                function GetExDocIntro() {
+                    var url = "../../CityService.Service/HospitalInfoService.svc/GetExDocIntro";
+                    $.ajax(url, {
+                        type: "GET",
+                        data: {
+                            HospName: decodeURI(getQueryStringByName("HospName")),
+                            DepartName: decodeURI(getQueryStringByName("DepartName")),
+                            DoctorName: decodeURI(getQueryStringByName("DoctorName")),
+                        },
+                        dataType: "Json",
+                        success: function (result) {
+                            AddDoc(result.d);
+                        },
+                        error: function () {
+                            return;
+                        }
+                    })
+                }
+                //获取特定医生的号源信息
+                function GetRegister() {
+                    var hospName = decodeURI(getQueryStringByName("HospName"));
+                    var depName = decodeURI(getQueryStringByName("DepartName"));
+                    var docName = decodeURI(getQueryStringByName("DoctorName"));
+                    var wd = $("#Day option:selected").val();
+                    var workType = "";
+                    var url = "../../CityService.Service/HospitalInfoService.svc/GetRegistDetails?HospName=" + hospName + "&DepartName=" + depName + "&DoctorName=" + docName + "&WorkDate=" + wd;
+                    $.ajax(url, {
+                        type: "GET",
+                        dataType: "json",
+                        success: function (result) {
+                            if (result.d == null) {
+                                content =
+                                '<div style="text-align:center;padding-top:80px;">' +
+                                '<img src="../Images/empty.png" style="width:140px;height:140px" />' +
+                                '<div style="margin-top:24px; text-align:center;font-family:STHeitiSC;font-size: 16px;color:#8f8f95;">暂无可用号源</div>' +
+                                '</div>';
+                                $("#RegisterDetails").html(content);
+                            }
+                            else {
+                                AddRegister(result.d);
+                            }
+                        },
+                        complete:function()
+                        {$("#toast").hide();},
+                        error: function ()
+                        {
+                            return;
+                        }
+                    })
+                }
+                //获取医生信息，添加到页面上
+                function AddDoc(result) {
+                    var html = ""
+                    $.each(result, function () {
+                        var doctorUrl = this.DocPhotoURL;
+                        if (doctorUrl.length > 0) {
+                            doctorUrl = this.DocPhotoURL;
+                        }
+                        else {
+                            doctorUrl = "../Images/doctor.png";
+                        }
+                        html =
+                            "<div class='am-list-item'>" +
+                                   "<div class='am-list-thumb am-list-thumb-radius'><img src='" + doctorUrl + "' width='80' height='100'></div>" +
+                                             "<div class='am-list-content'>" +
+                                                "<div class='am-list-title'>姓名：" + this.DoctorName + "</div>" +
+                                                "<div class='am-list-title'>职务：" + this.DocRank + "</div>" +
+                                                "<div class='am-list-title'>医院：" + this.HospName + "</div>" +
+                                                "<div class='am-list-title'>科室：" + this.DepartName + "</div>" +
+                                             "</div>" +
+                                    "</div>" +
+                                  "<div class='am-list-header'>擅长：</div>" +
+                                "<div class='am-list-content'>" +
+                                "<div class='am-list-item am-list-item-form'>" +
+                                    "<div class='am-list-control'>" + this.DoctorInro +
+                                    "</div>" +
+                                "</div>" +
+                                "</div>" +
+                        "</div>";
+                    });
+                    $("#DocDetails").html(html);
+                }
+                //获取特定医生的号源信息添加到页面上
+                function AddRegister(result) {
+                    //var ht = $(result).find("PoolInfo").text();
+                    //if (ht == null) {
+                    //    var msg = "该专家没有可用排班";
+                    //    location.href = "Message.html?msg=" + msg;
+                    //}
+                    //else {
+                    var htm = "<div class='am-list-item'>" +
+                              "<div class='am-list-content'>时段</div>" +
+                              "<div class='am-list-content am-ft-center'>余号/总号</div>" +
+                              "<div class='am-list-content am-ft-right'>挂号</div>" +
+                              "</div>";
+                         $.each(result,function(){
+                             var TotalNum = this.TotalNum;
+                             var LeftNum = this.LeftNum;
+                             var StartTime = this.StartTime;
+                             var EndTime = this.EndTime;
+                        var Date = StartTime + "-" + EndTime;
+                        if (LeftNum > 0)
+                        {
+                            htm +=
+                           "<div class='am-list-item'>" +
+                           "<div class='am-list-content'>" + Date + "</div>" +
+                                    "<div class='am-list-content am-ft-center'>" + LeftNum + "/" + TotalNum + "</div>" +
+                                    '<div class="am-list-content am-ft-right"><a href="ExRegister.html?HospName=' + decodeURI(getQueryStringByName("HospName")) + '&DepartName=' + decodeURI(getQueryStringByName('DepartName')) + '&DoctorName=' + decodeURI(getQueryStringByName("DoctorName")) + '&TotalNum=' + TotalNum + '&LeftNum=' + LeftNum + '&Date=' + Date + '&StartTime=' + StartTime + '&EndTime=' + EndTime + '&ClinicDate=' + $("#Day option:selected").val() + '" class="am-button" am-mode="small blue inline">挂号</a></div>' +
+                            "</div>";
+                        }
+                        else {
+                            htm +=
+                           "<div class='am-list-item'>" +
+                           "<div class='am-list-content'>" + Date + "</div>" +
+                                    "<div class='am-list-content am-ft-center'>" + LeftNum + "/" + TotalNum + "</div>" +
+                                    '<div class="am-list-content am-ft-right"><a class="am-button" am-mode="small white inline">已满</a></div>' +
+                            "</div>";
+                        }
+                    });
+                    $("#RegisterDetails").html(htm);
+
+                    //}
+                }
+            </script>
+</body>
+
+</html>

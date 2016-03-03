@@ -1,0 +1,469 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>实时挂号</title>
+     <meta charset='UTF-8'>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link href="../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/button.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/toast.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/dialog.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/button-group.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../Scripts/extensions/base.js"></script>
+    <script type="text/javascript" src="../Scripts/bootstrap.js"></script>
+    <script type="text/javascript" src="../Content/alipay/amui-demo_files/amui.js"></script>
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=2ffb8bddf5f3620892d0bb3051b23777"></script>
+</head>
+<body>
+    <!--挂号信息-->
+    <div data-role="page">
+        <div data-role="content" style="background-color:#EFEFF4;visibility:;">
+            <div class="am-list am-list-5lb" am-mode="flat chip form">
+                <div class="am-list-body">
+                    <div class="am-list-header">挂号信息</div>
+                    <div class="am-list-item am-input-autoclear">
+                        <div class="am-list-label">医院名称</div>
+                        <div class="am-list-body" id="HospName">
+
+                        </div>
+                        <div class="am-list-clear"><i class="am-icon-clear am-icon" am-mode="clear" style="visibility: hidden;"></i></div>
+                    </div>
+                    <div class="am-list-item am-input-autoclear">
+                        <div class="am-list-label">科室名称</div>
+                        <div class="am-list-control">
+                            <div class="am-list-body" id="DepartName">
+
+                            </div>
+                        </div>
+                        <div class="am-list-clear"><i class="am-icon-clear am-icon" am-mode="clear" style="visibility: hidden;"></i></div>
+                    </div>
+                    <div class="am-list-item am-input-autoclear">
+                        <div class="am-list-label">时间</div>
+                        <div class="am-list-control">
+                            <div class="am-list-body" id="date2">
+
+                            </div>
+                        </div>
+                        <div class="am-list-clear"><i class="am-icon-clear am-icon" am-mode="clear" style=""></i></div>
+                    </div>
+                    <input type="hidden" id="Phone1" name="Phone1" value="">
+                    <input type="hidden" id="IdCard1" name="IdCard1" value="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--挂号信息结束-->
+    <!--挂号人信息-->
+    <div data-role="page">
+        <div data-role="content" style="background-color:#EFEFF4;">
+            <div class="am-list am-list-5lb" am-mode="flat chip form">
+                <div class="am-list-body">
+                    <div class="am-list-header">挂号人信息</div>
+                    <div id="details" style="left:15px;">
+                        <div class="am-list-item am-input-autoclear">
+
+                            <div class="am-list-label">姓名</div>
+                            <div class="am-list-control"id="Name">
+                            </div>
+
+                        </div>
+                        <div class="am-list-item am-input-autoclear">
+
+                            <div class="am-list-label">身份证号</div>
+                            <div class="am-list-control"id="IDcard">
+                            </div>
+                        </div>
+                        <div class="am-list-item am-input-autoclear">
+
+                            <div class="am-list-label">手机号</div>
+                            <div class="am-list-control"id="Phone">
+                            </div>
+                        </div>
+                        <div class="am-list-item am-input-autoclear">
+                            <div class="am-list-label">就诊类型</div>
+                            <div class="am-list-control"id="Style">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-LEFT:15px;margin-top:15PX;margin-right:15px;">
+                    <button id="m_search2" type="button" class="am-button" am-mode="#00aaff">选择挂号人</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--挂号人信息结束-->
+    <!--号源详情-->
+    <div data-role="page">
+        <div data-role="content" style="background-color:#EFEFF4">
+            <div class="am-list am-list-5lb" am-mode="flat chip form">
+                <div class="am-list-header">号源信息</div>
+                <div class="am-list-item am-input-autoclear">
+                    <div class="am-list-label">就诊时间</div>
+                    <div class="am-list-body" id="ClinicFeeDate">
+                    </div>
+                </div>
+                <div class="am-list-item am-input-autoclear">
+                    <div class="am-list-label">取号时间</div>
+                    <div class="am-list-body" id="Date">
+
+                    </div>
+                </div>
+                <div class="am-list-item am-input-autoclear" id="ClinicN" style="display:none">
+                    <div class="am-list-label">就诊序号</div>
+                    <div class="am-list-body" id="ClinicNO">
+                    </div>
+                </div>
+                <div class="am-list-item am-input-autoclear" id="TotalN">
+                    <div class="am-list-label">总号</div>
+                    <div class="am-list-body" id="TotalNum">
+                    </div>
+                </div>
+                <div class="am-list-item am-input-autoclear" id="LeftN">
+                    <div class="am-list-label">余号</div>
+                    <div class="am-list-body" id="LeftNum">
+                    </div>
+                </div>
+                <div class="am-list-item am-input-autoclear">
+                    <div class="am-list-label">挂号费</div>
+                    <div class="am-list-body" id="RegistryFee">
+
+                    </div>
+                </div>
+                <div class="am-list-item am-input-autoclear">
+                    <div class="am-list-label">诊疗费</div>
+                    <div class="am-list-body" id="ClinicFee">
+                    </div>
+                </div>
+                <div class="am-list-item am-input-autoclear">
+                    <div class="am-list-label">专家费</div>
+                    <div class="am-list-body" id="ExpertFee">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="padding-left:15px;padding-right:15px;margin-top:15PX;">
+            <button id="SaveButton" type="button" class="am-button" am-mode="blue disabled" onclick="SaveRegistered()">挂 号</button>
+        </div>
+         
+    </div>
+    <!--号源详情结束-->
+    <!--弹窗信息-->
+    <div class="am-dialog" id="selectDialog" am-mode="show" style="display:none;z-index:1;">
+        <div class="am-dialog-wrap">
+            <div class="am-dialog-header">
+                <h3>常用挂号人</h3>
+            </div>
+            <div class="am-list am-list-5lb" am-mode="flat chip form">
+                <div class="am-dialog-body">
+                    <div class="am-list-body" id="Namelist">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--</div>-->
+    <!--弹窗信息结束-->
+    <div data-role="page">
+        <div data-role="content" style="background-color:#EFEFF4;margin-top:20px;">
+           
+                <div class="am-flexbox">
+                    <div class="am-flexbox-item am-flex-left"><a href="RegisterList.html">挂号清单</a></div>
+                    <div class="am-flexbox-item am-flex-center"><a href="Comuserlist.html">常用成员</a></div>
+                    <div class="am-flexbox-item am-flex-right"><a href="News.html">预约提醒</a></div>
+                </div>
+   </div>
+  </div>
+
+    <div id="fuwu" style="display: block;font-family:STHeitiSC  ;font-size: 12px; margin-bottom: 15px; margin-left: 0px; width: 100%; text-align: center; bottom: 0px;z-index:-1;margin-top:20px;">
+        <div class="am-agreement am-ft-gray am-ft-sm">
+            <p>
+                本服务由苏州市卫生局<br />苏州云联智慧信息技术应用有限公司提供支持
+            </p>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    $(function () {
+        $("#HospName").html(decodeURI(getQueryStringByName("HospName")));
+        $("#DepartName").html(decodeURI(getQueryStringByName("DepartName")));
+         $("#ClinicFeeDate").html(decodeURI(getQueryStringByName("Date")));
+        GetDate();
+        //CommonDepartDetails();
+        GetFee();
+        GetExpertFee();
+        GetMemberList();
+        Add();
+        GetRegister();
+    });
+    $("#m_search2").click(function () {
+        $("#selectDialog").show();
+    });
+    function SaveRegister() {
+        SaveRegistered();
+    }
+    //专家挂号信息到12320平台
+    function SaveRegistered() {
+        var OpenID = document.cookie.split(";")[0].split("=")[1];
+        var url = "../../CityService.Service/HospitalInfoService.svc/SaveComRegistered";
+        $.ajax({
+            type: "Get",
+            url: url,
+            data: {
+                HospName: decodeURI(getQueryStringByName("HospName")),
+                DepartName: decodeURI(getQueryStringByName("DepartName")),
+                StartTime: decodeURI(getQueryStringByName("StartTime")),
+                EndTime: decodeURI(getQueryStringByName("EndTime")),
+                Name: $("#Name").html(),
+                Phone: $("#Phone1").val(),
+                IDCard: $("#IdCard1").val(),
+                Style: $("#Style").html(),
+                ExpertFee: $("#ExpertFee").html(),
+                RegistryFee: $("#RegistryFee").html(),
+                ClinicFee: $("#ClinicFee").html(),
+                OpenID: OpenID,
+            },
+            dataType: "json",
+            success: function (result) {
+                var str = result.d;
+                var a = str.split(":");
+                if (a[0]==0) {
+                    alert("挂号成功");
+                    $("#LeftN").css("display", "none");
+                    $("#TotalN").css("display", "none");
+                    $("#ClinicNO").html(a[1]);
+                    $("#ClinicN").css("display","");
+                    $("#SaveButton").css("display", "none");
+                    $("#m_search2").css("display", "none");
+                }
+                 else if (a[0]== 708) {
+                    alert("用户已预约，不能重复预约");
+                }
+                else if (a[0] == 702)
+                { alert("预约已满"); }
+                else if (a[0] == 709)
+                { alert("此排班已停诊"); }
+                else if (a[0] == 710)
+                { alert("此排班已停挂"); }
+                else if (a[0] == 725)
+                { alert("因年龄限制，预约失败"); }
+                else if (a[0] == 726) {
+                    alert("因性别限制，预约失败");
+                }
+                else if (a[0] == 730)
+                { alert("因用户黑名单限制，预约失败"); }
+
+                else
+                { alert("预约失败"); }
+            },
+            error: function () {
+                return;
+            }
+        });
+    }
+    function GetRegister() {
+        StartTime = decodeURI(getQueryStringByName("StartTime"));
+        EndTime = decodeURI(getQueryStringByName("EndTime"));
+        var result = timect(StartTime, EndTime);
+        $("#Date").html(result);
+    }
+    function timect(StartTime,EndTime) {
+        var da = StartTime.match(/\d+/g);
+        var db = EndTime.match(/\d+/g);
+        var timea = new Date(0, 0, 0, parseInt(da[0], 10), parseInt(da[1], 10), 0);
+        var timeb = new Date(0, 0, 0, parseInt(db[0], 10), parseInt(db[1], 10), 0);
+        var c = (timeb.getTime() - timea.getTime())/(1000 * 60);
+        if (c <120)
+        {
+            var timea = new Date(0, 0, 0, parseInt(da[0], 10), parseInt(da[1], 10) - 30, 0);
+            var timeb = new Date(0, 0, 0, parseInt(db[0], 10), parseInt(db[1], 10), 0);
+            if (timea.getMinutes() == 0)
+            {
+                return timea.getHours() + ":" + "00" + "-" + StartTime;
+            }
+            else
+            {
+                return timea.getHours() + ":" + timea.getMinutes() + "-" + StartTime;
+            }
+         }
+        else
+        {
+            var timea = new Date(0, 0, 0, parseInt(da[0], 10), parseInt(da[1], 10), 0);
+            if (timea.getHours() < 12)
+            {
+                var timeb = new Date(0, 0, 0, parseInt(da[0], 10), parseInt(da[1] - 30, 10), 0);
+                if (timeb.getMinutes() == 0) {
+                    return timeb.getHours() + ":" + "00" + "-" + "09:30";
+                }
+                else {
+                    return timeb.getHours() + ":" + timeb.getMinutes() + "-" + "09:30";
+                }
+            }
+            else
+            {
+                    var timeb = new Date(0, 0, 0, parseInt(da[0], 10), parseInt(da[1] - 30, 10), 0);
+                    if (timeb.getMinutes() == 0)
+                    {
+                        return timeb.getHours() + ":" + "00" + "-" + "16:00";
+                    }
+                    else
+                    {
+                        return timeb.getHours() + ":" + timeb.getMinutes() + "-" + "16:00";
+                    }
+                }
+            }
+        }
+    //获取时间
+    function GetDate() {
+        var date = new Date();
+        var month = date.getMonth() + 1;
+        var day = date.getDate();;
+        var noon = date.getHours();
+        if (noon > 12)
+            noon1 = "下午"
+        else
+            noon1 = "上午";
+        var str = "星期" + "日一二三四五六".charAt(date.getDay());
+        var timevalue = month + "月" + day + "日  " + str + "  " + noon1;
+        $("#date2").html(timevalue);
+    }
+    function Add() {
+        // StartTime = decodeURI(getQueryStringByName("StartTime"));
+        // EndTime = decodeURI(getQueryStringByName("EndTime"));
+        TotalNum = decodeURI(getQueryStringByName("TotalNum"));
+        LeftNum = decodeURI(getQueryStringByName("LeftNum"));
+        // $("#Date").html(StartTime + "-" + EndTime);
+        $("#TotalNum").html(TotalNum);
+        $("#LeftNum").html(LeftNum);
+
+    }
+    //获取用户姓名
+    function GetMemberList() {
+        var OpenID = document.cookie.split(";")[0].split("=")[1];
+        var url = "../../CityService.Service/HospitalInfoService.svc/GetMemberNameList";
+        $.ajax({
+            type: "Get",
+            url: url,
+            data: {
+                OpenID: OpenID,
+            },
+            dataType: "json",
+            success: function (result) {
+                AddName(result.d)
+            },
+            error: function () {
+                return;
+            }
+        });
+    }
+    //获取挂号费/诊疗费
+    function GetFee() {
+        var url = "../../CityService.Service/HospitalInfoService.svc/GetFee";
+        $.ajax(url, {
+            type: "GET",
+            data: {
+                HospName: decodeURI(getQueryStringByName("HospName")),
+                DepartName: decodeURI(getQueryStringByName("DepartName"))
+            },
+            dataType: "Json",
+            success: function (result) {
+                $.each(result.d, function () {
+                    $("#RegistryFee").html(this.RegistryFee+"0 元");
+                    $("#ClinicFee").html(this.ClinicFee+"0 元");
+                });
+            },
+            error: function () {
+                return;
+            }
+        })
+    }
+    //获取专家费
+    function GetExpertFee() {
+        var url = "../../CityService.Service/HospitalInfoService.svc/GetComExpertFee";
+        $.ajax(url, {
+            type: "GET",
+            data: {
+                HospName: decodeURI(getQueryStringByName("HospName")),
+                DepartName: decodeURI(getQueryStringByName("DepartName"))
+            },
+            dataType: "Json",
+            success: function (result) {
+                $("#ExpertFee").html(result.d[0]+"0 元");
+            },
+            error: function () {
+                return;
+            }
+        })
+    }
+    //获取挂号人详细信息
+    function GetMemeberDetails(IDCard) {
+        $("#selectDialog").hide();
+        var OpenID = document.cookie.split(";")[0].split("=")[1];
+        var url = "../../CityService.Service/HospitalInfoService.svc/GetMembertList";
+        $.ajax({
+            type: "GET",
+            url: url,
+            data: {
+                IDCard:IDCard,
+            },
+            dataType: "json",
+            success: function (result) {
+                AddNameList(result.d)
+            },
+            error: function () { return; }
+
+        });
+    }
+    //获取选中的常用挂号人详细信息
+    function AddNameList(result) {
+        var content = "";
+            $(result).find("Patient").each(function () {
+                var Name = $(this).children("Name").text();
+                var Phonetemp = $(this).children("Phone").text();
+                var tempFirst = Phonetemp.substring(0, 3);
+                var tempPhone = Phonetemp.substring(3, 7);
+                var midphone = tempPhone.replace(tempPhone, "****");
+                var tempPhone2 = Phonetemp.substring(7, 11);
+                var Phone = tempFirst + midphone + tempPhone2;
+                var IdCardtemp = $(this).children("IdCard").text();
+                var IdCardFirst = IdCardtemp.substring(0, 1);
+                var IdCard12 = IdCardtemp.substring(1, 17);
+                var IdCardmid = IdCard12.replace(IdCard12, "****************");
+                var IdCardLast = IdCardtemp.substring(17, 18);
+                var IdCard = IdCardFirst + IdCardmid + IdCardLast;
+                var InsureType = $(this).children("InsureType").text();
+                $("#Name").html(Name);
+                $("#Phone").html(Phone);
+                $("#IDcard").html(IdCard);
+                $("#Style").html(InsureType);
+                $("#Phone1").val(Phonetemp);
+                $("#IdCard1").val(IdCardtemp);
+        });
+        $("#details").css("display", "");
+        $("#SaveButton").attr("am-mode", "blue");
+    }
+    //获取常用挂号人姓名
+    function AddName(result) {
+        var namelist = "";
+        $.each(result, function () {
+            namelist +=
+                   // '<a class="am-list-item" onclick="javascript:alert(\''+this.Name +'\')">' +
+                   '<a class="am-list-item" onclick="GetMemeberDetails(\'' + this.IDCard + '\')">' +
+                      '<div class="am-list-content">' + this.Name + '</div>' +
+                       ' <div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>' +
+                    '</a>';
+        });
+        $("#Namelist").html(namelist);
+    }
+
+</script>
+</html>

@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "个人资料变更、账户合并";
+}
+
+<div data-role="content" style="background-color:#fff">
+    <div class="am-list" am-mode="flat  chip">
+        <div style="padding:0 10px;padding-bottom:10px;">
+            <div style="width:70px;float:right;z-index:2;font-size:13px;padding:10px;text-align:center;font-weight:bolder;word-break:keep-all;">
+                <img src="~/Images/地图.png" style="width:30px;height:30px;" onclick="Show()" />
+                <div><strong>办理网点</strong></div>
+            </div>
+            <p style="text-align:center;"><b>个人资料变更、账户合并</b></p>
+            <div style="margin-top:15px;"><b>办理流程</b></div>
+            <div style="margin-top:15px;">职工带齐材料至办理场所进行业务申请→工作人员审核材料→进行业务处理</div>
+        </div>
+        <div style="padding:0 15px;">
+            <div style="margin-top:15px;"><b>办理要件</b></div>
+            <div style="margin-top:15px;">
+            <img src="~/Images/个人资料变更、账户合并.PNG" id="Images1" style="width:100%" />
+                </div>
+        </div>
+        <script>
+            $(function () {
+                $("#Images1").click(function () {
+                    var url = $("#Images1").attr("src");
+                    window.location.href = "../AlipayProvidentFund/ShowImages?url=" + url;
+                });
+            });
+            function Show() {
+                window.location.href = "../AlipayProvidentFund/SelectCardPoint";
+            }
+        </script>
+      
+    </div>
+    </div>

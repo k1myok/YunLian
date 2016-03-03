@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Mappings>
+  <Mapping>
+    <!-- 大类 -->
+    <TestType>自考</TestType>
+    <!-- 分类 -->
+    <Classification>考试通知书查询</Classification>
+    <!-- 年月 -->
+    <Date>2015年10月</Date>
+    <!-- 数据表名 -->
+    <TableName>KSTZS</TableName>
+  </Mapping>
+  <Mapping>
+    <!-- 大类 -->
+    <TestType>自考</TestType>
+    <!-- 分类 -->
+    <Classification>自考成绩查询</Classification>
+    <!-- 年月 -->
+    <Date>2015年10月</Date>
+    <!-- 数据表名 -->
+    <TableName>ZKCJCX</TableName>
+  </Mapping>
+  <Mapping>
+    <!-- 大类 -->
+    <TestType>自考</TestType>
+    <!-- 分类 -->
+    <Classification>自考教材信息查询</Classification>
+    <!-- 年月 -->
+    <Date>2015年10月</Date>
+    <!-- 数据表名 -->
+    <TableName>JCXX</TableName>
+  </Mapping>
+  <Mapping>
+    <!-- 大类 -->
+    <TestType>自考</TestType>
+    <!-- 分类 -->
+    <Classification>自考考试日程查询</Classification>
+    <!-- 年月 -->
+    <Date>2015年10月</Date>
+    <!-- 数据表名 -->
+    <TableName>KSRQCX</TableName>
+    <RQ1BM>10月19日上午</RQ1BM>
+    <RQ2BM>10月17日下午</RQ2BM>
+    <RQ3BM>10月18日上午</RQ3BM>
+    <RQ4BM>10月18日下午</RQ4BM>
+  </Mapping>
+  <Mapping>
+    <!-- 大类 -->
+    <TestType>高考</TestType>
+    <!-- 分类 -->
+    <Classification>高考成绩查询</Classification>
+    <!-- 年月 -->
+    <Date>2015年6月</Date>
+    <!-- 数据表名 -->
+    <TableName>GKCJCX</TableName>
+  </Mapping>
+  <Mapping>
+    <!-- 大类 -->
+    <TestType>高考</TestType>
+    <!-- 分类 -->
+    <Classification>高考考点查询</Classification>
+    <!-- 年月 -->
+    <Date>2015年6月</Date>
+    <!-- 数据表名 -->
+    <TableName>GKKDCX</TableName>
+  </Mapping>
+  <Mapping>
+    <!-- 大类 -->
+    <TestType>高考</TestType>
+    <!-- 分类 -->
+    <Classification>高考考籍号考生号查询</Classification>
+    <!-- 年月 -->
+    <Date>2015年6月</Date>
+    <!-- 数据表名 -->
+    <TableName>KJHKSHCX</TableName>
+  </Mapping>
+  <Mapping>
+    <!-- 大类 -->
+    <TestType>高考</TestType>
+    <!-- 分类 -->
+    <Classification>口语成绩查询</Classification>
+    <!-- 年月 -->
+    <Date>2015年6月</Date>
+    <!-- 数据表名 -->
+    <TableName>KYCJ</TableName>
+  </Mapping>
+  <Mapping>
+    <!-- 大类 -->
+    <TestType>高考</TestType>
+    <!-- 分类 -->
+    <Classification>学测成绩查询</Classification>
+    <!-- 年月 -->
+    <Date>2015年6月</Date>
+    <!-- 数据表名 -->
+    <TableName>XYSPCS</TableName>
+  </Mapping>
+  <Mapping>
+    <!-- 大类 -->
+    <TestType>研究生</TestType>
+    <!-- 分类 -->
+    <Classification>研究生考场查询</Classification>
+    <!-- 年月 -->
+    <Date>2015年1月</Date>
+    <!-- 数据表名 -->
+    <TableName>YJSKCCX</TableName>
+  </Mapping>
+  <Mapping>
+    <!-- 大类 -->
+    <TestType>证书</TestType>
+    <!-- 分类 -->
+    <Classification>全国计算机等级考试查询</Classification>
+    <!-- 年月 -->
+    <Date>2015年9月</Date>
+    <!-- 数据表名 -->
+    <TableName>QGJSJDJKSCX</TableName>
+  </Mapping>
+  <Mapping>
+    <!-- 大类 -->
+    <TestType>证书</TestType>
+    <!-- 分类 -->
+    <Classification>全国英语等级考试成绩查询</Classification>
+    <!-- 年月 -->
+    <Date>2015年9月</Date>
+    <!-- 数据表名 -->
+    <TableName>QGYYDJKSCJCX</TableName>
+  </Mapping>
+  <Mapping>
+    <!-- 大类 -->
+    <TestType>证书</TestType>
+    <!-- 分类 -->
+    <Classification>教师资格考试成绩查询</Classification>
+    <!-- 年月 -->
+    <Date>2015年9月</Date>
+    <!-- 数据表名 -->
+    <TableName>QGJSZGZKSCX</TableName>
+  </Mapping>
+  <Mapping>
+    <!-- 大类 -->
+    <TestType>中考</TestType>
+    <!-- 分类 -->
+    <Classification>中考成绩查询</Classification>
+    <!-- 年月 -->
+    <Date>2015年6月</Date>
+    <!-- 数据表名 -->
+    <TableName>ZHKCJCX</TableName>
+  </Mapping>
+  <Mapping>
+    <!-- 大类 -->
+    <TestType>中考</TestType>
+    <!-- 分类 -->
+    <Classification>中考考场查询</Classification>
+    <!-- 年月 -->
+    <Date>2015年6月</Date>
+    <!-- 数据表名 -->
+    <TableName>ZHKKCCX</TableName>
+  </Mapping>
+  <Mapping>
+    <!-- 大类 -->
+    <TestType>中考</TestType>
+    <!-- 分类 -->
+    <Classification>中考人机对话成绩查询</Classification>
+    <!-- 年月 -->
+    <Date>2015年6月</Date>
+    <!-- 数据表名 -->
+    <TableName>ZHKRJDHCJCX</TableName>
+  </Mapping>
+  <Mapping>
+    <!-- 大类 -->
+    <TestType>成考</TestType>
+    <!-- 分类 -->
+    <Classification>成考成绩查询</Classification>
+    <!-- 年月 -->
+    <Date>2015年10月</Date>
+    <!-- 数据表名 -->
+    <TableName>CKCJCX</TableName>
+  </Mapping>
+  <Mapping>
+    <!-- 大类 -->
+    <TestType>成考</TestType>
+    <!-- 分类 -->
+    <Classification>成考考场查询</Classification>
+    <!-- 年月 -->
+    <Date>2015年10月</Date>
+    <!-- 数据表名 -->
+    <TableName>CKKCCX</TableName>
+  </Mapping>
+</Mappings>
+
+
+
+

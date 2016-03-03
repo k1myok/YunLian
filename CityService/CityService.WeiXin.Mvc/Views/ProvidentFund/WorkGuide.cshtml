@@ -1,0 +1,445 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>办事指南</title>
+    <link href="~/Content/jquery.mobile-1.4.5.css" rel="stylesheet" />
+    <script src="~/Script/jquery-1.10.2.min.js"></script>
+    <script src="~/Script/extensions/base.js"></script>
+    <script src="~/Script/jquery.mobile-1.4.5.js"></script>
+    <script src="~/Scripts/jquery-verification-1.0.1.js"></script>
+    <style>
+        /*.ui-page-theme-a .ui-btn, html .ui-bar-a .ui-btn, html .ui-body-a .ui-btn, html body .ui-group-theme-a .ui-btn, html head + body .ui-btn.ui-btn-a, .ui-page-theme-a .ui-btn:visited, html .ui-bar-a .ui-btn:visited, html .ui-body-a .ui-btn:visited, html body .ui-group-theme-a .ui-btn:visited, html head + body .ui-btn .ui-btn-a:visited {
+            background-color: #fff;
+            border-color: #ddd;
+            color: #333;
+            text-shadow: 0 1px 0 #f3f3f3;
+        }*/
+    </style>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="content" style="padding:0 0 10px 0;">
+            <div>
+                <img src="~/Image/苏州市住房公积金管理中心.jpg" style="width:100%;" />
+            </div>
+            <div data-role="tabs" id="tabs">
+                <script>
+                    $(document).ready(function () {
+                        var sessionstorage = window.sessionStorage;
+                        var index=sessionstorage.getItem("index");
+                        if (!isNullOrEmpty(index)) {
+                            switch (index) {
+                                case "1":
+                                    $("a[href=#one]").click();
+                                    break;
+                                case "2":
+                                    $("a[href=#two]").click();
+                                    break;
+                                case "3":
+                                    $("a[href=#three]").click();
+                                    break;
+                            }
+                        }
+                        else {
+                            //默认第一个选中
+                            $("a[href=#one]").addClass("ui-btn-active")
+                        }
+                        $("a[href=#one]").click(function () {
+                            sessionstorage.setItem("index", "1");
+                        });
+                        $("a[href=#two]").click(function () {
+                            sessionstorage.setItem("index", "2");
+                        });
+                        $("a[href=#three]").click(function () {
+                            sessionstorage.setItem("index", "3");
+                        });
+                    });
+                    function GoLR1() {
+                        window.location.href = "../ProvidentFund/LoanResult1";
+                    }
+                    function GoLR2() {
+                        window.location.href = "../ProvidentFund/LoanResult2";
+                    }
+                    function GoLR3() {
+                        window.location.href = "../ProvidentFund/LoanResult3";
+                    }
+                    function GoLR4() {
+                        window.location.href = "../ProvidentFund/LoanResult4";
+                    }
+                    function GoLR5() {
+                        window.location.href = "../ProvidentFund/LoanResult5";
+                    }
+                    function GoLR6() {
+                        window.location.href = "../ProvidentFund/LoanResult6";
+                    }
+                    function GoDR1(val) {
+                        window.location.href = "../ProvidentFund/DrawResult1?title=" + val;
+                    }
+                    function GoDR2(val) {
+                        window.location.href = "../ProvidentFund/DrawResult2?title=" + val;
+                    }
+                    function GoDR3(val) {
+                        window.location.href = "../ProvidentFund/DrawResult3?title=" + val;
+                    }
+                    function GoDR4(val) {
+                        window.location.href = "../ProvidentFund/DrawResult4?title=" + val;
+                    }
+                    function GoDR5(val) {
+                        window.location.href = "../ProvidentFund/DrawResult5?title=" + val;
+                    }
+                    function GoDR6(val) {
+                        window.location.href = "../ProvidentFund/DrawResult6?title=" + val;
+                    }
+                    function GoDR7(val) {
+                        window.location.href = "../ProvidentFund/DrawResult7?title=" + val;
+                    }
+                    function GoDR8(val) {
+                        window.location.href = "../ProvidentFund/DrawResult8?title=" + val;
+                    }
+                    function GoDR9(val) {
+                        window.location.href = "../ProvidentFund/DrawResult9?title=" + val;
+                    }
+                    function Change1() {
+                        window.location.href = "../ProvidentFund/CardMangeResul4";
+                    }
+                    function Change2() {
+                        window.location.href = "../ProvidentFund/CardMangeResul2";
+                    }
+                    function Change3() {
+                        window.location.href = "../ProvidentFund/CardMangeResul1";
+                    }
+                    function Change4() {
+                        window.location.href = "../ProvidentFund/CardMangeResul3";
+                    }
+                </script>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#one" data-ajax="false">贷款业务</a></li>
+                        <li><a href="#two" data-ajax="false">提取业务</a></li>
+                        <li><a href="#three" data-ajax="false">个人卡务</a></li>
+                    </ul>
+                </div>
+                <div id="one" class="ui-body-d ui-content" style="padding:0;padding-top:3.2px;">
+                    <table style="width:100%;text-align:center;vertical-align:central;font-size:12px;background-color:white;" cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td style="border: 1px solid #ddd;" onclick="GoLR1()">
+                                    <table style="width:100%;text-align:left;padding:5px 0;" border="0" cellpadding="2" cellspacing="2">
+                                        <tbody>
+                                            <tr>
+                                                <td width="15%" style="text-align:center;"><img src="~/Image/新建普通住房贷款申请指南2.png" /></td>
+                                                <td width="85%">新建普通住房贷款申请指南</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #ddd;border-top:0;" onclick="GoLR2()">
+                                    <table style="width:100%;text-align:left;padding:5px 0;" border="0" cellpadding="2" cellspacing="2">
+                                        <tbody>
+                                            <tr>
+                                                <td width="15%" style="text-align:center;"><img src="~/Image/二手公积金贷款申请指南2.png" /></td>
+                                                <td width="85%">二手房公积金贷款申请指南</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #ddd;border-top:0;" onclick="GoLR3()">
+                                    <table style="width:100%;text-align:left;padding:5px 0;" border="0" cellpadding="2" cellspacing="2">
+                                        <tbody>
+                                            <tr>
+                                                <td width="15%" style="text-align:center;"><img src="~/Image/变更贷款还款方式.png" /></td>
+                                                <td width="85%">变更贷款还款方式</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #ddd;border-top:0;" onclick="GoLR4()">
+                                    <table style="width:100%;text-align:left;padding:5px 0;" border="0" cellpadding="2" cellspacing="2">
+                                        <tbody>
+                                            <tr>
+                                                <td width="15%" style="text-align:center;"><img src="~/Image/调整贷款每月还款额.png" /></td>
+                                                <td width="85%">调整贷款每月还款额</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #ddd;border-top:0;" onclick="GoLR5()">
+                                    <table style="width:100%;text-align:left;padding:5px 0;" border="0" cellpadding="2" cellspacing="2">
+                                        <tbody>
+                                            <tr>
+                                                <td width="15%" style="text-align:center;"><img src="~/Image/怎样办理部分归还或还清公积金贷款.png" /></td>
+                                                <td width="85%">怎样办理部分归还或还清公积金贷款</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #ddd;border-top:0;" onclick="GoLR6()">
+                                    <table style="width:100%;text-align:left;padding:5px 0;" border="0" cellpadding="2" cellspacing="2">
+                                        <tbody>
+                                            <tr>
+                                                <td width="15%" style="text-align:center;"><img src="~/Image/公积金贷款还清以后需办理的事项.png" /></td>
+                                                <td width="85%">公积金贷款还清以后需办理的事项</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div style="bottom:0px;position:fixed;">
+                        <img src="~/Image/公积金官方微信.png" style="width:100%;" />
+                    </div>
+                </div>
+                <div id="two" style="padding:0;padding-top:3.2px;">
+                    <table style="width:100%;text-align:left;vertical-align:central;font-size:12px;background-color:white;padding-top:5px;" cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td style="border: 1px solid #ddd;padding-left:3px;" onclick="GoDR1('购买新房、二手房')">
+                                    <table style="width:100%;text-align:left;padding:5px 0;" border="0" cellpadding="2" cellspacing="2">
+                                        <tbody>
+                                            <tr>
+                                                <td width="15%" style="text-align:center;"><img src="~/Image/购买新房，二手房.png" /></td>
+                                                <td width="85%">购买新房、二手房</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #ddd;border-top:0;padding-left:3px;" onclick="GoDR2('购买公有住房产权、使用权、分期付款')">
+                                    <table style="width:100%;text-align:left;padding:5px 0;" border="0" cellpadding="2" cellspacing="2">
+                                        <tbody>
+                                            <tr>
+                                                <td width="15%" style="text-align:center;"><img src="~/Image/购买公有住房产权，使用权.png" /></td>
+                                                <td width="85%">购买公有住房产权、使用权、分期付款</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd;border-top:0;" onclick="GoDR3('拆迁安置')">
+                                    <table style="width:100%;text-align:left;padding:5px 0;" border="0" cellpadding="2" cellspacing="2">
+                                        <tbody>
+                                            <tr>
+                                                <td width="15%" style="text-align:center;"><img src="~/Image/拆迁安置，翻建自住住房.png" /></td>
+                                                <td width="85%">拆迁安置</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd;border-top:0;" onclick="GoDR3('翻建自住住房')">
+                                    <table style="width:100%;text-align:left;padding:5px 0;" border="0" cellpadding="2" cellspacing="2">
+                                        <tbody>
+                                            <tr>
+                                                <td width="15%" style="text-align:center;"><img src="~/Image/翻建自住住房.png" /></td>
+                                                <td width="85%">翻建自住住房</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #ddd;border-top:0;" onclick="GoDR4('离退休')">
+                                    <table style="width:100%;text-align:left;padding:5px 0;" border="0" cellpadding="2" cellspacing="2">
+                                        <tbody>
+                                            <tr>
+                                                <td width="15%" style="text-align:center;"><img src="~/Image/离退休.png" /></td>
+                                                <td width="85%">离退休</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #ddd;border-top:0;" onclick="GoDR4('下岗失业')">
+                                    <table style="width:100%;text-align:left;padding:5px 0;" border="0" cellpadding="2" cellspacing="2">
+                                        <tbody>
+                                            <tr>
+                                                <td width="15%" style="text-align:center;"><img src="~/Image/离退休，下岗失业.png" /></td>
+                                                <td width="85%">下岗失业</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #ddd;border-top:0;" onclick="GoDR4('死亡（或被宣告死亡）提取')">
+                                    <table style="width:100%;text-align:left;padding:5px 0;" border="0" cellpadding="2" cellspacing="2">
+                                        <tbody>
+                                            <tr>
+                                                <td width="15%" style="text-align:center;"><img src="~/Image/死亡提取.png" /></td>
+                                                <td width="85%">死亡（或被宣告死亡）提取</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd;border-top:0;" onclick="GoDR5('出大市范围外、出境定居')">
+                                    <table style="width:100%;text-align:left;padding:5px 0;" border="0" cellpadding="2" cellspacing="2">
+                                        <tbody>
+                                            <tr>
+                                                <td width="15%" style="text-align:center;"><img src="~/Image/出大市范围外，出境定居.png" /></td>
+                                                <td width="85%">出大市范围外，出境定居</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #ddd;border-top:0;" onclick="GoDR6('还贷提取')">
+                                    <table style="width:100%;text-align:left;padding:5px 0;" border="0" cellpadding="2" cellspacing="2">
+                                        <tbody>
+                                            <tr>
+                                                <td width="15%" style="text-align:center;"><img src="~/Image/还贷提取2.png" /></td>
+                                                <td width="85%">还贷提取</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #ddd;border-top:0;" onclick="GoDR7('还贷委托提取')">
+                                    <table style="width:100%;text-align:left;padding:5px 0;" border="0" cellpadding="2" cellspacing="2">
+                                        <tbody>
+                                            <tr>
+                                                <td width="15%" style="text-align:center;"><img src="~/Image/还贷委托提取2.png" /></td>
+                                                <td width="85%">还贷委托提取</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd;border-top:0;" onclick="GoDR8('租房提取')">
+                                    <table style="width:100%;text-align:left;padding:5px 0;" border="0" cellpadding="2" cellspacing="2">
+                                        <tbody>
+                                            <tr>
+                                                <td width="15%" style="text-align:center;"><img src="~/Image/租房提取2.png" /></td>
+                                                <td width="85%">租房提取</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #ddd;border-top:0;" onclick="GoDR9('完全和部分丧失劳动能力')">
+                                    <table style="width:100%;text-align:left;padding:5px 0;" border="0" cellpadding="2" cellspacing="2">
+                                        <tbody>
+                                            <tr>
+                                                <td width="15%" style="text-align:center;"><img src="~/Image/完全和部分丧失劳动能力，低保特困.png" /></td>
+                                                <td width="85%">完全和部分丧失劳动能力</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #ddd;border-top:0;" onclick="GoDR9('低保特困')">
+                                    <table style="width:100%;text-align:left;padding:5px 0;" border="0" cellpadding="2" cellspacing="2">
+                                        <tbody>
+                                            <tr>
+                                                <td width="15%" style="text-align:center;"><img src="~/Image/低保特困.png" /></td>
+                                                <td width="85%">低保特困</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #ddd;border-top:0;" onclick="GoDR9('患重病')">
+                                    <table style="width:100%;text-align:left;padding:5px 0;" border="0" cellpadding="2" cellspacing="2">
+                                        <tbody>
+                                            <tr>
+                                                <td width="15%" style="text-align:center;"><img src="~/Image/患重病.png" /></td>
+                                                <td width="85%">患重病</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div style="padding-bottom:0px;margin-bottom:0px;">
+                        <img src="~/Image/公积金官方微信.png" style="width:100%;" />
+                    </div>
+                </div>
+                <div id="three" style="padding:0;padding-top:3.2px;">
+                    <table style="width:100%;text-align:center;vertical-align:central;font-size:12px;background-color:white;" cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td style="border: 1px solid #ddd;" onclick="Change1()">
+                                    <table style="width:100%;text-align:left;padding:5px 0;" border="0" cellpadding="2" cellspacing="2">
+                                        <tbody>
+                                            <tr>
+                                                <td width="15%" style="text-align:center;"><img src="~/Image/个人资料变更2.png" /></td>
+                                                <td width="85%">个人资料变更、账户合并</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #ddd;border-top:0;" onclick="Change2()">
+                                    <table style="width:100%;text-align:left;padding:5px 0;" border="0" cellpadding="2" cellspacing="2">
+                                        <tbody>
+                                            <tr>
+                                                <td width="15%" style="text-align:center;"><img src="~/Image/密码修改挂失2.png" /></td>
+                                                <td width="85%">密码修改、挂失</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd;border-top:0;" onclick="Change3()">
+                                    <table style="width:100%;text-align:left;padding:5px 0;" border="0" cellpadding="2" cellspacing="2">
+                                        <tbody>
+                                            <tr>
+                                                <td width="15%" style="text-align:center;"><img src="~/Image/个人账户转移2.png" /></td>
+                                                <td width="85%">个人账户转移</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #ddd;border-top:0;" onclick="Change4()">
+                                    <table style="width:100%;text-align:left;padding:5px 0;" border="0" cellpadding="2" cellspacing="2">
+                                        <tbody>
+                                            <tr>
+                                                <td width="15%" style="text-align:center;"><img src="~/Image/挂失领卡换卡2.png" /></td>
+                                                <td width="85%">挂失、领卡、换卡</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div style="bottom:0px;position:fixed;">
+                        <img src="~/Image/公积金官方微信.png" style="width:100%;" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

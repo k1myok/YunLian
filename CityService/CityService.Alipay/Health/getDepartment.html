@@ -1,0 +1,238 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>预约挂号</title>
+    <meta charset='UTF-8'>
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <link href="../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/button.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/toast.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/dialog.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/button-group.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../Scripts/extensions/base.js"></script>
+    <script type="text/javascript" src="../Content/alipay/amui-demo_files/amui.js"></script>
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=2ffb8bddf5f3620892d0bb3051b23777"></script>
+    </head>
+<body>
+    <div data-role="page">
+        <div data-role="content" style="background-color:#EFEFF4">
+            <div class="am-tab" id="tabHeader">
+                <a id="tab1" href="javascript:switchPanel('1')" class="am-tab-item" data-tab="selected">普通挂号</a>
+                <a id="tab2" href="javascript:switchPanel('2')" class="am-tab-item">专家挂号</a>
+            </div>
+            <!--普通挂号-->
+            <div id="tab1Panel" class="am-list am-list-5lb" am-mode="flat chip form" style="display:none;">
+               <!--search-->
+                <div class="am-search-input">
+                    <div class="am-search am-input-autoclear">
+                        <div class="am-search-input">
+                            <div class="am-search-icon"><i class="am-icon" am-mode="search"></i></div>
+                            <input class="am-search-value" id="Depart" type="text" placeholder="搜索科室" value="">
+                            <input type="hidden" id="HospName" value="" name="HospName">
+                            <div class="am-search-clear"><i class="am-icon-clear am-icon" am-mode="clear clear-tiny" style="visibility: hidden;"></i></div>
+                        </div>
+                        <div class="am-search-button" style="display: none;">
+                            <button type="button" class="am-button" am-mode="little blue" disabled="disabled" onclick="getComDepartDoc()">查询</button>
+                        </div>
+                    </div>
+                    <div class="am-search-clear"><i class="am-icon-clear am-icon" am-mode="clear clear-tiny" style="visibility: hidden;"></i></div>
+                </div>
+                <div data-role="page">
+                    <div data-role="content" style="background-color:#EFEFF4">
+                        <div class="am-list am-list-5lb" am-mode="flat chip form">
+                            <div class="am-list-body" id="CommonDepartlist">
+            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+            <!--end 普通挂号--> 
+            <!--专家号-->
+           <div id="tab2Panel" class="am-list am-list-5lb" am-mode="flat chip form" style="display:none;">
+            <div class="am-search-input">
+                <div class="am-search am-input-autoclear">
+                    <!--搜索科室-->
+                    <div class="am-search-input">
+                        <div class="am-search-icon"><i class="am-icon" am-mode="search"></i></div>
+                        <input class="am-search-value" id="exDepart" type="text" placeholder="科室" value="">
+                        <div class="am-search-clear"><i class="am-icon-clear am-icon" am-mode="clear clear-tiny" style="visibility: hidden;"></i></div>
+                    </div>
+                 </div>
+                <div class="am-search am-input-autoclear">
+                    <!--搜索专家-->
+                    <div class="am-search-input">
+                        <div class="am-search-icon"><i class="am-icon" am-mode="search"></i></div>
+                        <input class="am-search-value" id="Doctor" type="text" placeholder="专家" value="">
+                        <div class="am-search-clear"><i class="am-icon-clear am-icon" am-mode="clear clear-tiny" style="visibility:hidden;"></i></div>
+                    </div>
+                </div>
+                <div class="am-search-button" style="display:block;padding-left:15px;padding-right:15px;margin-top:15PX;">
+                    <button type="button" class="am-button" am-mode="small blue" onclick="getExDepartDoc()">查询</button>
+                </div>
+             </div>
+                <div data-role="page">
+                    <div data-role="content" style="background-color:#EFEFF4">
+                        <div class="am-list am-list-5lb" am-mode="flat chip form">
+                            <div class="am-list-body" id="ExpertDepartlist">
+                              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+              <div class="am-flexbox">
+                    <div class="am-flexbox-item"><a href="RegisterList.html">挂号清单</a></div>
+                    <div class="am-flexbox-item"><a href="Comuserlist.html">常用成员</a></div>
+                    <div class="am-flexbox-item"><a href="News.html">预约提醒</a></div>
+                </div>
+        </div>
+        </div> 
+    <div id="fuwu" style="display: block;font-family:STHeitiSC  ;font-size: 12px; margin-left: 0px; width: 100%; text-align: center; bottom: 0px; position:relative;z-index:-1;margin-top:20px">
+        <div class="am-agreement am-ft-gray am-ft-sm">
+            <p>
+                本服务由苏州市卫生局<br />苏州云联智慧信息技术应用有限公司提供支持
+            </p>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    $(function (){
+        switchPanel(2);
+        GetCommonDepart();
+        GetExpertDepart();
+    });
+ 
+    function switchPanel(index) {
+        $("#tab1Panel").css("display", index == "1" ? "inline" : "none");
+        $("#tab2Panel").css("display", index == "2" ? "inline" : "none");
+        $("#tab1").attr("data-tab", index == "1" ? "selected" : "");
+        $("#tab2").attr("data-tab", index == "2" ? "selected" : "");
+    }
+    function GetCommonDepart()
+    {
+        var url = "../../CityService.Service/HospitalInfoService.svc/GetCommonDepart";
+        $.ajax(url,{
+            type:"GET",
+            data:{
+                HospName: decodeURI(getQueryStringByName("HospName")),
+    },
+    dataType:"Json",
+            success:function(result)
+            {
+                addToCommonDepartlist(result.d);
+            },
+            error:function()
+            {
+                return;
+            }
+        })
+    }
+     function GetExpertDepart()
+      {
+         var url = "../../CityService.Service/HospitalInfoService.svc/GetExpertDepart";
+        $.ajax(url,{
+            type: "GET",
+            data: {
+                HospName: decodeURI(getQueryStringByName("HospName")),
+            },
+            dataType: "Json",
+            success: function (result) {
+              addToExpertDepartlist(result.d);
+            },
+            error: function () {
+                return;
+            }
+        })
+     }
+
+     function getComDepartDoc()
+     {
+         var HospName = decodeURI(getQueryStringByName("HospName"));
+         var search = $("#Depart").val();
+         if (search.toString().trim() != "") {
+             var url = "../../CityService.Service/HospitalInfoService.svc/GetSearchCommonDepart";
+             $.ajax(url, {
+                 type: "GET",
+                 data: {
+                     HospName: decodeURI(getQueryStringByName("HospName")),
+                     SearchDepartName: $("#Depart").val().toString().trim()
+                 },
+                 dataType: "Json",
+                 success: function (result) {
+                     addToCommonDepartlist(result.d);
+                 },
+                 error: function () {
+                     return;
+                 }
+             })
+         } else
+         {
+             GetCommonDepart();
+         }
+     }
+
+     function getExDepartDoc() {
+         var HospName = decodeURI(getQueryStringByName("HospName"));
+         var DepSearch = $("#exDepart").val();
+         var DocSearch = $("#Doctor").val();
+	 if(DepSearch =="" && DocSearch =="")
+	{ 
+          var msg="没有相应的信息";
+         location.href = "Message.html?msg="+msg;
+	}else{
+         location.href = 'ExDepartDocList.html?HospName=' + HospName + '&DepName=' + DepSearch + '&DocName=' + DocSearch;
+	}
+     }
+
+     function addToCommonDepartlist(DepartList)
+     {
+         var HospName = decodeURI(getQueryStringByName("HospName"));
+         content = "";
+         if (DepartList == null || DepartList.length == 0) {
+             content =
+                  '<div style="padding-bottom:20px;">'+
+             '<div class="am-list-item" >' +
+             '<div class="am-list-content">暂未查到可用信息</div>' +
+             '</div>' +
+             '</div>';
+             $("#CommonDepartlist").html(content);
+         }
+         else
+         {
+             $.each(DepartList, function () {
+                 content = content +
+                '<a class="am-list-item" href=ComDepartDetail.html?HospName=' + HospName + '&DepartName=' + this + '>' +
+                '<div class="am-list-content">' + this + '</div>' +
+                '<div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>' +
+            '</a>';
+             });
+             $("#CommonDepartlist").html(content);
+         }
+     }
+     function addToExpertDepartlist(DepartList) {
+         var HospName = decodeURI(getQueryStringByName("HospName"));
+         if (DepartList == null || DepartList.length == 0)
+             return;
+         content ="";
+         $.each(DepartList, function () {
+             content = content +
+           '<a  href="ExDepartDocList.html?HospName=' + HospName + '&DepartName='+ this +'" class="am-list-item">' +
+            '<div class="am-list-content">' + this + '</div>' +
+            '<div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>' +
+        '</a>';
+         });
+         $("#ExpertDepartlist").html(content);
+      }
+</script>
+</html>
+

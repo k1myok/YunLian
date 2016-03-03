@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <title>
+    苏州旅游
+  </title>
+  <menus>
+    <menu>
+      <content>手机导游</content>
+      <url>../Traval/Default.html</url>
+      <image>../Images/手机导游.png</image>
+    </menu>
+  </menus>
+  <foot>
+    <div class='am-agreement am-ft-gray am-ft-sm'>
+      <p id='footValue'>
+        本服务由<br />苏州云联智慧信息技术应用有限公司提供支持
+      </p>
+    </div>
+  </foot>
+  <type>
+    type_jgg
+  </type>
+</root>

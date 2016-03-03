@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport"  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+
+    <title>农产品物价查询结果</title>
+    <link href="../../Content/amui-demo_files/demo.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="../../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../Content/alipay/amui-demo_files/amui.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../Content/alipay/amui-demo_files/amui.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../../Content/alipay/amui-demo_files/agreement.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../../Content/alipay/amui-demo_files/article.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../../Content/alipay/amui-demo_files/city-select.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../../Content/alipay/amui-demo_files/timeline.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../../Content/alipay/amui-demo_files/page-result.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../../Content/alipay/amui-demo_files/iconfont.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../../Content/alipay/amui-demo_files/button-group.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../../Content/alipay/amui-demo_files/search.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../../Content/alipay/amui-demo_files/top-notice.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../../Content/alipay/amui-demo_files/toast.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../../Content/alipay/amui-demo_files/message.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../../Content/alipay/amui-demo_files/dialog.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../../Content/alipay/amui-demo_files/card.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../../Content/alipay/amui-demo_files/header.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../../Content/alipay/amui-demo_files/switch.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../../Content/alipay/amui-demo_files/simple-password.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../../Content/alipay/amui-demo_files/form.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../../Content/alipay/amui-demo_files/message(1).css" media="all">
+    <link rel="stylesheet" type="text/css" href="../../Content/alipay/amui-demo_files/demo.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../../Content/alipay/button.css" media="all">
+    <script charset="utf-8" src="../../Content/alipay/amui-demo_files/zepto.js"></script>
+    <script charset="utf-8" src="../../Content/alipay/amui-demo_files/amui.js"></script>
+    <script type="text/javascript" src="../../Scripts/extensions/base.js"></script>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="header" class="am-header" style="display:none">
+            <!--<div class="am-header-left">
+             <a class="am-header-back" href="javascript:window.history.back()">返回</a>
+         </div>
+        <h1 class="am-header-title">查询结果</h1>-->
+        </div> 
+        <div data-role="content">
+            <div class="am-toast" id="toast">
+                <div class="am-toast-text">
+                    <span class="am-toast-icon am-icon" am-mode="toast-loading"></span> 正在努力查询...
+                </div>
+            </div>
+            <div class="am-card" id="cardContainer">
+                <div id="resultDiv" class="am-page-result-wrap" style="margin-top:125px; text-align:center;display:none">
+                    <div class="am-page-result-pic">
+                        <img src="../../Images/empty.png" width="138" height="138">
+                    </div>
+                    <div class="am-page-result-title" style="color:#8F8F95; font-size:16px; margin-top:25px;font-family:stheitisc">未查询到价格记录</div>
+                    <div class="am-page-result-brief" style="color:#8F8F95; font-size:16px; margin-top:8px;font-family:stheitisc">请返回修改商品查询关键字</div>
+                </div>
+            </div>
+        </div>
+        <div style="padding-left:15px;padding-right:15px;margin-top:15PX;margin-bottom:20px;">
+            <button class="am-button am-button-light" id="moreButton" style="visibility:hidden;">更多</button>
+        </div>
+
+    </div>
+            <script>
+                $(function () {
+                    search();
+                    $("#moreButton").click(function () {
+                        pageNum++;
+                        search();
+                    });
+                })
+
+                var entityList;
+                var resultEntity;
+                var pageNum = 1;
+                function search() {
+                    $("#toast").show();
+                    var args = null;
+                    url = "../../../CityService.Service/PriceQueryService.svc/QueryAgriculturePrice";
+
+                    var pName = decodeURI(getQueryStringByName("pName"));
+                    var mName = decodeURI(getQueryStringByName("mName"));
+                    var pDate = decodeURI(getQueryStringByName("pDate"));
+                    args = $.parseJSON('{"pName":"' + pName + '","mName":"' + (mName == "不限" ? "" : mName) + '","pDate":"' + pDate + '","pageNum":' + pageNum + '}');
+                    $.ajax(url, {
+                        type: 'get',
+                        contentType: 'text/json',
+                        data: args,
+                        success: function (msg) {
+                            if (msg.d == "")
+                            {
+                                complete();
+                                return;
+                            }
+                            resultEntity = msg.d.Result;
+                            if (resultEntity == null || resultEntity.length == 0 || msg.d.IsCompleted) {
+                                complete();
+                            }
+                            else
+                                $("#moreButton").css("visibility", "visible");
+
+
+                            addToList(resultEntity);
+                        },
+                        error: function (xhr) {
+                        },
+                        complete: function () {
+                            $("#toast").hide();
+                        }
+                    });
+                }
+
+                function complete()
+                {
+                    $("#moreButton").css("visibility", "hidden");
+                    if (pageNum == 1)
+                        $("#resultDiv").show();
+                }
+                function addToList(entityList)
+                {
+                    if (entityList == null || entityList.length == 0)
+                        return;
+
+                    $("#resultDiv").hide();
+                    $.each(entityList, function () {
+                        var marketBodyElement = findOrCreateMarketBodyElement(this);
+                        var content = '<div  class="am-list-item">' +
+                                        '<div class="am-list-content">' +
+                                            '<div class="am-list-brief"  style="font-size:16px; color:#666666; font-family:stheitisc;">' + this.ProductName + '</div>' +
+                                        '</div>' +
+                                        '<div class="am-list-brief" style="font-size:16px; color:#666666; font-family:STHeitiSC;text-align:right">' + this.Price + this.UnitName + '</div>' +
+                                    '</div>';
+
+                        marketBodyElement.innerHTML += content;
+                    });
+                }
+
+                function findOrCreateMarketBodyElement(entity)
+                {
+                    var marketNode = document.getElementById("marketBody" + entity.MarketName);
+                    if (marketNode != null)
+                        return marketNode;
+
+                    var content = "";
+
+                    content = ' <div id = market' + entity.MarketName + ' class="am-list" am-mode="radius">' +
+                                    '<div class="am-list-header">' +
+                                         '<h3 class="am-card-item-title"  style="font-size:16px; color:#4D4D4D; text-align:center; font-family:stheitisc;margin-top:-10px;">' +
+                                         entity.MarketName + '</h3>' +
+                                    '</div>' +
+                                    '<div class="am-list-body" id="marketBody' + entity.MarketName + '">' +
+                                    ' </div>'
+                                '</div>';
+
+                    cardContainer.innerHTML += content;
+                    return document.getElementById("marketBody" + entity.MarketName);
+                }
+            </script>
+</body>
+</html>

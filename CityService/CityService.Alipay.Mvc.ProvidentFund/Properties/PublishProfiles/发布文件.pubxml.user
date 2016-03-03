@@ -1,0 +1,805 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+您 Web 项目的发布/打包进程将使用此文件。您可以通过编辑此 MSBuild 文件
+来自定义该进程的行为。若要了解与此相关的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkID=208121。
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\AlipayProvidentFund</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/AFG.Map.Transform.dll">
+      <publishTime>12/15/2015 16:43:34</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>11/02/2015 11:31:13</publishTime>
+    </File>
+    <File Include="bin/CityService.Alipay.Aop.dll">
+      <publishTime>01/19/2016 15:48:48</publishTime>
+    </File>
+    <File Include="bin/CityService.Alipay.Aop.pdb">
+      <publishTime>01/19/2016 15:48:47</publishTime>
+    </File>
+    <File Include="bin/CityService.Alipay.Mvc.ProvidentFund.dll">
+      <publishTime>02/01/2016 15:01:17</publishTime>
+    </File>
+    <File Include="bin/CityService.Alipay.Mvc.ProvidentFund.pdb">
+      <publishTime>02/01/2016 15:01:17</publishTime>
+    </File>
+    <File Include="bin/CityService.Service.Controllers.dll">
+      <publishTime>02/01/2016 15:00:24</publishTime>
+    </File>
+    <File Include="bin/CityService.Service.Controllers.pdb">
+      <publishTime>02/01/2016 15:00:24</publishTime>
+    </File>
+    <File Include="bin/de/Microsoft.Data.Edm.resources.dll">
+      <publishTime>11/02/2015 11:31:13</publishTime>
+    </File>
+    <File Include="bin/de/Microsoft.Data.OData.resources.dll">
+      <publishTime>11/02/2015 11:31:13</publishTime>
+    </File>
+    <File Include="bin/de/System.Spatial.resources.dll">
+      <publishTime>11/02/2015 11:31:13</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.AspNet.dll">
+      <publishTime>01/20/2016 14:45:02</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.Core.dll">
+      <publishTime>01/20/2016 14:45:09</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OAuth.Consumer.dll">
+      <publishTime>01/20/2016 14:45:12</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OAuth.dll">
+      <publishTime>01/20/2016 14:45:16</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OpenId.dll">
+      <publishTime>01/20/2016 14:45:20</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OpenId.RelyingParty.dll">
+      <publishTime>01/20/2016 14:45:24</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>09/09/2015 10:35:34</publishTime>
+    </File>
+    <File Include="bin/es/Microsoft.Data.Edm.resources.dll">
+      <publishTime>11/02/2015 11:31:13</publishTime>
+    </File>
+    <File Include="bin/es/Microsoft.Data.OData.resources.dll">
+      <publishTime>11/02/2015 11:31:13</publishTime>
+    </File>
+    <File Include="bin/es/System.Spatial.resources.dll">
+      <publishTime>11/02/2015 11:31:13</publishTime>
+    </File>
+    <File Include="bin/fr/Microsoft.Data.Edm.resources.dll">
+      <publishTime>11/02/2015 11:31:13</publishTime>
+    </File>
+    <File Include="bin/fr/Microsoft.Data.OData.resources.dll">
+      <publishTime>11/02/2015 11:31:13</publishTime>
+    </File>
+    <File Include="bin/fr/System.Spatial.resources.dll">
+      <publishTime>11/02/2015 11:31:13</publishTime>
+    </File>
+    <File Include="bin/it/Microsoft.Data.Edm.resources.dll">
+      <publishTime>11/02/2015 11:31:13</publishTime>
+    </File>
+    <File Include="bin/it/Microsoft.Data.OData.resources.dll">
+      <publishTime>11/02/2015 11:31:13</publishTime>
+    </File>
+    <File Include="bin/it/System.Spatial.resources.dll">
+      <publishTime>11/02/2015 11:31:13</publishTime>
+    </File>
+    <File Include="bin/ja/Microsoft.Data.Edm.resources.dll">
+      <publishTime>11/02/2015 11:31:13</publishTime>
+    </File>
+    <File Include="bin/ja/Microsoft.Data.OData.resources.dll">
+      <publishTime>11/02/2015 11:31:13</publishTime>
+    </File>
+    <File Include="bin/ja/System.Spatial.resources.dll">
+      <publishTime>11/02/2015 11:31:13</publishTime>
+    </File>
+    <File Include="bin/ko/Microsoft.Data.Edm.resources.dll">
+      <publishTime>11/02/2015 11:31:13</publishTime>
+    </File>
+    <File Include="bin/ko/Microsoft.Data.OData.resources.dll">
+      <publishTime>11/02/2015 11:31:13</publishTime>
+    </File>
+    <File Include="bin/ko/System.Spatial.resources.dll">
+      <publishTime>11/02/2015 11:31:13</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Data.Edm.dll">
+      <publishTime>11/02/2015 11:31:13</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Data.OData.dll">
+      <publishTime>11/02/2015 11:31:13</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>11/02/2015 11:31:11</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Mvc.FixedDisplayModes.dll">
+      <publishTime>11/02/2015 11:31:12</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.WebPages.OAuth.dll">
+      <publishTime>01/20/2016 14:45:33</publishTime>
+    </File>
+    <File Include="bin/Mono.Math.dll">
+      <publishTime>01/20/2016 14:45:20</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>11/02/2015 11:31:11</publishTime>
+    </File>
+    <File Include="bin/Org.Mentalis.Security.Cryptography.dll">
+      <publishTime>01/20/2016 14:45:20</publishTime>
+    </File>
+    <File Include="bin/ru/Microsoft.Data.Edm.resources.dll">
+      <publishTime>11/02/2015 11:31:13</publishTime>
+    </File>
+    <File Include="bin/ru/Microsoft.Data.OData.resources.dll">
+      <publishTime>11/02/2015 11:31:13</publishTime>
+    </File>
+    <File Include="bin/ru/System.Spatial.resources.dll">
+      <publishTime>11/02/2015 11:31:13</publishTime>
+    </File>
+    <File Include="bin/Senparc.Weixin.dll">
+      <publishTime>07/20/2015 15:16:35</publishTime>
+    </File>
+    <File Include="bin/Senparc.Weixin.MP.dll">
+      <publishTime>07/20/2015 15:16:35</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.dll">
+      <publishTime>07/10/2012 12:07:38</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>11/02/2015 11:31:12</publishTime>
+    </File>
+    <File Include="bin/System.Spatial.dll">
+      <publishTime>11/02/2015 11:31:13</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>11/02/2015 11:31:12</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>11/02/2015 11:31:12</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.OData.dll">
+      <publishTime>11/02/2015 11:31:13</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>11/02/2015 11:31:12</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>11/02/2015 11:31:12</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>11/02/2015 11:31:13</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>11/02/2015 11:31:11</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>11/02/2015 11:31:12</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>11/02/2015 11:31:12</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>11/02/2015 11:31:12</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>11/02/2015 11:31:13</publishTime>
+    </File>
+    <File Include="bin/WebMatrix.Data.dll">
+      <publishTime>07/09/2013 11:05:10</publishTime>
+    </File>
+    <File Include="bin/WebMatrix.WebData.dll">
+      <publishTime>01/20/2016 14:45:39</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/EntityFramework.resources.dll">
+      <publishTime>09/09/2015 10:35:33</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/Microsoft.Data.Edm.resources.dll">
+      <publishTime>11/02/2015 11:31:13</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/Microsoft.Data.OData.resources.dll">
+      <publishTime>11/02/2015 11:31:13</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/Microsoft.Web.WebPages.OAuth.resources.dll">
+      <publishTime>01/20/2016 14:45:36</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Net.Http.Formatting.resources.dll">
+      <publishTime>11/02/2015 11:31:14</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Net.Http.resources.dll">
+      <publishTime>07/09/2013 11:34:42</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Spatial.resources.dll">
+      <publishTime>11/02/2015 11:31:13</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Helpers.resources.dll">
+      <publishTime>11/02/2015 11:31:14</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Http.OData.resources.dll">
+      <publishTime>11/02/2015 11:31:15</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Http.resources.dll">
+      <publishTime>11/02/2015 11:31:14</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Http.WebHost.resources.dll">
+      <publishTime>11/02/2015 11:31:14</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Mvc.resources.dll">
+      <publishTime>11/02/2015 11:31:14</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Optimization.resources.dll">
+      <publishTime>11/02/2015 11:31:15</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Razor.resources.dll">
+      <publishTime>11/02/2015 11:31:14</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.Deployment.resources.dll">
+      <publishTime>11/02/2015 11:31:14</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.Razor.resources.dll">
+      <publishTime>11/02/2015 11:31:14</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.resources.dll">
+      <publishTime>11/02/2015 11:31:14</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/WebMatrix.Data.resources.dll">
+      <publishTime>07/09/2013 11:35:42</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/WebMatrix.WebData.resources.dll">
+      <publishTime>01/20/2016 14:45:41</publishTime>
+    </File>
+    <File Include="bin/zh-Hant/Microsoft.Data.Edm.resources.dll">
+      <publishTime>11/02/2015 11:31:13</publishTime>
+    </File>
+    <File Include="bin/zh-Hant/Microsoft.Data.OData.resources.dll">
+      <publishTime>11/02/2015 11:31:13</publishTime>
+    </File>
+    <File Include="bin/zh-Hant/System.Spatial.resources.dll">
+      <publishTime>11/02/2015 11:31:13</publishTime>
+    </File>
+    <File Include="Content/alipay/alipay.css">
+      <publishTime>01/20/2016 14:30:08</publishTime>
+    </File>
+    <File Include="Content/alipay/amui-demo.html">
+      <publishTime>01/20/2016 14:30:08</publishTime>
+    </File>
+    <File Include="Content/alipay/amui-demo_files/1mx2r0hiYX.png">
+      <publishTime>01/20/2016 14:30:08</publishTime>
+    </File>
+    <File Include="Content/alipay/amui-demo_files/1mx2r1D6Rh.png">
+      <publishTime>01/20/2016 14:30:08</publishTime>
+    </File>
+    <File Include="Content/alipay/amui-demo_files/1mx2r21KOD.png">
+      <publishTime>01/20/2016 14:30:08</publishTime>
+    </File>
+    <File Include="Content/alipay/amui-demo_files/30NvQ6bZHj.png">
+      <publishTime>01/20/2016 14:30:08</publishTime>
+    </File>
+    <File Include="Content/alipay/amui-demo_files/30NvQVuHAd.png">
+      <publishTime>01/20/2016 14:30:08</publishTime>
+    </File>
+    <File Include="Content/alipay/amui-demo_files/agreement.css">
+      <publishTime>01/20/2016 14:30:08</publishTime>
+    </File>
+    <File Include="Content/alipay/amui-demo_files/amui.css">
+      <publishTime>01/20/2016 14:30:08</publishTime>
+    </File>
+    <File Include="Content/alipay/amui-demo_files/amui.js">
+      <publishTime>01/20/2016 14:30:08</publishTime>
+    </File>
+    <File Include="Content/alipay/amui-demo_files/article.css">
+      <publishTime>01/20/2016 14:30:08</publishTime>
+    </File>
+    <File Include="Content/alipay/amui-demo_files/button-group.css">
+      <publishTime>01/20/2016 14:30:08</publishTime>
+    </File>
+    <File Include="Content/alipay/amui-demo_files/card.css">
+      <publishTime>01/20/2016 14:30:08</publishTime>
+    </File>
+    <File Include="Content/alipay/amui-demo_files/city-select.css">
+      <publishTime>01/20/2016 14:30:08</publishTime>
+    </File>
+    <File Include="Content/alipay/amui-demo_files/demo.css">
+      <publishTime>01/20/2016 14:30:08</publishTime>
+    </File>
+    <File Include="Content/alipay/amui-demo_files/dialog.css">
+      <publishTime>01/20/2016 14:30:08</publishTime>
+    </File>
+    <File Include="Content/alipay/amui-demo_files/fff">
+      <publishTime>01/20/2016 14:30:08</publishTime>
+    </File>
+    <File Include="Content/alipay/amui-demo_files/form.css">
+      <publishTime>01/20/2016 14:30:08</publishTime>
+    </File>
+    <File Include="Content/alipay/amui-demo_files/header.css">
+      <publishTime>01/20/2016 14:30:08</publishTime>
+    </File>
+    <File Include="Content/alipay/amui-demo_files/iconfont.css">
+      <publishTime>01/20/2016 14:30:08</publishTime>
+    </File>
+    <File Include="Content/alipay/amui-demo_files/message%281%29.css">
+      <publishTime>01/20/2016 14:30:09</publishTime>
+    </File>
+    <File Include="Content/alipay/amui-demo_files/message.css">
+      <publishTime>01/20/2016 14:30:09</publishTime>
+    </File>
+    <File Include="Content/alipay/amui-demo_files/page-result.css">
+      <publishTime>01/20/2016 14:30:09</publishTime>
+    </File>
+    <File Include="Content/alipay/amui-demo_files/saved_resource">
+      <publishTime>01/20/2016 14:30:09</publishTime>
+    </File>
+    <File Include="Content/alipay/amui-demo_files/search.css">
+      <publishTime>01/20/2016 14:30:09</publishTime>
+    </File>
+    <File Include="Content/alipay/amui-demo_files/simple-password.css">
+      <publishTime>01/20/2016 14:30:09</publishTime>
+    </File>
+    <File Include="Content/alipay/amui-demo_files/switch.css">
+      <publishTime>01/20/2016 14:30:09</publishTime>
+    </File>
+    <File Include="Content/alipay/amui-demo_files/timeline.css">
+      <publishTime>01/20/2016 14:30:09</publishTime>
+    </File>
+    <File Include="Content/alipay/amui-demo_files/toast.css">
+      <publishTime>01/20/2016 14:30:09</publishTime>
+    </File>
+    <File Include="Content/alipay/amui-demo_files/top-notice.css">
+      <publishTime>01/20/2016 14:30:09</publishTime>
+    </File>
+    <File Include="Content/alipay/amui-demo_files/ximeng2.jpg">
+      <publishTime>01/20/2016 14:30:09</publishTime>
+    </File>
+    <File Include="Content/alipay/amui-demo_files/zepto.js">
+      <publishTime>01/20/2016 14:30:09</publishTime>
+    </File>
+    <File Include="Content/alipay/button.css">
+      <publishTime>01/20/2016 14:30:08</publishTime>
+    </File>
+    <File Include="Content/alipay/images/ajax-loader.gif">
+      <publishTime>01/21/2016 10:53:03</publishTime>
+    </File>
+    <File Include="Content/alipay/mobiscroll.custom-2.6.2.min.css">
+      <publishTime>01/20/2016 14:30:08</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>11/19/2015 13:52:18</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>11/19/2015 13:52:19</publishTime>
+    </File>
+    <File Include="Content/bootstrap/bootstrap.css">
+      <publishTime>01/20/2016 14:30:09</publishTime>
+    </File>
+    <File Include="Content/fonts/glyphicons-halflings-regular.eot">
+      <publishTime>01/20/2016 14:30:10</publishTime>
+    </File>
+    <File Include="Content/fonts/glyphicons-halflings-regular.svg">
+      <publishTime>01/20/2016 14:30:10</publishTime>
+    </File>
+    <File Include="Content/fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>01/20/2016 14:30:10</publishTime>
+    </File>
+    <File Include="Content/fonts/glyphicons-halflings-regular.woff">
+      <publishTime>01/20/2016 14:30:10</publishTime>
+    </File>
+    <File Include="Content/fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>01/20/2016 14:30:10</publishTime>
+    </File>
+    <File Include="Content/jquery.mobile-1.4.5.css">
+      <publishTime>01/20/2016 14:30:08</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>11/19/2015 13:52:21</publishTime>
+    </File>
+    <File Include="Content/user/jquery-loanscalculate-1.0.1.css">
+      <publishTime>01/20/2016 14:30:10</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>01/20/2016 14:30:08</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>01/20/2016 14:30:08</publishTime>
+    </File>
+    <File Include="Images/empty.png">
+      <publishTime>01/20/2016 14:30:10</publishTime>
+    </File>
+    <File Include="Images/end.png">
+      <publishTime>01/20/2016 14:30:10</publishTime>
+    </File>
+    <File Include="Images/origin_start.png">
+      <publishTime>01/20/2016 14:30:10</publishTime>
+    </File>
+    <File Include="Images/radio/blue%402x.png">
+      <publishTime>01/20/2016 14:30:12</publishTime>
+    </File>
+    <File Include="Images/radio/blue.png">
+      <publishTime>01/20/2016 14:30:12</publishTime>
+    </File>
+    <File Include="Images/radio/orange%402x.png">
+      <publishTime>01/20/2016 14:30:12</publishTime>
+    </File>
+    <File Include="Images/radio/orange.png">
+      <publishTime>01/20/2016 14:30:12</publishTime>
+    </File>
+    <File Include="Images/tuding2.png">
+      <publishTime>01/20/2016 14:30:10</publishTime>
+    </File>
+    <File Include="Images/个人账户转移.png">
+      <publishTime>01/20/2016 14:30:10</publishTime>
+    </File>
+    <File Include="Images/个人账户转移2.png">
+      <publishTime>01/20/2016 14:30:10</publishTime>
+    </File>
+    <File Include="Images/个人账户转移_2.PNG">
+      <publishTime>01/20/2016 14:30:10</publishTime>
+    </File>
+    <File Include="Images/个人资料变更.png">
+      <publishTime>01/20/2016 14:30:10</publishTime>
+    </File>
+    <File Include="Images/个人资料变更2.png">
+      <publishTime>01/20/2016 14:30:10</publishTime>
+    </File>
+    <File Include="Images/个人资料变更、账户合并.PNG">
+      <publishTime>01/20/2016 14:30:10</publishTime>
+    </File>
+    <File Include="Images/二手公积金贷款申请指南.png">
+      <publishTime>01/20/2016 14:30:10</publishTime>
+    </File>
+    <File Include="Images/二手公积金贷款申请指南2.png">
+      <publishTime>01/20/2016 14:30:10</publishTime>
+    </File>
+    <File Include="Images/低保特困.png">
+      <publishTime>01/20/2016 14:30:10</publishTime>
+    </File>
+    <File Include="Images/公积金官方微信.png">
+      <publishTime>01/20/2016 14:30:10</publishTime>
+    </File>
+    <File Include="Images/出大市范围外、出境定居.PNG">
+      <publishTime>01/20/2016 14:30:10</publishTime>
+    </File>
+    <File Include="Images/出大市范围外，出境定居.png">
+      <publishTime>01/20/2016 14:30:10</publishTime>
+    </File>
+    <File Include="Images/分期付款.png">
+      <publishTime>01/20/2016 14:30:10</publishTime>
+    </File>
+    <File Include="Images/地图.png">
+      <publishTime>01/20/2016 14:30:10</publishTime>
+    </File>
+    <File Include="Images/存量成套住房（二手住房）.png">
+      <publishTime>01/20/2016 14:30:10</publishTime>
+    </File>
+    <File Include="Images/完全和部分丧失劳动能力、低保特困（边缘）、患重病.PNG">
+      <publishTime>01/20/2016 14:30:12</publishTime>
+    </File>
+    <File Include="Images/完全和部分丧失劳动能力，低保特困.png">
+      <publishTime>01/20/2016 14:30:12</publishTime>
+    </File>
+    <File Include="Images/定位b.png">
+      <publishTime>01/20/2016 14:30:10</publishTime>
+    </File>
+    <File Include="Images/定位起点.png">
+      <publishTime>01/20/2016 14:30:10</publishTime>
+    </File>
+    <File Include="Images/密码修改.PNG">
+      <publishTime>01/20/2016 14:30:12</publishTime>
+    </File>
+    <File Include="Images/密码修改挂失.png">
+      <publishTime>01/20/2016 14:30:12</publishTime>
+    </File>
+    <File Include="Images/密码修改挂失2.png">
+      <publishTime>01/20/2016 14:30:12</publishTime>
+    </File>
+    <File Include="Images/患重病.png">
+      <publishTime>01/20/2016 14:30:12</publishTime>
+    </File>
+    <File Include="Images/拆迁安置、翻建自住住房.PNG">
+      <publishTime>01/20/2016 14:30:10</publishTime>
+    </File>
+    <File Include="Images/拆迁安置，翻建自住住房.png">
+      <publishTime>01/20/2016 14:30:10</publishTime>
+    </File>
+    <File Include="Images/挂失、领卡、换卡.PNG">
+      <publishTime>01/20/2016 14:30:10</publishTime>
+    </File>
+    <File Include="Images/挂失领卡换卡.png">
+      <publishTime>01/20/2016 14:30:10</publishTime>
+    </File>
+    <File Include="Images/挂失领卡换卡2.png">
+      <publishTime>01/20/2016 14:30:10</publishTime>
+    </File>
+    <File Include="Images/新建普通住房要件.PNG">
+      <publishTime>01/20/2016 14:30:12</publishTime>
+    </File>
+    <File Include="Images/新建普通住房贷款申请指南.png">
+      <publishTime>01/20/2016 14:30:12</publishTime>
+    </File>
+    <File Include="Images/新建普通住房贷款申请指南2.png">
+      <publishTime>01/20/2016 14:30:12</publishTime>
+    </File>
+    <File Include="Images/死亡提取.png">
+      <publishTime>01/20/2016 14:30:12</publishTime>
+    </File>
+    <File Include="Images/离退休.png">
+      <publishTime>01/20/2016 14:30:12</publishTime>
+    </File>
+    <File Include="Images/离退休、下岗失业、死亡（或被宣告死亡）提取.PNG">
+      <publishTime>01/20/2016 14:30:12</publishTime>
+    </File>
+    <File Include="Images/离退休，下岗失业.png">
+      <publishTime>01/20/2016 14:30:12</publishTime>
+    </File>
+    <File Include="Images/租房提取.PNG">
+      <publishTime>01/20/2016 14:30:12</publishTime>
+    </File>
+    <File Include="Images/租房提取2.png">
+      <publishTime>01/20/2016 14:30:12</publishTime>
+    </File>
+    <File Include="Images/翻建自住住房.png">
+      <publishTime>01/20/2016 14:30:10</publishTime>
+    </File>
+    <File Include="Images/苏州市住房公积金管理中心.jpg">
+      <publishTime>01/20/2016 14:30:12</publishTime>
+    </File>
+    <File Include="Images/账户转移_1.PNG">
+      <publishTime>01/20/2016 14:30:12</publishTime>
+    </File>
+    <File Include="Images/购买公有住房产权、使用权、分期付款.PNG">
+      <publishTime>01/20/2016 14:30:10</publishTime>
+    </File>
+    <File Include="Images/购买公有住房产权，使用权.png">
+      <publishTime>01/20/2016 14:30:10</publishTime>
+    </File>
+    <File Include="Images/购买新房、二手房.PNG">
+      <publishTime>01/20/2016 14:30:10</publishTime>
+    </File>
+    <File Include="Images/购买新房，二手房.png">
+      <publishTime>01/20/2016 14:30:10</publishTime>
+    </File>
+    <File Include="Images/还贷委托提取.png">
+      <publishTime>01/20/2016 14:30:12</publishTime>
+    </File>
+    <File Include="Images/还贷委托提取2.png">
+      <publishTime>01/20/2016 14:30:12</publishTime>
+    </File>
+    <File Include="Images/还贷提取.PNG">
+      <publishTime>01/20/2016 14:30:12</publishTime>
+    </File>
+    <File Include="Images/还贷提取2.png">
+      <publishTime>01/20/2016 14:30:12</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>02/01/2016 11:00:12</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap/bootstrap.js">
+      <publishTime>01/20/2016 14:30:13</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap/bootstrap.min.js">
+      <publishTime>01/20/2016 14:30:13</publishTime>
+    </File>
+    <File Include="Scripts/extensions/base.js">
+      <publishTime>01/20/2016 14:30:13</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.js">
+      <publishTime>01/20/2016 14:30:13</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.8.2.js">
+      <publishTime>01/20/2016 14:30:13</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.8.2.min.js">
+      <publishTime>01/20/2016 14:30:13</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui-1.8.24.js">
+      <publishTime>01/20/2016 14:30:13</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui-1.8.24.min.js">
+      <publishTime>01/20/2016 14:30:13</publishTime>
+    </File>
+    <File Include="Scripts/jquery.mobile-1.4.5.js">
+      <publishTime>01/20/2016 14:30:12</publishTime>
+    </File>
+    <File Include="Scripts/jquery.unobtrusive-ajax.js">
+      <publishTime>01/20/2016 14:30:12</publishTime>
+    </File>
+    <File Include="Scripts/jquery.unobtrusive-ajax.min.js">
+      <publishTime>01/20/2016 14:30:12</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>01/20/2016 14:30:12</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>01/20/2016 14:30:12</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>01/20/2016 14:30:12</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>01/20/2016 14:30:12</publishTime>
+    </File>
+    <File Include="Scripts/knockout-2.2.0.debug.js">
+      <publishTime>01/20/2016 14:30:13</publishTime>
+    </File>
+    <File Include="Scripts/knockout-2.2.0.js">
+      <publishTime>01/20/2016 14:30:13</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.6.2.js">
+      <publishTime>01/20/2016 14:30:13</publishTime>
+    </File>
+    <File Include="Scripts/user/alipay.openid.js">
+      <publishTime>01/20/2016 14:30:13</publishTime>
+    </File>
+    <File Include="Scripts/user/jquery-guid.js">
+      <publishTime>01/20/2016 14:30:13</publishTime>
+    </File>
+    <File Include="Scripts/user/jquery-loanscalculate-1.0.1.js">
+      <publishTime>01/20/2016 14:30:13</publishTime>
+    </File>
+    <File Include="Scripts/user/jquery-verification-1.0.1.js">
+      <publishTime>01/20/2016 14:30:13</publishTime>
+    </File>
+    <File Include="Scripts/user/myEase64.js">
+      <publishTime>01/20/2016 14:30:13</publishTime>
+    </File>
+    <File Include="Scripts/_references.js">
+      <publishTime>01/20/2016 14:30:12</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/AccountList.cshtml">
+      <publishTime>01/29/2016 09:48:57</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/AccountResult.cshtml">
+      <publishTime>01/28/2016 16:05:29</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/AddAccount.cshtml">
+      <publishTime>01/28/2016 17:22:47</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/CardManageList.cshtml">
+      <publishTime>01/26/2016 09:50:50</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/CardMangeResul1.cshtml">
+      <publishTime>01/28/2016 14:25:24</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/CardMangeResul2.cshtml">
+      <publishTime>01/27/2016 17:03:49</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/CardMangeResul3.cshtml">
+      <publishTime>01/28/2016 14:28:36</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/CardMangeResul4.cshtml">
+      <publishTime>01/26/2016 10:06:49</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/ChangeAccount.cshtml">
+      <publishTime>01/26/2016 09:50:50</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/Default.cshtml">
+      <publishTime>01/28/2016 14:43:12</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/DrawList.cshtml">
+      <publishTime>01/26/2016 09:50:50</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/DrawResult1.cshtml">
+      <publishTime>01/26/2016 09:50:50</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/DrawResult2.cshtml">
+      <publishTime>01/26/2016 09:50:50</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/DrawResult3.cshtml">
+      <publishTime>01/26/2016 09:50:50</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/DrawResult4.cshtml">
+      <publishTime>01/26/2016 09:50:50</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/DrawResult5.cshtml">
+      <publishTime>01/26/2016 09:50:50</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/DrawResult6.cshtml">
+      <publishTime>01/26/2016 09:50:50</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/DrawResult7.cshtml">
+      <publishTime>01/26/2016 09:50:50</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/DrawResult8.cshtml">
+      <publishTime>01/26/2016 10:03:25</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/DrawResult9.cshtml">
+      <publishTime>01/26/2016 10:02:41</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/Index.cshtml">
+      <publishTime>01/26/2016 09:25:58</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/LawsList.cshtml">
+      <publishTime>01/26/2016 09:50:50</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/LawsRegulations.cshtml">
+      <publishTime>01/26/2016 09:50:49</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/LawsResult1.cshtml">
+      <publishTime>01/26/2016 09:25:58</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/LoanList.cshtml">
+      <publishTime>01/26/2016 09:50:49</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/LoanResult1.cshtml">
+      <publishTime>01/26/2016 09:50:49</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/LoanResult2.cshtml">
+      <publishTime>01/26/2016 09:50:49</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/LoansCalculate.cshtml">
+      <publishTime>01/26/2016 09:25:58</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/NotAccount.cshtml">
+      <publishTime>01/26/2016 09:50:49</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/NotLoan.cshtml">
+      <publishTime>01/26/2016 09:50:49</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/Offline.cshtml">
+      <publishTime>01/26/2016 09:25:58</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/RegulationsList.cshtml">
+      <publishTime>01/26/2016 09:50:49</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/RegulationsResult1.cshtml">
+      <publishTime>01/26/2016 09:25:58</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/SelectBalance.cshtml">
+      <publishTime>01/26/2016 09:50:49</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/SelectBalanceResult.cshtml">
+      <publishTime>01/28/2016 16:18:29</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/SelectCardPoint.cshtml">
+      <publishTime>01/26/2016 09:50:49</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/SelectDepositResult.cshtml">
+      <publishTime>01/26/2016 09:50:49</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/SelectLoan.cshtml">
+      <publishTime>01/29/2016 17:23:09</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/SelectLoanResult.cshtml">
+      <publishTime>01/26/2016 09:50:49</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/SelectPoint.cshtml">
+      <publishTime>01/26/2016 09:50:49</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/SelectPointResult.cshtml">
+      <publishTime>01/26/2016 10:11:07</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/SelectRepaymentInfo.cshtml">
+      <publishTime>01/26/2016 09:50:49</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/ShowImage.cshtml">
+      <publishTime>01/26/2016 09:25:58</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/Test.cshtml">
+      <publishTime>01/26/2016 09:25:58</publishTime>
+    </File>
+    <File Include="Views/AlipayProvidentFund/WorkGuide.cshtml">
+      <publishTime>01/26/2016 09:50:49</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>01/20/2016 14:30:15</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>01/20/2016 16:30:50</publishTime>
+    </File>
+    <File Include="Views/Shared/_LoginPartial.cshtml">
+      <publishTime>01/20/2016 14:30:15</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>01/20/2016 14:30:13</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>01/20/2016 14:30:13</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>02/01/2016 15:01:27</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

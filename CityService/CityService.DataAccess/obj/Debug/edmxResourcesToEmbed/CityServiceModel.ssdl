@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CitServiceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AgricultureMarket">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="X" Type="float" />
+    <Property Name="Y" Type="float" />
+  </EntityType>
+  <EntityType Name="AgricultureParticiple">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductName" Type="nvarchar" MaxLength="255" />
+    <Property Name="Participle" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Depart">
+    <Key>
+      <PropertyRef Name="HospName" />
+      <PropertyRef Name="DepartName" />
+    </Key>
+    <Property Name="HospName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="DepartName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="DepartType" Type="nvarchar" MaxLength="100" />
+    <Property Name="DepartIntro" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Limited" Type="nvarchar" MaxLength="20" />
+    <Property Name="RegistryFee" Type="nvarchar" MaxLength="20" />
+    <Property Name="ClinicFee" Type="nvarchar" MaxLength="20" />
+    <Property Name="DepartSex" Type="nvarchar" MaxLength="2" />
+    <Property Name="ChildAge" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“CityService.dbo.Doctor”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="Doctor">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="HospName" />
+      <PropertyRef Name="DepartName" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HospName" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="DepartName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="DoctorName" Type="nvarchar" MaxLength="50" />
+    <Property Name="DocSex" Type="nvarchar" MaxLength="10" />
+    <Property Name="DocRank" Type="nvarchar" MaxLength="100" />
+    <Property Name="DoctorInro" Type="nvarchar" MaxLength="4000" />
+    <Property Name="DocMajor" Type="nvarchar" MaxLength="400" />
+    <Property Name="IsExpert" Type="nvarchar" MaxLength="100" />
+    <Property Name="RegistryFee" Type="nvarchar" MaxLength="20" />
+    <Property Name="ClinicFee" Type="nvarchar" MaxLength="20" />
+    <Property Name="DocPhotoURL" Type="nvarchar" MaxLength="400" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“CityService.dbo.Hospital”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="Hospital">
+    <Key>
+      <PropertyRef Name="HospName" />
+    </Key>
+    <Property Name="HospName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Grade" Type="nvarchar" MaxLength="50" />
+    <Property Name="Kind" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="200" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="20" />
+    <Property Name="Intro" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Member">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="IDCard" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Style" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="openID" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Register">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IDCard" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="OPenId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="HospName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DepartName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DoctorName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RegisteDate" Type="datetime" Nullable="false" />
+    <Property Name="ClinicDate" Type="datetime" Nullable="false" />
+    <Property Name="StartTime" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="EndTime" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="RegisterFee" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="SN" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DocRate" Type="nvarchar" MaxLength="20" />
+    <Property Name="Style" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="comment" Type="nvarchar" MaxLength="200" />
+    <Property Name="ClinicSerialNo" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“CityService.dbo.schedual”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="schedual">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="HospName" />
+      <PropertyRef Name="DepartName" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HospName" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="DepartName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DoctorName" Type="nvarchar" MaxLength="20" />
+    <Property Name="WorkDate" Type="datetime" />
+    <Property Name="WorkType" Type="nvarchar" MaxLength="20" />
+    <Property Name="WorkStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="ExpertFee" Type="nvarchar" MaxLength="20" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="SchoolDistrict">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Region" Type="nvarchar" MaxLength="255" />
+    <Property Name="SchoolName" Type="nvarchar" MaxLength="1000" />
+    <Property Name="SchoolType" Type="varchar" MaxLength="50" />
+    <Property Name="SchoolAddress" Type="nvarchar" MaxLength="1000" />
+    <Property Name="SchoolDistricts" Type="nvarchar(max)" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“CityService.dbo.ZWBST_EntDetail”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="ZWBST_EntDetail">
+    <Key>
+      <PropertyRef Name="GUID" />
+      <PropertyRef Name="ENTERPRICENAME" />
+      <PropertyRef Name="LOGO" />
+      <PropertyRef Name="ENTERPRICEINFO" />
+    </Key>
+    <Property Name="GUID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ENTERPRICENAME" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="LOGO" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="ENTERPRICEINFO" Type="nvarchar" MaxLength="2000" Nullable="false" />
+    <Property Name="ADDRESS" Type="nvarchar" MaxLength="400" />
+    <Property Name="CONTACT" Type="nvarchar" MaxLength="200" />
+    <Property Name="JYFW" Type="nvarchar" MaxLength="2000" />
+    <Property Name="TJNR" Type="nvarchar" MaxLength="1000" />
+    <Property Name="FWCL" Type="nvarchar" MaxLength="1000" />
+    <Property Name="FWQYFW" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“CityService.dbo.ZWBST_EntSfbz”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="ZWBST_EntSfbz">
+    <Key>
+      <PropertyRef Name="GUID" />
+      <PropertyRef Name="ENTERPRICEGUID" />
+    </Key>
+    <Property Name="GUID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ENTERPRICEGUID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TYPE" Type="nvarchar" MaxLength="50" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="UNIT" Type="nvarchar" MaxLength="20" />
+    <Property Name="PRICE1" Type="nvarchar" MaxLength="50" />
+    <Property Name="PRICE2" Type="nvarchar" MaxLength="50" />
+    <Property Name="REMARK" Type="nvarchar" MaxLength="200" />
+    <Property Name="REMARK1" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="ZWBST_ShfwzList">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GUID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="SERVICETYPEGUID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="SERVICENAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ENTERPRICEGUID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ENTERPRICENAME" Type="nvarchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“CityService.dbo.AgricultureDetailView”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="AgricultureDetailView">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="ProductName" />
+      <PropertyRef Name="Createdt" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ProductName" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Createdt" Type="datetime" Nullable="false" />
+    <Property Name="MarketName" Type="varchar" MaxLength="500" />
+    <Property Name="UnitName" Type="varchar" MaxLength="500" />
+    <Property Name="Price" Type="float" />
+    <Property Name="CreateDay" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“CityService.dbo.TravalPlaceDetail”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="TravalPlaceDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Picture" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“CityService.dbo.TravalPlaceView”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="TravalPlaceView">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="Name" Type="nvarchar" MaxLength="255" />
+    <Property Name="X" Type="float" />
+    <Property Name="Y" Type="float" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Picture" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“CityService.dbo.TravalSpotDetailView”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="TravalSpotDetailView">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="PlaceName" Type="nvarchar" MaxLength="255" />
+    <Property Name="SpotName" Type="nvarchar" MaxLength="255" />
+    <Property Name="Sound" Type="nvarchar" MaxLength="255" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“CityService.dbo.TravalSpotView”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="TravalSpotView">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlaceName" Type="nvarchar" MaxLength="255" />
+    <Property Name="SpotName" Type="nvarchar" MaxLength="255" />
+    <Property Name="X" Type="float" />
+    <Property Name="Y" Type="float" />
+  </EntityType>
+  <EntityContainer Name="CitServiceModelStoreContainer">
+    <EntitySet Name="AgricultureMarket" EntityType="Self.AgricultureMarket" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AgricultureParticiple" EntityType="Self.AgricultureParticiple" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Depart" EntityType="Self.Depart" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Member" EntityType="Self.Member" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Register" EntityType="Self.Register" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SchoolDistrict" EntityType="Self.SchoolDistrict" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ZWBST_ShfwzList" EntityType="Self.ZWBST_ShfwzList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Doctor" EntityType="Self.Doctor" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Doctor].[ID] AS [ID], 
+[Doctor].[HospName] AS [HospName], 
+[Doctor].[DepartName] AS [DepartName], 
+[Doctor].[DoctorName] AS [DoctorName], 
+[Doctor].[DocSex] AS [DocSex], 
+[Doctor].[DocRank] AS [DocRank], 
+[Doctor].[DoctorInro] AS [DoctorInro], 
+[Doctor].[DocMajor] AS [DocMajor], 
+[Doctor].[IsExpert] AS [IsExpert], 
+[Doctor].[RegistryFee] AS [RegistryFee], 
+[Doctor].[ClinicFee] AS [ClinicFee], 
+[Doctor].[DocPhotoURL] AS [DocPhotoURL]
+FROM [dbo].[Doctor] AS [Doctor]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Hospital" EntityType="Self.Hospital" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Hospital].[HospName] AS [HospName], 
+[Hospital].[Grade] AS [Grade], 
+[Hospital].[Kind] AS [Kind], 
+[Hospital].[Address] AS [Address], 
+[Hospital].[Phone] AS [Phone], 
+[Hospital].[Intro] AS [Intro]
+FROM [dbo].[Hospital] AS [Hospital]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="schedual" EntityType="Self.schedual" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[schedual].[ID] AS [ID], 
+[schedual].[HospName] AS [HospName], 
+[schedual].[DepartName] AS [DepartName], 
+[schedual].[DoctorName] AS [DoctorName], 
+[schedual].[WorkDate] AS [WorkDate], 
+[schedual].[WorkType] AS [WorkType], 
+[schedual].[WorkStatus] AS [WorkStatus], 
+[schedual].[ExpertFee] AS [ExpertFee], 
+[schedual].[Remark] AS [Remark]
+FROM [dbo].[schedual] AS [schedual]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ZWBST_EntDetail" EntityType="Self.ZWBST_EntDetail" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[ZWBST_EntDetail].[GUID] AS [GUID], 
+[ZWBST_EntDetail].[ENTERPRICENAME] AS [ENTERPRICENAME], 
+[ZWBST_EntDetail].[LOGO] AS [LOGO], 
+[ZWBST_EntDetail].[ENTERPRICEINFO] AS [ENTERPRICEINFO], 
+[ZWBST_EntDetail].[ADDRESS] AS [ADDRESS], 
+[ZWBST_EntDetail].[CONTACT] AS [CONTACT], 
+[ZWBST_EntDetail].[JYFW] AS [JYFW], 
+[ZWBST_EntDetail].[TJNR] AS [TJNR], 
+[ZWBST_EntDetail].[FWCL] AS [FWCL], 
+[ZWBST_EntDetail].[FWQYFW] AS [FWQYFW]
+FROM [dbo].[ZWBST_EntDetail] AS [ZWBST_EntDetail]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ZWBST_EntSfbz" EntityType="Self.ZWBST_EntSfbz" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[ZWBST_EntSfbz].[GUID] AS [GUID], 
+[ZWBST_EntSfbz].[ENTERPRICEGUID] AS [ENTERPRICEGUID], 
+[ZWBST_EntSfbz].[TYPE] AS [TYPE], 
+[ZWBST_EntSfbz].[NAME] AS [NAME], 
+[ZWBST_EntSfbz].[UNIT] AS [UNIT], 
+[ZWBST_EntSfbz].[PRICE1] AS [PRICE1], 
+[ZWBST_EntSfbz].[PRICE2] AS [PRICE2], 
+[ZWBST_EntSfbz].[REMARK] AS [REMARK], 
+[ZWBST_EntSfbz].[REMARK1] AS [REMARK1]
+FROM [dbo].[ZWBST_EntSfbz] AS [ZWBST_EntSfbz]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="AgricultureDetailView" EntityType="Self.AgricultureDetailView" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[AgricultureDetailView].[ID] AS [ID], 
+[AgricultureDetailView].[ProductName] AS [ProductName], 
+[AgricultureDetailView].[Createdt] AS [Createdt], 
+[AgricultureDetailView].[MarketName] AS [MarketName], 
+[AgricultureDetailView].[UnitName] AS [UnitName], 
+[AgricultureDetailView].[Price] AS [Price], 
+[AgricultureDetailView].[CreateDay] AS [CreateDay]
+FROM [dbo].[AgricultureDetailView] AS [AgricultureDetailView]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TravalPlaceDetail" EntityType="Self.TravalPlaceDetail" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[TravalPlaceDetail].[ID] AS [ID], 
+[TravalPlaceDetail].[Name] AS [Name], 
+[TravalPlaceDetail].[Description] AS [Description], 
+[TravalPlaceDetail].[Picture] AS [Picture]
+FROM [dbo].[TravalPlaceDetail] AS [TravalPlaceDetail]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TravalPlaceView" EntityType="Self.TravalPlaceView" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[TravalPlaceView].[Name] AS [Name], 
+[TravalPlaceView].[X] AS [X], 
+[TravalPlaceView].[Y] AS [Y], 
+[TravalPlaceView].[ID] AS [ID], 
+[TravalPlaceView].[Picture] AS [Picture]
+FROM [dbo].[TravalPlaceView] AS [TravalPlaceView]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TravalSpotDetailView" EntityType="Self.TravalSpotDetailView" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[TravalSpotDetailView].[PlaceName] AS [PlaceName], 
+[TravalSpotDetailView].[SpotName] AS [SpotName], 
+[TravalSpotDetailView].[Sound] AS [Sound], 
+[TravalSpotDetailView].[Description] AS [Description], 
+[TravalSpotDetailView].[ID] AS [ID]
+FROM [dbo].[TravalSpotDetailView] AS [TravalSpotDetailView]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TravalSpotView" EntityType="Self.TravalSpotView" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[TravalSpotView].[ID] AS [ID], 
+[TravalSpotView].[PlaceName] AS [PlaceName], 
+[TravalSpotView].[SpotName] AS [SpotName], 
+[TravalSpotView].[X] AS [X], 
+[TravalSpotView].[Y] AS [Y]
+FROM [dbo].[TravalSpotView] AS [TravalSpotView]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>居住证办理地点查询结果</title>
+    <meta charset='UTF-8'>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <link href="../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/toast.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/button.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/dialog.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/button-group.css" type="text/css" rel="stylesheet" />
+
+    <script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../Scripts/extensions/base.js"></script>
+    <script type="text/javascript" src="../Content/alipay/amui-demo_files/amui.js"></script>
+</head>
+<body>
+    <div data-role="page" id="detailDiv">
+        <div data-role="content" style="background-color:#EFEFF4">
+            <div class="am-list am-list-5lb" am-mode="flat chip">
+                <div class="am-list-header">居住证办理地点信息</div>
+                <div class="am-list" am-mode="radius">
+                    <div class="am-list-body" id="list">
+                    </div>
+                </div>
+                </div>
+        </div>
+    </div>
+    <div id="fuwu" style="display: block;font-family:STHeitiSC  ;font-size: 12px; margin-bottom: 15px; margin-left: 0px; width: 100%; text-align: center; bottom: 0px;z-index:-1;">
+        <div class="am-agreement am-ft-gray am-ft-sm">
+            <p>
+                本服务由苏州市公安局<br />苏州云联智慧信息技术应用有限公司提供支持
+            </p>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            var id = decodeURI(getQueryStringByName("id"));
+            var url = "../../CityService.Service/PoliceService.svc/SelectRegisterResidentCardAddressInfo";
+            $.ajax(url, {
+                type: 'get',
+                contentType: 'text/json',
+                data: "id=" + id,
+                success: function (msg) {
+                    if (msg.d.data.length > 0) {
+                        var htm = "";
+                        for (var i = 0; i < msg.d.data.length; i++) {
+                            if (msg.d.data[i].isDel == 0) {
+                                htm += 
+                                        '<div class="am-list-item">' +
+                                        '<div class="am-list-label" style="line-height:26px;width:120px;">分局</div>' +
+                                        ' <div class="am-list-content am-ft-right" style="line-height:26px;text-align:right">' +
+                                                      '' + msg.d.data[i].DeptName + '' +
+                                        '  </div>' +
+                                        ' </div>' +
+                                        '<div class="am-list-item">' +
+                                        '<div class="am-list-label">派出所</div>' +
+                                        ' <div class="am-list-content am-ft-right">' +
+                                                      '' + msg.d.data[i].PcsName + '' +
+                                        '  </div>' +
+                                        ' </div>' +
+                                        '<div class="am-list-item">' +
+                                        '<div class="am-list-label">警务室</div>' +
+                                        ' <div class="am-list-content am-ft-right">' +
+                                                      '' + msg.d.data[i].JWSName + '' +
+                                        '  </div>' +
+                                        ' </div>' +
+                                        '<div class="am-list-item am-list-item-form">' +
+                                        '<div class="am-list-label" style="width:25%">街道地址</div>' +
+                                        ' <div class="am-list-control" style="width:75%;text-align:right">' +
+                                                      '' + msg.d.data[i].StreetAdd + '' +
+                                        '  </div>' +
+                                        ' </div>' +
+
+                                        '<div class="am-list-item">' +
+                                        '<div class="am-list-label" style="width:25%">警员姓名</div>' +
+                                        ' <div class="am-list-content am-ft-right" style="line-height:26px;text-align:right">' +
+                                                      '' + msg.d.data[i].PoliceMan + '' +
+                                        '  </div>' +
+                                        ' </div>' +
+                                        '<div class="am-list-item">' +
+                                        '<div class="am-list-label" style="width:25%">联系电话</div>' +
+                                        ' <div class="am-list-content am-ft-right" style="line-height:26px;text-align:right">' +
+                                                      '' + msg.d.data[i].Phone + '' +
+                                        '  </div>' +
+                                        ' </div>';
+                                        
+                            }
+                        }
+
+                        $("#list").html(htm);
+                    }
+                },
+                error: function (xhr) {
+                },
+                complete: function () {
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>

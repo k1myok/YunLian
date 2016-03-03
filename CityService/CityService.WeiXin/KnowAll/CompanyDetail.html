@@ -1,0 +1,311 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>企业详情</title>
+    <meta charset='UTF-8'>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <link href="../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/toast.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/button.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/dialog.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/button-group.css" type="text/css" rel="stylesheet" />
+
+    <script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../Scripts/extensions/base.js"></script>
+    <script type="text/javascript" src="../Content/alipay/amui-demo_files/amui.js"></script>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="content" style="background-color:#EFEFF4">
+            <div class="am-list" am-mode="flat">
+                <div class="am-list-body">
+                    <div id="company"></div>
+                    <div class="am-list-header">四、收费标准</div>
+                    <div id="sflist" style="background-color:white"></div>
+                </div>
+            </div>
+            </div>
+    </div>
+
+
+    <div id="fuwu" style="display: block;font-family:STHeitiSC  ;font-size: 12px; margin-left: 0px; width: 100%; text-align: center; bottom: 10px; position:relative;z-index:-1;margin-top:20px">
+        <div class="am-agreement am-ft-gray am-ft-sm">
+            <p>
+                 本服务由苏州市人民政府便民服务中心提供<!--<br />苏州云联智慧信息技术应用有限公司提供支持-->
+            </p>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+
+    $(function () {
+
+        GetCompanyDetail();
+        SFBZ()
+    });
+    function GetCompanyDetail()
+    {
+        var id = decodeURI(getQueryStringByName("id"));
+        var url = "../../CityService.Service/KnowAllService.svc/Zwbst_GetEntDetail";
+        $.ajax(url, {
+            type: 'get',
+            data: {
+                id:id,
+            },
+            success: function (msg) {
+              addTolist(msg.d)
+            },
+            error: function (x) { },
+            complete: function () { },
+        })
+    }
+    function addTolist(result)
+    {
+        var ht = "<div class='am-list-item'>" +
+                        '<div class="am-list-thumb am-list-thumb-radius"><img src=' + result.data.LOGO + ' width="46" height="46" alt=""></div>' +
+                        '<div class="am-list-content">' +
+                            '<div class="am-list-title">' + result.data.ENTERPRICENAME + '</div>' +
+                            '<div class="am-list-brief"></div>' +
+                           '</div>' +
+                '</div>' +
+               '<div class="am-list-header">一、经营范围</div>' +
+               '<div class="am-list-item">' + result.data.JYFW + '</div>' +
+                 '<div class="am-list-header">二、推荐内容</div>' +
+                '<div class="am-list-item">' + result.data.TJNR + '</div>' +
+        '<div class="am-list-header">三、服务承诺</div>' +
+                '<div class="am-list-item">' + result.data.FWCL + '</div>';
+        $("#company").html(ht);
+    }
+    function SFBZ() {
+        var id = decodeURI(getQueryStringByName("id"))
+        var url = "../../CityService.Service/KnowAllService.svc/Zwbst_GetEntSfbz";
+        $.ajax(url, {
+            type: 'get',
+            data:
+                {
+                    id: id,
+                },
+            success: function (msg) {
+                // alert(msg.d.succ)
+                addtoListsfbz(msg.d);
+            },
+            error: {},
+            complete: function () {
+
+            },
+        });
+    }
+    function addtoListsfbz(result) {
+        var id = decodeURI(getQueryStringByName("id"));
+        
+        //许四男E002，哈里E004 ,金相邻E006 徐建明 E003
+        
+        var html = "";
+        switch (id) {
+            case "E001":
+                html =
+                '<div class="am-flexbox" style="min-height:32px">' +
+                '<div class="am-flexbox-item">序号</div>' +
+                '<div class="am-flexbox-item">材料名称</div>' +
+                '<div class="am-flexbox-item">单位</div>' +
+                '<div class="am-flexbox-item">价格(元)</div>' +
+                 '</div>' +
+                 '</div>' +
+                 '<hr style="height:1px;border:none;border-top:1px solid #d2d2d2;">';
+                $.each(result.data, function (index, item) {
+                    html +=
+                        '<div class="am-flexbox" style="min-height:32px">' +
+                        '<div class="am-flexbox-item"style="width:20%">' + item.RN + '</div>' +
+                        '<div class="am-flexbox-item"style="width:30%">' + item.NAME + '</div>' +
+                        '<div class="am-flexbox-item"style="width:30%">' + item.UNIT + '</div>' +
+                        '<div class="am-flexbox-item"style="width:30%">' + item.PRICE1 + '</div>' +
+                         '</div>' +
+                         '<hr  style="height:1px;border:none;border-top:1px solid #d2d2d2;">' +
+                         '</div>' +
+                         '</div>';
+                });
+                html += 
+                    '<div class="am-list-header"><c style="color:red">注:</c>'+result.REMARK1+'</div>' +
+                      //'<p style="padding-left:15px;padding-right:15px;">' + result.REMARK1 + '</p>' +
+                '</div>';
+                break;
+            case "E008":
+                html =
+                '<div class="am-flexbox" style="min-height:32px">' +
+                '<div class="am-flexbox-item" style="width:40%">项目</div>' +
+                '<div class="am-flexbox-item" style="width:10%">单位</div>' +
+                '<div class="am-flexbox-item" style="width:10%">更换(元)</div>' +
+                 '<div class="am-flexbox-item" style="width:10%">开锁</div>' +
+                 '</div>' +
+                 '<hr style="height:1px;border:none;border-top:1px solid #d2d2d2;" >';
+                $.each(result.data, function () {
+                    html += '<div class="am-flexbox" style="min-height:32px">' +
+                        '<div class="am-flexbox-item" style="width:40%">' + this.NAME + '</div>' +
+                        '<div class="am-flexbox-item"style="width:10%">' + this.UNIT + '</div>' +
+                        '<div class="am-flexbox-item" style="width:10%">' + this.PRICE1 + '</div>' +
+                         '<div class="am-flexbox-item" style="width:10%">' + this.PRICE2 + '</div>' +
+                         '</div>' +
+                         '<hr  style="height:1px;border:none;border-top:1px solid #d2d2d2;">';
+                });
+                break;
+            case "E005":
+                html =
+                '<div class="am-flexbox"style="min-height:32px">' +
+                '<div class="am-flexbox-item">项目</div>' +
+                '<div class="am-flexbox-item">价格(元)</div>' +
+                '<div class="am-flexbox-item">备注</div>' +
+                 '<div class="am-flexbox-item">类型</div>' +
+                 '</div>' +
+                 '<hr style="height:1px;border:none;border-top:1px solid #d2d2d2;" >';
+                $.each(result.data, function () {
+                    html += '<div class="am-flexbox">' +
+                        '<div class="am-flexbox-item" style="width:30%"">' + this.NAME + '</div>' +
+                        '<div class="am-flexbox-item"style="width:10%">' + this.PRICE1 + '</div>' +
+                        '<div class="am-flexbox-item" style="width:30%">' + this.REMARK + '</div>' +
+                         '<div class="am-flexbox-item" style="width:30%">' + this.TYPE + '</div>' +
+                         '</div>' +
+                         '<hr  style="height:1px;border:none;border-top:1px solid #d2d2d2;">';
+                });
+                break;
+            case "E002":
+            case "E003":
+            case "E004":
+            case "E008":
+                html =
+                    '<div class="am-flexbox" style="min-height:32px">' +
+                    '<div class="am-flexbox-item">项目</div>' +
+                    '<div class="am-flexbox-item">单位</div>' +
+                    '<div class="am-flexbox-item">价格(元)</div>' +
+                    '<div class="am-flexbox-item">备注</div>' +
+                    '</div>' +
+                    '<hr style="height:1px;border:none;border-top:1px solid #d2d2d2;" >';
+                $.each(result.data, function () {
+                    html += '<div class="am-flexbox" style="min-height:32px">' +
+                        '<div class="am-flexbox-item" style="width:30%">' + this.NAME + '</div>' +
+                        '<div class="am-flexbox-item" style="width:10%">' + this.UNIT + '</div>' +
+                        '<div class="am-flexbox-item" style="width:30%">' + this.PRICE1 + '</div>' +
+                         '<div class="am-flexbox-item" style="width:30%">' + this.REMARK + '</div>' +
+                         '</div>' +
+                         '<hr  style="height:1px;border:none;border-top:1px solid #d2d2d2;" >';
+                });
+                break;
+            case "E006":
+                html =
+                    '<div class="am-flexbox">' +
+                    '<div class="am-flexbox-item">项目</div>' +
+                    '<div class="am-flexbox-item">单位</div>' +
+                    '<div class="am-flexbox-item">价格(元)</div>' +
+                    '<div class="am-flexbox-item">备注</div>' +
+                    '</div>' +
+                    '<hr style="height:1px;border:none;border-top:1px solid #d2d2d2;" >';
+                $.each(result.data, function () {
+                    html += '<div class="am-flexbox" style="min-height:32px">' +
+                        '<div class="am-flexbox-item" style="width:30%">' + this.NAME + '</div>' +
+                        '<div class="am-flexbox-item" style="width:10%">' + this.UNIT + '</div>' +
+                        '<div class="am-flexbox-item"style="width:30%">' + this.PRICE1 + '</div>' +
+                         '<div class="am-flexbox-item"style="width:30%">' + result.REMARK1 + '</div>' +
+                         '</div>' +
+                         '<hr  style="height:1px;border:none;border-top:1px solid #d2d2d2;" >';
+                });
+                break;
+        }
+        $("#sflist").html(html);
+
+       // //苏水延伸E001
+       // if (id == "E001")
+       // {
+       //     var htm =
+       //         '<div class="am-flexbox" style="min-height:32px">' +
+       //         '<div class="am-flexbox-item">序号</div>' +
+       //         '<div class="am-flexbox-item">材料名称</div>' +
+       //         '<div class="am-flexbox-item">单位</div>' +
+       //         '<div class="am-flexbox-item">价格(元)</div>' +
+       //          '</div>' +
+       //          '</div>' +
+       //          '<hr style="height:1px;border:none;border-top:1px solid #d2d2d2;">';
+       //     $.each(result.data, function (index, item) {
+       //         htm += '<div class="am-flexbox">' +
+       //             '<div class="am-flexbox-item">' + item.RN + '</div>' +
+       //             '<div class="am-flexbox-item">' + item.NAME + '</div>' +
+       //             '<div class="am-flexbox-item">' + item.UNIT + '</div>' +
+       //             '<div class="am-flexbox-item">' + item.PRICE1 + '</div>' +
+       //              '</div>' +
+       //              '<hr  style="height:1px;border:none;border-top:1px solid #d2d2d2;">' +
+       //              '</div>';
+       //     });
+       //     htm += '<div class="am-agreement">' +
+       //         '<div class="am-list-header">备注</div>' +
+       //           '<p>' + result.REMARK1 + '</p>' +
+       //     '</div>';
+       //     $("#sflist").html(htm);
+       // }
+       // //新春锁业
+       // if (id == "E008") {
+       //     var htm =
+       //         '<div class="am-flexbox">' +
+       //         '<div class="am-flexbox-item">项目</div>' +
+       //         '<div class="am-flexbox-item">单位</div>' +
+       //         '<div class="am-flexbox-item">更换(元)</div>' +
+       //          '<div class="am-flexbox-item">开锁</div>' +
+       //          '</div>' +
+       //          '<hr style="height:1px;border:none;border-top:1px solid #d2d2d2;" >';
+       //     $.each(result.data, function () {
+       //         htm += '<div class="am-flexbox">' +
+       //             '<div class="am-flexbox-item" style="width:40%">' + this.NAME + '</div>' +
+       //             '<div class="am-flexbox-item">' + this.UNIT + '</div>' +
+       //             '<div class="am-flexbox-item">' + this.PRICE1 + '</div>' +
+       //              '<div class="am-flexbox-item">' + this.PRICE2 + '</div>' +
+       //              '</div>' +
+       //              '<hr  style="height:1px;border:none;border-top:1px solid #d2d2d2;">';
+       //     });
+       //     $("#sflist").html(htm);
+       // }
+       //else  if (id == "E005") {
+       //     var htm =
+       //         '<div class="am-flexbox">' +
+       //         '<div class="am-flexbox-item">项目</div>' +
+       //         '<div class="am-flexbox-item">价格(元)</div>' +
+       //         '<div class="am-flexbox-item">备注</div>' +
+       //          '<div class="am-flexbox-item">类型</div>' +
+       //          '</div>' +
+       //          '<hr style="height:1px;border:none;border-top:1px solid #d2d2d2;" >';
+       //     $.each(result.data, function () {
+       //         htm += '<div class="am-flexbox">' +
+       //             '<div class="am-flexbox-item" style="width:40%">' + this.NAME + '</div>' +
+       //             '<div class="am-flexbox-item">' + this.PRICE1 + '</div>' +
+       //             '<div class="am-flexbox-item">' + this.REMARK + '</div>' +
+       //              '<div class="am-flexbox-item">' + this.TYPE + '</div>' +
+       //              '</div>' +
+       //              '<hr  style="height:1px;border:none;border-top:1px solid #d2d2d2;">';
+       //     });
+       //     $("#sflist").html(htm);
+       //}
+       //// if ((id == "E002") || (id == "E004") || (id == "E008") || (id == "E003") || (id = "E006")) {
+       //else
+       //{
+       //     var htm =
+       //             '<div class="am-flexbox" style="min-height:32px">' +
+       //             '<div class="am-flexbox-item">项目</div>' +
+       //             '<div class="am-flexbox-item">单位</div>' +
+       //             '<div class="am-flexbox-item">价格(元)</div>' +
+       //             '<div class="am-flexbox-item">备注</div>' +
+       //             '</div>' +
+       //             '<hr style="height:1px;border:none;border-top:1px solid #d2d2d2;" >';
+       //     $.each(result.data, function () {
+       //         htm += '<div class="am-flexbox">' +
+       //             '<div class="am-flexbox-item" style="width:40%">' + this.NAME + '</div>' +
+       //             '<div class="am-flexbox-item">' + this.UNIT + '</div>' +
+       //             '<div class="am-flexbox-item">' + this.PRICE1 + '</div>' +
+       //              '<div class="am-flexbox-item">' + this.REMARK + '</div>' +
+       //              '</div>' +
+       //              '<hr  style="height:1px;border:none;border-top:1px solid #d2d2d2;" >';
+       //     });
+       //     $("#sflist").html(htm);
+       // }
+    }
+</script>
+</html>

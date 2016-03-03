@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c6d10ad7-a620-4994-8141-7bd2a9f211d4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/SelectProvidentFundService/DataTransformService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DataTransformService.xsd" MetadataType="Schema" ID="73c7ae7e-afea-473d-b3f2-b42151c3fa73" SourceId="1" SourceUrl="http://localhost/SelectProvidentFundService/DataTransformService.svc?xsd=xsd0" />
+    <MetadataFile FileName="DataTransformService1.xsd" MetadataType="Schema" ID="bce0f7d0-98c7-453d-adc8-bfe13a9b369a" SourceId="1" SourceUrl="http://localhost/SelectProvidentFundService/DataTransformService.svc?xsd=xsd1" />
+    <MetadataFile FileName="DataTransformService.wsdl" MetadataType="Wsdl" ID="c4ff81d2-a60b-48eb-a181-1108c675a347" SourceId="1" SourceUrl="http://localhost/SelectProvidentFundService/DataTransformService.svc?wsdl" />
+    <MetadataFile FileName="DataTransformService.disco" MetadataType="Disco" ID="7bc0d5c6-84cf-4627-9dcc-4fe9747bd33f" SourceId="1" SourceUrl="http://localhost/SelectProvidentFundService/DataTransformService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

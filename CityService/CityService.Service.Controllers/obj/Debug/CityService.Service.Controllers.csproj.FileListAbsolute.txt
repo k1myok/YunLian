@@ -1,0 +1,10 @@
+E:\Projects\PreProjects\Source\CityService\CityService.Service.Controllers\bin\Debug\CityService.Service.Controllers.dll.config
+E:\Projects\PreProjects\Source\CityService\CityService.Service.Controllers\bin\Debug\CityService.Service.Controllers.dll
+E:\Projects\PreProjects\Source\CityService\CityService.Service.Controllers\bin\Debug\CityService.Service.Controllers.pdb
+E:\Projects\PreProjects\Source\CityService\CityService.Service.Controllers\bin\Debug\EntityFramework.dll
+E:\Projects\PreProjects\Source\CityService\CityService.Service.Controllers\bin\Debug\EntityFramework.xml
+E:\Projects\PreProjects\Source\CityService\CityService.Service.Controllers\bin\Debug\zh-Hans\EntityFramework.resources.dll
+E:\Projects\PreProjects\Source\CityService\CityService.Service.Controllers\obj\Debug\CityService.Service.Controllers.dll
+E:\Projects\PreProjects\Source\CityService\CityService.Service.Controllers\obj\Debug\CityService.Service.Controllers.pdb
+E:\Projects\PreProjects\Source\CityService\CityService.Service.Controllers\bin\Debug\CityService.Alipay.Aop.dll
+E:\Projects\PreProjects\Source\CityService\CityService.Service.Controllers\bin\Debug\CityService.Alipay.Aop.pdb

@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D864D570-0817-4E84-B5DE-2AD8D67D116B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CityService.Service</RootNamespace>
+    <AssemblyName>CityService.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CityService.DataAccess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\CityService.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Senparc.Weixin">
+      <HintPath>..\CityService.Service.Controllers\bin\Debug\Senparc.Weixin.dll</HintPath>
+    </Reference>
+    <Reference Include="Senparc.Weixin.MP">
+      <HintPath>..\CityService.Service.Controllers\bin\Debug\Senparc.Weixin.MP.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CityService.DataAccess.csproj.user" />
+    <Content Include="CityServicesInfo\healthMenuPage.xml" />
+    <Content Include="CityServicesInfo\eduMenuPage.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="CityServicesInfo\szbmMenuPage.xml" />
+    <Content Include="CityServicesInfo\policeMenuPage.xml" />
+    <Content Include="CityServicesInfo\travalMenuPage.xml" />
+    <Content Include="CityServicesInfo\szqxMenuPage.xml" />
+    <Content Include="CityServicesInfo\menuPage.xml" />
+    <Content Include="CityServicesInfo_Alipay\eduMenuPage.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="CityServicesInfo_Alipay\healthMenuPage.xml" />
+    <Content Include="CityServicesInfo_Alipay\menuPage.xml" />
+    <Content Include="CityServicesInfo_Alipay\policeMenuPage.xml" />
+    <Content Include="CityServicesInfo_Alipay\szbmMenuPage.xml" />
+    <Content Include="CityServicesInfo_Alipay\szqxMenuPage.xml" />
+    <Content Include="CityServicesInfo_Alipay\travalMenuPage.xml" />
+    <Content Include="EducationCJService.svc" />
+    <Content Include="EducationService.svc" />
+    <Content Include="EnvProtectionService.svc" />
+    <Content Include="HospitalInfoService.svc" />
+    <Content Include="KnowAllService.svc" />
+    <Content Include="PoliceService.svc" />
+    <Content Include="PriceQueryService.svc" />
+    <Content Include="Resource\Mapping.xml" />
+    <Content Include="Service References\EhrServiceReference\CityService.Service.EhrServiceReference.ehrServiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\AlipayServer.pubxml" />
+    <None Include="Properties\PublishProfiles\AlipayServer_Debug.pubxml" />
+    <None Include="Properties\PublishProfiles\app.china-ccw.comtest.pubxml" />
+    <None Include="Properties\PublishProfiles\test.pubxml" />
+    <None Include="Service References\EhrServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\EhrServiceReference\configuration.svcinfo" />
+    <None Include="Service References\EhrServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Service References\KnowAllNew\CityService.Service.KnowAllNew.GetcaseinfoByGuidResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\KnowAllNew\CityService.Service.KnowAllNew.GetInfoMgtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\KnowAllNew\CityService.Service.KnowAllNew.GetServiceCompanyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\KnowAllNew\CityService.Service.KnowAllNew.GetServiceEquipmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\KnowAllNew\CityService.Service.KnowAllNew.Zwbst_AddEvalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\KnowAllNew\CityService.Service.KnowAllNew.Zwbst_GetBmdtDetailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\KnowAllNew\CityService.Service.KnowAllNew.Zwbst_GetBmdtListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\KnowAllNew\CityService.Service.KnowAllNew.Zwbst_GetEntDetailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\KnowAllNew\CityService.Service.KnowAllNew.Zwbst_GetEntSfbzResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\KnowAllNew\CityService.Service.KnowAllNew.Zwbst_GetInfoDetailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\KnowAllNew\CityService.Service.KnowAllNew.Zwbst_GetInfoEvalListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\KnowAllNew\CityService.Service.KnowAllNew.Zwbst_GetInfoListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\KnowAllNew\CityService.Service.KnowAllNew.Zwbst_GetShfwzListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\KnowAllNew\CityService.Service.KnowAllNew.Zwbst_LoginAndBindAlipayResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\KnowAllNew\CityService.Service.KnowAllNew.Zwbst_LoginByAlipayResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\KnowAllNew\CityService.Service.KnowAllNew.Zwbst_RegisterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\KnowAllNew\CityService.Service.KnowAllNew.Zwbst_GetBmdtTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\KnowAllNew\WebService1.disco" />
+    <None Include="Service References\KnowAllNew\configuration91.svcinfo" />
+    <None Include="Service References\KnowAllNew\configuration.svcinfo" />
+    <None Include="Service References\KnowAllNew\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Service References\KnowAllServiceReference\CityService.Service.KnowAllServiceReference.GetcaseinfoByGuidResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\KnowAllServiceReference\CityService.Service.KnowAllServiceReference.GetInfoXmlResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\KnowAllServiceReference\CityService.Service.KnowAllServiceReference.GetServiceCompanyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\KnowAllServiceReference\CityService.Service.KnowAllServiceReference.GetServiceEquipmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\KnowAllNew\WebService1.wsdl" />
+    <None Include="Service References\KnowAllServiceReference\WebService1.disco" />
+    <None Include="Service References\KnowAllServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\KnowAllServiceReference\configuration.svcinfo" />
+    <None Include="Service References\KnowAllServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Service2.svc" />
+    <Content Include="test\jgg.xml" />
+    <Content Include="TravalService.svc" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CityServicesInfo\IndexPage.cs" />
+    <Compile Include="CityServicesInfo\Menu.cs" />
+    <Compile Include="CityServicesInfo\Name.cs" />
+    <Compile Include="Enterprice.cs" />
+    <Compile Include="Servicename.cs" />
+    <Compile Include="ZWbst\CompanyDetail.cs" />
+    <Compile Include="ZWbst\SHFWZ.cs" />
+    <Compile Include="ZWbst\SHFWZList.cs" />
+    <Compile Include="ZWbst\SHFWZListDetail.cs" />
+    <Compile Include="ZWbst\Price.cs" />
+    <Compile Include="ZWbst\ZWBSTSF.cs" />
+    <Compile Include="ZWbst\Company.cs" />
+    <Compile Include="EducationCJService.svc.cs">
+      <DependentUpon>EducationCJService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="EducationInfo\Attendance.cs" />
+    <Compile Include="EducationInfo\DepositAndDraw.cs" />
+    <Compile Include="EducationInfo\Encrypt.cs" />
+    <Compile Include="EducationInfo\Spending.cs" />
+    <Compile Include="EducationService.svc.cs">
+      <DependentUpon>EducationService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="EnvProtectionService.svc.cs">
+      <DependentUpon>EnvProtectionService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Common\GroupModel.cs" />
+    <Compile Include="HospitalInfoService.svc.cs">
+      <DependentUpon>HospitalInfoService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Common\HttpHelper.cs" />
+    <Compile Include="Common\MultiPageResult.cs" />
+    <Compile Include="PoliceInfo\AskQuestion.cs" />
+    <Compile Include="PoliceInfo\CaseQuery.cs" />
+    <Compile Include="HospitalInfo\RegisterDB.cs" />
+    <Compile Include="HospitalInfo\ExDepartDoc.cs" />
+    <Compile Include="HospitalInfo\Fee.cs" />
+    <Compile Include="HospitalInfo\Memberlist.cs" />
+    <Compile Include="KnowAllService.svc.cs">
+      <DependentUpon>KnowAllService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="PoliceInfo\CaseQueryDetail.cs" />
+    <Compile Include="PoliceInfo\Consult.cs" />
+    <Compile Include="PoliceInfo\ConsultingAnswer.cs" />
+    <Compile Include="PoliceInfo\ConsultingAnswerResult.cs" />
+    <Compile Include="PoliceInfo\Consultingservices.cs" />
+    <Compile Include="PoliceInfo\ConsultResult.cs" />
+    <Compile Include="PoliceInfo\DriverScore.cs" />
+    <Compile Include="PoliceInfo\DriverScoreResult.cs" />
+    <Compile Include="PoliceInfo\ItemGuide.cs" />
+    <Compile Include="PoliceInfo\ItemGuideResult.cs" />
+    <Compile Include="PoliceInfo\OtherCase.cs" />
+    <Compile Include="PoliceInfo\OtherCaseDetail.cs" />
+    <Compile Include="PoliceInfo\Peccancy.cs" />
+    <Compile Include="PoliceInfo\PeccancyResult.cs" />
+    <Compile Include="PoliceInfo\PoliceBureaus.cs" />
+    <Compile Include="PoliceInfo\PoliceBureausResult.cs" />
+    <Compile Include="PoliceInfo\PoliceCategory.cs" />
+    <Compile Include="PoliceInfo\PoliceCategoryResult.cs" />
+    <Compile Include="PoliceInfo\RegisterIDCard.cs" />
+    <Compile Include="PoliceInfo\RegisterIDCardResult.cs" />
+    <Compile Include="PoliceInfo\RegisterResidentCard.cs" />
+    <Compile Include="PoliceInfo\RegisterResidentCardAddress.cs" />
+    <Compile Include="PoliceInfo\RegisterResidentCardAddressResult.cs" />
+    <Compile Include="PoliceInfo\RegisterResidentCardResult.cs" />
+    <Compile Include="PoliceInfo\SameNameResult.cs" />
+    <Compile Include="PoliceInfo\TemporaryPass.cs" />
+    <Compile Include="PoliceInfo\TemporaryPassResult.cs" />
+    <Compile Include="PoliceInfo\WorkDirectory.cs" />
+    <Compile Include="PoliceInfo\WorkDirectoryPage.cs" />
+    <Compile Include="PoliceInfo\WorkDirectoryResult.cs" />
+    <Compile Include="PoliceService.svc.cs">
+      <DependentUpon>PoliceService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="PriceQueryService.svc.cs">
+      <DependentUpon>PriceQueryService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="HospitalInfo\Schedualdate.cs" />
+    <Compile Include="Service References\EhrServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\KnowAllNew\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\KnowAllServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service2.svc.cs">
+      <DependentUpon>Service2.svc</DependentUpon>
+    </Compile>
+    <Compile Include="test\htm.cs" />
+    <Compile Include="test\Menu.cs" />
+    <Compile Include="TravalService.svc.cs">
+      <DependentUpon>TravalService.svc</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="bin\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EhrServiceReference\EhrServiceImplService.wsdl" />
+    <None Include="Service References\KnowAllServiceReference\WebService1.wsdl" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\EhrServiceReference\" />
+    <WCFMetadataStorage Include="Service References\KnowAllNew\" />
+    <WCFMetadataStorage Include="Service References\KnowAllServiceReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CityService.Alipay.Aop\CityService.Alipay.Aop.csproj">
+      <Project>{9c11cae5-5188-4e71-825b-68fc3135728a}</Project>
+      <Name>CityService.Alipay.Aop</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CityService.DataAccess\CityService.DataAccess.csproj">
+      <Project>{24ea58ff-ba57-4211-abcc-f0eda89fb065}</Project>
+      <Name>CityService.DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == '32|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>24422</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:24422/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

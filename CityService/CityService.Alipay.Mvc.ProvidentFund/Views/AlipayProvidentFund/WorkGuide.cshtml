@@ -1,0 +1,225 @@
+﻿@{
+    ViewBag.Title = "办事指南";
+}
+            <div data-role="tabs" id="tabs">
+                <script>
+                    $(function () { $("a[href=#one]").addClass("ui-btn-active")});
+                </script>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#one" data-ajax="false">贷款申请</a></li>
+                        <li><a href="#two" data-ajax="false">提取政策</a></li>
+                        <li><a href="#three" data-ajax="false">个人卡务</a></li>
+                    </ul>
+                </div>
+                <div id="one" class="ui-body-d ui-content" style="padding:0;padding-top:3.2px;margin-top:15px;">
+                    <div class="am-list" am-mode="flat chip">
+                        <div class="am-list-body">
+                            <a onclick="GoLR1()" class="am-list-item">
+                                <div class="am-list-thumb"><img src="~/Images/新建普通住房贷款申请指南2.png" width="32" height="32" alt=""></div>
+                                <div class="am-list-content">
+                                    <div class="am-list-title">新建普通住房贷款申请指南</div>
+                                </div>
+                                <div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>
+                            </a>
+                            <a onclick="GoLR2()" class="am-list-item">
+                                <div class="am-list-thumb"><img src="~/Images/二手公积金贷款申请指南2.png" width="32" height="32" alt=""></div>
+                                <div class="am-list-content">
+                                    <div class="am-list-title">二手房公积金贷款申请指南</div>
+                                </div>
+                                <div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>
+                            </a>
+                        </div>
+                        </div>
+                </div>
+                <div id="two" style="padding:0;padding-top:3.2px;margin-top:15px;">
+                    <div class="am-list" am-mode="flat chip">
+                        <div class="am-list-body">
+                            <a onclick="GoDR1('购买新房、二手房')" class="am-list-item">
+                                <div class="am-list-thumb"><img src="~/Images/购买新房，二手房.png" width="32" height="32" alt=""></div>
+                                <div class="am-list-content">
+                                    <div class="am-list-title">购买新房、二手房</div>
+                                </div>
+                                <div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>
+                            </a>
+                            <a onclick = "GoDR2('购买公有住房产权、使用权、分期付款')" class="am-list-item">
+                                <div class="am-list-thumb"><img src="~/Images/购买公有住房产权，使用权.png" width="32" height="32" alt=""></div>
+                                <div class="am-list-content">
+                                    <div class="am-list-title">购买公有住房产权、使用权、分期付款</div>
+                                </div>
+                                <div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>
+                            </a>
+                            <a onclick="GoDR3('拆迁安置')" class="am-list-item">
+                                <div class="am-list-thumb"><img src="~/Images/拆迁安置，翻建自住住房.png" width="32" height="32" alt=""></div>
+                                <div class="am-list-content">
+                                    <div class="am-list-title">拆迁安置</div>
+                                </div>
+                                <div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>
+                            </a>
+                            <a onclick="GoDR3('翻建自住住房')" class="am-list-item">
+                                <div class="am-list-thumb"><img src="~/Images/翻建自住住房.png" width="32" height="32" alt=""></div>
+                                <div class="am-list-content">
+                                    <div class="am-list-title">翻建自住住房</div>
+                                </div>
+                                <div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>
+                            </a>
+                            <a onclick="GoDR3('离退休')" class="am-list-item">
+                                <div class="am-list-thumb"><img src="~/Images/离退休.png" width="32" height="32" alt=""></div>
+                                <div class="am-list-content">
+                                    <div class="am-list-title">离退休</div>
+                                </div>
+                                <div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>
+                            </a>
+                            <a onclick="GoDR4('下岗失业')" class="am-list-item">
+                                <div class="am-list-thumb"><img src="~/Images/离退休，下岗失业.png" width="32" height="32" alt=""></div>
+                                <div class="am-list-content">
+                                    <div class="am-list-title">下岗失业</div>
+                                </div>
+                                <div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>
+                            </a>
+                            <a onclick="GoDR4('死亡（或被宣告死亡）提取')" class="am-list-item">
+                                <div class="am-list-thumb"><img src="~/Images/死亡提取.png" width="32" height="32" alt=""></div>
+                                <div class="am-list-content">
+                                    <div class="am-list-title">死亡（或被宣告死亡）提取</div>
+                                </div>
+                                <div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>
+                            </a>
+                            <a onclick="GoDR5('出大市范围外、出境定居')" class="am-list-item">
+                                <div class="am-list-thumb"><img src="~/Images/出大市范围外，出境定居.png" width="32" height="32" alt=""></div>
+                                <div class="am-list-content">
+                                    <div class="am-list-title">出大市范围外，出境定居</div>
+                                </div>
+                                <div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>
+                            </a>
+                            <a onclick="GoDR6('还贷提取')" class="am-list-item">
+                                <div class="am-list-thumb"><img src="~/Images/还贷提取2.png" width="32" height="32" alt=""></div>
+                                <div class="am-list-content">
+                                    <div class="am-list-title">还贷提取</div>
+                                </div>
+                                <div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>
+                            </a>
+                            <a onclick="GoDR7('还贷委托提取')" class="am-list-item">
+                                <div class="am-list-thumb"><img src="~/Images/还贷委托提取2.png" width="32" height="32" alt=""></div>
+                                <div class="am-list-content">
+                                    <div class="am-list-title">还贷委托提取</div>
+                                </div>
+                                <div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>
+                            </a>
+                            <a onclick="GoDR8('租房提取')" class="am-list-item">
+                                <div class="am-list-thumb"><img src="~/Images/租房提取2.png" width="32" height="32" alt=""></div>
+                                <div class="am-list-content">
+                                    <div class="am-list-title">租房提取</div>
+                                </div>
+                                <div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>
+                            </a>
+                            <a onclick="GoDR9('完全和部分丧失劳动能力')" class="am-list-item">
+                                <div class="am-list-thumb"><img src="~/Images/完全和部分丧失劳动能力，低保特困.png" width="32" height="32" alt=""></div>
+                                <div class="am-list-content">
+                                    <div class="am-list-title">完全和部分丧失劳动能力</div>
+                                </div>
+                                <div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>
+                            </a>
+                            <a onclick="GoDR9('低保特困')" class="am-list-item">
+                                <div class="am-list-thumb"><img src="~/Images/低保特困.png" width="32" height="32" alt=""></div>
+                                <div class="am-list-content">
+                                    <div class="am-list-title">低保特困</div>
+                                </div>
+                                <div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>
+                            </a>
+                            <a onclick="GoDR9('患重病')" class="am-list-item">
+                                <div class="am-list-thumb"><img src="~/Images/患重病.png" width="32" height="32" alt=""></div>
+                                <div class="am-list-content">
+                                    <div class="am-list-title">患重病</div>
+                                </div>
+                                <div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>
+                            </a>
+                        </div>
+                    </div>
+       
+                        </div>
+                <div id="three" style="padding:0;padding-top:3.2px; margin-top:15px;">
+                    <script>
+                        function GoLR1() {
+                            window.location.href = "../AlipayProvidentFund/LoanResult1";
+                        }
+
+                        function GoLR2() {
+                            window.location.href = "../AlipayProvidentFund/LoanResult2";
+                        }
+
+                        function GoDR1(val) {
+                            window.location.href = "../AlipayProvidentFund/DrawResult1?title=" + val;
+                        }
+                        function GoDR2(val) {
+                            window.location.href = "../AlipayProvidentFund/DrawResult2?title=" + val;
+                        }
+                        function GoDR3(val) {
+                            window.location.href = "../AlipayProvidentFund/DrawResult3?title=" + val;
+                        }
+                        function GoDR4(val) {
+                            window.location.href = "../AlipayProvidentFund/DrawResult4?title=" + val;
+                        }
+                        function GoDR5(val) {
+                            window.location.href = "../AlipayProvidentFund/DrawResult5?title=" + val;
+                        }
+                        function GoDR6(val) {
+                            window.location.href = "../AlipayProvidentFund/DrawResult6?title=" + val;
+                        }
+                        function GoDR7(val) {
+                            window.location.href = "../AlipayProvidentFund/DrawResult7?title=" + val;
+                        }
+                        function GoDR8(val) {
+                            window.location.href = "../AlipayProvidentFund/DrawResult8?title=" + val;
+                        }
+                        function GoDR9(val) {
+                            window.location.href = "../AlipayProvidentFund/DrawResult9?title=" + val;
+                        }
+
+                        function Change1() {
+                            window.location.href = "../AlipayProvidentFund/CardMangeResul4";
+                        }
+                        function Change2() {
+                            window.location.href = "../AlipayProvidentFund/CardMangeResul2";
+                        }
+                        function Change3() {
+                            window.location.href = "../AlipayProvidentFund/CardMangeResul1";
+                        }
+                        function Change4() {
+                            window.location.href = "../AlipayProvidentFund/CardMangeResul3";
+                        }
+                    </script>
+                    <div class="am-list" am-mode="flat chip">
+                        <div class="am-list-body">
+                            <a onclick="Change1()" class="am-list-item">
+                                <div class="am-list-thumb"><img src="~/Images/个人资料变更2.png" width="32" height="32" alt=""></div>
+                                <div class="am-list-content">
+                                    <div class="am-list-title">个人资料变更、账户合并</div>
+                                </div>
+                                <div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>
+                            </a>
+                            <a onclick="Change2()" class="am-list-item">
+                                <div class="am-list-thumb"><img src="~/Images/密码修改挂失2.png" width="32" height="32" alt=""></div>
+                                <div class="am-list-content">
+                                    <div class="am-list-title">密码修改、挂失</div>
+                                </div>
+                                <div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>
+                            </a>
+                            <a onclick="Change3()" class="am-list-item">
+                                <div class="am-list-thumb"><img src="~/Images/个人账户转移2.png" width="32" height="32" alt=""></div>
+                                <div class="am-list-content">
+                                    <div class="am-list-title">个人账户转移</div>
+                                </div>
+                                <div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>
+                            </a>
+                            <a onclick="Change4()" class="am-list-item">
+                                <div class="am-list-thumb"><img src="~/Images/挂失领卡换卡2.png" width="32" height="32" alt=""></div>
+                                <div class="am-list-content">
+                                    <div class="am-list-title">挂失、领卡、换卡</div>
+                                </div>
+                                <div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>
+                            </a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+

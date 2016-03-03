@@ -1,0 +1,12 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace CityService.Service
+{
+   public  class Servicename
+    {
+       public string servicename { get; set; }
+    }
+}

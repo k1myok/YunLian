@@ -1,0 +1,37 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+    <S:Body>
+        <RegisterReq xmlns="http://new.webservice.namespace">
+            <AuthInfo>
+                <UserName>SZYunLian</UserName>
+                <Password>YunLian1156</Password>
+            </AuthInfo>
+            <OperType>{0}</OperType>
+            <SN>{1}</SN>
+            <PatientInfo>
+                <IdCard>{2}</IdCard>
+                <Name>{3}</Name>
+                <Phone>{4}</Phone>
+                <InsureType>{5}</InsureType>
+            </PatientInfo>
+            <RegInfo>
+                <HospName>{6}</HospName>
+                <DepartName>{7}</DepartName>
+                <DoctorName>{8}</DoctorName>
+                <WorkDate>{9}</WorkDate>
+                <WorkType>{10}</WorkType>
+                <StartTime>{11}</StartTime>
+                <EndTime>{12}</EndTime>
+                <RegOperType>
+                    <RadCheckType>{13}</RadCheckType>
+                    <BodyCheckSet>{14}</BodyCheckSet>
+                </RegOperType>
+            </RegInfo>
+            <RegFrom>
+                <RegVia>手机：APP</RegVia>
+                <Vendor>支付宝</Vendor>
+                <Operator>SZYunLian</Operator>
+            </RegFrom>
+        </RegisterReq>
+    </S:Body>
+</S:Envelope>

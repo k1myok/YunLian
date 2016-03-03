@@ -1,0 +1,1003 @@
+====================================
+
+------------------------------
+service:
+ALL_HTTP=HTTP_CONNECTION:Keep-Alive
+HTTP_ACCEPT:text/html, application/xhtml+xml, */*
+HTTP_ACCEPT_ENCODING:gzip, deflate
+HTTP_ACCEPT_LANGUAGE:zh-CN
+HTTP_HOST:localhost:22615
+HTTP_USER_AGENT:Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)
+HTTP_DNT:1
+&ALL_RAW=Connection: Keep-Alive
+Accept: text/html, application/xhtml+xml, */*
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN
+Host: localhost:22615
+User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)
+DNT: 1
+&APPL_MD_PATH=/LM/W3SVC/15/ROOT&APPL_PHYSICAL_PATH=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\&AUTH_TYPE=&AUTH_USER=&AUTH_PASSWORD=&LOGON_USER=&REMOTE_USER=&CERT_COOKIE=&CERT_FLAGS=&CERT_ISSUER=&CERT_KEYSIZE=&CERT_SECRETKEYSIZE=&CERT_SERIALNUMBER=&CERT_SERVER_ISSUER=&CERT_SERVER_SUBJECT=&CERT_SUBJECT=&CONTENT_LENGTH=0&CONTENT_TYPE=&GATEWAY_INTERFACE=CGI/1.1&HTTPS=off&HTTPS_KEYSIZE=&HTTPS_SECRETKEYSIZE=&HTTPS_SERVER_ISSUER=&HTTPS_SERVER_SUBJECT=&INSTANCE_ID=15&INSTANCE_META_PATH=/LM/W3SVC/15&LOCAL_ADDR=::1&PATH_INFO=/Gateway.aspx&PATH_TRANSLATED=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\Gateway.aspx&QUERY_STRING=&REMOTE_ADDR=::1&REMOTE_HOST=::1&REMOTE_PORT=22989&REQUEST_METHOD=GET&SCRIPT_NAME=/Gateway.aspx&SERVER_NAME=localhost&SERVER_PORT=22615&SERVER_PORT_SECURE=0&SERVER_PROTOCOL=HTTP/1.1&SERVER_SOFTWARE=Microsoft-IIS/8.0&URL=/Gateway.aspx&HTTP_CONNECTION=Keep-Alive&HTTP_ACCEPT=text/html, application/xhtml+xml, */*&HTTP_ACCEPT_ENCODING=gzip, deflate&HTTP_ACCEPT_LANGUAGE=zh-CN&HTTP_HOST=localhost:22615&HTTP_USER_AGENT=Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)&HTTP_DNT=1
+====================================
+sign=Fi6JUYlrw4CrRSgFURFFu0ZgF932PXnvLifsM92yoqNtgDmVRUqJvVx90rOpe0h0NLDxLm6SWQNVCgELv9KIZ00HN35XRPMjzMVvyXqbA3D%2Be6cEL2KDKhdJ%2FG%2BR3p3oFL%2BYDucbEm8sRZQj7ZdAC%2FojY38k79vSpzuA%2FfUxnCI%3D&biz_content=%3C%3Fxml+version%3D%221.0%22+encoding%3D%22gbk%22%3F%3E%3CXML%3E%3CAppId%3E%3C%21%5BCDATA%5B2015060100099966%5D%5D%3E%3C%2FAppId%3E%3CFromUserId%3E%3C%2FFromUserId%3E%3CCreateTime%3E%3C%21%5BCDATA%5B1433599723354%5D%5D%3E%3C%2FCreateTime%3E%3CMsgType%3E%3C%21%5BCDATA%5Bevent%5D%5D%3E%3C%2FMsgType%3E%3CEventType%3E%3C%21%5BCDATA%5Bverifygw%5D%5D%3E%3C%2FEventType%3E%3CActionParam%3E%3C%2FActionParam%3E%3CAgreementId%3E%3C%2FAgreementId%3E%3CAccountNo%3E%3C%2FAccountNo%3E%3C%2FXML%3E&sign_type=RSA&service=alipay.service.check&charset=GBK
+------------------------------
+service:
+ALL_HTTP=HTTP_CONNECTION:keep-alive
+HTTP_CONTENT_LENGTH:746
+HTTP_HOST:localhost:22615
+HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+&ALL_RAW=Connection: keep-alive
+Content-Length: 746
+Host: localhost:22615
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+&APPL_MD_PATH=/LM/W3SVC/15/ROOT&APPL_PHYSICAL_PATH=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\&AUTH_TYPE=&AUTH_USER=&AUTH_PASSWORD=&LOGON_USER=&REMOTE_USER=&CERT_COOKIE=&CERT_FLAGS=&CERT_ISSUER=&CERT_KEYSIZE=&CERT_SECRETKEYSIZE=&CERT_SERIALNUMBER=&CERT_SERVER_ISSUER=&CERT_SERVER_SUBJECT=&CERT_SUBJECT=&CONTENT_LENGTH=746&CONTENT_TYPE=&GATEWAY_INTERFACE=CGI/1.1&HTTPS=off&HTTPS_KEYSIZE=&HTTPS_SECRETKEYSIZE=&HTTPS_SERVER_ISSUER=&HTTPS_SERVER_SUBJECT=&INSTANCE_ID=15&INSTANCE_META_PATH=/LM/W3SVC/15&LOCAL_ADDR=::1&PATH_INFO=/Gateway.aspx&PATH_TRANSLATED=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\Gateway.aspx&QUERY_STRING=&REMOTE_ADDR=::1&REMOTE_HOST=::1&REMOTE_PORT=22989&REQUEST_METHOD=POST&SCRIPT_NAME=/Gateway.aspx&SERVER_NAME=localhost&SERVER_PORT=22615&SERVER_PORT_SECURE=0&SERVER_PROTOCOL=HTTP/1.1&SERVER_SOFTWARE=Microsoft-IIS/8.0&URL=/Gateway.aspx&HTTP_CONNECTION=keep-alive&HTTP_CONTENT_LENGTH=746&HTTP_HOST=localhost:22615&HTTP_USER_AGENT=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+------------------------------
+====================================
+------------------------------
+POST
+------------------------------
+sign=C/4sP9wkDBD9s2ogFBkI2NENegY4r4M7TXbyhsl5ocjfccVGLm1dZOlhwhO9b2JiC5W3WbzQ7Z25a4PsEr4XuugYI7DFhDiXX1oaVFiIgL0N6iZu7/itlPO4L1EWrZI5YHSTETxpr6V2LAuDfh9mZEZ7EBQKT4/s0cgZxDHv2hg=&biz_content=<?xml+version="1.0"+encoding="gbk"?><XML><AppId><![CDATA[2015060100099966]]></AppId><FromUserId></FromUserId><CreateTime><![CDATA[1433600264541]]></CreateTime><MsgType><![CDATA[event]]></MsgType><EventType><![CDATA[verifygw]]></EventType><ActionParam></ActionParam><AgreementId></AgreementId><AccountNo></AccountNo></XML>&sign_type=RSA&service=alipay.service.check&charset=GBK
+------------------------------
+service:
+------------------------------
+ALL_HTTP=HTTP_CONNECTION:keep-alive
+HTTP_CONTENT_LENGTH:566
+HTTP_HOST:localhost:22615
+HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+&ALL_RAW=Connection: keep-alive
+Content-Length: 566
+Host: localhost:22615
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+&APPL_MD_PATH=/LM/W3SVC/15/ROOT&APPL_PHYSICAL_PATH=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\&AUTH_TYPE=&AUTH_USER=&AUTH_PASSWORD=&LOGON_USER=&REMOTE_USER=&CERT_COOKIE=&CERT_FLAGS=&CERT_ISSUER=&CERT_KEYSIZE=&CERT_SECRETKEYSIZE=&CERT_SERIALNUMBER=&CERT_SERVER_ISSUER=&CERT_SERVER_SUBJECT=&CERT_SUBJECT=&CONTENT_LENGTH=566&CONTENT_TYPE=&GATEWAY_INTERFACE=CGI/1.1&HTTPS=off&HTTPS_KEYSIZE=&HTTPS_SECRETKEYSIZE=&HTTPS_SERVER_ISSUER=&HTTPS_SERVER_SUBJECT=&INSTANCE_ID=15&INSTANCE_META_PATH=/LM/W3SVC/15&LOCAL_ADDR=::1&PATH_INFO=/Gateway.aspx&PATH_TRANSLATED=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\Gateway.aspx&QUERY_STRING=&REMOTE_ADDR=::1&REMOTE_HOST=::1&REMOTE_PORT=24848&REQUEST_METHOD=POST&SCRIPT_NAME=/Gateway.aspx&SERVER_NAME=localhost&SERVER_PORT=22615&SERVER_PORT_SECURE=0&SERVER_PROTOCOL=HTTP/1.1&SERVER_SOFTWARE=Microsoft-IIS/8.0&URL=/Gateway.aspx&HTTP_CONNECTION=keep-alive&HTTP_CONTENT_LENGTH=566&HTTP_HOST=localhost:22615&HTTP_USER_AGENT=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+------------------------------
+====================================
+------------------------------
+GET
+------------------------------
+
+------------------------------
+service:
+------------------------------
+ALL_HTTP=HTTP_CONNECTION:Keep-Alive
+HTTP_ACCEPT:text/html, application/xhtml+xml, */*
+HTTP_ACCEPT_ENCODING:gzip, deflate
+HTTP_ACCEPT_LANGUAGE:zh-CN
+HTTP_HOST:localhost:22615
+HTTP_USER_AGENT:Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)
+HTTP_DNT:1
+&ALL_RAW=Connection: Keep-Alive
+Accept: text/html, application/xhtml+xml, */*
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN
+Host: localhost:22615
+User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)
+DNT: 1
+&APPL_MD_PATH=/LM/W3SVC/15/ROOT&APPL_PHYSICAL_PATH=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\&AUTH_TYPE=&AUTH_USER=&AUTH_PASSWORD=&LOGON_USER=&REMOTE_USER=&CERT_COOKIE=&CERT_FLAGS=&CERT_ISSUER=&CERT_KEYSIZE=&CERT_SECRETKEYSIZE=&CERT_SERIALNUMBER=&CERT_SERVER_ISSUER=&CERT_SERVER_SUBJECT=&CERT_SUBJECT=&CONTENT_LENGTH=0&CONTENT_TYPE=&GATEWAY_INTERFACE=CGI/1.1&HTTPS=off&HTTPS_KEYSIZE=&HTTPS_SECRETKEYSIZE=&HTTPS_SERVER_ISSUER=&HTTPS_SERVER_SUBJECT=&INSTANCE_ID=15&INSTANCE_META_PATH=/LM/W3SVC/15&LOCAL_ADDR=::1&PATH_INFO=/Gateway.aspx&PATH_TRANSLATED=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\Gateway.aspx&QUERY_STRING=&REMOTE_ADDR=::1&REMOTE_HOST=::1&REMOTE_PORT=24913&REQUEST_METHOD=GET&SCRIPT_NAME=/Gateway.aspx&SERVER_NAME=localhost&SERVER_PORT=22615&SERVER_PORT_SECURE=0&SERVER_PROTOCOL=HTTP/1.1&SERVER_SOFTWARE=Microsoft-IIS/8.0&URL=/Gateway.aspx&HTTP_CONNECTION=Keep-Alive&HTTP_ACCEPT=text/html, application/xhtml+xml, */*&HTTP_ACCEPT_ENCODING=gzip, deflate&HTTP_ACCEPT_LANGUAGE=zh-CN&HTTP_HOST=localhost:22615&HTTP_USER_AGENT=Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)&HTTP_DNT=1
+------------------------------
+====================================
+------------------------------
+POST
+------------------------------
+sign=C/4sP9wkDBD9s2ogFBkI2NENegY4r4M7TXbyhsl5ocjfccVGLm1dZOlhwhO9b2JiC5W3WbzQ7Z25a4PsEr4XuugYI7DFhDiXX1oaVFiIgL0N6iZu7/itlPO4L1EWrZI5YHSTETxpr6V2LAuDfh9mZEZ7EBQKT4/s0cgZxDHv2hg=&biz_content=<?xml+version="1.0"+encoding="gbk"?><XML><AppId><![CDATA[2015060100099966]]></AppId><FromUserId></FromUserId><CreateTime><![CDATA[1433600264541]]></CreateTime><MsgType><![CDATA[event]]></MsgType><EventType><![CDATA[verifygw]]></EventType><ActionParam></ActionParam><AgreementId></AgreementId><AccountNo></AccountNo></XML>&sign_type=RSA&service=alipay.service.check&charset=GBK
+------------------------------
+service:
+------------------------------
+ALL_HTTP=HTTP_CONNECTION:keep-alive
+HTTP_CONTENT_LENGTH:566
+HTTP_HOST:localhost:22615
+HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+&ALL_RAW=Connection: keep-alive
+Content-Length: 566
+Host: localhost:22615
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+&APPL_MD_PATH=/LM/W3SVC/15/ROOT&APPL_PHYSICAL_PATH=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\&AUTH_TYPE=&AUTH_USER=&AUTH_PASSWORD=&LOGON_USER=&REMOTE_USER=&CERT_COOKIE=&CERT_FLAGS=&CERT_ISSUER=&CERT_KEYSIZE=&CERT_SECRETKEYSIZE=&CERT_SERIALNUMBER=&CERT_SERVER_ISSUER=&CERT_SERVER_SUBJECT=&CERT_SUBJECT=&CONTENT_LENGTH=566&CONTENT_TYPE=&GATEWAY_INTERFACE=CGI/1.1&HTTPS=off&HTTPS_KEYSIZE=&HTTPS_SECRETKEYSIZE=&HTTPS_SERVER_ISSUER=&HTTPS_SERVER_SUBJECT=&INSTANCE_ID=15&INSTANCE_META_PATH=/LM/W3SVC/15&LOCAL_ADDR=::1&PATH_INFO=/Gateway.aspx&PATH_TRANSLATED=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\Gateway.aspx&QUERY_STRING=&REMOTE_ADDR=::1&REMOTE_HOST=::1&REMOTE_PORT=24913&REQUEST_METHOD=POST&SCRIPT_NAME=/Gateway.aspx&SERVER_NAME=localhost&SERVER_PORT=22615&SERVER_PORT_SECURE=0&SERVER_PROTOCOL=HTTP/1.1&SERVER_SOFTWARE=Microsoft-IIS/8.0&URL=/Gateway.aspx&HTTP_CONNECTION=keep-alive&HTTP_CONTENT_LENGTH=566&HTTP_HOST=localhost:22615&HTTP_USER_AGENT=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+------------------------------
+====================================
+------------------------------
+GET
+------------------------------
+sign=C/4sP9wkDBD9s2ogFBkI2NENegY4r4M7TXbyhsl5ocjfccVGLm1dZOlhwhO9b2JiC5W3WbzQ7Z25a4PsEr4XuugYI7DFhDiXX1oaVFiIgL0N6iZu7/itlPO4L1EWrZI5YHSTETxpr6V2LAuDfh9mZEZ7EBQKT4/s0cgZxDHv2hg=&biz_content=<?xml+version="1.0"+encoding="gbk"?><XML><AppId><![CDATA[2015060100099966]]></AppId><FromUserId></FromUserId><CreateTime><![CDATA[1433600264541]]></CreateTime><MsgType><![CDATA[event]]></MsgType><EventType><![CDATA[verifygw]]></EventType><ActionParam></ActionParam><AgreementId></AgreementId><AccountNo></AccountNo></XML>&sign_type=RSA&service=alipay.service.check&charset=GBK
+------------------------------
+service:
+------------------------------
+ALL_HTTP=HTTP_CONNECTION:keep-alive
+HTTP_CONTENT_LENGTH:566
+HTTP_HOST:localhost:22615
+HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+&ALL_RAW=Connection: keep-alive
+Content-Length: 566
+Host: localhost:22615
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+&APPL_MD_PATH=/LM/W3SVC/15/ROOT&APPL_PHYSICAL_PATH=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\&AUTH_TYPE=&AUTH_USER=&AUTH_PASSWORD=&LOGON_USER=&REMOTE_USER=&CERT_COOKIE=&CERT_FLAGS=&CERT_ISSUER=&CERT_KEYSIZE=&CERT_SECRETKEYSIZE=&CERT_SERIALNUMBER=&CERT_SERVER_ISSUER=&CERT_SERVER_SUBJECT=&CERT_SUBJECT=&CONTENT_LENGTH=566&CONTENT_TYPE=&GATEWAY_INTERFACE=CGI/1.1&HTTPS=off&HTTPS_KEYSIZE=&HTTPS_SECRETKEYSIZE=&HTTPS_SERVER_ISSUER=&HTTPS_SERVER_SUBJECT=&INSTANCE_ID=15&INSTANCE_META_PATH=/LM/W3SVC/15&LOCAL_ADDR=::1&PATH_INFO=/Gateway.aspx&PATH_TRANSLATED=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\Gateway.aspx&QUERY_STRING=&REMOTE_ADDR=::1&REMOTE_HOST=::1&REMOTE_PORT=25706&REQUEST_METHOD=GET&SCRIPT_NAME=/Gateway.aspx&SERVER_NAME=localhost&SERVER_PORT=22615&SERVER_PORT_SECURE=0&SERVER_PROTOCOL=HTTP/1.1&SERVER_SOFTWARE=Microsoft-IIS/8.0&URL=/Gateway.aspx&HTTP_CONNECTION=keep-alive&HTTP_CONTENT_LENGTH=566&HTTP_HOST=localhost:22615&HTTP_USER_AGENT=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+------------------------------
+====================================
+------------------------------
+GET
+------------------------------
+
+------------------------------
+service:
+------------------------------
+ALL_HTTP=HTTP_CONNECTION:Keep-Alive
+HTTP_ACCEPT:text/html, application/xhtml+xml, */*
+HTTP_ACCEPT_ENCODING:gzip, deflate
+HTTP_ACCEPT_LANGUAGE:zh-CN
+HTTP_HOST:localhost
+HTTP_USER_AGENT:Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)
+HTTP_DNT:1
+&ALL_RAW=Connection: Keep-Alive
+Accept: text/html, application/xhtml+xml, */*
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN
+Host: localhost
+User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)
+DNT: 1
+&APPL_MD_PATH=/LM/W3SVC/1/ROOT/AlipayDemoSite&APPL_PHYSICAL_PATH=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\&AUTH_TYPE=&AUTH_USER=&AUTH_PASSWORD=&LOGON_USER=&REMOTE_USER=&CERT_COOKIE=&CERT_FLAGS=&CERT_ISSUER=&CERT_KEYSIZE=&CERT_SECRETKEYSIZE=&CERT_SERIALNUMBER=&CERT_SERVER_ISSUER=&CERT_SERVER_SUBJECT=&CERT_SUBJECT=&CONTENT_LENGTH=0&CONTENT_TYPE=&GATEWAY_INTERFACE=CGI/1.1&HTTPS=off&HTTPS_KEYSIZE=&HTTPS_SECRETKEYSIZE=&HTTPS_SERVER_ISSUER=&HTTPS_SERVER_SUBJECT=&INSTANCE_ID=1&INSTANCE_META_PATH=/LM/W3SVC/1&LOCAL_ADDR=::1&PATH_INFO=/AlipayDemoSite/Gateway.aspx&PATH_TRANSLATED=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\Gateway.aspx&QUERY_STRING=&REMOTE_ADDR=::1&REMOTE_HOST=::1&REMOTE_PORT=26419&REQUEST_METHOD=GET&SCRIPT_NAME=/AlipayDemoSite/Gateway.aspx&SERVER_NAME=localhost&SERVER_PORT=80&SERVER_PORT_SECURE=0&SERVER_PROTOCOL=HTTP/1.1&SERVER_SOFTWARE=Microsoft-IIS/7.5&URL=/AlipayDemoSite/Gateway.aspx&HTTP_CONNECTION=Keep-Alive&HTTP_ACCEPT=text/html, application/xhtml+xml, */*&HTTP_ACCEPT_ENCODING=gzip, deflate&HTTP_ACCEPT_LANGUAGE=zh-CN&HTTP_HOST=localhost&HTTP_USER_AGENT=Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)&HTTP_DNT=1
+------------------------------
+====================================
+------------------------------
+POST
+------------------------------
+sign=C/4sP9wkDBD9s2ogFBkI2NENegY4r4M7TXbyhsl5ocjfccVGLm1dZOlhwhO9b2JiC5W3WbzQ7Z25a4PsEr4XuugYI7DFhDiXX1oaVFiIgL0N6iZu7/itlPO4L1EWrZI5YHSTETxpr6V2LAuDfh9mZEZ7EBQKT4/s0cgZxDHv2hg=&biz_content=<?xml+version="1.0"+encoding="gbk"?><XML><AppId><![CDATA[2015060100099966]]></AppId><FromUserId></FromUserId><CreateTime><![CDATA[1433600264541]]></CreateTime><MsgType><![CDATA[event]]></MsgType><EventType><![CDATA[verifygw]]></EventType><ActionParam></ActionParam><AgreementId></AgreementId><AccountNo></AccountNo></XML>&sign_type=RSA&service=alipay.service.check&charset=GBK
+------------------------------
+service:
+------------------------------
+ALL_HTTP=HTTP_CONNECTION:keep-alive
+HTTP_CONTENT_LENGTH:566
+HTTP_HOST:localhost
+HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+&ALL_RAW=Connection: keep-alive
+Content-Length: 566
+Host: localhost
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+&APPL_MD_PATH=/LM/W3SVC/1/ROOT/AlipayDemoSite&APPL_PHYSICAL_PATH=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\&AUTH_TYPE=&AUTH_USER=&AUTH_PASSWORD=&LOGON_USER=&REMOTE_USER=&CERT_COOKIE=&CERT_FLAGS=&CERT_ISSUER=&CERT_KEYSIZE=&CERT_SECRETKEYSIZE=&CERT_SERIALNUMBER=&CERT_SERVER_ISSUER=&CERT_SERVER_SUBJECT=&CERT_SUBJECT=&CONTENT_LENGTH=566&CONTENT_TYPE=&GATEWAY_INTERFACE=CGI/1.1&HTTPS=off&HTTPS_KEYSIZE=&HTTPS_SECRETKEYSIZE=&HTTPS_SERVER_ISSUER=&HTTPS_SERVER_SUBJECT=&INSTANCE_ID=1&INSTANCE_META_PATH=/LM/W3SVC/1&LOCAL_ADDR=::1&PATH_INFO=/AlipayDemoSite/Gateway.aspx&PATH_TRANSLATED=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\Gateway.aspx&QUERY_STRING=&REMOTE_ADDR=::1&REMOTE_HOST=::1&REMOTE_PORT=26419&REQUEST_METHOD=POST&SCRIPT_NAME=/AlipayDemoSite/Gateway.aspx&SERVER_NAME=localhost&SERVER_PORT=80&SERVER_PORT_SECURE=0&SERVER_PROTOCOL=HTTP/1.1&SERVER_SOFTWARE=Microsoft-IIS/7.5&URL=/AlipayDemoSite/Gateway.aspx&HTTP_CONNECTION=keep-alive&HTTP_CONTENT_LENGTH=566&HTTP_HOST=localhost&HTTP_USER_AGENT=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+------------------------------
+====================================
+------------------------------
+GET
+------------------------------
+
+------------------------------
+service:
+------------------------------
+sign=C/4sP9wkDBD9s2ogFBkI2NENegY4r4M7TXbyhsl5ocjfccVGLm1dZOlhwhO9b2JiC5W3WbzQ7Z25a4PsEr4XuugYI7DFhDiXX1oaVFiIgL0N6iZu7/itlPO4L1EWrZI5YHSTETxpr6V2LAuDfh9mZEZ7EBQKT4/s0cgZxDHv2hg=&biz_content=<?xml version=\"1.0\" encoding=\"gbk\"?><XML><AppId><![CDATA[2015060100099966]]></AppId><FromUserId></FromUserId><CreateTime><![CDATA[1433600264541]]></CreateTime><MsgType><![CDATA[event]]></MsgType><EventType><![CDATA[verifygw]]></EventType><ActionParam></ActionParam><AgreementId></AgreementId><AccountNo></AccountNo></XML>&sign_type=RSA&service=alipay.service.check&charset=GBK&ALL_HTTP=HTTP_CONNECTION:keep-alive
+HTTP_CONTENT_LENGTH:0
+HTTP_HOST:localhost
+HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+&ALL_RAW=Connection: keep-alive
+Content-Length: 0
+Host: localhost
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+&APPL_MD_PATH=/LM/W3SVC/1/ROOT/AlipayDemoSite&APPL_PHYSICAL_PATH=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\&AUTH_TYPE=&AUTH_USER=&AUTH_PASSWORD=&LOGON_USER=&REMOTE_USER=&CERT_COOKIE=&CERT_FLAGS=&CERT_ISSUER=&CERT_KEYSIZE=&CERT_SECRETKEYSIZE=&CERT_SERIALNUMBER=&CERT_SERVER_ISSUER=&CERT_SERVER_SUBJECT=&CERT_SUBJECT=&CONTENT_LENGTH=0&CONTENT_TYPE=&GATEWAY_INTERFACE=CGI/1.1&HTTPS=off&HTTPS_KEYSIZE=&HTTPS_SECRETKEYSIZE=&HTTPS_SERVER_ISSUER=&HTTPS_SERVER_SUBJECT=&INSTANCE_ID=1&INSTANCE_META_PATH=/LM/W3SVC/1&LOCAL_ADDR=::1&PATH_INFO=/AlipayDemoSite/Gateway.aspx&PATH_TRANSLATED=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\Gateway.aspx&QUERY_STRING=sign=C/4sP9wkDBD9s2ogFBkI2NENegY4r4M7TXbyhsl5ocjfccVGLm1dZOlhwhO9b2JiC5W3WbzQ7Z25a4PsEr4XuugYI7DFhDiXX1oaVFiIgL0N6iZu7/itlPO4L1EWrZI5YHSTETxpr6V2LAuDfh9mZEZ7EBQKT4/s0cgZxDHv2hg=&biz_content=<?xml+version=\"1.0\"+encoding=\"gbk\"?><XML><AppId><![CDATA[2015060100099966]]></AppId><FromUserId></FromUserId><CreateTime><![CDATA[1433600264541]]></CreateTime><MsgType><![CDATA[event]]></MsgType><EventType><![CDATA[verifygw]]></EventType><ActionParam></ActionParam><AgreementId></AgreementId><AccountNo></AccountNo></XML>&sign_type=RSA&service=alipay.service.check&charset=GBK&REMOTE_ADDR=::1&REMOTE_HOST=::1&REMOTE_PORT=26419&REQUEST_METHOD=GET&SCRIPT_NAME=/AlipayDemoSite/Gateway.aspx&SERVER_NAME=localhost&SERVER_PORT=80&SERVER_PORT_SECURE=0&SERVER_PROTOCOL=HTTP/1.1&SERVER_SOFTWARE=Microsoft-IIS/7.5&URL=/AlipayDemoSite/Gateway.aspx&HTTP_CONNECTION=keep-alive&HTTP_CONTENT_LENGTH=0&HTTP_HOST=localhost&HTTP_USER_AGENT=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+------------------------------
+<?xml version="1.0" encoding="GBK"?><alipay><response><success>false</success><error_code>VERIFY_FAILED</error_code><biz_content>MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDJxYxxNucRaW91Jc1FvHaVfWfEhsdhyMlwIhl9IpK5k4ggj0AvIXO0EIWJjs6PQeRdo9iNHLWIJqWt9vsXFkzZy0EqXgXIUwakmx8IB5A/usNutsb9nBPgERIWcDcTX9CI65lE7MupUNoM/tQ7hfgHgEyusFUkuJe7AFvHeaivvQIDAQAB</biz_content></response><sign>dZsVhnBX6SMAG5EjRYZs3iwCvAnvPLo/rnI7uG0Gg88thaaQOeK9kBOuXl3ACjl5me5jECqR1fBICT+cM0apCQ4EkNsUDoQzd3Cb0zUTQQW0M145T4CrNgTVMg8My0By0U7VkNTrhH0uZ74DX4HLs2Xo9Q66ZcqIotgXazQdxxY=</sign><sign_type>RSA</sign_type></alipay>
+------------------------------
+====================================
+------------------------------
+GET
+------------------------------
+
+------------------------------
+service:
+------------------------------
+sign=C/4sP9wkDBD9s2ogFBkI2NENegY4r4M7TXbyhsl5ocjfccVGLm1dZOlhwhO9b2JiC5W3WbzQ7Z25a4PsEr4XuugYI7DFhDiXX1oaVFiIgL0N6iZu7/itlPO4L1EWrZI5YHSTETxpr6V2LAuDfh9mZEZ7EBQKT4/s0cgZxDHv2hg=&biz_content=<?xml version=\"1.0\" encoding=\"gbk\"?><XML><AppId><![CDATA[2015060100099966]]></AppId><FromUserId></FromUserId><CreateTime><![CDATA[1433600264541]]></CreateTime><MsgType><![CDATA[event]]></MsgType><EventType><![CDATA[verifygw]]></EventType><ActionParam></ActionParam><AgreementId></AgreementId><AccountNo></AccountNo></XML>&sign_type=RSA&service=alipay.service.check&charset=GBK&ALL_HTTP=HTTP_CONNECTION:keep-alive
+HTTP_CONTENT_LENGTH:0
+HTTP_HOST:localhost
+HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+&ALL_RAW=Connection: keep-alive
+Content-Length: 0
+Host: localhost
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+&APPL_MD_PATH=/LM/W3SVC/1/ROOT/AlipayDemoSite&APPL_PHYSICAL_PATH=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\&AUTH_TYPE=&AUTH_USER=&AUTH_PASSWORD=&LOGON_USER=&REMOTE_USER=&CERT_COOKIE=&CERT_FLAGS=&CERT_ISSUER=&CERT_KEYSIZE=&CERT_SECRETKEYSIZE=&CERT_SERIALNUMBER=&CERT_SERVER_ISSUER=&CERT_SERVER_SUBJECT=&CERT_SUBJECT=&CONTENT_LENGTH=0&CONTENT_TYPE=&GATEWAY_INTERFACE=CGI/1.1&HTTPS=off&HTTPS_KEYSIZE=&HTTPS_SECRETKEYSIZE=&HTTPS_SERVER_ISSUER=&HTTPS_SERVER_SUBJECT=&INSTANCE_ID=1&INSTANCE_META_PATH=/LM/W3SVC/1&LOCAL_ADDR=::1&PATH_INFO=/AlipayDemoSite/Gateway.aspx&PATH_TRANSLATED=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\Gateway.aspx&QUERY_STRING=sign=C/4sP9wkDBD9s2ogFBkI2NENegY4r4M7TXbyhsl5ocjfccVGLm1dZOlhwhO9b2JiC5W3WbzQ7Z25a4PsEr4XuugYI7DFhDiXX1oaVFiIgL0N6iZu7/itlPO4L1EWrZI5YHSTETxpr6V2LAuDfh9mZEZ7EBQKT4/s0cgZxDHv2hg=&biz_content=<?xml+version=\"1.0\"+encoding=\"gbk\"?><XML><AppId><![CDATA[2015060100099966]]></AppId><FromUserId></FromUserId><CreateTime><![CDATA[1433600264541]]></CreateTime><MsgType><![CDATA[event]]></MsgType><EventType><![CDATA[verifygw]]></EventType><ActionParam></ActionParam><AgreementId></AgreementId><AccountNo></AccountNo></XML>&sign_type=RSA&service=alipay.service.check&charset=GBK&REMOTE_ADDR=::1&REMOTE_HOST=::1&REMOTE_PORT=26753&REQUEST_METHOD=GET&SCRIPT_NAME=/AlipayDemoSite/Gateway.aspx&SERVER_NAME=localhost&SERVER_PORT=80&SERVER_PORT_SECURE=0&SERVER_PROTOCOL=HTTP/1.1&SERVER_SOFTWARE=Microsoft-IIS/7.5&URL=/AlipayDemoSite/Gateway.aspx&HTTP_CONNECTION=keep-alive&HTTP_CONTENT_LENGTH=0&HTTP_HOST=localhost&HTTP_USER_AGENT=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+------------------------------
+<?xml version="1.0" encoding="GBK"?><alipay><response><success>false</success><error_code>VERIFY_FAILED</error_code><biz_content>MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDJxYxxNucRaW91Jc1FvHaVfWfEhsdhyMlwIhl9IpK5k4ggj0AvIXO0EIWJjs6PQeRdo9iNHLWIJqWt9vsXFkzZy0EqXgXIUwakmx8IB5A/usNutsb9nBPgERIWcDcTX9CI65lE7MupUNoM/tQ7hfgHgEyusFUkuJe7AFvHeaivvQIDAQAB</biz_content></response><sign>dZsVhnBX6SMAG5EjRYZs3iwCvAnvPLo/rnI7uG0Gg88thaaQOeK9kBOuXl3ACjl5me5jECqR1fBICT+cM0apCQ4EkNsUDoQzd3Cb0zUTQQW0M145T4CrNgTVMg8My0By0U7VkNTrhH0uZ74DX4HLs2Xo9Q66ZcqIotgXazQdxxY=</sign><sign_type>RSA</sign_type></alipay>
+------------------------------
+====================================
+------------------------------
+POST
+------------------------------
+
+------------------------------
+service:
+------------------------------
+sign=C/4sP9wkDBD9s2ogFBkI2NENegY4r4M7TXbyhsl5ocjfccVGLm1dZOlhwhO9b2JiC5W3WbzQ7Z25a4PsEr4XuugYI7DFhDiXX1oaVFiIgL0N6iZu7/itlPO4L1EWrZI5YHSTETxpr6V2LAuDfh9mZEZ7EBQKT4/s0cgZxDHv2hg=&biz_content=<?xml version=\"1.0\" encoding=\"gbk\"?><XML><AppId><![CDATA[2015060100099966]]></AppId><FromUserId></FromUserId><CreateTime><![CDATA[1433600264541]]></CreateTime><MsgType><![CDATA[event]]></MsgType><EventType><![CDATA[verifygw]]></EventType><ActionParam></ActionParam><AgreementId></AgreementId><AccountNo></AccountNo></XML>&sign_type=RSA&service=alipay.service.check&charset=GBK&ALL_HTTP=HTTP_CONNECTION:keep-alive
+HTTP_CONTENT_LENGTH:0
+HTTP_HOST:localhost
+HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+&ALL_RAW=Connection: keep-alive
+Content-Length: 0
+Host: localhost
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+&APPL_MD_PATH=/LM/W3SVC/1/ROOT/AlipayDemoSite&APPL_PHYSICAL_PATH=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\&AUTH_TYPE=&AUTH_USER=&AUTH_PASSWORD=&LOGON_USER=&REMOTE_USER=&CERT_COOKIE=&CERT_FLAGS=&CERT_ISSUER=&CERT_KEYSIZE=&CERT_SECRETKEYSIZE=&CERT_SERIALNUMBER=&CERT_SERVER_ISSUER=&CERT_SERVER_SUBJECT=&CERT_SUBJECT=&CONTENT_LENGTH=0&CONTENT_TYPE=&GATEWAY_INTERFACE=CGI/1.1&HTTPS=off&HTTPS_KEYSIZE=&HTTPS_SECRETKEYSIZE=&HTTPS_SERVER_ISSUER=&HTTPS_SERVER_SUBJECT=&INSTANCE_ID=1&INSTANCE_META_PATH=/LM/W3SVC/1&LOCAL_ADDR=::1&PATH_INFO=/AlipayDemoSite/Gateway.aspx&PATH_TRANSLATED=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\Gateway.aspx&QUERY_STRING=sign=C/4sP9wkDBD9s2ogFBkI2NENegY4r4M7TXbyhsl5ocjfccVGLm1dZOlhwhO9b2JiC5W3WbzQ7Z25a4PsEr4XuugYI7DFhDiXX1oaVFiIgL0N6iZu7/itlPO4L1EWrZI5YHSTETxpr6V2LAuDfh9mZEZ7EBQKT4/s0cgZxDHv2hg=&biz_content=<?xml+version=\"1.0\"+encoding=\"gbk\"?><XML><AppId><![CDATA[2015060100099966]]></AppId><FromUserId></FromUserId><CreateTime><![CDATA[1433600264541]]></CreateTime><MsgType><![CDATA[event]]></MsgType><EventType><![CDATA[verifygw]]></EventType><ActionParam></ActionParam><AgreementId></AgreementId><AccountNo></AccountNo></XML>&sign_type=RSA&service=alipay.service.check&charset=GBK&REMOTE_ADDR=::1&REMOTE_HOST=::1&REMOTE_PORT=26753&REQUEST_METHOD=POST&SCRIPT_NAME=/AlipayDemoSite/Gateway.aspx&SERVER_NAME=localhost&SERVER_PORT=80&SERVER_PORT_SECURE=0&SERVER_PROTOCOL=HTTP/1.1&SERVER_SOFTWARE=Microsoft-IIS/7.5&URL=/AlipayDemoSite/Gateway.aspx&HTTP_CONNECTION=keep-alive&HTTP_CONTENT_LENGTH=0&HTTP_HOST=localhost&HTTP_USER_AGENT=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+------------------------------
+<?xml version="1.0" encoding="GBK"?><alipay><response><success>false</success><error_code>VERIFY_FAILED</error_code><biz_content>MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDJxYxxNucRaW91Jc1FvHaVfWfEhsdhyMlwIhl9IpK5k4ggj0AvIXO0EIWJjs6PQeRdo9iNHLWIJqWt9vsXFkzZy0EqXgXIUwakmx8IB5A/usNutsb9nBPgERIWcDcTX9CI65lE7MupUNoM/tQ7hfgHgEyusFUkuJe7AFvHeaivvQIDAQAB</biz_content></response><sign>dZsVhnBX6SMAG5EjRYZs3iwCvAnvPLo/rnI7uG0Gg88thaaQOeK9kBOuXl3ACjl5me5jECqR1fBICT+cM0apCQ4EkNsUDoQzd3Cb0zUTQQW0M145T4CrNgTVMg8My0By0U7VkNTrhH0uZ74DX4HLs2Xo9Q66ZcqIotgXazQdxxY=</sign><sign_type>RSA</sign_type></alipay>
+------------------------------
+====================================
+------------------------------
+POST
+------------------------------
+
+------------------------------
+service:
+------------------------------
+sign=C/4sP9wkDBD9s2ogFBkI2NENegY4r4M7TXbyhsl5ocjfccVGLm1dZOlhwhO9b2JiC5W3WbzQ7Z25a4PsEr4XuugYI7DFhDiXX1oaVFiIgL0N6iZu7/itlPO4L1EWrZI5YHSTETxpr6V2LAuDfh9mZEZ7EBQKT4/s0cgZxDHv2hg=&biz_content=<?xml version=\"1.0\" encoding=\"gbk\"?><XML><AppId><![CDATA[2015060100099966]]></AppId><FromUserId></FromUserId><CreateTime><![CDATA[1433600264541]]></CreateTime><MsgType><![CDATA[event]]></MsgType><EventType><![CDATA[verifygw]]></EventType><ActionParam></ActionParam><AgreementId></AgreementId><AccountNo></AccountNo></XML>&sign_type=RSA&service=alipay.service.check&charset=GBK&ALL_HTTP=HTTP_CONNECTION:keep-alive
+HTTP_CONTENT_LENGTH:0
+HTTP_HOST:localhost
+HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+&ALL_RAW=Connection: keep-alive
+Content-Length: 0
+Host: localhost
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+&APPL_MD_PATH=/LM/W3SVC/1/ROOT/AlipayDemoSite&APPL_PHYSICAL_PATH=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\&AUTH_TYPE=&AUTH_USER=&AUTH_PASSWORD=&LOGON_USER=&REMOTE_USER=&CERT_COOKIE=&CERT_FLAGS=&CERT_ISSUER=&CERT_KEYSIZE=&CERT_SECRETKEYSIZE=&CERT_SERIALNUMBER=&CERT_SERVER_ISSUER=&CERT_SERVER_SUBJECT=&CERT_SUBJECT=&CONTENT_LENGTH=0&CONTENT_TYPE=&GATEWAY_INTERFACE=CGI/1.1&HTTPS=off&HTTPS_KEYSIZE=&HTTPS_SECRETKEYSIZE=&HTTPS_SERVER_ISSUER=&HTTPS_SERVER_SUBJECT=&INSTANCE_ID=1&INSTANCE_META_PATH=/LM/W3SVC/1&LOCAL_ADDR=::1&PATH_INFO=/AlipayDemoSite/Gateway.aspx&PATH_TRANSLATED=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\Gateway.aspx&QUERY_STRING=sign=C/4sP9wkDBD9s2ogFBkI2NENegY4r4M7TXbyhsl5ocjfccVGLm1dZOlhwhO9b2JiC5W3WbzQ7Z25a4PsEr4XuugYI7DFhDiXX1oaVFiIgL0N6iZu7/itlPO4L1EWrZI5YHSTETxpr6V2LAuDfh9mZEZ7EBQKT4/s0cgZxDHv2hg=&biz_content=<?xml+version=\"1.0\"+encoding=\"gbk\"?><XML><AppId><![CDATA[2015060100099966]]></AppId><FromUserId></FromUserId><CreateTime><![CDATA[1433600264541]]></CreateTime><MsgType><![CDATA[event]]></MsgType><EventType><![CDATA[verifygw]]></EventType><ActionParam></ActionParam><AgreementId></AgreementId><AccountNo></AccountNo></XML>&sign_type=RSA&service=alipay.service.check&charset=GBK&REMOTE_ADDR=::1&REMOTE_HOST=::1&REMOTE_PORT=26753&REQUEST_METHOD=POST&SCRIPT_NAME=/AlipayDemoSite/Gateway.aspx&SERVER_NAME=localhost&SERVER_PORT=80&SERVER_PORT_SECURE=0&SERVER_PROTOCOL=HTTP/1.1&SERVER_SOFTWARE=Microsoft-IIS/7.5&URL=/AlipayDemoSite/Gateway.aspx&HTTP_CONNECTION=keep-alive&HTTP_CONTENT_LENGTH=0&HTTP_HOST=localhost&HTTP_USER_AGENT=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+------------------------------
+<?xml version="1.0" encoding="GBK"?><alipay><response><success>false</success><error_code>VERIFY_FAILED</error_code><biz_content>MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDJxYxxNucRaW91Jc1FvHaVfWfEhsdhyMlwIhl9IpK5k4ggj0AvIXO0EIWJjs6PQeRdo9iNHLWIJqWt9vsXFkzZy0EqXgXIUwakmx8IB5A/usNutsb9nBPgERIWcDcTX9CI65lE7MupUNoM/tQ7hfgHgEyusFUkuJe7AFvHeaivvQIDAQAB</biz_content></response><sign>dZsVhnBX6SMAG5EjRYZs3iwCvAnvPLo/rnI7uG0Gg88thaaQOeK9kBOuXl3ACjl5me5jECqR1fBICT+cM0apCQ4EkNsUDoQzd3Cb0zUTQQW0M145T4CrNgTVMg8My0By0U7VkNTrhH0uZ74DX4HLs2Xo9Q66ZcqIotgXazQdxxY=</sign><sign_type>RSA</sign_type></alipay>
+------------------------------
+====================================
+------------------------------
+POST
+------------------------------
+
+------------------------------
+service:
+------------------------------
+sign=C/4sP9wkDBD9s2ogFBkI2NENegY4r4M7TXbyhsl5ocjfccVGLm1dZOlhwhO9b2JiC5W3WbzQ7Z25a4PsEr4XuugYI7DFhDiXX1oaVFiIgL0N6iZu7/itlPO4L1EWrZI5YHSTETxpr6V2LAuDfh9mZEZ7EBQKT4/s0cgZxDHv2hg=&biz_content=<?xml version=\"1.0\" encoding=\"gbk\"?><XML><AppId><![CDATA[2015060100099966]]></AppId><FromUserId></FromUserId><CreateTime><![CDATA[1433600264541]]></CreateTime><MsgType><![CDATA[event]]></MsgType><EventType><![CDATA[verifygw]]></EventType><ActionParam></ActionParam><AgreementId></AgreementId><AccountNo></AccountNo></XML>&sign_type=RSA&service=alipay.service.check&charset=GBK&ALL_HTTP=HTTP_CONNECTION:keep-alive
+HTTP_CONTENT_LENGTH:0
+HTTP_HOST:localhost
+HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+HTTP_HTTP_CONTENT_TYPE:application/x-www-form-urlencoded; text/html; charset=GBK
+&ALL_RAW=Connection: keep-alive
+Content-Length: 0
+Host: localhost
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+HTTP_CONTENT_TYPE: application/x-www-form-urlencoded; text/html; charset=GBK
+&APPL_MD_PATH=/LM/W3SVC/1/ROOT/AlipayDemoSite&APPL_PHYSICAL_PATH=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\&AUTH_TYPE=&AUTH_USER=&AUTH_PASSWORD=&LOGON_USER=&REMOTE_USER=&CERT_COOKIE=&CERT_FLAGS=&CERT_ISSUER=&CERT_KEYSIZE=&CERT_SECRETKEYSIZE=&CERT_SERIALNUMBER=&CERT_SERVER_ISSUER=&CERT_SERVER_SUBJECT=&CERT_SUBJECT=&CONTENT_LENGTH=0&CONTENT_TYPE=&GATEWAY_INTERFACE=CGI/1.1&HTTPS=off&HTTPS_KEYSIZE=&HTTPS_SECRETKEYSIZE=&HTTPS_SERVER_ISSUER=&HTTPS_SERVER_SUBJECT=&INSTANCE_ID=1&INSTANCE_META_PATH=/LM/W3SVC/1&LOCAL_ADDR=::1&PATH_INFO=/AlipayDemoSite/Gateway.aspx&PATH_TRANSLATED=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\Gateway.aspx&QUERY_STRING=sign=C/4sP9wkDBD9s2ogFBkI2NENegY4r4M7TXbyhsl5ocjfccVGLm1dZOlhwhO9b2JiC5W3WbzQ7Z25a4PsEr4XuugYI7DFhDiXX1oaVFiIgL0N6iZu7/itlPO4L1EWrZI5YHSTETxpr6V2LAuDfh9mZEZ7EBQKT4/s0cgZxDHv2hg=&biz_content=<?xml+version=\"1.0\"+encoding=\"gbk\"?><XML><AppId><![CDATA[2015060100099966]]></AppId><FromUserId></FromUserId><CreateTime><![CDATA[1433600264541]]></CreateTime><MsgType><![CDATA[event]]></MsgType><EventType><![CDATA[verifygw]]></EventType><ActionParam></ActionParam><AgreementId></AgreementId><AccountNo></AccountNo></XML>&sign_type=RSA&service=alipay.service.check&charset=GBK&REMOTE_ADDR=::1&REMOTE_HOST=::1&REMOTE_PORT=26753&REQUEST_METHOD=POST&SCRIPT_NAME=/AlipayDemoSite/Gateway.aspx&SERVER_NAME=localhost&SERVER_PORT=80&SERVER_PORT_SECURE=0&SERVER_PROTOCOL=HTTP/1.1&SERVER_SOFTWARE=Microsoft-IIS/7.5&URL=/AlipayDemoSite/Gateway.aspx&HTTP_CONNECTION=keep-alive&HTTP_CONTENT_LENGTH=0&HTTP_HOST=localhost&HTTP_USER_AGENT=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36&HTTP_HTTP_CONTENT_TYPE=application/x-www-form-urlencoded; text/html; charset=GBK
+------------------------------
+<?xml version="1.0" encoding="GBK"?><alipay><response><success>false</success><error_code>VERIFY_FAILED</error_code><biz_content>MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDJxYxxNucRaW91Jc1FvHaVfWfEhsdhyMlwIhl9IpK5k4ggj0AvIXO0EIWJjs6PQeRdo9iNHLWIJqWt9vsXFkzZy0EqXgXIUwakmx8IB5A/usNutsb9nBPgERIWcDcTX9CI65lE7MupUNoM/tQ7hfgHgEyusFUkuJe7AFvHeaivvQIDAQAB</biz_content></response><sign>dZsVhnBX6SMAG5EjRYZs3iwCvAnvPLo/rnI7uG0Gg88thaaQOeK9kBOuXl3ACjl5me5jECqR1fBICT+cM0apCQ4EkNsUDoQzd3Cb0zUTQQW0M145T4CrNgTVMg8My0By0U7VkNTrhH0uZ74DX4HLs2Xo9Q66ZcqIotgXazQdxxY=</sign><sign_type>RSA</sign_type></alipay>
+------------------------------
+====================================
+------------------------------
+POST
+------------------------------
+
+------------------------------
+service:
+------------------------------
+sign=C/4sP9wkDBD9s2ogFBkI2NENegY4r4M7TXbyhsl5ocjfccVGLm1dZOlhwhO9b2JiC5W3WbzQ7Z25a4PsEr4XuugYI7DFhDiXX1oaVFiIgL0N6iZu7/itlPO4L1EWrZI5YHSTETxpr6V2LAuDfh9mZEZ7EBQKT4/s0cgZxDHv2hg=&biz_content=<?xml version=\"1.0\" encoding=\"gbk\"?><XML><AppId><![CDATA[2015060100099966]]></AppId><FromUserId></FromUserId><CreateTime><![CDATA[1433600264541]]></CreateTime><MsgType><![CDATA[event]]></MsgType><EventType><![CDATA[verifygw]]></EventType><ActionParam></ActionParam><AgreementId></AgreementId><AccountNo></AccountNo></XML>&sign_type=RSA&service=alipay.service.check&charset=GBK&ALL_HTTP=HTTP_CONNECTION:keep-alive
+HTTP_CONTENT_LENGTH:0
+HTTP_HOST:localhost
+HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+HTTP_HTTP_CONTENT_TYPE:application/x-www-form-urlencoded; text/html; charset=GBK
+&ALL_RAW=Connection: keep-alive
+Content-Length: 0
+Host: localhost
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+HTTP_CONTENT_TYPE: application/x-www-form-urlencoded; text/html; charset=GBK
+&APPL_MD_PATH=/LM/W3SVC/1/ROOT/AlipayDemoSite&APPL_PHYSICAL_PATH=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\&AUTH_TYPE=&AUTH_USER=&AUTH_PASSWORD=&LOGON_USER=&REMOTE_USER=&CERT_COOKIE=&CERT_FLAGS=&CERT_ISSUER=&CERT_KEYSIZE=&CERT_SECRETKEYSIZE=&CERT_SERIALNUMBER=&CERT_SERVER_ISSUER=&CERT_SERVER_SUBJECT=&CERT_SUBJECT=&CONTENT_LENGTH=0&CONTENT_TYPE=&GATEWAY_INTERFACE=CGI/1.1&HTTPS=off&HTTPS_KEYSIZE=&HTTPS_SECRETKEYSIZE=&HTTPS_SERVER_ISSUER=&HTTPS_SERVER_SUBJECT=&INSTANCE_ID=1&INSTANCE_META_PATH=/LM/W3SVC/1&LOCAL_ADDR=::1&PATH_INFO=/AlipayDemoSite/Gateway.aspx&PATH_TRANSLATED=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\Gateway.aspx&QUERY_STRING=sign=C/4sP9wkDBD9s2ogFBkI2NENegY4r4M7TXbyhsl5ocjfccVGLm1dZOlhwhO9b2JiC5W3WbzQ7Z25a4PsEr4XuugYI7DFhDiXX1oaVFiIgL0N6iZu7/itlPO4L1EWrZI5YHSTETxpr6V2LAuDfh9mZEZ7EBQKT4/s0cgZxDHv2hg=&biz_content=<?xml+version=\"1.0\"+encoding=\"gbk\"?><XML><AppId><![CDATA[2015060100099966]]></AppId><FromUserId></FromUserId><CreateTime><![CDATA[1433600264541]]></CreateTime><MsgType><![CDATA[event]]></MsgType><EventType><![CDATA[verifygw]]></EventType><ActionParam></ActionParam><AgreementId></AgreementId><AccountNo></AccountNo></XML>&sign_type=RSA&service=alipay.service.check&charset=GBK&REMOTE_ADDR=::1&REMOTE_HOST=::1&REMOTE_PORT=26753&REQUEST_METHOD=POST&SCRIPT_NAME=/AlipayDemoSite/Gateway.aspx&SERVER_NAME=localhost&SERVER_PORT=80&SERVER_PORT_SECURE=0&SERVER_PROTOCOL=HTTP/1.1&SERVER_SOFTWARE=Microsoft-IIS/7.5&URL=/AlipayDemoSite/Gateway.aspx&HTTP_CONNECTION=keep-alive&HTTP_CONTENT_LENGTH=0&HTTP_HOST=localhost&HTTP_USER_AGENT=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36&HTTP_HTTP_CONTENT_TYPE=application/x-www-form-urlencoded; text/html; charset=GBK
+------------------------------
+<?xml version="1.0" encoding="GBK"?><alipay><response><success>false</success><error_code>VERIFY_FAILED</error_code><biz_content>MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDJxYxxNucRaW91Jc1FvHaVfWfEhsdhyMlwIhl9IpK5k4ggj0AvIXO0EIWJjs6PQeRdo9iNHLWIJqWt9vsXFkzZy0EqXgXIUwakmx8IB5A/usNutsb9nBPgERIWcDcTX9CI65lE7MupUNoM/tQ7hfgHgEyusFUkuJe7AFvHeaivvQIDAQAB</biz_content></response><sign>dZsVhnBX6SMAG5EjRYZs3iwCvAnvPLo/rnI7uG0Gg88thaaQOeK9kBOuXl3ACjl5me5jECqR1fBICT+cM0apCQ4EkNsUDoQzd3Cb0zUTQQW0M145T4CrNgTVMg8My0By0U7VkNTrhH0uZ74DX4HLs2Xo9Q66ZcqIotgXazQdxxY=</sign><sign_type>RSA</sign_type></alipay>
+------------------------------
+====================================
+------------------------------
+POST
+------------------------------
+"sign=C/4sP9wkDBD9s2ogFBkI2NENegY4r4M7TXbyhsl5ocjfccVGLm1dZOlhwhO9b2JiC5W3WbzQ7Z25a4PsEr4XuugYI7DFhDiXX1oaVFiIgL0N6iZu7/itlPO4L1EWrZI5YHSTETxpr6V2LAuDfh9mZEZ7EBQKT4/s0cgZxDHv2hg=&biz_content=<?xml+version=\"1.0\"+encoding=\"gbk\"?><XML><AppId><![CDATA[2015060100099966]]></AppId><FromUserId></FromUserId><CreateTime><![CDATA[1433600264541]]></CreateTime><MsgType><![CDATA[event]]></MsgType><EventType><![CDATA[verifygw]]></EventType><ActionParam></ActionParam><AgreementId></AgreementId><AccountNo></AccountNo></XML>&sign_type=RSA&service=alipay.service.check&charset=GBK"
+------------------------------
+service:
+------------------------------
+sign=C/4sP9wkDBD9s2ogFBkI2NENegY4r4M7TXbyhsl5ocjfccVGLm1dZOlhwhO9b2JiC5W3WbzQ7Z25a4PsEr4XuugYI7DFhDiXX1oaVFiIgL0N6iZu7/itlPO4L1EWrZI5YHSTETxpr6V2LAuDfh9mZEZ7EBQKT4/s0cgZxDHv2hg=&biz_content=<?xml version=\"1.0\" encoding=\"gbk\"?><XML><AppId><![CDATA[2015060100099966]]></AppId><FromUserId></FromUserId><CreateTime><![CDATA[1433600264541]]></CreateTime><MsgType><![CDATA[event]]></MsgType><EventType><![CDATA[verifygw]]></EventType><ActionParam></ActionParam><AgreementId></AgreementId><AccountNo></AccountNo></XML>&sign_type=RSA&service=alipay.service.check&charset=GBK&ALL_HTTP=HTTP_CONNECTION:keep-alive
+HTTP_CONTENT_LENGTH:572
+HTTP_HOST:localhost
+HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+HTTP_HTTP_CONTENT_TYPE:application/x-www-form-urlencoded; text/html; charset=GBK
+&ALL_RAW=Connection: keep-alive
+Content-Length: 572
+Host: localhost
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+HTTP_CONTENT_TYPE: application/x-www-form-urlencoded; text/html; charset=GBK
+&APPL_MD_PATH=/LM/W3SVC/1/ROOT/AlipayDemoSite&APPL_PHYSICAL_PATH=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\&AUTH_TYPE=&AUTH_USER=&AUTH_PASSWORD=&LOGON_USER=&REMOTE_USER=&CERT_COOKIE=&CERT_FLAGS=&CERT_ISSUER=&CERT_KEYSIZE=&CERT_SECRETKEYSIZE=&CERT_SERIALNUMBER=&CERT_SERVER_ISSUER=&CERT_SERVER_SUBJECT=&CERT_SUBJECT=&CONTENT_LENGTH=572&CONTENT_TYPE=&GATEWAY_INTERFACE=CGI/1.1&HTTPS=off&HTTPS_KEYSIZE=&HTTPS_SECRETKEYSIZE=&HTTPS_SERVER_ISSUER=&HTTPS_SERVER_SUBJECT=&INSTANCE_ID=1&INSTANCE_META_PATH=/LM/W3SVC/1&LOCAL_ADDR=::1&PATH_INFO=/AlipayDemoSite/Gateway.aspx&PATH_TRANSLATED=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\Gateway.aspx&QUERY_STRING=sign=C/4sP9wkDBD9s2ogFBkI2NENegY4r4M7TXbyhsl5ocjfccVGLm1dZOlhwhO9b2JiC5W3WbzQ7Z25a4PsEr4XuugYI7DFhDiXX1oaVFiIgL0N6iZu7/itlPO4L1EWrZI5YHSTETxpr6V2LAuDfh9mZEZ7EBQKT4/s0cgZxDHv2hg=&biz_content=<?xml+version=\"1.0\"+encoding=\"gbk\"?><XML><AppId><![CDATA[2015060100099966]]></AppId><FromUserId></FromUserId><CreateTime><![CDATA[1433600264541]]></CreateTime><MsgType><![CDATA[event]]></MsgType><EventType><![CDATA[verifygw]]></EventType><ActionParam></ActionParam><AgreementId></AgreementId><AccountNo></AccountNo></XML>&sign_type=RSA&service=alipay.service.check&charset=GBK&REMOTE_ADDR=::1&REMOTE_HOST=::1&REMOTE_PORT=26753&REQUEST_METHOD=POST&SCRIPT_NAME=/AlipayDemoSite/Gateway.aspx&SERVER_NAME=localhost&SERVER_PORT=80&SERVER_PORT_SECURE=0&SERVER_PROTOCOL=HTTP/1.1&SERVER_SOFTWARE=Microsoft-IIS/7.5&URL=/AlipayDemoSite/Gateway.aspx&HTTP_CONNECTION=keep-alive&HTTP_CONTENT_LENGTH=572&HTTP_HOST=localhost&HTTP_USER_AGENT=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36&HTTP_HTTP_CONTENT_TYPE=application/x-www-form-urlencoded; text/html; charset=GBK
+------------------------------
+<?xml version="1.0" encoding="GBK"?><alipay><response><success>false</success><error_code>VERIFY_FAILED</error_code><biz_content>MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDJxYxxNucRaW91Jc1FvHaVfWfEhsdhyMlwIhl9IpK5k4ggj0AvIXO0EIWJjs6PQeRdo9iNHLWIJqWt9vsXFkzZy0EqXgXIUwakmx8IB5A/usNutsb9nBPgERIWcDcTX9CI65lE7MupUNoM/tQ7hfgHgEyusFUkuJe7AFvHeaivvQIDAQAB</biz_content></response><sign>dZsVhnBX6SMAG5EjRYZs3iwCvAnvPLo/rnI7uG0Gg88thaaQOeK9kBOuXl3ACjl5me5jECqR1fBICT+cM0apCQ4EkNsUDoQzd3Cb0zUTQQW0M145T4CrNgTVMg8My0By0U7VkNTrhH0uZ74DX4HLs2Xo9Q66ZcqIotgXazQdxxY=</sign><sign_type>RSA</sign_type></alipay>
+------------------------------
+====================================
+------------------------------
+GET
+------------------------------
+
+------------------------------
+service:
+------------------------------
+ALL_HTTP=HTTP_CONNECTION:Keep-Alive
+HTTP_ACCEPT:text/html, application/xhtml+xml, */*
+HTTP_ACCEPT_ENCODING:gzip, deflate
+HTTP_ACCEPT_LANGUAGE:zh-CN
+HTTP_HOST:localhost
+HTTP_USER_AGENT:Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)
+HTTP_DNT:1
+&ALL_RAW=Connection: Keep-Alive
+Accept: text/html, application/xhtml+xml, */*
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN
+Host: localhost
+User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)
+DNT: 1
+&APPL_MD_PATH=/LM/W3SVC/1/ROOT/AlipayDemoSite&APPL_PHYSICAL_PATH=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\&AUTH_TYPE=&AUTH_USER=&AUTH_PASSWORD=&LOGON_USER=&REMOTE_USER=&CERT_COOKIE=&CERT_FLAGS=&CERT_ISSUER=&CERT_KEYSIZE=&CERT_SECRETKEYSIZE=&CERT_SERIALNUMBER=&CERT_SERVER_ISSUER=&CERT_SERVER_SUBJECT=&CERT_SUBJECT=&CONTENT_LENGTH=0&CONTENT_TYPE=&GATEWAY_INTERFACE=CGI/1.1&HTTPS=off&HTTPS_KEYSIZE=&HTTPS_SECRETKEYSIZE=&HTTPS_SERVER_ISSUER=&HTTPS_SERVER_SUBJECT=&INSTANCE_ID=1&INSTANCE_META_PATH=/LM/W3SVC/1&LOCAL_ADDR=::1&PATH_INFO=/AlipayDemoSite/Gateway.aspx&PATH_TRANSLATED=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\Gateway.aspx&QUERY_STRING=&REMOTE_ADDR=::1&REMOTE_HOST=::1&REMOTE_PORT=30740&REQUEST_METHOD=GET&SCRIPT_NAME=/AlipayDemoSite/Gateway.aspx&SERVER_NAME=localhost&SERVER_PORT=80&SERVER_PORT_SECURE=0&SERVER_PROTOCOL=HTTP/1.1&SERVER_SOFTWARE=Microsoft-IIS/7.5&URL=/AlipayDemoSite/Gateway.aspx&HTTP_CONNECTION=Keep-Alive&HTTP_ACCEPT=text/html, application/xhtml+xml, */*&HTTP_ACCEPT_ENCODING=gzip, deflate&HTTP_ACCEPT_LANGUAGE=zh-CN&HTTP_HOST=localhost&HTTP_USER_AGENT=Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)&HTTP_DNT=1
+------------------------------
+====================================
+------------------------------
+POST
+------------------------------
+"sign=C/4sP9wkDBD9s2ogFBkI2NENegY4r4M7TXbyhsl5ocjfccVGLm1dZOlhwhO9b2JiC5W3WbzQ7Z25a4PsEr4XuugYI7DFhDiXX1oaVFiIgL0N6iZu7/itlPO4L1EWrZI5YHSTETxpr6V2LAuDfh9mZEZ7EBQKT4/s0cgZxDHv2hg=&biz_content=<?xml+version=\"1.0\"+encoding=\"gbk\"?><XML><AppId><![CDATA[2015060100099966]]></AppId><FromUserId></FromUserId><CreateTime><![CDATA[1433600264541]]></CreateTime><MsgType><![CDATA[event]]></MsgType><EventType><![CDATA[verifygw]]></EventType><ActionParam></ActionParam><AgreementId></AgreementId><AccountNo></AccountNo></XML>&sign_type=RSA&service=alipay.service.check&charset=GBK"
+------------------------------
+service:
+------------------------------
+sign=C/4sP9wkDBD9s2ogFBkI2NENegY4r4M7TXbyhsl5ocjfccVGLm1dZOlhwhO9b2JiC5W3WbzQ7Z25a4PsEr4XuugYI7DFhDiXX1oaVFiIgL0N6iZu7/itlPO4L1EWrZI5YHSTETxpr6V2LAuDfh9mZEZ7EBQKT4/s0cgZxDHv2hg=&biz_content=<?xml version=\"1.0\" encoding=\"gbk\"?><XML><AppId><![CDATA[2015060100099966]]></AppId><FromUserId></FromUserId><CreateTime><![CDATA[1433600264541]]></CreateTime><MsgType><![CDATA[event]]></MsgType><EventType><![CDATA[verifygw]]></EventType><ActionParam></ActionParam><AgreementId></AgreementId><AccountNo></AccountNo></XML>&sign_type=RSA&service=alipay.service.check&charset=GBK&ALL_HTTP=HTTP_CONNECTION:keep-alive
+HTTP_CONTENT_LENGTH:572
+HTTP_HOST:localhost
+HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+HTTP_HTTP_CONTENT_TYPE:application/x-www-form-urlencoded; text/html; charset=GBK
+&ALL_RAW=Connection: keep-alive
+Content-Length: 572
+Host: localhost
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+HTTP_CONTENT_TYPE: application/x-www-form-urlencoded; text/html; charset=GBK
+&APPL_MD_PATH=/LM/W3SVC/1/ROOT/AlipayDemoSite&APPL_PHYSICAL_PATH=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\&AUTH_TYPE=&AUTH_USER=&AUTH_PASSWORD=&LOGON_USER=&REMOTE_USER=&CERT_COOKIE=&CERT_FLAGS=&CERT_ISSUER=&CERT_KEYSIZE=&CERT_SECRETKEYSIZE=&CERT_SERIALNUMBER=&CERT_SERVER_ISSUER=&CERT_SERVER_SUBJECT=&CERT_SUBJECT=&CONTENT_LENGTH=572&CONTENT_TYPE=&GATEWAY_INTERFACE=CGI/1.1&HTTPS=off&HTTPS_KEYSIZE=&HTTPS_SECRETKEYSIZE=&HTTPS_SERVER_ISSUER=&HTTPS_SERVER_SUBJECT=&INSTANCE_ID=1&INSTANCE_META_PATH=/LM/W3SVC/1&LOCAL_ADDR=::1&PATH_INFO=/AlipayDemoSite/Gateway.aspx&PATH_TRANSLATED=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\Gateway.aspx&QUERY_STRING=sign=C/4sP9wkDBD9s2ogFBkI2NENegY4r4M7TXbyhsl5ocjfccVGLm1dZOlhwhO9b2JiC5W3WbzQ7Z25a4PsEr4XuugYI7DFhDiXX1oaVFiIgL0N6iZu7/itlPO4L1EWrZI5YHSTETxpr6V2LAuDfh9mZEZ7EBQKT4/s0cgZxDHv2hg=&biz_content=<?xml+version=\"1.0\"+encoding=\"gbk\"?><XML><AppId><![CDATA[2015060100099966]]></AppId><FromUserId></FromUserId><CreateTime><![CDATA[1433600264541]]></CreateTime><MsgType><![CDATA[event]]></MsgType><EventType><![CDATA[verifygw]]></EventType><ActionParam></ActionParam><AgreementId></AgreementId><AccountNo></AccountNo></XML>&sign_type=RSA&service=alipay.service.check&charset=GBK&REMOTE_ADDR=::1&REMOTE_HOST=::1&REMOTE_PORT=30740&REQUEST_METHOD=POST&SCRIPT_NAME=/AlipayDemoSite/Gateway.aspx&SERVER_NAME=localhost&SERVER_PORT=80&SERVER_PORT_SECURE=0&SERVER_PROTOCOL=HTTP/1.1&SERVER_SOFTWARE=Microsoft-IIS/7.5&URL=/AlipayDemoSite/Gateway.aspx&HTTP_CONNECTION=keep-alive&HTTP_CONTENT_LENGTH=572&HTTP_HOST=localhost&HTTP_USER_AGENT=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36&HTTP_HTTP_CONTENT_TYPE=application/x-www-form-urlencoded; text/html; charset=GBK
+------------------------------
+====================================
+------------------------------
+GET
+------------------------------
+
+------------------------------
+service:
+------------------------------
+ALL_HTTP=HTTP_CONNECTION:Keep-Alive
+HTTP_ACCEPT:text/html, application/xhtml+xml, */*
+HTTP_ACCEPT_ENCODING:gzip, deflate
+HTTP_ACCEPT_LANGUAGE:zh-CN
+HTTP_HOST:localhost
+HTTP_USER_AGENT:Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)
+HTTP_DNT:1
+&ALL_RAW=Connection: Keep-Alive
+Accept: text/html, application/xhtml+xml, */*
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN
+Host: localhost
+User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)
+DNT: 1
+&APPL_MD_PATH=/LM/W3SVC/1/ROOT/AlipayDemoSite&APPL_PHYSICAL_PATH=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\&AUTH_TYPE=&AUTH_USER=&AUTH_PASSWORD=&LOGON_USER=&REMOTE_USER=&CERT_COOKIE=&CERT_FLAGS=&CERT_ISSUER=&CERT_KEYSIZE=&CERT_SECRETKEYSIZE=&CERT_SERIALNUMBER=&CERT_SERVER_ISSUER=&CERT_SERVER_SUBJECT=&CERT_SUBJECT=&CONTENT_LENGTH=0&CONTENT_TYPE=&GATEWAY_INTERFACE=CGI/1.1&HTTPS=off&HTTPS_KEYSIZE=&HTTPS_SECRETKEYSIZE=&HTTPS_SERVER_ISSUER=&HTTPS_SERVER_SUBJECT=&INSTANCE_ID=1&INSTANCE_META_PATH=/LM/W3SVC/1&LOCAL_ADDR=::1&PATH_INFO=/AlipayDemoSite/Gateway.aspx&PATH_TRANSLATED=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\Gateway.aspx&QUERY_STRING=&REMOTE_ADDR=::1&REMOTE_HOST=::1&REMOTE_PORT=32318&REQUEST_METHOD=GET&SCRIPT_NAME=/AlipayDemoSite/Gateway.aspx&SERVER_NAME=localhost&SERVER_PORT=80&SERVER_PORT_SECURE=0&SERVER_PROTOCOL=HTTP/1.1&SERVER_SOFTWARE=Microsoft-IIS/7.5&URL=/AlipayDemoSite/Gateway.aspx&HTTP_CONNECTION=Keep-Alive&HTTP_ACCEPT=text/html, application/xhtml+xml, */*&HTTP_ACCEPT_ENCODING=gzip, deflate&HTTP_ACCEPT_LANGUAGE=zh-CN&HTTP_HOST=localhost&HTTP_USER_AGENT=Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)&HTTP_DNT=1
+------------------------------
+====================================
+------------------------------
+POST
+------------------------------
+"sign=C/4sP9wkDBD9s2ogFBkI2NENegY4r4M7TXbyhsl5ocjfccVGLm1dZOlhwhO9b2JiC5W3WbzQ7Z25a4PsEr4XuugYI7DFhDiXX1oaVFiIgL0N6iZu7/itlPO4L1EWrZI5YHSTETxpr6V2LAuDfh9mZEZ7EBQKT4/s0cgZxDHv2hg=&biz_content=<?xml+version=\"1.0\"+encoding=\"gbk\"?><XML><AppId><![CDATA[2015060100099966]]></AppId><FromUserId></FromUserId><CreateTime><![CDATA[1433600264541]]></CreateTime><MsgType><![CDATA[event]]></MsgType><EventType><![CDATA[verifygw]]></EventType><ActionParam></ActionParam><AgreementId></AgreementId><AccountNo></AccountNo></XML>&sign_type=RSA&service=alipay.service.check&charset=GBK"
+------------------------------
+service:
+------------------------------
+sign=C/4sP9wkDBD9s2ogFBkI2NENegY4r4M7TXbyhsl5ocjfccVGLm1dZOlhwhO9b2JiC5W3WbzQ7Z25a4PsEr4XuugYI7DFhDiXX1oaVFiIgL0N6iZu7/itlPO4L1EWrZI5YHSTETxpr6V2LAuDfh9mZEZ7EBQKT4/s0cgZxDHv2hg=&biz_content=<?xml version=\"1.0\" encoding=\"gbk\"?><XML><AppId><![CDATA[2015060100099966]]></AppId><FromUserId></FromUserId><CreateTime><![CDATA[1433600264541]]></CreateTime><MsgType><![CDATA[event]]></MsgType><EventType><![CDATA[verifygw]]></EventType><ActionParam></ActionParam><AgreementId></AgreementId><AccountNo></AccountNo></XML>&sign_type=RSA&service=alipay.service.check&charset=GBK&ALL_HTTP=HTTP_CONNECTION:keep-alive
+HTTP_CONTENT_LENGTH:572
+HTTP_HOST:localhost
+HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+HTTP_HTTP_CONTENT_TYPE:application/x-www-form-urlencoded; text/html; charset=GBK
+&ALL_RAW=Connection: keep-alive
+Content-Length: 572
+Host: localhost
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+HTTP_CONTENT_TYPE: application/x-www-form-urlencoded; text/html; charset=GBK
+&APPL_MD_PATH=/LM/W3SVC/1/ROOT/AlipayDemoSite&APPL_PHYSICAL_PATH=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\&AUTH_TYPE=&AUTH_USER=&AUTH_PASSWORD=&LOGON_USER=&REMOTE_USER=&CERT_COOKIE=&CERT_FLAGS=&CERT_ISSUER=&CERT_KEYSIZE=&CERT_SECRETKEYSIZE=&CERT_SERIALNUMBER=&CERT_SERVER_ISSUER=&CERT_SERVER_SUBJECT=&CERT_SUBJECT=&CONTENT_LENGTH=572&CONTENT_TYPE=&GATEWAY_INTERFACE=CGI/1.1&HTTPS=off&HTTPS_KEYSIZE=&HTTPS_SECRETKEYSIZE=&HTTPS_SERVER_ISSUER=&HTTPS_SERVER_SUBJECT=&INSTANCE_ID=1&INSTANCE_META_PATH=/LM/W3SVC/1&LOCAL_ADDR=::1&PATH_INFO=/AlipayDemoSite/Gateway.aspx&PATH_TRANSLATED=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\Gateway.aspx&QUERY_STRING=sign=C/4sP9wkDBD9s2ogFBkI2NENegY4r4M7TXbyhsl5ocjfccVGLm1dZOlhwhO9b2JiC5W3WbzQ7Z25a4PsEr4XuugYI7DFhDiXX1oaVFiIgL0N6iZu7/itlPO4L1EWrZI5YHSTETxpr6V2LAuDfh9mZEZ7EBQKT4/s0cgZxDHv2hg=&biz_content=<?xml+version=\"1.0\"+encoding=\"gbk\"?><XML><AppId><![CDATA[2015060100099966]]></AppId><FromUserId></FromUserId><CreateTime><![CDATA[1433600264541]]></CreateTime><MsgType><![CDATA[event]]></MsgType><EventType><![CDATA[verifygw]]></EventType><ActionParam></ActionParam><AgreementId></AgreementId><AccountNo></AccountNo></XML>&sign_type=RSA&service=alipay.service.check&charset=GBK&REMOTE_ADDR=::1&REMOTE_HOST=::1&REMOTE_PORT=32318&REQUEST_METHOD=POST&SCRIPT_NAME=/AlipayDemoSite/Gateway.aspx&SERVER_NAME=localhost&SERVER_PORT=80&SERVER_PORT_SECURE=0&SERVER_PROTOCOL=HTTP/1.1&SERVER_SOFTWARE=Microsoft-IIS/7.5&URL=/AlipayDemoSite/Gateway.aspx&HTTP_CONNECTION=keep-alive&HTTP_CONTENT_LENGTH=572&HTTP_HOST=localhost&HTTP_USER_AGENT=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36&HTTP_HTTP_CONTENT_TYPE=application/x-www-form-urlencoded; text/html; charset=GBK
+------------------------------
+<?xml version="1.0" encoding="GBK"?><alipay><response><success>false</success><error_code>VERIFY_FAILED</error_code><biz_content>MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDJxYxxNucRaW91Jc1FvHaVfWfEhsdhyMlwIhl9IpK5k4ggj0AvIXO0EIWJjs6PQeRdo9iNHLWIJqWt9vsXFkzZy0EqXgXIUwakmx8IB5A/usNutsb9nBPgERIWcDcTX9CI65lE7MupUNoM/tQ7hfgHgEyusFUkuJe7AFvHeaivvQIDAQAB</biz_content></response><sign>dZsVhnBX6SMAG5EjRYZs3iwCvAnvPLo/rnI7uG0Gg88thaaQOeK9kBOuXl3ACjl5me5jECqR1fBICT+cM0apCQ4EkNsUDoQzd3Cb0zUTQQW0M145T4CrNgTVMg8My0By0U7VkNTrhH0uZ74DX4HLs2Xo9Q66ZcqIotgXazQdxxY=</sign><sign_type>RSA</sign_type></alipay>
+------------------------------
+====================================
+------------------------------
+POST
+------------------------------
+"sign=C/4sP9wkDBD9s2ogFBkI2NENegY4r4M7TXbyhsl5ocjfccVGLm1dZOlhwhO9b2JiC5W3WbzQ7Z25a4PsEr4XuugYI7DFhDiXX1oaVFiIgL0N6iZu7/itlPO4L1EWrZI5YHSTETxpr6V2LAuDfh9mZEZ7EBQKT4/s0cgZxDHv2hg=&biz_content=<?xml+version=\"1.0\"+encoding=\"gbk\"?><XML><AppId><![CDATA[2015060100099966]]></AppId><FromUserId></FromUserId><CreateTime><![CDATA[1433600264541]]></CreateTime><MsgType><![CDATA[event]]></MsgType><EventType><![CDATA[verifygw]]></EventType><ActionParam></ActionParam><AgreementId></AgreementId><AccountNo></AccountNo></XML>&sign_type=RSA&service=alipay.service.check&charset=GBK"
+------------------------------
+service:
+------------------------------
+sign=C/4sP9wkDBD9s2ogFBkI2NENegY4r4M7TXbyhsl5ocjfccVGLm1dZOlhwhO9b2JiC5W3WbzQ7Z25a4PsEr4XuugYI7DFhDiXX1oaVFiIgL0N6iZu7/itlPO4L1EWrZI5YHSTETxpr6V2LAuDfh9mZEZ7EBQKT4/s0cgZxDHv2hg=&biz_content=<?xml version=\"1.0\" encoding=\"gbk\"?><XML><AppId><![CDATA[2015060100099966]]></AppId><FromUserId></FromUserId><CreateTime><![CDATA[1433600264541]]></CreateTime><MsgType><![CDATA[event]]></MsgType><EventType><![CDATA[verifygw]]></EventType><ActionParam></ActionParam><AgreementId></AgreementId><AccountNo></AccountNo></XML>&sign_type=RSA&service=alipay.service.check&charset=GBK&ALL_HTTP=HTTP_CONNECTION:keep-alive
+HTTP_CONTENT_LENGTH:572
+HTTP_HOST:localhost
+HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+HTTP_HTTP_CONTENT_TYPE:application/x-www-form-urlencoded; text/html; charset=GBK
+&ALL_RAW=Connection: keep-alive
+Content-Length: 572
+Host: localhost
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+HTTP_CONTENT_TYPE: application/x-www-form-urlencoded; text/html; charset=GBK
+&APPL_MD_PATH=/LM/W3SVC/1/ROOT/AlipayDemoSite&APPL_PHYSICAL_PATH=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\&AUTH_TYPE=&AUTH_USER=&AUTH_PASSWORD=&LOGON_USER=&REMOTE_USER=&CERT_COOKIE=&CERT_FLAGS=&CERT_ISSUER=&CERT_KEYSIZE=&CERT_SECRETKEYSIZE=&CERT_SERIALNUMBER=&CERT_SERVER_ISSUER=&CERT_SERVER_SUBJECT=&CERT_SUBJECT=&CONTENT_LENGTH=572&CONTENT_TYPE=&GATEWAY_INTERFACE=CGI/1.1&HTTPS=off&HTTPS_KEYSIZE=&HTTPS_SECRETKEYSIZE=&HTTPS_SERVER_ISSUER=&HTTPS_SERVER_SUBJECT=&INSTANCE_ID=1&INSTANCE_META_PATH=/LM/W3SVC/1&LOCAL_ADDR=::1&PATH_INFO=/AlipayDemoSite/Gateway.aspx&PATH_TRANSLATED=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\Gateway.aspx&QUERY_STRING=sign=C/4sP9wkDBD9s2ogFBkI2NENegY4r4M7TXbyhsl5ocjfccVGLm1dZOlhwhO9b2JiC5W3WbzQ7Z25a4PsEr4XuugYI7DFhDiXX1oaVFiIgL0N6iZu7/itlPO4L1EWrZI5YHSTETxpr6V2LAuDfh9mZEZ7EBQKT4/s0cgZxDHv2hg=&biz_content=<?xml+version=\"1.0\"+encoding=\"gbk\"?><XML><AppId><![CDATA[2015060100099966]]></AppId><FromUserId></FromUserId><CreateTime><![CDATA[1433600264541]]></CreateTime><MsgType><![CDATA[event]]></MsgType><EventType><![CDATA[verifygw]]></EventType><ActionParam></ActionParam><AgreementId></AgreementId><AccountNo></AccountNo></XML>&sign_type=RSA&service=alipay.service.check&charset=GBK&REMOTE_ADDR=::1&REMOTE_HOST=::1&REMOTE_PORT=32318&REQUEST_METHOD=POST&SCRIPT_NAME=/AlipayDemoSite/Gateway.aspx&SERVER_NAME=localhost&SERVER_PORT=80&SERVER_PORT_SECURE=0&SERVER_PROTOCOL=HTTP/1.1&SERVER_SOFTWARE=Microsoft-IIS/7.5&URL=/AlipayDemoSite/Gateway.aspx&HTTP_CONNECTION=keep-alive&HTTP_CONTENT_LENGTH=572&HTTP_HOST=localhost&HTTP_USER_AGENT=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36&HTTP_HTTP_CONTENT_TYPE=application/x-www-form-urlencoded; text/html; charset=GBK
+------------------------------
+<?xml version="1.0" encoding="GBK"?><alipay><response><success>false</success><error_code>VERIFY_FAILED</error_code><biz_content>MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDJxYxxNucRaW91Jc1FvHaVfWfEhsdhyMlwIhl9IpK5k4ggj0AvIXO0EIWJjs6PQeRdo9iNHLWIJqWt9vsXFkzZy0EqXgXIUwakmx8IB5A/usNutsb9nBPgERIWcDcTX9CI65lE7MupUNoM/tQ7hfgHgEyusFUkuJe7AFvHeaivvQIDAQAB</biz_content></response><sign>dZsVhnBX6SMAG5EjRYZs3iwCvAnvPLo/rnI7uG0Gg88thaaQOeK9kBOuXl3ACjl5me5jECqR1fBICT+cM0apCQ4EkNsUDoQzd3Cb0zUTQQW0M145T4CrNgTVMg8My0By0U7VkNTrhH0uZ74DX4HLs2Xo9Q66ZcqIotgXazQdxxY=</sign><sign_type>RSA</sign_type></alipay>
+>>>>>>>>start Gateway>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+====================================
+---------------------------------------------------------------
+>>>>>>>>start Get RequestType>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+GET
+---------------------------------------------------------------
+>>>>>>>>start Get service Type>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------
+>>>>>>>>start Get InputStream Content>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------
+>>>>>>>>start Get UrlParam>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ALL_HTTP=HTTP_CONNECTION:Keep-Alive
+HTTP_ACCEPT:text/html, application/xhtml+xml, */*
+HTTP_ACCEPT_ENCODING:gzip, deflate
+HTTP_ACCEPT_LANGUAGE:zh-CN
+HTTP_HOST:localhost
+HTTP_USER_AGENT:Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)
+HTTP_DNT:1
+&ALL_RAW=Connection: Keep-Alive
+Accept: text/html, application/xhtml+xml, */*
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN
+Host: localhost
+User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)
+DNT: 1
+&APPL_MD_PATH=/LM/W3SVC/1/ROOT/AlipayDemoSite&APPL_PHYSICAL_PATH=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\&AUTH_TYPE=&AUTH_USER=&AUTH_PASSWORD=&LOGON_USER=&REMOTE_USER=&CERT_COOKIE=&CERT_FLAGS=&CERT_ISSUER=&CERT_KEYSIZE=&CERT_SECRETKEYSIZE=&CERT_SERIALNUMBER=&CERT_SERVER_ISSUER=&CERT_SERVER_SUBJECT=&CERT_SUBJECT=&CONTENT_LENGTH=0&CONTENT_TYPE=&GATEWAY_INTERFACE=CGI/1.1&HTTPS=off&HTTPS_KEYSIZE=&HTTPS_SECRETKEYSIZE=&HTTPS_SERVER_ISSUER=&HTTPS_SERVER_SUBJECT=&INSTANCE_ID=1&INSTANCE_META_PATH=/LM/W3SVC/1&LOCAL_ADDR=::1&PATH_INFO=/AlipayDemoSite/Gateway.aspx&PATH_TRANSLATED=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\Gateway.aspx&QUERY_STRING=&REMOTE_ADDR=::1&REMOTE_HOST=::1&REMOTE_PORT=24345&REQUEST_METHOD=GET&SCRIPT_NAME=/AlipayDemoSite/Gateway.aspx&SERVER_NAME=localhost&SERVER_PORT=80&SERVER_PORT_SECURE=0&SERVER_PROTOCOL=HTTP/1.1&SERVER_SOFTWARE=Microsoft-IIS/7.5&URL=/AlipayDemoSite/Gateway.aspx&HTTP_CONNECTION=Keep-Alive&HTTP_ACCEPT=text/html, application/xhtml+xml, */*&HTTP_ACCEPT_ENCODING=gzip, deflate&HTTP_ACCEPT_LANGUAGE=zh-CN&HTTP_HOST=localhost&HTTP_USER_AGENT=Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)&HTTP_DNT=1
+---------------------------------------------------------------
+>>>>>>>>start Gateway>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+====================================
+---------------------------------------------------------------
+>>>>>>>>start Get RequestType>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+POST
+---------------------------------------------------------------
+>>>>>>>>start Get service Type>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------
+>>>>>>>>start Get InputStream Content>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+sign=s6ipeuG1ywLueOU+0AMtCD2YZCbmn11vcY8M4UI2d2oVJIOhxNvUJ8bftaaVY7ZK3BM9Obi3ZS7/arpyZQJHcyeGefk9Exlyz537yr8U0BwvZT1oTwhzRmB1mX6wJ2epWRLub/rK0anzc3Qz+ppv3JUY6XnWnCFZy+VBOKiJBj0=&biz_content=<XML><Text><Content><![CDATA[看看]]></Content></Text><AppId><![CDATA[2015060100099966]]></AppId><MsgType><![CDATA[text]]></MsgType><CreateTime><![CDATA[1433659851154]]></CreateTime><FromUserId><![CDATA[20880091942797915870748041119911]]></FromUserId><MsgId><![CDATA[150607445051000001]]></MsgId><UserInfo><![CDATA[{"logon_id":"wdf***@126.com","user_name":"*飞飞"}]]></UserInfo></XML>&sign_type=RSA&service=alipay.mobile.public.message.notify&charset=GBK&ALL_HTTP=HTTP_CONTENT_LENGTH:887
+---------------------------------------------------------------
+>>>>>>>>start Get UrlParam>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ALL_HTTP=HTTP_CONTENT_LENGTH:680
+HTTP_HOST:localhost
+HTTP_USER_AGENT:Fiddler
+&ALL_RAW=Content-Length: 680
+Host: localhost
+User-Agent: Fiddler
+&APPL_MD_PATH=/LM/W3SVC/1/ROOT/AlipayDemoSite&APPL_PHYSICAL_PATH=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\&AUTH_TYPE=&AUTH_USER=&AUTH_PASSWORD=&LOGON_USER=&REMOTE_USER=&CERT_COOKIE=&CERT_FLAGS=&CERT_ISSUER=&CERT_KEYSIZE=&CERT_SECRETKEYSIZE=&CERT_SERIALNUMBER=&CERT_SERVER_ISSUER=&CERT_SERVER_SUBJECT=&CERT_SUBJECT=&CONTENT_LENGTH=680&CONTENT_TYPE=&GATEWAY_INTERFACE=CGI/1.1&HTTPS=off&HTTPS_KEYSIZE=&HTTPS_SECRETKEYSIZE=&HTTPS_SERVER_ISSUER=&HTTPS_SERVER_SUBJECT=&INSTANCE_ID=1&INSTANCE_META_PATH=/LM/W3SVC/1&LOCAL_ADDR=::1&PATH_INFO=/AlipayDemoSite/Gateway.aspx&PATH_TRANSLATED=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\Gateway.aspx&QUERY_STRING=&REMOTE_ADDR=::1&REMOTE_HOST=::1&REMOTE_PORT=24392&REQUEST_METHOD=POST&SCRIPT_NAME=/AlipayDemoSite/Gateway.aspx&SERVER_NAME=localhost&SERVER_PORT=80&SERVER_PORT_SECURE=0&SERVER_PROTOCOL=HTTP/1.1&SERVER_SOFTWARE=Microsoft-IIS/7.5&URL=/AlipayDemoSite/Gateway.aspx&HTTP_CONTENT_LENGTH=680&HTTP_HOST=localhost&HTTP_USER_AGENT=Fiddler
+---------------------------------------------------------------
+>>>>>>>>start Gateway>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+====================================
+---------------------------------------------------------------
+>>>>>>>>start Get RequestType>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+POST
+---------------------------------------------------------------
+>>>>>>>>start Get service Type>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------
+>>>>>>>>start Get InputStream Content>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+sign=s6ipeuG1ywLueOU+0AMtCD2YZCbmn11vcY8M4UI2d2oVJIOhxNvUJ8bftaaVY7ZK3BM9Obi3ZS7/arpyZQJHcyeGefk9Exlyz537yr8U0BwvZT1oTwhzRmB1mX6wJ2epWRLub/rK0anzc3Qz+ppv3JUY6XnWnCFZy+VBOKiJBj0=&biz_content=<XML><Text><Content><![CDATA[看看]]></Content></Text><AppId><![CDATA[2015060100099966]]></AppId><MsgType><![CDATA[text]]></MsgType><CreateTime><![CDATA[1433659851154]]></CreateTime><FromUserId><![CDATA[20880091942797915870748041119911]]></FromUserId><MsgId><![CDATA[150607445051000001]]></MsgId><UserInfo><![CDATA[{"logon_id":"wdf***@126.com","user_name":"*飞飞"}]]></UserInfo></XML>&sign_type=RSA&service=alipay.mobile.public.message.notify&charset=GBK&ALL_HTTP=HTTP_CONTENT_LENGTH:887
+---------------------------------------------------------------
+>>>>>>>>start Get UrlParam>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ALL_HTTP=HTTP_CONTENT_LENGTH:680
+HTTP_HOST:localhost
+HTTP_USER_AGENT:Fiddler
+&ALL_RAW=Content-Length: 680
+Host: localhost
+User-Agent: Fiddler
+&APPL_MD_PATH=/LM/W3SVC/1/ROOT/AlipayDemoSite&APPL_PHYSICAL_PATH=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\&AUTH_TYPE=&AUTH_USER=&AUTH_PASSWORD=&LOGON_USER=&REMOTE_USER=&CERT_COOKIE=&CERT_FLAGS=&CERT_ISSUER=&CERT_KEYSIZE=&CERT_SECRETKEYSIZE=&CERT_SERIALNUMBER=&CERT_SERVER_ISSUER=&CERT_SERVER_SUBJECT=&CERT_SUBJECT=&CONTENT_LENGTH=680&CONTENT_TYPE=&GATEWAY_INTERFACE=CGI/1.1&HTTPS=off&HTTPS_KEYSIZE=&HTTPS_SECRETKEYSIZE=&HTTPS_SERVER_ISSUER=&HTTPS_SERVER_SUBJECT=&INSTANCE_ID=1&INSTANCE_META_PATH=/LM/W3SVC/1&LOCAL_ADDR=::1&PATH_INFO=/AlipayDemoSite/Gateway.aspx&PATH_TRANSLATED=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\Gateway.aspx&QUERY_STRING=&REMOTE_ADDR=::1&REMOTE_HOST=::1&REMOTE_PORT=24392&REQUEST_METHOD=POST&SCRIPT_NAME=/AlipayDemoSite/Gateway.aspx&SERVER_NAME=localhost&SERVER_PORT=80&SERVER_PORT_SECURE=0&SERVER_PROTOCOL=HTTP/1.1&SERVER_SOFTWARE=Microsoft-IIS/7.5&URL=/AlipayDemoSite/Gateway.aspx&HTTP_CONTENT_LENGTH=680&HTTP_HOST=localhost&HTTP_USER_AGENT=Fiddler
+---------------------------------------------------------------
+>>>>>>>>start Gateway>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+====================================
+---------------------------------------------------------------
+>>>>>>>>start Get RequestType>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+POST
+---------------------------------------------------------------
+>>>>>>>>start Get service Type>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------
+>>>>>>>>start Get InputStream Content>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+sign=s6ipeuG1ywLueOU+0AMtCD2YZCbmn11vcY8M4UI2d2oVJIOhxNvUJ8bftaaVY7ZK3BM9Obi3ZS7/arpyZQJHcyeGefk9Exlyz537yr8U0BwvZT1oTwhzRmB1mX6wJ2epWRLub/rK0anzc3Qz+ppv3JUY6XnWnCFZy+VBOKiJBj0=&biz_content=<XML><Text><Content><![CDATA[看看]]></Content></Text><AppId><![CDATA[2015060100099966]]></AppId><MsgType><![CDATA[text]]></MsgType><CreateTime><![CDATA[1433659851154]]></CreateTime><FromUserId><![CDATA[20880091942797915870748041119911]]></FromUserId><MsgId><![CDATA[150607445051000001]]></MsgId><UserInfo><![CDATA[{"logon_id":"wdf***@126.com","user_name":"*飞飞"}]]></UserInfo></XML>&sign_type=RSA&service=alipay.mobile.public.message.notify&charset=GBK&ALL_HTTP=HTTP_CONTENT_LENGTH:887
+---------------------------------------------------------------
+>>>>>>>>start Get UrlParam>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ALL_HTTP=HTTP_CONTENT_LENGTH:680
+HTTP_HOST:localhost
+HTTP_USER_AGENT:Fiddler
+&ALL_RAW=Content-Length: 680
+Host: localhost
+User-Agent: Fiddler
+&APPL_MD_PATH=/LM/W3SVC/1/ROOT/AlipayDemoSite&APPL_PHYSICAL_PATH=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\&AUTH_TYPE=&AUTH_USER=&AUTH_PASSWORD=&LOGON_USER=&REMOTE_USER=&CERT_COOKIE=&CERT_FLAGS=&CERT_ISSUER=&CERT_KEYSIZE=&CERT_SECRETKEYSIZE=&CERT_SERIALNUMBER=&CERT_SERVER_ISSUER=&CERT_SERVER_SUBJECT=&CERT_SUBJECT=&CONTENT_LENGTH=680&CONTENT_TYPE=&GATEWAY_INTERFACE=CGI/1.1&HTTPS=off&HTTPS_KEYSIZE=&HTTPS_SECRETKEYSIZE=&HTTPS_SERVER_ISSUER=&HTTPS_SERVER_SUBJECT=&INSTANCE_ID=1&INSTANCE_META_PATH=/LM/W3SVC/1&LOCAL_ADDR=::1&PATH_INFO=/AlipayDemoSite/Gateway.aspx&PATH_TRANSLATED=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\Gateway.aspx&QUERY_STRING=&REMOTE_ADDR=::1&REMOTE_HOST=::1&REMOTE_PORT=24392&REQUEST_METHOD=POST&SCRIPT_NAME=/AlipayDemoSite/Gateway.aspx&SERVER_NAME=localhost&SERVER_PORT=80&SERVER_PORT_SECURE=0&SERVER_PROTOCOL=HTTP/1.1&SERVER_SOFTWARE=Microsoft-IIS/7.5&URL=/AlipayDemoSite/Gateway.aspx&HTTP_CONTENT_LENGTH=680&HTTP_HOST=localhost&HTTP_USER_AGENT=Fiddler
+---------------------------------------------------------------
+>>>>>>>>start Gateway>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+====================================
+---------------------------------------------------------------
+>>>>>>>>start Get RequestType>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+GET
+---------------------------------------------------------------
+>>>>>>>>start Get service Type>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------
+>>>>>>>>start Get InputStream Content>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------
+>>>>>>>>start Get unescape InputStream Content>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------
+>>>>>>>>start Get UrlParam>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ALL_HTTP=HTTP_CONNECTION:Keep-Alive
+HTTP_ACCEPT:text/html, application/xhtml+xml, */*
+HTTP_ACCEPT_ENCODING:gzip, deflate
+HTTP_ACCEPT_LANGUAGE:zh-CN
+HTTP_HOST:localhost
+HTTP_USER_AGENT:Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)
+HTTP_DNT:1
+&ALL_RAW=Connection: Keep-Alive
+Accept: text/html, application/xhtml+xml, */*
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN
+Host: localhost
+User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)
+DNT: 1
+&APPL_MD_PATH=/LM/W3SVC/1/ROOT/AlipayDemoSite&APPL_PHYSICAL_PATH=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\&AUTH_TYPE=&AUTH_USER=&AUTH_PASSWORD=&LOGON_USER=&REMOTE_USER=&CERT_COOKIE=&CERT_FLAGS=&CERT_ISSUER=&CERT_KEYSIZE=&CERT_SECRETKEYSIZE=&CERT_SERIALNUMBER=&CERT_SERVER_ISSUER=&CERT_SERVER_SUBJECT=&CERT_SUBJECT=&CONTENT_LENGTH=0&CONTENT_TYPE=&GATEWAY_INTERFACE=CGI/1.1&HTTPS=off&HTTPS_KEYSIZE=&HTTPS_SECRETKEYSIZE=&HTTPS_SERVER_ISSUER=&HTTPS_SERVER_SUBJECT=&INSTANCE_ID=1&INSTANCE_META_PATH=/LM/W3SVC/1&LOCAL_ADDR=::1&PATH_INFO=/AlipayDemoSite/Gateway.aspx&PATH_TRANSLATED=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\Gateway.aspx&QUERY_STRING=&REMOTE_ADDR=::1&REMOTE_HOST=::1&REMOTE_PORT=24452&REQUEST_METHOD=GET&SCRIPT_NAME=/AlipayDemoSite/Gateway.aspx&SERVER_NAME=localhost&SERVER_PORT=80&SERVER_PORT_SECURE=0&SERVER_PROTOCOL=HTTP/1.1&SERVER_SOFTWARE=Microsoft-IIS/7.5&URL=/AlipayDemoSite/Gateway.aspx&HTTP_CONNECTION=Keep-Alive&HTTP_ACCEPT=text/html, application/xhtml+xml, */*&HTTP_ACCEPT_ENCODING=gzip, deflate&HTTP_ACCEPT_LANGUAGE=zh-CN&HTTP_HOST=localhost&HTTP_USER_AGENT=Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)&HTTP_DNT=1
+---------------------------------------------------------------
+>>>>>>>>start Gateway>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+====================================
+---------------------------------------------------------------
+>>>>>>>>start Get RequestType>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+GET
+---------------------------------------------------------------
+>>>>>>>>start Get service Type>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+alipay.mobile.public.message.notify
+---------------------------------------------------------------
+>>>>>>>>start Get InputStream Content>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------
+>>>>>>>>start Get unescape InputStream Content>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------
+>>>>>>>>start Get UrlParam>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+sign=fGzvwfSNXp8jyWl56w3b0HuGUT3A3DiDd1iQw8pHOJvlSExmT5OzU0hh9b1aj6pExhHMkXy/2gFXOPAAsd4UCVHgRe/J8SW3s9hW6W53hIf56mJXOly/lGWMAWmtQZgNt1h9HxlVKG9ascqB1aHsEvYkg5wfcafZFSG4ztdg/HI=&biz_content=<XML><Text><Content><![CDATA[����]]></Content></Text><AppId><![CDATA[2015060100099966]]></AppId><MsgType><![CDATA[text]]></MsgType><CreateTime><![CDATA[1433660297566]]></CreateTime><FromUserId><![CDATA[20880091942797915870748041119911]]></FromUserId><MsgId><![CDATA[150607445817000001]]></MsgId><UserInfo><![CDATA[{"logon_id":"wdf***@126.com","user_name":"*�ɷ�"}]]></UserInfo></XML>&sign_type=RSA&service=alipay.mobile.public.message.notify&charset=GBK&ALL_HTTP=HTTP_CONTENT_LENGTH:0
+HTTP_HOST:localhost
+HTTP_USER_AGENT:Fiddler
+&ALL_RAW=Content-Length: 0
+Host: localhost
+User-Agent: Fiddler
+&APPL_MD_PATH=/LM/W3SVC/1/ROOT/AlipayDemoSite&APPL_PHYSICAL_PATH=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\&AUTH_TYPE=&AUTH_USER=&AUTH_PASSWORD=&LOGON_USER=&REMOTE_USER=&CERT_COOKIE=&CERT_FLAGS=&CERT_ISSUER=&CERT_KEYSIZE=&CERT_SECRETKEYSIZE=&CERT_SERIALNUMBER=&CERT_SERVER_ISSUER=&CERT_SERVER_SUBJECT=&CERT_SUBJECT=&CONTENT_LENGTH=0&CONTENT_TYPE=&GATEWAY_INTERFACE=CGI/1.1&HTTPS=off&HTTPS_KEYSIZE=&HTTPS_SECRETKEYSIZE=&HTTPS_SERVER_ISSUER=&HTTPS_SERVER_SUBJECT=&INSTANCE_ID=1&INSTANCE_META_PATH=/LM/W3SVC/1&LOCAL_ADDR=::1&PATH_INFO=/AlipayDemoSite/Gateway.aspx&PATH_TRANSLATED=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\Gateway.aspx&QUERY_STRING=sign=fGzvwfSNXp8jyWl56w3b0HuGUT3A3DiDd1iQw8pHOJvlSExmT5OzU0hh9b1aj6pExhHMkXy%2F2gFXOPAAsd4UCVHgRe%2FJ8SW3s9hW6W53hIf56mJXOly%2FlGWMAWmtQZgNt1h9HxlVKG9ascqB1aHsEvYkg5wfcafZFSG4ztdg%2FHI%3D&biz_content=%3CXML%3E%3CText%3E%3CContent%3E%3C%21%5BCDATA%5B%BF%B4%BF%B4%5D%5D%3E%3C%2FContent%3E%3C%2FText%3E%3CAppId%3E%3C%21%5BCDATA%5B2015060100099966%5D%5D%3E%3C%2FAppId%3E%3CMsgType%3E%3C%21%5BCDATA%5Btext%5D%5D%3E%3C%2FMsgType%3E%3CCreateTime%3E%3C%21%5BCDATA%5B1433660297566%5D%5D%3E%3C%2FCreateTime%3E%3CFromUserId%3E%3C%21%5BCDATA%5B20880091942797915870748041119911%5D%5D%3E%3C%2FFromUserId%3E%3CMsgId%3E%3C%21%5BCDATA%5B150607445817000001%5D%5D%3E%3C%2FMsgId%3E%3CUserInfo%3E%3C%21%5BCDATA%5B%7B%22logon_id%22%3A%22wdf***%40126.com%22%2C%22user_name%22%3A%22*%B7%C9%B7%C9%22%7D%5D%5D%3E%3C%2FUserInfo%3E%3C%2FXML%3E&sign_type=RSA&service=alipay.mobile.public.message.notify&charset=GBK&REMOTE_ADDR=::1&REMOTE_HOST=::1&REMOTE_PORT=24452&REQUEST_METHOD=GET&SCRIPT_NAME=/AlipayDemoSite/Gateway.aspx&SERVER_NAME=localhost&SERVER_PORT=80&SERVER_PORT_SECURE=0&SERVER_PROTOCOL=HTTP/1.1&SERVER_SOFTWARE=Microsoft-IIS/7.5&URL=/AlipayDemoSite/Gateway.aspx&HTTP_CONTENT_LENGTH=0&HTTP_HOST=localhost&HTTP_USER_AGENT=Fiddler
+---------------------------------------------------------------
+>>>>>>>>start getting biz_content>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+getting read xmlnode of biz_content xml
+---------------------------------------------------------------
+>>>>>>>>start Gateway>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+====================================
+---------------------------------------------------------------
+>>>>>>>>start Get RequestType>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+GET
+---------------------------------------------------------------
+>>>>>>>>start Get service Type>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+alipay.mobile.public.message.notify
+---------------------------------------------------------------
+>>>>>>>>start Get InputStream Content>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------
+>>>>>>>>start Get unescape InputStream Content>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------
+>>>>>>>>start Get UrlParam>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+sign=fGzvwfSNXp8jyWl56w3b0HuGUT3A3DiDd1iQw8pHOJvlSExmT5OzU0hh9b1aj6pExhHMkXy/2gFXOPAAsd4UCVHgRe/J8SW3s9hW6W53hIf56mJXOly/lGWMAWmtQZgNt1h9HxlVKG9ascqB1aHsEvYkg5wfcafZFSG4ztdg/HI=&biz_content=<XML><Text><Content><![CDATA[����]]></Content></Text><AppId><![CDATA[2015060100099966]]></AppId><MsgType><![CDATA[text]]></MsgType><CreateTime><![CDATA[1433660297566]]></CreateTime><FromUserId><![CDATA[20880091942797915870748041119911]]></FromUserId><MsgId><![CDATA[150607445817000001]]></MsgId><UserInfo><![CDATA[{"logon_id":"wdf***@126.com","user_name":"*�ɷ�"}]]></UserInfo></XML>&sign_type=RSA&service=alipay.mobile.public.message.notify&charset=GBK&ALL_HTTP=HTTP_CONTENT_LENGTH:0
+HTTP_HOST:localhost
+HTTP_USER_AGENT:Fiddler
+&ALL_RAW=Content-Length: 0
+Host: localhost
+User-Agent: Fiddler
+&APPL_MD_PATH=/LM/W3SVC/1/ROOT/AlipayDemoSite&APPL_PHYSICAL_PATH=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\&AUTH_TYPE=&AUTH_USER=&AUTH_PASSWORD=&LOGON_USER=&REMOTE_USER=&CERT_COOKIE=&CERT_FLAGS=&CERT_ISSUER=&CERT_KEYSIZE=&CERT_SECRETKEYSIZE=&CERT_SERIALNUMBER=&CERT_SERVER_ISSUER=&CERT_SERVER_SUBJECT=&CERT_SUBJECT=&CONTENT_LENGTH=0&CONTENT_TYPE=&GATEWAY_INTERFACE=CGI/1.1&HTTPS=off&HTTPS_KEYSIZE=&HTTPS_SECRETKEYSIZE=&HTTPS_SERVER_ISSUER=&HTTPS_SERVER_SUBJECT=&INSTANCE_ID=1&INSTANCE_META_PATH=/LM/W3SVC/1&LOCAL_ADDR=::1&PATH_INFO=/AlipayDemoSite/Gateway.aspx&PATH_TRANSLATED=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\Gateway.aspx&QUERY_STRING=sign=fGzvwfSNXp8jyWl56w3b0HuGUT3A3DiDd1iQw8pHOJvlSExmT5OzU0hh9b1aj6pExhHMkXy%2F2gFXOPAAsd4UCVHgRe%2FJ8SW3s9hW6W53hIf56mJXOly%2FlGWMAWmtQZgNt1h9HxlVKG9ascqB1aHsEvYkg5wfcafZFSG4ztdg%2FHI%3D&biz_content=%3CXML%3E%3CText%3E%3CContent%3E%3C%21%5BCDATA%5B%BF%B4%BF%B4%5D%5D%3E%3C%2FContent%3E%3C%2FText%3E%3CAppId%3E%3C%21%5BCDATA%5B2015060100099966%5D%5D%3E%3C%2FAppId%3E%3CMsgType%3E%3C%21%5BCDATA%5Btext%5D%5D%3E%3C%2FMsgType%3E%3CCreateTime%3E%3C%21%5BCDATA%5B1433660297566%5D%5D%3E%3C%2FCreateTime%3E%3CFromUserId%3E%3C%21%5BCDATA%5B20880091942797915870748041119911%5D%5D%3E%3C%2FFromUserId%3E%3CMsgId%3E%3C%21%5BCDATA%5B150607445817000001%5D%5D%3E%3C%2FMsgId%3E%3CUserInfo%3E%3C%21%5BCDATA%5B%7B%22logon_id%22%3A%22wdf***%40126.com%22%2C%22user_name%22%3A%22*%B7%C9%B7%C9%22%7D%5D%5D%3E%3C%2FUserInfo%3E%3C%2FXML%3E&sign_type=RSA&service=alipay.mobile.public.message.notify&charset=GBK&REMOTE_ADDR=::1&REMOTE_HOST=::1&REMOTE_PORT=24452&REQUEST_METHOD=GET&SCRIPT_NAME=/AlipayDemoSite/Gateway.aspx&SERVER_NAME=localhost&SERVER_PORT=80&SERVER_PORT_SECURE=0&SERVER_PROTOCOL=HTTP/1.1&SERVER_SOFTWARE=Microsoft-IIS/7.5&URL=/AlipayDemoSite/Gateway.aspx&HTTP_CONTENT_LENGTH=0&HTTP_HOST=localhost&HTTP_USER_AGENT=Fiddler
+---------------------------------------------------------------
+>>>>>>>>start getting biz_content>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+getting read xmlnode of biz_content xml
+---------------------------------------------------------------
+>>>>>>>>start Gateway>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+====================================
+---------------------------------------------------------------
+>>>>>>>>start Get RequestType>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+GET
+---------------------------------------------------------------
+>>>>>>>>start Get service Type>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+alipay.mobile.public.message.notify
+---------------------------------------------------------------
+>>>>>>>>start Get InputStream Content>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------
+>>>>>>>>start Get unescape InputStream Content>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------
+>>>>>>>>start Get UrlParam>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+sign=fGzvwfSNXp8jyWl56w3b0HuGUT3A3DiDd1iQw8pHOJvlSExmT5OzU0hh9b1aj6pExhHMkXy/2gFXOPAAsd4UCVHgRe/J8SW3s9hW6W53hIf56mJXOly/lGWMAWmtQZgNt1h9HxlVKG9ascqB1aHsEvYkg5wfcafZFSG4ztdg/HI=&biz_content=<XML><Text><Content><![CDATA[����]]></Content></Text><AppId><![CDATA[2015060100099966]]></AppId><MsgType><![CDATA[text]]></MsgType><CreateTime><![CDATA[1433660297566]]></CreateTime><FromUserId><![CDATA[20880091942797915870748041119911]]></FromUserId><MsgId><![CDATA[150607445817000001]]></MsgId><UserInfo><![CDATA[{"logon_id":"wdf***@126.com","user_name":"*�ɷ�"}]]></UserInfo></XML>&sign_type=RSA&service=alipay.mobile.public.message.notify&charset=GBK&ALL_HTTP=HTTP_CONTENT_TYPE:application/x-www-form-urlencoded; text/html; charset=GBK
+HTTP_HOST:localhost
+HTTP_USER_AGENT:Fiddler
+HTTP_HTTP_CONTENT_TYPE:application/x-www-form-urlencoded; text/html; charset=GBK
+HTTP_HTTP_HOST:121.40.171.35
+HTTP_HTTP_USER_AGENT:Mozilla/4.0
+&ALL_RAW=Content-Type: application/x-www-form-urlencoded; text/html; charset=GBK
+Host: localhost
+User-Agent: Fiddler
+HTTP_CONTENT_TYPE: application/x-www-form-urlencoded; text/html; charset=GBK
+HTTP_HOST: 121.40.171.35
+HTTP_USER_AGENT: Mozilla/4.0
+&APPL_MD_PATH=/LM/W3SVC/1/ROOT/AlipayDemoSite&APPL_PHYSICAL_PATH=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\&AUTH_TYPE=&AUTH_USER=&AUTH_PASSWORD=&LOGON_USER=&REMOTE_USER=&CERT_COOKIE=&CERT_FLAGS=&CERT_ISSUER=&CERT_KEYSIZE=&CERT_SECRETKEYSIZE=&CERT_SERIALNUMBER=&CERT_SERVER_ISSUER=&CERT_SERVER_SUBJECT=&CERT_SUBJECT=&CONTENT_LENGTH=0&CONTENT_TYPE=application/x-www-form-urlencoded; text/html; charset=GBK&GATEWAY_INTERFACE=CGI/1.1&HTTPS=off&HTTPS_KEYSIZE=&HTTPS_SECRETKEYSIZE=&HTTPS_SERVER_ISSUER=&HTTPS_SERVER_SUBJECT=&INSTANCE_ID=1&INSTANCE_META_PATH=/LM/W3SVC/1&LOCAL_ADDR=::1&PATH_INFO=/AlipayDemoSite/Gateway.aspx&PATH_TRANSLATED=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\Gateway.aspx&QUERY_STRING=sign=fGzvwfSNXp8jyWl56w3b0HuGUT3A3DiDd1iQw8pHOJvlSExmT5OzU0hh9b1aj6pExhHMkXy%2F2gFXOPAAsd4UCVHgRe%2FJ8SW3s9hW6W53hIf56mJXOly%2FlGWMAWmtQZgNt1h9HxlVKG9ascqB1aHsEvYkg5wfcafZFSG4ztdg%2FHI%3D&biz_content=%3CXML%3E%3CText%3E%3CContent%3E%3C%21%5BCDATA%5B%BF%B4%BF%B4%5D%5D%3E%3C%2FContent%3E%3C%2FText%3E%3CAppId%3E%3C%21%5BCDATA%5B2015060100099966%5D%5D%3E%3C%2FAppId%3E%3CMsgType%3E%3C%21%5BCDATA%5Btext%5D%5D%3E%3C%2FMsgType%3E%3CCreateTime%3E%3C%21%5BCDATA%5B1433660297566%5D%5D%3E%3C%2FCreateTime%3E%3CFromUserId%3E%3C%21%5BCDATA%5B20880091942797915870748041119911%5D%5D%3E%3C%2FFromUserId%3E%3CMsgId%3E%3C%21%5BCDATA%5B150607445817000001%5D%5D%3E%3C%2FMsgId%3E%3CUserInfo%3E%3C%21%5BCDATA%5B%7B%22logon_id%22%3A%22wdf***%40126.com%22%2C%22user_name%22%3A%22*%B7%C9%B7%C9%22%7D%5D%5D%3E%3C%2FUserInfo%3E%3C%2FXML%3E&sign_type=RSA&service=alipay.mobile.public.message.notify&charset=GBK&REMOTE_ADDR=::1&REMOTE_HOST=::1&REMOTE_PORT=24497&REQUEST_METHOD=GET&SCRIPT_NAME=/AlipayDemoSite/Gateway.aspx&SERVER_NAME=localhost&SERVER_PORT=80&SERVER_PORT_SECURE=0&SERVER_PROTOCOL=HTTP/1.1&SERVER_SOFTWARE=Microsoft-IIS/7.5&URL=/AlipayDemoSite/Gateway.aspx&HTTP_CONTENT_TYPE=application/x-www-form-urlencoded; text/html; charset=GBK&HTTP_HOST=localhost&HTTP_USER_AGENT=Fiddler&HTTP_HTTP_CONTENT_TYPE=application/x-www-form-urlencoded; text/html; charset=GBK&HTTP_HTTP_HOST=121.40.171.35&HTTP_HTTP_USER_AGENT=Mozilla/4.0
+---------------------------------------------------------------
+>>>>>>>>start getting biz_content>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+getting read xmlnode of biz_content xml
+---------------------------------------------------------------
+>>>>>>>>start Gateway>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+====================================
+---------------------------------------------------------------
+>>>>>>>>start Get RequestType>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+GET
+---------------------------------------------------------------
+>>>>>>>>start Get service Type>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+alipay.mobile.public.message.notify
+---------------------------------------------------------------
+>>>>>>>>start Get InputStream Content>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------
+>>>>>>>>start Get unescape InputStream Content>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------
+>>>>>>>>start Get UrlParam>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+sign=fGzvwfSNXp8jyWl56w3b0HuGUT3A3DiDd1iQw8pHOJvlSExmT5OzU0hh9b1aj6pExhHMkXy/2gFXOPAAsd4UCVHgRe/J8SW3s9hW6W53hIf56mJXOly/lGWMAWmtQZgNt1h9HxlVKG9ascqB1aHsEvYkg5wfcafZFSG4ztdg/HI=&biz_content=<XML><Text><Content><![CDATA[����]]></Content></Text><AppId><![CDATA[2015060100099966]]></AppId><MsgType><![CDATA[text]]></MsgType><CreateTime><![CDATA[1433660297566]]></CreateTime><FromUserId><![CDATA[20880091942797915870748041119911]]></FromUserId><MsgId><![CDATA[150607445817000001]]></MsgId><UserInfo><![CDATA[{"logon_id":"wdf***@126.com","user_name":"*�ɷ�"}]]></UserInfo></XML>&sign_type=RSA&service=alipay.mobile.public.message.notify&charset=GBK&ALL_HTTP=HTTP_CONTENT_TYPE:application/x-www-form-urlencoded; text/html; charset=GBK
+HTTP_HOST:localhost
+HTTP_USER_AGENT:Fiddler
+HTTP_HTTP_CONTENT_TYPE:application/x-www-form-urlencoded; text/html; charset=GBK
+HTTP_HTTP_HOST:121.40.171.35
+HTTP_HTTP_USER_AGENT:Mozilla/4.0
+&ALL_RAW=Content-Type: application/x-www-form-urlencoded; text/html; charset=GBK
+Host: localhost
+User-Agent: Fiddler
+HTTP_CONTENT_TYPE: application/x-www-form-urlencoded; text/html; charset=GBK
+HTTP_HOST: 121.40.171.35
+HTTP_USER_AGENT: Mozilla/4.0
+&APPL_MD_PATH=/LM/W3SVC/1/ROOT/AlipayDemoSite&APPL_PHYSICAL_PATH=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\&AUTH_TYPE=&AUTH_USER=&AUTH_PASSWORD=&LOGON_USER=&REMOTE_USER=&CERT_COOKIE=&CERT_FLAGS=&CERT_ISSUER=&CERT_KEYSIZE=&CERT_SECRETKEYSIZE=&CERT_SERIALNUMBER=&CERT_SERVER_ISSUER=&CERT_SERVER_SUBJECT=&CERT_SUBJECT=&CONTENT_LENGTH=0&CONTENT_TYPE=application/x-www-form-urlencoded; text/html; charset=GBK&GATEWAY_INTERFACE=CGI/1.1&HTTPS=off&HTTPS_KEYSIZE=&HTTPS_SECRETKEYSIZE=&HTTPS_SERVER_ISSUER=&HTTPS_SERVER_SUBJECT=&INSTANCE_ID=1&INSTANCE_META_PATH=/LM/W3SVC/1&LOCAL_ADDR=::1&PATH_INFO=/AlipayDemoSite/Gateway.aspx&PATH_TRANSLATED=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\Gateway.aspx&QUERY_STRING=sign=fGzvwfSNXp8jyWl56w3b0HuGUT3A3DiDd1iQw8pHOJvlSExmT5OzU0hh9b1aj6pExhHMkXy%2F2gFXOPAAsd4UCVHgRe%2FJ8SW3s9hW6W53hIf56mJXOly%2FlGWMAWmtQZgNt1h9HxlVKG9ascqB1aHsEvYkg5wfcafZFSG4ztdg%2FHI%3D&biz_content=%3CXML%3E%3CText%3E%3CContent%3E%3C%21%5BCDATA%5B%BF%B4%BF%B4%5D%5D%3E%3C%2FContent%3E%3C%2FText%3E%3CAppId%3E%3C%21%5BCDATA%5B2015060100099966%5D%5D%3E%3C%2FAppId%3E%3CMsgType%3E%3C%21%5BCDATA%5Btext%5D%5D%3E%3C%2FMsgType%3E%3CCreateTime%3E%3C%21%5BCDATA%5B1433660297566%5D%5D%3E%3C%2FCreateTime%3E%3CFromUserId%3E%3C%21%5BCDATA%5B20880091942797915870748041119911%5D%5D%3E%3C%2FFromUserId%3E%3CMsgId%3E%3C%21%5BCDATA%5B150607445817000001%5D%5D%3E%3C%2FMsgId%3E%3CUserInfo%3E%3C%21%5BCDATA%5B%7B%22logon_id%22%3A%22wdf***%40126.com%22%2C%22user_name%22%3A%22*%B7%C9%B7%C9%22%7D%5D%5D%3E%3C%2FUserInfo%3E%3C%2FXML%3E&sign_type=RSA&service=alipay.mobile.public.message.notify&charset=GBK&REMOTE_ADDR=::1&REMOTE_HOST=::1&REMOTE_PORT=24497&REQUEST_METHOD=GET&SCRIPT_NAME=/AlipayDemoSite/Gateway.aspx&SERVER_NAME=localhost&SERVER_PORT=80&SERVER_PORT_SECURE=0&SERVER_PROTOCOL=HTTP/1.1&SERVER_SOFTWARE=Microsoft-IIS/7.5&URL=/AlipayDemoSite/Gateway.aspx&HTTP_CONTENT_TYPE=application/x-www-form-urlencoded; text/html; charset=GBK&HTTP_HOST=localhost&HTTP_USER_AGENT=Fiddler&HTTP_HTTP_CONTENT_TYPE=application/x-www-form-urlencoded; text/html; charset=GBK&HTTP_HTTP_HOST=121.40.171.35&HTTP_HTTP_USER_AGENT=Mozilla/4.0
+---------------------------------------------------------------
+>>>>>>>>start getting biz_content>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+getting read xmlnode of biz_content xml
+---------------------------------------------------------------
+>>>>>>>>start Gateway>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+====================================
+---------------------------------------------------------------
+>>>>>>>>start Get RequestType>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+GET
+---------------------------------------------------------------
+>>>>>>>>start Get service Type>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+alipay.mobile.public.message.notify
+---------------------------------------------------------------
+>>>>>>>>start Get InputStream Content>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------
+>>>>>>>>start Get unescape InputStream Content>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------
+>>>>>>>>start Get UrlParam>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+sign=fGzvwfSNXp8jyWl56w3b0HuGUT3A3DiDd1iQw8pHOJvlSExmT5OzU0hh9b1aj6pExhHMkXy/2gFXOPAAsd4UCVHgRe/J8SW3s9hW6W53hIf56mJXOly/lGWMAWmtQZgNt1h9HxlVKG9ascqB1aHsEvYkg5wfcafZFSG4ztdg/HI=&biz_content=<XML><Text><Content><![CDATA[����]]></Content></Text><AppId><![CDATA[2015060100099966]]></AppId><MsgType><![CDATA[text]]></MsgType><CreateTime><![CDATA[1433660297566]]></CreateTime><FromUserId><![CDATA[20880091942797915870748041119911]]></FromUserId><MsgId><![CDATA[150607445817000001]]></MsgId><UserInfo><![CDATA[{"logon_id":"wdf***@126.com","user_name":"*�ɷ�"}]]></UserInfo></XML>&sign_type=RSA&service=alipay.mobile.public.message.notify&charset=GBK&ALL_HTTP=HTTP_CONTENT_TYPE:application/x-www-form-urlencoded; text/html; charset=GBK
+HTTP_HOST:localhost
+HTTP_USER_AGENT:Fiddler
+HTTP_HTTP_CONTENT_TYPE:application/x-www-form-urlencoded; text/html; charset=GBK
+HTTP_HTTP_HOST:121.40.171.35
+HTTP_HTTP_USER_AGENT:Mozilla/4.0
+&ALL_RAW=Content-Type: application/x-www-form-urlencoded; text/html; charset=GBK
+Host: localhost
+User-Agent: Fiddler
+HTTP_CONTENT_TYPE: application/x-www-form-urlencoded; text/html; charset=GBK
+HTTP_HOST: 121.40.171.35
+HTTP_USER_AGENT: Mozilla/4.0
+&APPL_MD_PATH=/LM/W3SVC/1/ROOT/AlipayDemoSite&APPL_PHYSICAL_PATH=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\&AUTH_TYPE=&AUTH_USER=&AUTH_PASSWORD=&LOGON_USER=&REMOTE_USER=&CERT_COOKIE=&CERT_FLAGS=&CERT_ISSUER=&CERT_KEYSIZE=&CERT_SECRETKEYSIZE=&CERT_SERIALNUMBER=&CERT_SERVER_ISSUER=&CERT_SERVER_SUBJECT=&CERT_SUBJECT=&CONTENT_LENGTH=0&CONTENT_TYPE=application/x-www-form-urlencoded; text/html; charset=GBK&GATEWAY_INTERFACE=CGI/1.1&HTTPS=off&HTTPS_KEYSIZE=&HTTPS_SECRETKEYSIZE=&HTTPS_SERVER_ISSUER=&HTTPS_SERVER_SUBJECT=&INSTANCE_ID=1&INSTANCE_META_PATH=/LM/W3SVC/1&LOCAL_ADDR=::1&PATH_INFO=/AlipayDemoSite/Gateway.aspx&PATH_TRANSLATED=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\Gateway.aspx&QUERY_STRING=sign=fGzvwfSNXp8jyWl56w3b0HuGUT3A3DiDd1iQw8pHOJvlSExmT5OzU0hh9b1aj6pExhHMkXy%2F2gFXOPAAsd4UCVHgRe%2FJ8SW3s9hW6W53hIf56mJXOly%2FlGWMAWmtQZgNt1h9HxlVKG9ascqB1aHsEvYkg5wfcafZFSG4ztdg%2FHI%3D&biz_content=%3CXML%3E%3CText%3E%3CContent%3E%3C%21%5BCDATA%5B%BF%B4%BF%B4%5D%5D%3E%3C%2FContent%3E%3C%2FText%3E%3CAppId%3E%3C%21%5BCDATA%5B2015060100099966%5D%5D%3E%3C%2FAppId%3E%3CMsgType%3E%3C%21%5BCDATA%5Btext%5D%5D%3E%3C%2FMsgType%3E%3CCreateTime%3E%3C%21%5BCDATA%5B1433660297566%5D%5D%3E%3C%2FCreateTime%3E%3CFromUserId%3E%3C%21%5BCDATA%5B20880091942797915870748041119911%5D%5D%3E%3C%2FFromUserId%3E%3CMsgId%3E%3C%21%5BCDATA%5B150607445817000001%5D%5D%3E%3C%2FMsgId%3E%3CUserInfo%3E%3C%21%5BCDATA%5B%7B%22logon_id%22%3A%22wdf***%40126.com%22%2C%22user_name%22%3A%22*%B7%C9%B7%C9%22%7D%5D%5D%3E%3C%2FUserInfo%3E%3C%2FXML%3E&sign_type=RSA&service=alipay.mobile.public.message.notify&charset=GBK&REMOTE_ADDR=::1&REMOTE_HOST=::1&REMOTE_PORT=24943&REQUEST_METHOD=GET&SCRIPT_NAME=/AlipayDemoSite/Gateway.aspx&SERVER_NAME=localhost&SERVER_PORT=80&SERVER_PORT_SECURE=0&SERVER_PROTOCOL=HTTP/1.1&SERVER_SOFTWARE=Microsoft-IIS/7.5&URL=/AlipayDemoSite/Gateway.aspx&HTTP_CONTENT_TYPE=application/x-www-form-urlencoded; text/html; charset=GBK&HTTP_HOST=localhost&HTTP_USER_AGENT=Fiddler&HTTP_HTTP_CONTENT_TYPE=application/x-www-form-urlencoded; text/html; charset=GBK&HTTP_HTTP_HOST=121.40.171.35&HTTP_HTTP_USER_AGENT=Mozilla/4.0
+---------------------------------------------------------------
+>>>>>>>>start getting biz_content>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+getting read xmlnode of biz_content xml
+---------------------------------------------------------------
+>>>>>>>>start getting biz_content>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+read xmlnode of biz_content xml completed
+---------------------------------------------------------------
+>>>>>>>>start geted biz_content xml data>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+eventType   :,FromUserId  :20880091942797915870748041119911,UserInfo    :{"logon_id":"wdf***@126.com","user_name":"*�ɷ�"},ActionParam :,AgreementId :,AccountNo   :,AppId       :2015060100099966,CreateTime  :1433660297566,MsgType     :text
+---------------------------------------------------------------
+>>>>>>>>start Gateway>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+====================================
+---------------------------------------------------------------
+>>>>>>>>start Get RequestType>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+GET
+---------------------------------------------------------------
+>>>>>>>>start Get service Type>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------
+>>>>>>>>start Get InputStream Content>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------
+>>>>>>>>start Get unescape InputStream Content>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------
+>>>>>>>>start Get UrlParam>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ALL_HTTP=HTTP_CONNECTION:Keep-Alive
+HTTP_ACCEPT:text/html, application/xhtml+xml, */*
+HTTP_ACCEPT_ENCODING:gzip, deflate
+HTTP_ACCEPT_LANGUAGE:zh-CN
+HTTP_HOST:localhost
+HTTP_USER_AGENT:Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)
+HTTP_DNT:1
+&ALL_RAW=Connection: Keep-Alive
+Accept: text/html, application/xhtml+xml, */*
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN
+Host: localhost
+User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)
+DNT: 1
+&APPL_MD_PATH=/LM/W3SVC/1/ROOT/AlipayDemoSite&APPL_PHYSICAL_PATH=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\&AUTH_TYPE=&AUTH_USER=&AUTH_PASSWORD=&LOGON_USER=&REMOTE_USER=&CERT_COOKIE=&CERT_FLAGS=&CERT_ISSUER=&CERT_KEYSIZE=&CERT_SECRETKEYSIZE=&CERT_SERIALNUMBER=&CERT_SERVER_ISSUER=&CERT_SERVER_SUBJECT=&CERT_SUBJECT=&CONTENT_LENGTH=0&CONTENT_TYPE=&GATEWAY_INTERFACE=CGI/1.1&HTTPS=off&HTTPS_KEYSIZE=&HTTPS_SECRETKEYSIZE=&HTTPS_SERVER_ISSUER=&HTTPS_SERVER_SUBJECT=&INSTANCE_ID=1&INSTANCE_META_PATH=/LM/W3SVC/1&LOCAL_ADDR=::1&PATH_INFO=/AlipayDemoSite/Gateway.aspx&PATH_TRANSLATED=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\Gateway.aspx&QUERY_STRING=&REMOTE_ADDR=::1&REMOTE_HOST=::1&REMOTE_PORT=24943&REQUEST_METHOD=GET&SCRIPT_NAME=/AlipayDemoSite/Gateway.aspx&SERVER_NAME=localhost&SERVER_PORT=80&SERVER_PORT_SECURE=0&SERVER_PROTOCOL=HTTP/1.1&SERVER_SOFTWARE=Microsoft-IIS/7.5&URL=/AlipayDemoSite/Gateway.aspx&HTTP_CONNECTION=Keep-Alive&HTTP_ACCEPT=text/html, application/xhtml+xml, */*&HTTP_ACCEPT_ENCODING=gzip, deflate&HTTP_ACCEPT_LANGUAGE=zh-CN&HTTP_HOST=localhost&HTTP_USER_AGENT=Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)&HTTP_DNT=1
+---------------------------------------------------------------
+>>>>>>>>start Gateway>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+====================================
+---------------------------------------------------------------
+>>>>>>>>start Get RequestType>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+GET
+---------------------------------------------------------------
+>>>>>>>>start Get service Type>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+alipay.mobile.public.message.notify
+---------------------------------------------------------------
+>>>>>>>>start Get InputStream Content>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------
+>>>>>>>>start Get unescape InputStream Content>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------
+>>>>>>>>start Get UrlParam>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+sign=fGzvwfSNXp8jyWl56w3b0HuGUT3A3DiDd1iQw8pHOJvlSExmT5OzU0hh9b1aj6pExhHMkXy/2gFXOPAAsd4UCVHgRe/J8SW3s9hW6W53hIf56mJXOly/lGWMAWmtQZgNt1h9HxlVKG9ascqB1aHsEvYkg5wfcafZFSG4ztdg/HI=&biz_content=<XML><Text><Content><![CDATA[����]]></Content></Text><AppId><![CDATA[2015060100099966]]></AppId><MsgType><![CDATA[text]]></MsgType><CreateTime><![CDATA[1433660297566]]></CreateTime><FromUserId><![CDATA[20880091942797915870748041119911]]></FromUserId><MsgId><![CDATA[150607445817000001]]></MsgId><UserInfo><![CDATA[{"logon_id":"wdf***@126.com","user_name":"*�ɷ�"}]]></UserInfo></XML>&sign_type=RSA&service=alipay.mobile.public.message.notify&charset=GBK&ALL_HTTP=HTTP_CONTENT_TYPE:application/x-www-form-urlencoded; text/html; charset=GBK
+HTTP_HOST:localhost
+HTTP_USER_AGENT:Fiddler
+HTTP_HTTP_CONTENT_TYPE:application/x-www-form-urlencoded; text/html; charset=GBK
+HTTP_HTTP_HOST:121.40.171.35
+HTTP_HTTP_USER_AGENT:Mozilla/4.0
+&ALL_RAW=Content-Type: application/x-www-form-urlencoded; text/html; charset=GBK
+Host: localhost
+User-Agent: Fiddler
+HTTP_CONTENT_TYPE: application/x-www-form-urlencoded; text/html; charset=GBK
+HTTP_HOST: 121.40.171.35
+HTTP_USER_AGENT: Mozilla/4.0
+&APPL_MD_PATH=/LM/W3SVC/1/ROOT/AlipayDemoSite&APPL_PHYSICAL_PATH=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\&AUTH_TYPE=&AUTH_USER=&AUTH_PASSWORD=&LOGON_USER=&REMOTE_USER=&CERT_COOKIE=&CERT_FLAGS=&CERT_ISSUER=&CERT_KEYSIZE=&CERT_SECRETKEYSIZE=&CERT_SERIALNUMBER=&CERT_SERVER_ISSUER=&CERT_SERVER_SUBJECT=&CERT_SUBJECT=&CONTENT_LENGTH=0&CONTENT_TYPE=application/x-www-form-urlencoded; text/html; charset=GBK&GATEWAY_INTERFACE=CGI/1.1&HTTPS=off&HTTPS_KEYSIZE=&HTTPS_SECRETKEYSIZE=&HTTPS_SERVER_ISSUER=&HTTPS_SERVER_SUBJECT=&INSTANCE_ID=1&INSTANCE_META_PATH=/LM/W3SVC/1&LOCAL_ADDR=::1&PATH_INFO=/AlipayDemoSite/Gateway.aspx&PATH_TRANSLATED=E:\Software\开发软件\开发工具\支付宝服务窗\Alipay Fuwuchuang DotNet Demo 20141028\WebSites\AlipayDemoSite\Gateway.aspx&QUERY_STRING=sign=fGzvwfSNXp8jyWl56w3b0HuGUT3A3DiDd1iQw8pHOJvlSExmT5OzU0hh9b1aj6pExhHMkXy%2F2gFXOPAAsd4UCVHgRe%2FJ8SW3s9hW6W53hIf56mJXOly%2FlGWMAWmtQZgNt1h9HxlVKG9ascqB1aHsEvYkg5wfcafZFSG4ztdg%2FHI%3D&biz_content=%3CXML%3E%3CText%3E%3CContent%3E%3C%21%5BCDATA%5B%BF%B4%BF%B4%5D%5D%3E%3C%2FContent%3E%3C%2FText%3E%3CAppId%3E%3C%21%5BCDATA%5B2015060100099966%5D%5D%3E%3C%2FAppId%3E%3CMsgType%3E%3C%21%5BCDATA%5Btext%5D%5D%3E%3C%2FMsgType%3E%3CCreateTime%3E%3C%21%5BCDATA%5B1433660297566%5D%5D%3E%3C%2FCreateTime%3E%3CFromUserId%3E%3C%21%5BCDATA%5B20880091942797915870748041119911%5D%5D%3E%3C%2FFromUserId%3E%3CMsgId%3E%3C%21%5BCDATA%5B150607445817000001%5D%5D%3E%3C%2FMsgId%3E%3CUserInfo%3E%3C%21%5BCDATA%5B%7B%22logon_id%22%3A%22wdf***%40126.com%22%2C%22user_name%22%3A%22*%B7%C9%B7%C9%22%7D%5D%5D%3E%3C%2FUserInfo%3E%3C%2FXML%3E&sign_type=RSA&service=alipay.mobile.public.message.notify&charset=GBK&REMOTE_ADDR=::1&REMOTE_HOST=::1&REMOTE_PORT=24943&REQUEST_METHOD=GET&SCRIPT_NAME=/AlipayDemoSite/Gateway.aspx&SERVER_NAME=localhost&SERVER_PORT=80&SERVER_PORT_SECURE=0&SERVER_PROTOCOL=HTTP/1.1&SERVER_SOFTWARE=Microsoft-IIS/7.5&URL=/AlipayDemoSite/Gateway.aspx&HTTP_CONTENT_TYPE=application/x-www-form-urlencoded; text/html; charset=GBK&HTTP_HOST=localhost&HTTP_USER_AGENT=Fiddler&HTTP_HTTP_CONTENT_TYPE=application/x-www-form-urlencoded; text/html; charset=GBK&HTTP_HTTP_HOST=121.40.171.35&HTTP_HTTP_USER_AGENT=Mozilla/4.0
+---------------------------------------------------------------
+>>>>>>>>start getting biz_content>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+getting read xmlnode of biz_content xml
+---------------------------------------------------------------
+>>>>>>>>start getting biz_content>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+read xmlnode of biz_content xml completed
+---------------------------------------------------------------
+>>>>>>>>start geted biz_content xml data>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+eventType   :,FromUserId  :20880091942797915870748041119911,UserInfo    :{"logon_id":"wdf***@126.com","user_name":"*�ɷ�"},ActionParam :,AgreementId :,AccountNo   :,AppId       :2015060100099966,CreateTime  :1433660297566,MsgType     :text
+---------------------------------------------------------------
+>>>>>>>>start Gateway>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+====================================
+---------------------------------------------------------------
+>>>>>>>>start Get RequestType>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+GET
+---------------------------------------------------------------
+>>>>>>>>start Get service Type>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------
+>>>>>>>>start Get InputStream Content>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------
+>>>>>>>>start Get unescape InputStream Content>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------
+>>>>>>>>start Get UrlParam>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ALL_HTTP=HTTP_CONNECTION:keep-alive
+HTTP_ACCEPT:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+HTTP_ACCEPT_ENCODING:gzip, deflate, sdch
+HTTP_ACCEPT_LANGUAGE:zh-CN,zh;q=0.8
+HTTP_HOST:localhost
+HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36
+HTTP_UPGRADE_INSECURE_REQUESTS:1
+&ALL_RAW=Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN,zh;q=0.8
+Host: localhost
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36
+Upgrade-Insecure-Requests: 1
+&APPL_MD_PATH=/LM/W3SVC/1/ROOT/CityService/CityService.Alipay.Aop.Gateway&APPL_PHYSICAL_PATH=E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Aop.Gateway\&AUTH_TYPE=&AUTH_USER=&AUTH_PASSWORD=&LOGON_USER=&REMOTE_USER=&CERT_COOKIE=&CERT_FLAGS=&CERT_ISSUER=&CERT_KEYSIZE=&CERT_SECRETKEYSIZE=&CERT_SERIALNUMBER=&CERT_SERVER_ISSUER=&CERT_SERVER_SUBJECT=&CERT_SUBJECT=&CONTENT_LENGTH=0&CONTENT_TYPE=&GATEWAY_INTERFACE=CGI/1.1&HTTPS=off&HTTPS_KEYSIZE=&HTTPS_SECRETKEYSIZE=&HTTPS_SERVER_ISSUER=&HTTPS_SERVER_SUBJECT=&INSTANCE_ID=1&INSTANCE_META_PATH=/LM/W3SVC/1&LOCAL_ADDR=::1&PATH_INFO=/CityService/CityService.Alipay.Aop.Gateway/Gateway.aspx&PATH_TRANSLATED=E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Aop.Gateway\Gateway.aspx&QUERY_STRING=&REMOTE_ADDR=::1&REMOTE_HOST=::1&REMOTE_PORT=15389&REQUEST_METHOD=GET&SCRIPT_NAME=/CityService/CityService.Alipay.Aop.Gateway/Gateway.aspx&SERVER_NAME=localhost&SERVER_PORT=80&SERVER_PORT_SECURE=0&SERVER_PROTOCOL=HTTP/1.1&SERVER_SOFTWARE=Microsoft-IIS/7.5&URL=/CityService/CityService.Alipay.Aop.Gateway/Gateway.aspx&HTTP_CONNECTION=keep-alive&HTTP_ACCEPT=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8&HTTP_ACCEPT_ENCODING=gzip, deflate, sdch&HTTP_ACCEPT_LANGUAGE=zh-CN,zh;q=0.8&HTTP_HOST=localhost&HTTP_USER_AGENT=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36&HTTP_UPGRADE_INSECURE_REQUESTS=1
+---------------------------------------------------------------
+>>>>>>>>start Gateway>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+====================================
+---------------------------------------------------------------
+>>>>>>>>start Get RequestType>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+GET
+---------------------------------------------------------------
+>>>>>>>>start Get service Type>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------
+>>>>>>>>start Get InputStream Content>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------
+>>>>>>>>start Get unescape InputStream Content>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------
+>>>>>>>>start Get UrlParam>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ALL_HTTP=HTTP_CONNECTION:keep-alive
+HTTP_ACCEPT:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+HTTP_ACCEPT_ENCODING:gzip,deflate,sdch
+HTTP_ACCEPT_LANGUAGE:zh-CN,zh;q=0.8
+HTTP_HOST:localhost
+HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+&ALL_RAW=Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: zh-CN,zh;q=0.8
+Host: localhost
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+&APPL_MD_PATH=/LM/W3SVC/1/ROOT/CityService/CityService.Alipay.Aop.Gateway&APPL_PHYSICAL_PATH=E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Aop.Gateway\&AUTH_TYPE=&AUTH_USER=&AUTH_PASSWORD=&LOGON_USER=&REMOTE_USER=&CERT_COOKIE=&CERT_FLAGS=&CERT_ISSUER=&CERT_KEYSIZE=&CERT_SECRETKEYSIZE=&CERT_SERIALNUMBER=&CERT_SERVER_ISSUER=&CERT_SERVER_SUBJECT=&CERT_SUBJECT=&CONTENT_LENGTH=0&CONTENT_TYPE=&GATEWAY_INTERFACE=CGI/1.1&HTTPS=off&HTTPS_KEYSIZE=&HTTPS_SECRETKEYSIZE=&HTTPS_SERVER_ISSUER=&HTTPS_SERVER_SUBJECT=&INSTANCE_ID=1&INSTANCE_META_PATH=/LM/W3SVC/1&LOCAL_ADDR=::1&PATH_INFO=/CityService/CityService.Alipay.Aop.Gateway/Gateway.aspx&PATH_TRANSLATED=E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Aop.Gateway\Gateway.aspx&QUERY_STRING=&REMOTE_ADDR=::1&REMOTE_HOST=::1&REMOTE_PORT=15757&REQUEST_METHOD=GET&SCRIPT_NAME=/CityService/CityService.Alipay.Aop.Gateway/Gateway.aspx&SERVER_NAME=localhost&SERVER_PORT=80&SERVER_PORT_SECURE=0&SERVER_PROTOCOL=HTTP/1.1&SERVER_SOFTWARE=Microsoft-IIS/7.5&URL=/CityService/CityService.Alipay.Aop.Gateway/Gateway.aspx&HTTP_CONNECTION=keep-alive&HTTP_ACCEPT=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8&HTTP_ACCEPT_ENCODING=gzip,deflate,sdch&HTTP_ACCEPT_LANGUAGE=zh-CN,zh;q=0.8&HTTP_HOST=localhost&HTTP_USER_AGENT=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+---------------------------------------------------------------
+>>>>>>>>start Gateway>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+====================================
+---------------------------------------------------------------
+>>>>>>>>start Get RequestType>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+GET
+---------------------------------------------------------------
+>>>>>>>>start Get service Type>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------
+>>>>>>>>start Get InputStream Content>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------
+>>>>>>>>start Get unescape InputStream Content>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------
+>>>>>>>>start Get UrlParam>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ALL_HTTP=HTTP_CONNECTION:keep-alive
+HTTP_ACCEPT:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+HTTP_ACCEPT_ENCODING:gzip, deflate, sdch
+HTTP_ACCEPT_LANGUAGE:zh-CN,zh;q=0.8
+HTTP_HOST:localhost
+HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36
+HTTP_UPGRADE_INSECURE_REQUESTS:1
+&ALL_RAW=Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN,zh;q=0.8
+Host: localhost
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36
+Upgrade-Insecure-Requests: 1
+&APPL_MD_PATH=/LM/W3SVC/1/ROOT/CityService/CityService.Alipay.Aop.Gateway&APPL_PHYSICAL_PATH=E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Aop.Gateway\&AUTH_TYPE=&AUTH_USER=&AUTH_PASSWORD=&LOGON_USER=&REMOTE_USER=&CERT_COOKIE=&CERT_FLAGS=&CERT_ISSUER=&CERT_KEYSIZE=&CERT_SECRETKEYSIZE=&CERT_SERIALNUMBER=&CERT_SERVER_ISSUER=&CERT_SERVER_SUBJECT=&CERT_SUBJECT=&CONTENT_LENGTH=0&CONTENT_TYPE=&GATEWAY_INTERFACE=CGI/1.1&HTTPS=off&HTTPS_KEYSIZE=&HTTPS_SECRETKEYSIZE=&HTTPS_SERVER_ISSUER=&HTTPS_SERVER_SUBJECT=&INSTANCE_ID=1&INSTANCE_META_PATH=/LM/W3SVC/1&LOCAL_ADDR=::1&PATH_INFO=/CityService/CityService.Alipay.Aop.Gateway/Gateway.aspx&PATH_TRANSLATED=E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Aop.Gateway\Gateway.aspx&QUERY_STRING=&REMOTE_ADDR=::1&REMOTE_HOST=::1&REMOTE_PORT=16825&REQUEST_METHOD=GET&SCRIPT_NAME=/CityService/CityService.Alipay.Aop.Gateway/Gateway.aspx&SERVER_NAME=localhost&SERVER_PORT=80&SERVER_PORT_SECURE=0&SERVER_PROTOCOL=HTTP/1.1&SERVER_SOFTWARE=Microsoft-IIS/7.5&URL=/CityService/CityService.Alipay.Aop.Gateway/Gateway.aspx&HTTP_CONNECTION=keep-alive&HTTP_ACCEPT=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8&HTTP_ACCEPT_ENCODING=gzip, deflate, sdch&HTTP_ACCEPT_LANGUAGE=zh-CN,zh;q=0.8&HTTP_HOST=localhost&HTTP_USER_AGENT=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36&HTTP_UPGRADE_INSECURE_REQUESTS=1
+---------------------------------------------------------------
+>>>>>>>>start Gateway>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+====================================
+---------------------------------------------------------------
+>>>>>>>>start Get RequestType>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+GET
+---------------------------------------------------------------
+>>>>>>>>start Get service Type>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------
+>>>>>>>>start Get InputStream Content>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------
+>>>>>>>>start Get unescape InputStream Content>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------
+>>>>>>>>start Get UrlParam>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ALL_HTTP=HTTP_CONNECTION:keep-alive
+HTTP_ACCEPT:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+HTTP_ACCEPT_ENCODING:gzip, deflate, sdch
+HTTP_ACCEPT_LANGUAGE:zh-CN,zh;q=0.8
+HTTP_HOST:localhost
+HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36
+HTTP_UPGRADE_INSECURE_REQUESTS:1
+&ALL_RAW=Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN,zh;q=0.8
+Host: localhost
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36
+Upgrade-Insecure-Requests: 1
+&APPL_MD_PATH=/LM/W3SVC/1/ROOT/CityService/CityService.Alipay.Aop.Gateway&APPL_PHYSICAL_PATH=E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Aop.Gateway\&AUTH_TYPE=&AUTH_USER=&AUTH_PASSWORD=&LOGON_USER=&REMOTE_USER=&CERT_COOKIE=&CERT_FLAGS=&CERT_ISSUER=&CERT_KEYSIZE=&CERT_SECRETKEYSIZE=&CERT_SERIALNUMBER=&CERT_SERVER_ISSUER=&CERT_SERVER_SUBJECT=&CERT_SUBJECT=&CONTENT_LENGTH=0&CONTENT_TYPE=&GATEWAY_INTERFACE=CGI/1.1&HTTPS=off&HTTPS_KEYSIZE=&HTTPS_SECRETKEYSIZE=&HTTPS_SERVER_ISSUER=&HTTPS_SERVER_SUBJECT=&INSTANCE_ID=1&INSTANCE_META_PATH=/LM/W3SVC/1&LOCAL_ADDR=::1&PATH_INFO=/CityService/CityService.Alipay.Aop.Gateway/Gateway.aspx&PATH_TRANSLATED=E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Aop.Gateway\Gateway.aspx&QUERY_STRING=&REMOTE_ADDR=::1&REMOTE_HOST=::1&REMOTE_PORT=18169&REQUEST_METHOD=GET&SCRIPT_NAME=/CityService/CityService.Alipay.Aop.Gateway/Gateway.aspx&SERVER_NAME=localhost&SERVER_PORT=80&SERVER_PORT_SECURE=0&SERVER_PROTOCOL=HTTP/1.1&SERVER_SOFTWARE=Microsoft-IIS/7.5&URL=/CityService/CityService.Alipay.Aop.Gateway/Gateway.aspx&HTTP_CONNECTION=keep-alive&HTTP_ACCEPT=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8&HTTP_ACCEPT_ENCODING=gzip, deflate, sdch&HTTP_ACCEPT_LANGUAGE=zh-CN,zh;q=0.8&HTTP_HOST=localhost&HTTP_USER_AGENT=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36&HTTP_UPGRADE_INSECURE_REQUESTS=1
+---------------------------------------------------------------
+ALL_HTTP=HTTP_CONNECTION:keep-alive
+HTTP_ACCEPT:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+HTTP_ACCEPT_ENCODING:gzip, deflate, sdch
+HTTP_ACCEPT_LANGUAGE:zh-CN,zh;q=0.8
+HTTP_HOST:localhost
+HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36
+HTTP_UPGRADE_INSECURE_REQUESTS:1
+&ALL_RAW=Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN,zh;q=0.8
+Host: localhost
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36
+Upgrade-Insecure-Requests: 1
+&APPL_MD_PATH=/LM/W3SVC/1/ROOT/CityService/CityService.Alipay.Aop.Gateway&APPL_PHYSICAL_PATH=E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Aop.Gateway\&AUTH_TYPE=&AUTH_USER=&AUTH_PASSWORD=&LOGON_USER=&REMOTE_USER=&CERT_COOKIE=&CERT_FLAGS=&CERT_ISSUER=&CERT_KEYSIZE=&CERT_SECRETKEYSIZE=&CERT_SERIALNUMBER=&CERT_SERVER_ISSUER=&CERT_SERVER_SUBJECT=&CERT_SUBJECT=&CONTENT_LENGTH=0&CONTENT_TYPE=&GATEWAY_INTERFACE=CGI/1.1&HTTPS=off&HTTPS_KEYSIZE=&HTTPS_SECRETKEYSIZE=&HTTPS_SERVER_ISSUER=&HTTPS_SERVER_SUBJECT=&INSTANCE_ID=1&INSTANCE_META_PATH=/LM/W3SVC/1&LOCAL_ADDR=::1&PATH_INFO=/CityService/CityService.Alipay.Aop.Gateway/Gateway.aspx&PATH_TRANSLATED=E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Aop.Gateway\Gateway.aspx&QUERY_STRING=&REMOTE_ADDR=::1&REMOTE_HOST=::1&REMOTE_PORT=18376&REQUEST_METHOD=GET&SCRIPT_NAME=/CityService/CityService.Alipay.Aop.Gateway/Gateway.aspx&SERVER_NAME=localhost&SERVER_PORT=80&SERVER_PORT_SECURE=0&SERVER_PROTOCOL=HTTP/1.1&SERVER_SOFTWARE=Microsoft-IIS/7.5&URL=/CityService/CityService.Alipay.Aop.Gateway/Gateway.aspx&HTTP_CONNECTION=keep-alive&HTTP_ACCEPT=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8&HTTP_ACCEPT_ENCODING=gzip, deflate, sdch&HTTP_ACCEPT_LANGUAGE=zh-CN,zh;q=0.8&HTTP_HOST=localhost&HTTP_USER_AGENT=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36&HTTP_UPGRADE_INSECURE_REQUESTS=1
+ALL_HTTP=HTTP_CACHE_CONTROL:max-age=0
+HTTP_CONNECTION:keep-alive
+HTTP_ACCEPT:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+HTTP_ACCEPT_ENCODING:gzip, deflate, sdch
+HTTP_ACCEPT_LANGUAGE:zh-CN,zh;q=0.8
+HTTP_HOST:localhost
+HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36
+HTTP_UPGRADE_INSECURE_REQUESTS:1
+&ALL_RAW=Cache-Control: max-age=0
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN,zh;q=0.8
+Host: localhost
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36
+Upgrade-Insecure-Requests: 1
+&APPL_MD_PATH=/LM/W3SVC/1/ROOT/CityService/CityService.Alipay.Aop.Gateway&APPL_PHYSICAL_PATH=E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Aop.Gateway\&AUTH_TYPE=&AUTH_USER=&AUTH_PASSWORD=&LOGON_USER=&REMOTE_USER=&CERT_COOKIE=&CERT_FLAGS=&CERT_ISSUER=&CERT_KEYSIZE=&CERT_SECRETKEYSIZE=&CERT_SERIALNUMBER=&CERT_SERVER_ISSUER=&CERT_SERVER_SUBJECT=&CERT_SUBJECT=&CONTENT_LENGTH=0&CONTENT_TYPE=&GATEWAY_INTERFACE=CGI/1.1&HTTPS=off&HTTPS_KEYSIZE=&HTTPS_SECRETKEYSIZE=&HTTPS_SERVER_ISSUER=&HTTPS_SERVER_SUBJECT=&INSTANCE_ID=1&INSTANCE_META_PATH=/LM/W3SVC/1&LOCAL_ADDR=::1&PATH_INFO=/CityService/CityService.Alipay.Aop.Gateway/Gateway.aspx&PATH_TRANSLATED=E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Aop.Gateway\Gateway.aspx&QUERY_STRING=&REMOTE_ADDR=::1&REMOTE_HOST=::1&REMOTE_PORT=18376&REQUEST_METHOD=GET&SCRIPT_NAME=/CityService/CityService.Alipay.Aop.Gateway/Gateway.aspx&SERVER_NAME=localhost&SERVER_PORT=80&SERVER_PORT_SECURE=0&SERVER_PROTOCOL=HTTP/1.1&SERVER_SOFTWARE=Microsoft-IIS/7.5&URL=/CityService/CityService.Alipay.Aop.Gateway/Gateway.aspx&HTTP_CACHE_CONTROL=max-age=0&HTTP_CONNECTION=keep-alive&HTTP_ACCEPT=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8&HTTP_ACCEPT_ENCODING=gzip, deflate, sdch&HTTP_ACCEPT_LANGUAGE=zh-CN,zh;q=0.8&HTTP_HOST=localhost&HTTP_USER_AGENT=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36&HTTP_UPGRADE_INSECURE_REQUESTS=1
+ALL_HTTP=HTTP_CONNECTION:keep-alive
+HTTP_ACCEPT:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+HTTP_ACCEPT_ENCODING:gzip, deflate, sdch
+HTTP_ACCEPT_LANGUAGE:zh-CN,zh;q=0.8
+HTTP_HOST:localhost
+HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36
+HTTP_UPGRADE_INSECURE_REQUESTS:1
+&ALL_RAW=Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN,zh;q=0.8
+Host: localhost
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36
+Upgrade-Insecure-Requests: 1
+&APPL_MD_PATH=/LM/W3SVC/1/ROOT/CityService/CityService.Alipay.Aop.Gateway&APPL_PHYSICAL_PATH=E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Aop.Gateway\&AUTH_TYPE=&AUTH_USER=&AUTH_PASSWORD=&LOGON_USER=&REMOTE_USER=&CERT_COOKIE=&CERT_FLAGS=&CERT_ISSUER=&CERT_KEYSIZE=&CERT_SECRETKEYSIZE=&CERT_SERIALNUMBER=&CERT_SERVER_ISSUER=&CERT_SERVER_SUBJECT=&CERT_SUBJECT=&CONTENT_LENGTH=0&CONTENT_TYPE=&GATEWAY_INTERFACE=CGI/1.1&HTTPS=off&HTTPS_KEYSIZE=&HTTPS_SECRETKEYSIZE=&HTTPS_SERVER_ISSUER=&HTTPS_SERVER_SUBJECT=&INSTANCE_ID=1&INSTANCE_META_PATH=/LM/W3SVC/1&LOCAL_ADDR=::1&PATH_INFO=/CityService/CityService.Alipay.Aop.Gateway/Gateway.aspx&PATH_TRANSLATED=E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Aop.Gateway\Gateway.aspx&QUERY_STRING=&REMOTE_ADDR=::1&REMOTE_HOST=::1&REMOTE_PORT=18376&REQUEST_METHOD=GET&SCRIPT_NAME=/CityService/CityService.Alipay.Aop.Gateway/Gateway.aspx&SERVER_NAME=localhost&SERVER_PORT=80&SERVER_PORT_SECURE=0&SERVER_PROTOCOL=HTTP/1.1&SERVER_SOFTWARE=Microsoft-IIS/7.5&URL=/CityService/CityService.Alipay.Aop.Gateway/Gateway.aspx&HTTP_CONNECTION=keep-alive&HTTP_ACCEPT=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8&HTTP_ACCEPT_ENCODING=gzip, deflate, sdch&HTTP_ACCEPT_LANGUAGE=zh-CN,zh;q=0.8&HTTP_HOST=localhost&HTTP_USER_AGENT=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36&HTTP_UPGRADE_INSECURE_REQUESTS=1
+>>>>>>>>start Gateway>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+====================================
+---------------------------------------------------------------
+>>>>>>>>start Get RequestType>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+GET
+---------------------------------------------------------------
+>>>>>>>>start Get service Type>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------
+>>>>>>>>start Get InputStream Content>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------
+>>>>>>>>start Get unescape InputStream Content>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------
+>>>>>>>>start Get UrlParam>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ALL_HTTP=HTTP_CONNECTION:keep-alive
+HTTP_ACCEPT:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+HTTP_ACCEPT_ENCODING:gzip, deflate, sdch
+HTTP_ACCEPT_LANGUAGE:zh-CN,zh;q=0.8
+HTTP_HOST:localhost
+HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36
+HTTP_UPGRADE_INSECURE_REQUESTS:1
+&ALL_RAW=Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN,zh;q=0.8
+Host: localhost
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36
+Upgrade-Insecure-Requests: 1
+&APPL_MD_PATH=/LM/W3SVC/1/ROOT/CityService/CityService.Alipay.Aop.Gateway&APPL_PHYSICAL_PATH=E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Aop.Gateway\&AUTH_TYPE=&AUTH_USER=&AUTH_PASSWORD=&LOGON_USER=&REMOTE_USER=&CERT_COOKIE=&CERT_FLAGS=&CERT_ISSUER=&CERT_KEYSIZE=&CERT_SECRETKEYSIZE=&CERT_SERIALNUMBER=&CERT_SERVER_ISSUER=&CERT_SERVER_SUBJECT=&CERT_SUBJECT=&CONTENT_LENGTH=0&CONTENT_TYPE=&GATEWAY_INTERFACE=CGI/1.1&HTTPS=off&HTTPS_KEYSIZE=&HTTPS_SECRETKEYSIZE=&HTTPS_SERVER_ISSUER=&HTTPS_SERVER_SUBJECT=&INSTANCE_ID=1&INSTANCE_META_PATH=/LM/W3SVC/1&LOCAL_ADDR=::1&PATH_INFO=/CityService/CityService.Alipay.Aop.Gateway/Gateway.aspx&PATH_TRANSLATED=E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Aop.Gateway\Gateway.aspx&QUERY_STRING=&REMOTE_ADDR=::1&REMOTE_HOST=::1&REMOTE_PORT=24376&REQUEST_METHOD=GET&SCRIPT_NAME=/CityService/CityService.Alipay.Aop.Gateway/Gateway.aspx&SERVER_NAME=localhost&SERVER_PORT=80&SERVER_PORT_SECURE=0&SERVER_PROTOCOL=HTTP/1.1&SERVER_SOFTWARE=Microsoft-IIS/7.5&URL=/CityService/CityService.Alipay.Aop.Gateway/Gateway.aspx&HTTP_CONNECTION=keep-alive&HTTP_ACCEPT=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8&HTTP_ACCEPT_ENCODING=gzip, deflate, sdch&HTTP_ACCEPT_LANGUAGE=zh-CN,zh;q=0.8&HTTP_HOST=localhost&HTTP_USER_AGENT=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36&HTTP_UPGRADE_INSECURE_REQUESTS=1
+---------------------------------------------------------------
+>>>>>>>>start Gateway>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+====================================
+---------------------------------------------------------------
+>>>>>>>>start Get RequestType>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+GET
+---------------------------------------------------------------
+>>>>>>>>start Get service Type>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------
+>>>>>>>>start Get InputStream Content>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------
+>>>>>>>>start Get unescape InputStream Content>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------
+>>>>>>>>start Get UrlParam>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ASP.NET_SessionId=4ynvadplj2ckaxuqqhsa4gr5&ALL_HTTP=HTTP_CONNECTION:keep-alive
+HTTP_ACCEPT:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+HTTP_ACCEPT_ENCODING:gzip, deflate, sdch
+HTTP_ACCEPT_LANGUAGE:zh-CN,zh;q=0.8
+HTTP_COOKIE:ASP.NET_SessionId=4ynvadplj2ckaxuqqhsa4gr5
+HTTP_HOST:localhost
+HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36
+HTTP_UPGRADE_INSECURE_REQUESTS:1
+&ALL_RAW=Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN,zh;q=0.8
+Cookie: ASP.NET_SessionId=4ynvadplj2ckaxuqqhsa4gr5
+Host: localhost
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36
+Upgrade-Insecure-Requests: 1
+&APPL_MD_PATH=/LM/W3SVC/1/ROOT/CityService/CityService.Alipay.Aop.Gateway&APPL_PHYSICAL_PATH=E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Aop.Gateway\&AUTH_TYPE=&AUTH_USER=&AUTH_PASSWORD=&LOGON_USER=&REMOTE_USER=&CERT_COOKIE=&CERT_FLAGS=&CERT_ISSUER=&CERT_KEYSIZE=&CERT_SECRETKEYSIZE=&CERT_SERIALNUMBER=&CERT_SERVER_ISSUER=&CERT_SERVER_SUBJECT=&CERT_SUBJECT=&CONTENT_LENGTH=0&CONTENT_TYPE=&GATEWAY_INTERFACE=CGI/1.1&HTTPS=off&HTTPS_KEYSIZE=&HTTPS_SECRETKEYSIZE=&HTTPS_SERVER_ISSUER=&HTTPS_SERVER_SUBJECT=&INSTANCE_ID=1&INSTANCE_META_PATH=/LM/W3SVC/1&LOCAL_ADDR=::1&PATH_INFO=/CityService/CityService.Alipay.Aop.Gateway/Gateway.aspx&PATH_TRANSLATED=E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Aop.Gateway\Gateway.aspx&QUERY_STRING=&REMOTE_ADDR=::1&REMOTE_HOST=::1&REMOTE_PORT=9398&REQUEST_METHOD=GET&SCRIPT_NAME=/CityService/CityService.Alipay.Aop.Gateway/Gateway.aspx&SERVER_NAME=localhost&SERVER_PORT=80&SERVER_PORT_SECURE=0&SERVER_PROTOCOL=HTTP/1.1&SERVER_SOFTWARE=Microsoft-IIS/7.5&URL=/CityService/CityService.Alipay.Aop.Gateway/Gateway.aspx&HTTP_CONNECTION=keep-alive&HTTP_ACCEPT=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8&HTTP_ACCEPT_ENCODING=gzip, deflate, sdch&HTTP_ACCEPT_LANGUAGE=zh-CN,zh;q=0.8&HTTP_COOKIE=ASP.NET_SessionId=4ynvadplj2ckaxuqqhsa4gr5&HTTP_HOST=localhost&HTTP_USER_AGENT=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36&HTTP_UPGRADE_INSECURE_REQUESTS=1
+---------------------------------------------------------------

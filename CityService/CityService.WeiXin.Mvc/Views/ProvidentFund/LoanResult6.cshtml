@@ -1,0 +1,53 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>公积金贷款还清以后需办理的事项</title>
+    <link href="~/Content/jquery.mobile-1.4.5.css" rel="stylesheet" />
+    <script src="~/Script/jquery-1.10.2.min.js"></script>
+    <script src="~/Script/extensions/base.js"></script>
+    <script src="~/Script/jquery.mobile-1.4.5.js"></script>
+</head>
+<body>
+    <div data-role="page" style="background-color: #fff;">
+        <div>
+            <img src="~/Image/苏州市住房公积金管理中心.jpg" style="width:100%;" />
+        </div>
+        <div style="padding:0 10px;padding-bottom:10px;">
+            <div style="width:70px;float:right;z-index:2;font-size:13px;padding:0 10px;text-align:center;font-weight:bolder;word-break:keep-all;">
+                <img src="~/Image/地图.png" style="width:30px;height:30px;" id="img" />
+                <div><strong>办理网点</strong></div>
+            </div>
+            <div>
+                <p style="text-align:center;"><b>公积金贷款还清以后需办理的事项</b></p>
+                <p>职工还清住房公积金购房贷款（含商业）后，必须要到房产交易中心注销该套房产的抵押登记。</p>
+                <p><b>办理流程</b></p>
+                <p>职工（借款人）带齐以下办理所需材料到苏州市住房置业担保公司（或其分公司）取回他项权证→至房产交易中心注销抵押登记。</p>
+                <p><b>所需材料</b></p>
+                <p>1、身份证；</p>
+                <p>2、还清证明；</p>
+                <p>3、担保费发票（提前还清且缴纳过担保费需提供）；</p>
+                <p>4、借款人银行借记卡（提前还清且缴纳过担保费需提供）；</p>
+                <p>5、配偶代为办理的需提供婚姻关系证明。</p>
+                <p><b>友情提示</b></p>
+                <p>1、借款人或配偶到场办理；</p>
+                <p>2、借款人申请组合贷款的，公积金贷款和商业贷款必须全部还清；</p>
+                <p>3、注销他项权证的有关事项请咨询各地房地产交易中心</p>
+            </div>
+        </div>
+        <div style="bottom:0px;">
+            <img src="~/Image/公积金官方微信.png" style="width:100%;" />
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("#img").click(function () {
+                window.location.href = "../ProvidentFund/SelectCardPoint3";
+            });
+        });
+    </script>
+</body>
+</html>

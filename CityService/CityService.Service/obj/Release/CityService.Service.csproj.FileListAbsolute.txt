@@ -1,0 +1,16 @@
+E:\Projects\PreProjects\Source\CityService\CityService.Service\bin\CityService.Service.dll.config
+E:\Projects\PreProjects\Source\CityService\CityService.Service\bin\CityService.Service.dll
+E:\Projects\PreProjects\Source\CityService\CityService.Service\bin\CityService.Service.pdb
+E:\Projects\PreProjects\Source\CityService\CityService.Service\bin\CityService.Alipay.Aop.dll
+E:\Projects\PreProjects\Source\CityService\CityService.Service\bin\EntityFramework.dll
+E:\Projects\PreProjects\Source\CityService\CityService.Service\bin\CityService.Alipay.Aop.pdb
+E:\Projects\PreProjects\Source\CityService\CityService.Service\bin\CityService.DataAccess.pdb
+E:\Projects\PreProjects\Source\CityService\CityService.Service\bin\EntityFramework.xml
+E:\Projects\PreProjects\Source\CityService\CityService.Service\bin\zh-Hans\EntityFramework.resources.dll
+E:\Projects\PreProjects\Source\CityService\CityService.Service\obj\Release\CityService.Service.csprojResolveAssemblyReference.cache
+E:\Projects\PreProjects\Source\CityService\CityService.Service\obj\Release\CityService.Service.dll
+E:\Projects\PreProjects\Source\CityService\CityService.Service\obj\Release\CityService.Service.pdb
+E:\Projects\PreProjects\Source\CityService\CityService.Service\bin\Senparc.Weixin.dll
+E:\Projects\PreProjects\Source\CityService\CityService.Service\bin\Senparc.Weixin.MP.dll
+E:\Projects\PreProjects\Source\CityService\CityService.Service\bin\AlipaySystem.DataAccess.dll
+E:\Projects\PreProjects\Source\CityService\CityService.Service\bin\AlipaySystem.DataAccess.pdb

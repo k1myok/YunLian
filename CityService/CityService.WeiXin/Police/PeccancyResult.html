@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>车辆违章查询结果</title>
+    <meta charset='UTF-8'>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <link href="../Content/alipay/alipay.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/toast.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/button.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/alipay/amui-demo_files/button-group.css" type="text/css" rel="stylesheet" />
+
+    <script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../Scripts/extensions/base.js"></script>
+    <script type="text/javascript" src="../Content/alipay/amui-demo_files/amui.js"></script>
+</head>
+<body>
+    <div data-role="page" id="page">
+        <div data-role="content" style="background-color:#EFEFF4;">
+            <div class="am-list am-list-5lb" am-mode="flat chip">
+                <div class="am-toast" id="toast">
+                    <div class="am-toast-text">
+                        <span class="am-toast-icon am-icon" am-mode="toast-loading"></span> 正在查询...
+                    </div>
+                </div>  
+                <div class="am-list-body" id="PeccInfo">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="padding-left:15px;padding-right:15px;margin-top:15PX;">
+        <button id="searchButton" type="button" class="am-button" am-mode="blue" onclick="turn()">完成查询</button>
+    </div>
+    <div id="fuwu" style="display: block;font-family:STHeitiSC  ;font-size: 12px; margin-bottom: 15px; margin-left: 0px;margin-top:15px; width: 100%; text-align: center; bottom: 0px;z-index:-1;">
+        <div class="am-agreement am-ft-gray am-ft-sm">
+            <p>
+                本服务由苏州市公安局<br />苏州云联智慧信息技术应用有限公司提供支持
+            </p>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            var result = getCookie("result");
+            var temp = JSON.parse(result);
+            var htm = "";
+            for (var i = 0; i < temp.data.length; i++) {
+                htm += '<div style="padding-top:20px">' +
+                        '<div class="am-list-item">' +
+                        '<div class="am-list-label" style="width:25%">单据流水号</div>' +
+                        ' <div class="am-list-content">' +
+                                      '' + temp.data[i].sn + '' +
+                        '  </div>' +
+                        ' </div>' +
+                        '<div class="am-list-item am-list-item-form">' +
+                        '<div class="am-list-label" style="width:25%">违章地点</div>' +
+                        ' <div class="am-list-control" style="line-height:auto;border-left:0px;border-right:0px;border-top:0px;width:75%">' +
+                                      '' + temp.data[i].address + '' +
+                        '  </div>' +
+                        ' </div>' +
+
+                        '<div class="am-list-item">' +
+                        '<div class="am-list-label" style="width:25%">发现机关</div>' +
+                        ' <div class="am-list-control" style="line-height:auto;border-left:0px;border-right:0px;border-top:0px;width:75%">' +
+                                      '' + temp.data[i].provider + '' +
+                        '  </div>' +
+                        ' </div>' +
+                        '<div class="am-list-item">' +
+                        '<div class="am-list-label" style="width:25%">罚款金额</div>' +
+                        ' <div class="am-list-content">' +
+                                      '' + temp.data[i].fins + ' 元' +
+                        '  </div>' +
+                        ' </div>' +
+                        '<div class="am-list-item">' +
+                        '<div class="am-list-label" style="width:25%"> 违章行为</div>' +
+                        ' <div class="am-list-control" style="line-height:auto;border-left:0px;border-right:0px;border-top:0px;width:75%">' +
+                                      '' + temp.data[i].violation + '' +
+                        '  </div>' +
+                        ' </div>' +
+                        '<div class="am-list-item">' +
+                        '<div class="am-list-label" style="width:25%">是否已处理</div>' +
+                        ' <div class="am-list-content">' +
+                                      '' + temp.data[i].processFlag + '' +
+                        '  </div>' +
+                        ' </div>' +
+                        '<div class="am-list-item">' +
+                        '<div class="am-list-label" style="width:25%">是否已交款</div>' +
+                        ' <div class="am-list-content">' +
+                                      '' + temp.data[i].payFineFlag + '' +
+                        '  </div>' +
+                        ' </div>' +
+                        '<div class="am-list-item">' +
+                        '<div class="am-list-label" style="width:25%">违章时间</div>' +
+                        ' <div class="am-list-content">' +
+                                      '' + temp.data[i].time + '' +
+                        '  </div>' +
+                        ' </div>' +
+                        '<a class="am-list-item" href="SelectPeccancyPhoto.html?path=' + temp.data[i].photos + '">' +
+                            '<div class="am-list-content">违章图片</div>' +
+                            '<div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>' +
+                        '</a>' +
+                        '</div>';
+            }
+
+            $("#PeccInfo").html(htm);
+            $("#toast").hide();
+           
+        });
+         
+        function turn()
+        {
+            location.href ="https://city.weixin.qq.com/cgi-bin/entry?result_data=%7b%22template_id%22%3a%22suzhougongan_jiaotongweifachaxun%22%7d#wechat_redirect";
+        }
+    </script>
+</body>
+</html>
