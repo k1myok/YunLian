@@ -1,0 +1,253 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>贷款还款受理点</title>
+    <link href="~/Content/jquery.mobile-1.4.5.css" rel="stylesheet" />
+    <script src="~/Script/jquery-1.10.2.min.js"></script>
+    <script src="~/Script/extensions/base.js"></script>
+    <script src="~/Script/jquery.mobile-1.4.5.js"></script>
+    <style>
+        .ui-page-theme-a .ui-btn, html .ui-bar-a .ui-btn, html .ui-body-a .ui-btn, html body .ui-group-theme-a .ui-btn, html head + body .ui-btn.ui-btn-a, .ui-page-theme-a .ui-btn:visited, html .ui-bar-a .ui-btn:visited, html .ui-body-a .ui-btn:visited, html body .ui-group-theme-a .ui-btn:visited, html head + body .ui-btn.ui-btn-a:visited {
+            background-color: #fff;
+            border-color: #ddd;
+            color: #333;
+            text-shadow: 0 1px 0 #f3f3f3;
+        }
+    </style>
+</head>
+<body>
+    <div data-role="page">
+        <script>
+            function Show(address) {
+                window.location.href = '../ProvidentFund/SelectPointResult?address=' + address;
+            }
+        </script>
+        <div data-role="content" style="padding:0 0 10px 0;">
+            <div>
+                <img src="~/Image/苏州市住房公积金管理中心.jpg" style="width:100%;" />
+            </div>
+            <div style="padding-top:10px;padding-bottom:0;">
+                <div style="padding-bottom:5px;padding-left:10px;">
+                    <span style="font-size:20px;"><b>贷款还款受理点</b></span>
+                </div>
+                <div data-role="collapsibleset">
+                    <div data-role="collapsible" data-inset="false">
+                        <h2 style="padding-left:15px;">姑苏虎丘分中心</h2>
+                        <ul data-role="listview" data-inset="false" class="ui-listview ui-listview-inset ui-corner-all ui-shadow" style="margin:0px;">
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('苏州市干将东路879号')"><h4>建设银行-干将支行</h4><p>干将东路879号</p><p>65127019</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('苏州市阊胥路88号')"><h4>工商银行-分行营业部</h4><p>阊胥路88号</p><p>68622100</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('苏州市干将东路877号')"><h4>工商银行-东吴支行</h4><p>十梓街528号</p><p>65112113</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('苏州市狮山路65号')"><h4>农业银行-新区商业街支行</h4><p>狮山路65号</p><p>68246815</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('苏州市干将西路188号')"><h4>中国银行-分行营业部</h4><p>干将西路188号</p><p>65113558-5133</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('苏州市南园北路77号')"><h4>交通银行-城中支行</h4><p>南园北路77号</p><p>65186165</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('苏州市苏慧路28号')"><h4>交通银行-分行营业部</h4><p>苏慧路28号</p><p>62565593</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('苏州市狮山路35号')"><h4>苏州银行-狮山路支行</h4><p>狮山路35号</p><p>68780416</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('苏州市干将东路877号')"><h4>苏州银行-姑苏服务大厅</h4><p>干将东路877号</p><p>65238776</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('苏州市阊胥路419号')"><h4>光大银行-金阊支行</h4><p>阊胥路419号</p><p>65585019</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('苏州市三香路6号')"><h4>江苏银行-总行营业部</h4><p>三香路6号</p><p>68631835</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('苏州市人民路1478号')"><h4>浦发银行-姑苏支行</h4><p>人民路1478号</p><p>67297362、67274546</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('苏州市钟园路718号')"><h4>浦发银行-分行营业部</h4><p>钟园路718号</p><p>62609736</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('苏州市竹辉路258号')"><h4>中信银行-苏州分行</h4><p>竹辉路258号</p><p>67295271、67556975</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('苏州市园区旺墩路188号建屋大厦1楼')"><h4>兴业银行-分行营业部</h4><p>园区旺墩路188号建屋大厦1楼</p><p>66607899、66607871</p></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div data-role="collapsible" data-inset="false">
+                        <h2 style="padding-left:15px;">吴中分中心</h2>
+                        <ul data-role="listview" data-inset="false" class="ui-listview ui-listview-inset ui-corner-all ui-shadow" style="margin:0px;">
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('苏州市宝带东路398号')"><h4>工商银行-吴中支行营业部</h4><p>宝带东路398号</p><p>65254743</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('苏州市东吴北路108号')"><h4>中国银行-吴中支行营业部</h4><p>东吴北路108号</p><p>65029160</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('苏州市宝带西路420号')"><h4>农业银行-沧浪新城支行</h4><p>宝带西路420号</p><p>66355303</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('苏州市天灵路98号')"><h4>建设银行-入驻服务大厅办理处</h4><p>天灵路98号</p><p>66056109</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('苏州市吴中东路169号')"><h4>建设银行-东苑支行</h4><p>吴中东路169号</p><p>66057302</p></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div data-role="collapsible" data-inset="false">
+                        <h2 style="padding-left:15px;">相城分中心</h2>
+                        <ul data-role="listview" data-inset="false" class="ui-listview ui-listview-inset ui-corner-all ui-shadow" style="margin:0px;">
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('苏州市嘉元路666号')"><h4>工商银行-工行相城支行</h4><p>嘉元路666号</p><p>65491266</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('苏州市嘉元路588号')"><h4>农业银行-农行相城支行</h4><p>嘉元路588号</p><p>65764339</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('苏州市嘉元路618号')"><h4>中国银行-中行相城支行</h4><p>嘉元路618号</p><p>65760757</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('苏州市华元路780号')"><h4>建设银行-建行相城支行</h4><p>华元路780号</p><p>65493844</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('苏州市嘉元路450号嘉元广场')"><h4>交通银行-交行相城支行</h4><p>嘉元路450号嘉元广场</p><p>65761796</p></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div data-role="collapsible" data-inset="false">
+                        <h2 style="padding-left:15px;">昆山分中心</h2>
+                        <ul data-role="listview" data-inset="false" class="ui-listview ui-listview-inset ui-corner-all ui-shadow" style="margin:0px;">
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('昆山市凯迪城铂金广场B座')"><h4>建设银行-高新区支行</h4><p>凯迪城铂金广场B座</p><p>57512061</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('昆山市前进中路162号')"><h4>工商银行-开发区支行营业部还贷专柜</h4><p>前进中路162号</p><p>57331151</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('昆山市人民北路98号')"><h4>农业银行-农行个贷中心</h4><p>人民北路98号</p><p>57539101</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('昆山市珠江北路278号')"><h4>中国银行-一楼营业厅</h4><p>珠江北路278号</p><p>57370243</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('昆山市前进西路205号')"><h4>交通银行-私人金融部</h4><p>前进西路205号</p><p>57556096</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('昆山市震川路102号')"><h4>农村商业银行-震川支行</h4><p>震川路102号</p><p>57534782</p></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div data-role="collapsible" data-inset="false">
+                        <h2 style="padding-left:15px;">太仓分中心</h2>
+                        <ul data-role="listview" data-inset="false" class="ui-listview ui-listview-inset ui-corner-all ui-shadow" style="margin:0px;">
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('太仓县城厢镇上海东路10号')"><h4>工商银行-太仓支行营业部</h4><p>城厢镇上海东路10号</p><p>0512-53576069</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('太仓县城厢镇上海西路2号')"><h4>农业银行-太仓支行营业部</h4><p>城厢镇上海西路2号</p><p>0512-53541200</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('太仓县城厢镇太平北路55-5号')"><h4>建设银行-太仓新区支行</h4><p>城厢镇太平北路55-5号</p><p>0512-53530750</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('太仓县城厢镇新华东路68号')"><h4>中国银行-太仓支行营业部</h4><p>城厢镇新华东路68号</p><p>0512-53530196</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('太仓县城厢镇上海东路8号')"><h4>交通银行-太仓支行营业部</h4><p>城厢镇上海东路8号</p><p>0512-53108600</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('太仓县城厢镇上海东路1号')"><h4>苏州银行-太仓支行营业部</h4><p>城厢镇上海东路1号</p><p>0512-53205878</p></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div data-role="collapsible" data-inset="false">
+                        <h2 style="padding-left:15px;">吴江分中心</h2>
+                        <ul data-role="listview" data-inset="false" class="ui-listview ui-listview-inset ui-corner-all ui-shadow" style="margin:0px;">
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('苏州吴江区松陵镇高新路860号')"><h4>建设银行-吴江城南支行</h4><p>吴江区松陵镇高新路860号</p><p>63418567</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('苏州吴江区松陵镇流虹路570号')"><h4>工商银行-吴江支行营业部</h4><p>吴江区松陵镇流虹路570号</p><p>63414133</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('苏州吴江区松陵镇中山北路2号')"><h4>农业银行-吴江三角井储蓄所</h4><p>吴江区松陵镇中山北路2号</p><p>63414121</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('苏州吴江区松陵镇鲈乡北路2号')"><h4>中国银行-吴江支行</h4><p>吴江区松陵镇鲈乡北路2号</p><p>63425945</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('苏州吴江区松陵镇永康路256号')"><h4>交通银行-吴江支行</h4><p>吴江区松陵镇永康路256号</p><p>63410418</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('苏州吴江区松陵镇中山南路1777号')"><h4>吴江农村商业银行-吴江农商行</h4><p>吴江区松陵镇中山南路1777号</p><p>63969875</p></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div data-role="collapsible" data-inset="false">
+                        <h2 style="padding-left:15px;">常熟分中心</h2>
+                        <ul data-role="listview" data-inset="false" class="ui-listview ui-listview-inset ui-corner-all ui-shadow" style="margin:0px;">
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('常熟海虞北路23号')"><h4>工商银行常熟支行-工行常熟支行营业部</h4><p>常熟海虞北路23号</p><p>52877161</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('常熟海虞北路36号')"><h4>建设银行常熟支行-建行常熟支行（驻服务大厅）</h4><p>常熟海虞北路36号</p><p>52886181</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('常熟海虞北路17号')"><h4>农业银行常熟支行-农行常熟支行个贷中心</h4><p>常熟海虞北路17号</p><p>52871510</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('常熟海虞北路13号')"><h4>中国银行常熟支行-中行常熟支行个金部</h4><p>常熟海虞北路13号</p><p>52879531</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('常熟市枫林路38号')"><h4>交通银行常熟分行-交行常熟分行营业部</h4><p>常熟市枫林路38号</p><p>52897834</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('常熟新世纪大道58号')"><h4>常熟农村商业银行-常熟农村商业银行营业部</h4><p>常熟新世纪大道58号</p><p>52909301</p></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div data-role="collapsible" data-inset="false">
+                        <h2 style="padding-left:15px;">张家港分中心</h2>
+                        <ul data-role="listview" data-inset="false" class="ui-listview ui-listview-inset ui-corner-all ui-shadow" style="margin:0px;">
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('张家港杨舍镇人民中路5号')"><h4>工商银行-工行公积金中心</h4><p>杨舍镇人民中路5号(市民服务中心C区)</p><p>58693706</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('张家港杨舍镇人民中路5号')"><h4>农业银行- 农行公积金中心</h4><p>杨舍镇人民中路5号(市民服务中心C区)</p><p>58685720</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('张家港杨舍镇人民中路5号')"><h4>建行张家港支行-万红支行</h4><p>杨舍镇人民中路5号(市民服务中心C区)</p><p>58617879</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('张家港杨舍镇沙洲西路228号')"><h4>建行张家港支行-万红支行</h4><p>杨舍镇沙洲西路228号</p><p>58189873</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('张家港杨舍镇人民中路5号')"><h4>中国银行-中行公积金中心</h4><p>杨舍镇人民中路5号(市民服务中心C区)</p><p>58108198</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('张家港杨舍镇人民中路5号')"><h4>交通银行-交行公积金房贷部</h4><p>杨舍镇人民中路5号(市民服务中心C区)</p><p>56793990</p></a>
+                            </li>
+                            <li>
+                                <a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('张家港杨舍镇人民中路5号')"><h4>张家港农村商业银行-农商行人民分理处</h4><p>杨舍镇人民中路5号(市民服务中心C区)</p><p>58113990</p></a>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+        <div style="bottom:0px;">
+            <img src="~/Image/公积金官方微信.png" style="width:100%;" />
+        </div>
+    </div>
+</body>
+</html>

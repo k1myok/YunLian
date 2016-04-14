@@ -66,9 +66,10 @@
                 type: 'get',
                 contentType: 'text/json',
                 success: function (msg) {
-                    if (msg.d == null)
+                    var temp = JSON.parse(msg);
+                    if (temp.succ==false)
                         return;
-                    addPlacesToList($.parseJSON(msg.d), keywords);
+                    addPlacesToList($.parseJSON(msg), keywords);
                 },
                 error: function (xhr) {
                 },
@@ -106,13 +107,14 @@
                     type: 'get',
                     contentType: 'text/json',
                     success: function (msg) {
-                        if (msg.d == null)
+                        var temp = JSON.parse(msg);
+                        if (temp.succ ==false)
                             return;
                         $("#imgInfo").show();
-                        var item = $.parseJSON(msg.d);
+                       
                         //$("#image").css("background-image","url(" + item.data + ")")
-                        $("#image").attr("src", item.data)
-                        $("#title").html(info.devName);
+                        $("#image").attr("src", temp.data)
+                        $("#title").html(temp.devName);
                     },
                     error: function (xhr) {
                     },

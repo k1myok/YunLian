@@ -218,7 +218,23 @@ namespace CityService.Service
             }
             return result;
         }
-
+        /// <summary>
+        /// 监控点模糊查询
+        /// </summary>
+        /// <param name="place">监控点模糊查询</param>
+        /// <returns></returns>
+        [WebGet(ResponseFormat = WebMessageFormat.Json)]
+        [OperationContract]
+        public string GetVideoslocation(string place)
+        {
+            var url = string.Format("http://221.224.13.5:8190/econsole/api/query/monitors/search?address={0}", place);
+            var result = HttpHelper.GetHtmlEx(url, Encoding.UTF8);
+            if (result == null)
+            {
+                return null;
+            }
+            return result;
+        }
         /// <summary>
         /// 获取所有分局下的派出所
         /// </summary>
@@ -436,23 +452,7 @@ namespace CityService.Service
             }
             return result;
         }
-        /// <summary>
-        /// 监控点模糊查询
-        /// </summary>
-        /// <param name="place">监控点模糊查询</param>
-        /// <returns></returns>
-        [WebGet(ResponseFormat = WebMessageFormat.Json)]
-        [OperationContract]
-        public string GetVideoslocation(string place)
-        {
-            var url = string.Format("http://221.224.13.5:8190/econsole/api/query/monitors/search?address={0}", place);
-            var result = HttpHelper.GetHtmlEx(url,Encoding.UTF8);
-            if (result == null)
-            {
-                return null;
-            }
-            return result;
-        }
+
 
         [OperationContract]
         [WebGet(ResponseFormat = WebMessageFormat.Json)]
@@ -573,7 +573,6 @@ namespace CityService.Service
             }
             return result;
         }
-
         [OperationContract]
         [WebInvoke(Method = "POST",
                     BodyStyle = WebMessageBodyStyle.Wrapped,

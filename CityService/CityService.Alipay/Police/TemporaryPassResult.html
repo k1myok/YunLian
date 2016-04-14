@@ -89,18 +89,19 @@
                 contentType: 'text/json',
                 data: "tempPass=" + tempPass,
                 success: function (msg) {
-                    if (msg.d.msg != null) {
-                        alert(msg.d.msg);
+                    var temp = JSON.parse(msg);
+                    if (temp.msg != null) {
+                        alert(temp.msg);
                         window.location.href = "SelectTemporaryPass.html";
                     } else {
-                        $("#fzr").html(msg.d.data.fzr);
-                        $("#yxq").html(msg.d.data.yxq);
-                        $("#gxdx").html(msg.d.data.gxdx);
-                        $("#yzwp").html(msg.d.data.yzwp);
-                        $("#cph").html(msg.d.data.cph);
-                        $("#lxdh").html(msg.d.data.lxdh);
-                        $("#sqsy").html(msg.d.data.sqsy);
-                        var xslx = msg.d.data.xslx.toString().replace("@", "<br/>");
+                        $("#fzr").html(temp.data.fzr);
+                        $("#yxq").html(temp.data.yxq);
+                        $("#gxdx").html(temp.data.gxdx);
+                        $("#yzwp").html(temp.data.yzwp);
+                        $("#cph").html(temp.data.cph);
+                        $("#lxdh").html(temp.data.lxdh);
+                        $("#sqsy").html(temp.data.sqsy);
+                        var xslx = temp.data.xslx.toString().replace("@", "<br/>");
 
                         $("#xslx").html(xslx);
                     }

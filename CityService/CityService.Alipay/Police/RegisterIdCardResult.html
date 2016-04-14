@@ -63,14 +63,15 @@
                 contentType: 'text/json',
                 data: "idcard=" + idcard +"&no="+ no,
                 success: function (msg) {
-                    if (msg.d.msg != null) {
-                        alert(msg.d.msg);
+                    var temp = JSON.parse(msg);
+                    if (temp.msg != null) {
+                        alert(temp.msg);
                         window.location.href = "SelectRegisterIDCard.html";
                     } else {
-                        $("#no").html(msg.d.data.Case_Id);
+                        $("#no").html(temp.data.Case_Id);
                         $("#idcard").html(idcard);
-                        $("#status").html(msg.d.data.Status);
-                        $("#phone").html(msg.d.data.Tel);
+                        $("#status").html(temp.data.Status);
+                        $("#phone").html(temp.data.Tel);
                     }
                 },
                 error: function (xhr) {

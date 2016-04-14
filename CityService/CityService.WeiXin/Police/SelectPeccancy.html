@@ -17,30 +17,43 @@
     <script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="../Scripts/extensions/base.js"></script>
     <script type="text/javascript" src="../Content/alipay/amui-demo_files/amui.js"></script>
+    <style>
+        .ui-block-a, .ui-block-b, .ui-block-c, .ui-block-d {
+            padding: 10px 0 10px 0;
+            text-align: center;
+        }
+
+            .ui-block-a img, .ui-block-b img, .ui-block-c img, .ui-block-d img {
+                width: 43%;
+                padding-top: 10%;
+            }
+
+        .am-button {
+            padding-LEFT: 15PX;
+        }
+    </style>
+
 </head>
 <body>
-    <div data-role="page"style="margin-top:15px;">
-        <div class="am-toast" id="toast">
-            <div class="am-toast-text">
-                <span class="am-toast-icon am-icon" am-mode="toast-loading"></span> 正在查询...
-            </div>
+    <div data-role="page">
+        <div data-role="header" class="am-header" style="background-color:#EFEFF4;display:none;">
         </div>
         <div data-role="content" style="background-color:#EFEFF4">
             <div class="am-list" am-mode="flat form">
                 <div class="am-list-body">
                     <div class="am-list-item am-input-autoclear">
                         <div class="am-list-label">车牌号</div>
-                        <div class="am-list-content">苏E
+                        <div class="am-list-control">
                             <input id="inputLicense"  placeholder="请输入完整的车牌号" type="text" value="">
                         </div>
                     </div>
                     <div class="am-list-item am-input-autoclear">
                         <div class="am-list-label">车架号</div>
-                        <div class="am-list-content">
+                        <div class="am-list-control">
                             <input id="inputVin" placeholder="请输入车架号后七位" type="text" value="">
                         </div>
                     </div>
-                    <div class="am-list-footer" style="padding-top:10px;font-size:16px;">温馨提示：车架号，即行驶证上的车辆识别代码</div>
+                    <div class="am-list-footer" style="padding-top:10px">温馨提示：车架号，即行驶证上的车辆识别代码</div>
                     <div style="padding-left:15px;padding-right:15px;margin-top:15PX;">
                         <button id="searchButton" type="button" class="am-button" am-mode="blue disabled">查询</button>
                     </div>
@@ -57,70 +70,61 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript">
-        $(function ()
-        {
+    <script>
+        $(function () {
             $("#toast").hide();
             window.setInterval("checkButtonState()", 200);
             $("#searchButton").click(function () {
                 var lic = $("#inputLicense").val();
                 var vin = $("#inputVin").val();
                 if (lic && vin) {
-                    if (vin.length != 7)
-                    {
-                       alert("车架号输入错误，请重新输入7位");
+                    if (vin.length != 7) {
+                        alert("车架号输入格式错误");
                     }
-                    else
-                   {
+                    else {
                         $("#toast").show();
                         result();
                     }
+
                 }
             });
         });
 
-        function checkButtonState()
-        {
+        function checkButtonState() {
             if ($("#inputLicense").val() && $("#inputVin").val()) {
                 $("#searchButton").attr("am-mode", "blue");
             }
-            else
-            {
+            else {
                 $("#searchButton").attr("am-mode", "blue disabled");
             }
-         }
-    function result() 
-    {
-        var url = "../../CityService.Service/PoliceService.svc/SelectPeccancyInfo";
-        var lic = "苏E" + $("#inputLicense").val();
-        var vin = $("#inputVin").val();
-        $.ajax(url, {
-            type: 'get',
-            contentType: 'text/json',
-            data: "lic=" + lic + "&vin=" + vin,
-            success: function (msg) {
-                if (msg != "") {
-                    var temp = JSON.parse(msg);
-                    if (temp.succ == true&&temp.data!="") {
-                        document.cookie = "result=" + msg;
-                        window.location.href = "PeccancyResult.html";
+        }
+        function result() {
+            var url = "../../CityService.Service/PoliceService.svc/SelectPeccancyInfo";
+            var lic = $("#inputLicense").val();
+            var vin = $("#inputVin").val();
+            $.ajax(url, {
+                type: 'get',
+                contentType: 'text/json',
+                data: "lic=" + lic + "&vin=" + vin,
+                success: function(msg){
+                    var temp =JSON.parse(msg);
+                    if (temp.succ == true) {
+                        if (temp.data.length > 0) {
+                            window.location.href = 'PeccancyResult.html?lic=' + lic + '&vin=' + vin;
+                        }
+                        else {
+                            alert("未查到交通违法信息!");
+                        }
                     }
-                    else {
-                        alert("未查到交通违法信息!");
-                    }
+                },
+                error: function (xhr) {
+                },
+                complete: function () {
+                    $("#toast").hide();
                 }
-                else
-                {
-                    alert("车牌号或车架号输入错误，请重新输入！");
-                }
-            },
-            error: function (xhr) {
-            },
-            complete: function () {
-                $("#toast").hide();
-            }
-        });
-    }
- </script>
+            });
+        }
+           
+    </script>
 </body>
 </html>

@@ -14,13 +14,13 @@ namespace CityService.UnitTestProject
         public void TestMethod1()
         {
             //var url = "http://221.224.13.5:8190/econsole/api/query/violation/vehicle?license=%E8%8B%8FEUM029&vin=0072420";
-            var url = "http://221.224.13.5:8190/econsole/api/query/violation/vehicle?license=苏EUM029&vin=0072420";
-            //var url = "http://221.224.13.5:8190/econsole/api/query/violation/vehicle";
-            var result = HttpHelper.GetHtmlExByByPost(url, "", Encoding.UTF8);
+            //var url = "http://221.224.13.5:8190/econsole/api/query/violation/vehicle?license=苏EUM029&vin=0072420";
+            ////var url = "http://221.224.13.5:8190/econsole/api/query/violation/vehicle";
+            //var result = HttpHelper.GetHtmlExByByPost(url, "", Encoding.UTF8);
 
             //var result = PostHttp(url, "{'license':'苏EUM029','vin':'0072420'}", "text/xml; charset=utf-8");
             //var result = new HttpWebRequestHelper().Post(url, "","","utf-8");
-            Assert.IsNotNull(result);
+            //Assert.IsNotNull(result);
         }
         [TestMethod]
         public void TestMethod2()

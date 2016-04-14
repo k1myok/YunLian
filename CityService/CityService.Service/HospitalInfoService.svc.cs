@@ -22,6 +22,7 @@ using System.Xml;
 [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
 public class HospitalInfoService
 {
+    public static string OpenID = "";
     // 要使用 HTTP GET，请添加 [WebGet] 特性。(默认 ResponseFormat 为 WebMessageFormat.Json)
     // 要创建返回 XML 的操作，
     //     请添加 [WebGet(ResponseFormat=WebMessageFormat.Xml)]，
@@ -33,24 +34,19 @@ public class HospitalInfoService
         // 在此处添加操作实现
         return;
     }
-    private static string wechatappId = ConfigurationManager.AppSettings["wechatappId"];
-    private static string wechatsecret = ConfigurationManager.AppSettings["wechatsecret"];
-    /// <summary>
-    /// 获取微信用户的OPenID
-    /// </summary>
-    /// <param name="code">接收到的临时参数</param>
-    /// <returns>返回包含openID的json字符串</returns>
     [OperationContract]
     [WebGet(ResponseFormat = WebMessageFormat.Json)]
     public string GetwechatOPenID(string code)
     {
         var grantType = "authorization_code";
-        var url = string.Format("https://api.weixin.qq.com/sns/oauth2/access_token?appid={0}&secret={1}&code={2}&grant_type={3}", wechatappId, wechatsecret, code, grantType);
+        var appId = "wx33cfa168b97bde1b";
+        var secret = "88626508ef000750214526005b12cb7c";
+        var url = string.Format("https://api.weixin.qq.com/sns/oauth2/access_token?appid={0}&secret={1}&code={2}&grant_type={3}", appId, secret, code, grantType);
         var result = HttpHelper.GetHtmlExByByPost(url, "", Encoding.UTF8);
         return result;
     }
     /// <summary>
-    /// 获取支付宝当前用户的OpenID
+    /// 获取当前用户的OpenID
     /// </summary>
     /// <param name="code"></param>
     /// <returns>openID</returns>
@@ -66,14 +62,15 @@ public class HospitalInfoService
        //var privateKeyPem = @"C:\Projects\PreProjects\Releases\CityService\CityService.Service\Resource\rsa_private_key.pem";
       
         //本地服务器
-        var privateKeyPem = @"E:\Projects\PreProjects\Source\CityService\CityService.Service\Resource\rsa_private_key.pem";
+        //var privateKeyPem = @"E:\Projects\PreProjects\Source\CityService\CityService.Service\Resource\rsa_private_key.pem";
         //阿里 7 /156
-        //var privateKeyPem = @"D:\Projects\Preprojects\Releases\CityService\CityService.Service\Resource\rsa_private_key.pem";
+        var privateKeyPem = @"D:\Projects\Preprojects\Releases\CityService\CityService.Service\Resource\rsa_private_key.pem";
         IAopClient client = new DefaultAopClient(url, appid, privateKeyPem);
         AlipaySystemOauthTokenRequest req = new AlipaySystemOauthTokenRequest();
         req.Code = code;
         req.GrantType = "authorization_code";
         AlipaySystemOauthTokenResponse res = client.Execute(req);
+        OpenID = res.AlipayUserId;
         return res.AlipayUserId;
     }
     [WebGet]
@@ -481,6 +478,7 @@ public class HospitalInfoService
         var result = HttpHelper.GetHtmlExByByPost("http://plat.jssz12320.cn:8001/szregplat/yuyue.wsdl", args, Encoding.UTF8);
         return result;     
     }
+
     /// <summary>
     /// 获取常用挂号人姓名列表
     /// </summary>
@@ -746,9 +744,9 @@ public class HospitalInfoService
  /// <returns></returns>
     [WebGet]
     [OperationContract]
-    public string CancelRegister(string IDCard, string Name, string SN,string Style)
+    public string CancelRegister(string IDCard, string Name, string SN, string Style)
     {
-  
+
         var fileName = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "Resource\\Template\\register_req.txt");
         var conte = System.IO.File.ReadAllText(fileName);
         var args = string.Format(conte, "DelReg", SN, IDCard, Name, "", Style, "", "", "", "", "", "", "", "", "");
@@ -757,7 +755,6 @@ public class HospitalInfoService
         XDocument document = XDocument.Parse(result);
         var bodyNode = document.Root.Element(XName.Get("Body", document.Root.Name.NamespaceName));
         var responseNode = bodyNode.Element(XName.Get("RegisterRsp", "http://new.webservice.namespace"));
-        var resultNode = responseNode.Element(XName.Get("ResultCode", "http://new.webservice.namespace"));
         return null;
     }
     /// <summary>
@@ -924,10 +921,10 @@ public class HospitalInfoService
                         reg.DoctorName = r.Element(XName.Get("DoctorName", "http://new.webservice.namespace")).Value;
                         reg.ClinicDateTime = r.Element(XName.Get("ClinicDateTime", "http://new.webservice.namespace")).Value;
                         reg.ClinicSerialNo = r.Element(XName.Get("ClinicSN", "http://new.webservice.namespace")).Value;
-                        reg.Style = userNode.Element(XName.Get("InsureType", "http://new.webservice.namespace")).Value;
                         reg.RegisterDate = Convert.ToDateTime(r.Element(XName.Get("RegDateTime", "http://new.webservice.namespace")).Value);
                         reg.RegisterFee = r.Element(XName.Get("UnpayedFee", "http://new.webservice.namespace")).Value;
                         reg.SN = r.Element(XName.Get("SN", "http://new.webservice.namespace")).Value;
+                        reg.Style = userNode.Element(XName.Get("InsureType", "http://new.webservice.namespace")).Value;
                         regList.Add(reg);
 
                     }
@@ -938,6 +935,8 @@ public class HospitalInfoService
 
         return regList;
     }
+
+
     /// <summary>
     /// 根据openID获取身份证号码
     /// </summary>

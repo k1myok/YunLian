@@ -53,9 +53,10 @@
                 contentType: 'text/json',
                 data: "name=" + name ,
                 success: function (msg) {
-                    if (msg.d != null) {
-                        if (msg.d.succ == "True") {
-                            $("#snCount").html(msg.d.data);
+                    var temp = JSON.parse(msg);
+                    if (temp!= null) {
+                        if (temp.succ == true) {
+                            $("#snCount").html(temp.data);
                         }
                         else {
                             return;

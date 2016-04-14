@@ -58,9 +58,10 @@
                 type: 'get',
                 contentType: 'text/json',
                 success: function (msg) {
-                    if (msg.d == null)
+                    var temp = JSON.parse(msg);
+                    if (temp.succ ==false)
                         return;
-                    addPlacesToList($.parseJSON(msg.d));
+                    addPlacesToList($.parseJSON(msg));
                 },
                 error: function (xhr) {
                 },

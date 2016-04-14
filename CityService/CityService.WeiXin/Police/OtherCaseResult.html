@@ -27,7 +27,7 @@
                     <span class="am-toast-icon am-icon" am-mode="toast-loading"></span> 正在查询...
                 </div>
             </div>
-                <div class="am-list am-list-5lb" am-mode="flat chip form">
+                <div class="am-list am-list-5lb" am-mode="flat form">
                     <div class="am-list-body" id="otherCaseResult">
                         <div class="am-list-item">
                             <div class="am-list-label">办件名称</div>
@@ -49,10 +49,7 @@
                             <div class="am-list-label">承诺时间</div>
                             <div class="am-list-content am-ft-right" id="DueDate"></div>
                         </div>
-                        <div class="am-list-item">
-                            <div class="am-list-label">办件状态</div>
-                            <div class="am-list-content am-ft-right" id="ProjectStatus"></div>
-                        </div>
+                        
                         <div class="am-list-item">
                             <div class="am-list-label">来办性质</div>
                             <div class="am-list-content am-ft-right" id="UnitAttribute"></div>
@@ -61,11 +58,19 @@
                             <div class="am-list-label">来办人姓名</div>
                             <div class="am-list-content am-ft-right" id="UnitName"></div>
                         </div>
+                        <div class="am-list-item">
+                            <div class="am-list-label">办件状态</div>
+                            <div class="am-list-content am-ft-right" id="ProjectStatus"></div>
+                        </div>
                     </div>
+                    <div class="am-list-header">备注</div>
+                    <div class="am-list-item">
+                        办件状态包括：待预审，已预审，审核处理中，已办结，转答复，已退回，已撤销
+                    </div>
+               
                 </div>
             </div>
         </div>
-    </div>
     <div style="padding-left:15px;padding-right:15px;margin-top:15PX;">
         <button id="searchButton" type="button" class="am-button" am-mode="blue" onclick="turn()">完成查询</button>
     </div>
@@ -118,7 +123,7 @@
       }
       function turn()
       {
-          location.href = "https://city.weixin.qq.com/cgi-bin/entry?result_data=%7b%22template_id%22%3a%22suzhoushixinxizhongxin_banshidatingjinduchaxun%22%7d#wechat_redirect";
+          location.href = "https://city.weixin.qq.com/cgi-bin/entry?result_data=%7b%22template_id%22%3a%22suzhougongan_datingbanjianchaxun%22%7d#wechat_redirect";
       }
  </script>
  </body>

@@ -2,6 +2,7 @@ E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\
 E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\CityService.Alipay.Mvc.ProvidentFund.dll
 E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\CityService.Alipay.Mvc.ProvidentFund.pdb
 E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\Antlr3.Runtime.dll
+E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\CityService.Service.Controllers.dll
 E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\DotNetOpenAuth.Core.dll
 E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\DotNetOpenAuth.OAuth.Consumer.dll
 E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\DotNetOpenAuth.OAuth.dll
@@ -15,6 +16,7 @@ E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\
 E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\Newtonsoft.Json.dll
 E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\System.Net.Http.dll
 E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\System.Net.Http.Formatting.dll
+E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\System.Net.Http.WebRequest.dll
 E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\System.Spatial.dll
 E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\System.Web.Helpers.dll
 E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\System.Web.Http.dll
@@ -29,8 +31,12 @@ E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\
 E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\WebGrease.dll
 E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\WebMatrix.Data.dll
 E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\WebMatrix.WebData.dll
+E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\Senparc.Weixin.MP.dll
+E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\CityService.Alipay.Aop.dll
+E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\AFG.Map.Transform.dll
 E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\Org.Mentalis.Security.Cryptography.dll
 E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\Mono.Math.dll
+E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\CityService.Service.Controllers.pdb
 E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\DotNetOpenAuth.Core.xml
 E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\DotNetOpenAuth.OAuth.xml
 E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\DotNetOpenAuth.OAuth.Consumer.xml
@@ -40,6 +46,7 @@ E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\
 E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\Newtonsoft.Json.xml
 E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\System.Net.Http.xml
 E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\System.Net.Http.Formatting.xml
+E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\System.Net.Http.WebRequest.xml
 E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\System.Web.Helpers.xml
 E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\System.Web.Http.xml
 E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\System.Web.Http.WebHost.xml
@@ -59,6 +66,7 @@ E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\
 E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\zh-Hans\EntityFramework.resources.dll
 E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\zh-Hans\System.Net.Http.resources.dll
 E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\zh-Hans\System.Net.Http.Formatting.resources.dll
+E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\zh-Hans\System.Net.Http.WebRequest.resources.dll
 E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\zh-Hans\System.Web.Helpers.resources.dll
 E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\zh-Hans\System.Web.Http.resources.dll
 E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\zh-Hans\System.Web.Http.WebHost.resources.dll
@@ -98,13 +106,7 @@ E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\
 E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\ru\System.Spatial.resources.dll
 E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\zh-Hans\System.Spatial.resources.dll
 E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\zh-Hant\System.Spatial.resources.dll
+E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\obj\Release\CityService.Alipay.Mvc.ProvidentFund.csprojResolveAssemblyReference.cache
 E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\obj\Release\CityService.Alipay.Mvc.ProvidentFund.dll
 E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\obj\Release\CityService.Alipay.Mvc.ProvidentFund.pdb
-E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\CityService.Service.Controllers.dll
-E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\Senparc.Weixin.MP.dll
-E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\CityService.Alipay.Aop.dll
-E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\AFG.Map.Transform.dll
-E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\Senparc.Weixin.dll
-E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\CityService.Service.Controllers.pdb
-E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\CityService.Alipay.Aop.pdb
-E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\obj\Release\CityService.Alipay.Mvc.ProvidentFund.csprojResolveAssemblyReference.cache
+E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Mvc.ProvidentFund\bin\Senparc.Weixin.MP.xml

@@ -32,7 +32,6 @@
             padding-LEFT: 15PX;
         }
     </style>
-
 </head>
 <body>
     <div data-role="page">
@@ -42,10 +41,11 @@
                 <div class="am-list-header">我要提问</div>
                 <div class="am-list-body">
                     <div class="am-list-item">
-                        <textarea id="inputName"placeholder="请输入要提问的内容" rows="6"></textarea>
+                        <textarea id="inputName"placeholder="请输入要提问的内容
+" rows="6"></textarea>
                 </div>
             </div>
-                     <div class="am-list-footer"style="color:red;">提示：目前留言咨询只提供关于苏州市公安局行政许可、行政审批和管理服务事项的咨询。</div>
+			 <div class="am-list-footer"style="color:red;font-size:16px;">提示:非公安业务请勿在此咨询!<br>目前留言咨询只提供关于苏州市公安局行政许可、行政审批和管理服务事项的咨询.</div>
                      <div style="padding-left:15px;padding-right:15px;margin-top:30PX;">
                         <button id="searchButton" type="button" class="am-button" am-mode="blue disabled" onclick="submit()">提交</button>
                      </div>
@@ -55,7 +55,7 @@
         <div id="fuwu" style="display: block;font-family:STHeitiSC  ;font-size: 12px; margin-bottom: 15px; margin-left: 0px; width: 100%; text-align: center; position: absolute; bottom: 0px;z-index:-1;">
             <div class="am-agreement am-ft-gray am-ft-sm">
                 <p>
-                    本服务由苏州市公安局<br />苏州云联智慧信息技术应用有限公司提供支持
+                    本服务由苏州市公安局提供支持
                 </p>
             </div>   
         </div>
@@ -92,9 +92,10 @@
                     data: args,
                     dataType: "json",
                     success: function (msg) {
-                        if (msg.d.succ == "True") {
+                        var temp = JSON.parse(msg);
+                        if (temp.succ ==true) {
                             alert("问题已经提交");
-                            location.href = "Homepage.html";
+                            location.href = "Consultingservices.html";
                         }
                         else {
                             alert("提交失败");

@@ -84,19 +84,21 @@
                 contentType: 'text/json',
                 data: "idcard=" + idcard,
                 success: function (msg) {
-                    if (msg.d.msg != null) {
-                        alert(msg.d.msg);
+                    var temp = JSON.parse(msg);
+                    if (temp.msg != null) {
+                        alert(temp.msg);
                         window.location.href = "SelectRegisterResidentCard.html";
-                    } else
+                    }
+                    else
                     {
-                        $("#Name").html(msg.d.data.姓名);
-                        $("#Sex").html(msg.d.data.性别);
-                        $("#jmCard").html(msg.d.data.居民证号);
-                        $("#hjAddress").html(msg.d.data.户籍所在地);
-                        $("#no").html(msg.d.data.居住证号);
-                        $("#Address").html(msg.d.data.现居住地址);
-                        $("#Status").html(msg.d.data.居住证状态);
-                        $("#isGet").html(msg.d.data.是否领居住证);
+                        $("#Name").html(temp.data.姓名);
+                        $("#Sex").html(temp.data.性别);
+                        $("#jmCard").html(temp.data.居民证号);
+                        $("#hjAddress").html(temp.data.户籍所在地);
+                        $("#no").html(temp.data.居住证号);
+                        $("#Address").html(temp.data.现居住地址);
+                        $("#Status").html(temp.data.居住证状态);
+                        $("#isGet").html(temp.data.是否领居住证);
                     }
                 },
                 error: function (xhr) {

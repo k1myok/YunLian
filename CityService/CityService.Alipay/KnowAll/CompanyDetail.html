@@ -65,10 +65,6 @@
     }
     function addTolist(result)
     {
-        var temp = result.data.TJNR;
-        alert(temp);
-        var tem = temp.replace("（0512）12345。","");
-        alert(tem);
         var ht = "<div class='am-list-item'>" +
                         '<div class="am-list-thumb am-list-thumb-radius"><img src=' + result.data.LOGO + ' width="46" height="46" alt=""></div>' +
                         '<div class="am-list-content">' +
@@ -79,9 +75,7 @@
                '<div class="am-list-header">一、经营范围</div>' +
                '<div class="am-list-item">' + result.data.JYFW + '</div>' +
                  '<div class="am-list-header">二、推荐内容</div>' +
-                '<div class="am-list-item">' + tem +
-                '</div>' +
-                 '<div class="am-list-item" style="border:0px;"> <br><a href=tel:0512-12345>0512-12345</a></div>' +
+                '<div class="am-list-item">' + result.data.TJNR + '</div>' +
         '<div class="am-list-header">三、服务承诺</div>' +
                 '<div class="am-list-item">' + result.data.FWCL + '</div>';
         $("#company").html(ht);

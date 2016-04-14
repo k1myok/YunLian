@@ -153,7 +153,8 @@
                 contentType: 'text/json',
                 data: "idcard=" + idcard + "&no=" + no,
                 success: function (msg) {
-                    if (msg.d.msg != null) {
+                    var temp = JSON.parse(msg);
+                    if (temp.msg != null) {
                         alert("没查到相关信息，请确认后再重试");
                     } else {
                         window.location.href = 'RegisterIdCardResult.html?idcard=' + idcard + '&no=' + no;

@@ -31,10 +31,10 @@ namespace CityService.Service
         }
 
         // 在此处添加更多操作并使用 [OperationContract] 标记它们
-        //C:\Projects\PreProjects\Releases\CityService\CityService.Service\CityServicesInfo
-        //C:\Projects\PreProjects\Releases\CityService\CityService.Service\CityServicesInfo
-        //C:\Projects\PreProjects\Releases\CityService\CityService.Service\CityServicesInfo
-        //E:\Projects\PreProjects\Source\CityService\CityService.Service\CityServicesInfo  本地
+        //D:\Projects\Preprojects\Releases\CityService\CityService.Service\CityServicesInfo_Alipay
+        //D:\Projects\Preprojects\Releases\CityService\CityService.Service\CityServicesInfo_Alipay
+        //D:\Projects\Preprojects\Releases\CityService\CityService.Service\CityServicesInfo_Alipay
+        //D:\Projects\Preprojects\Releases\CityService\CityService.Service\CityServicesInfo_Alipay  本地
         //D:\Projects\Preprojects\Releases\CityService\CityService.Service\CityServicesInfo_Alipay  7/156
         //E:\Projects\PreProjects\Source\CityService\CityService.Service\CityServicesInfo_Alipay
         [WebGet]
@@ -46,31 +46,31 @@ namespace CityService.Service
 
             if (type == "health")
             {
-                xmlDoc.Load(@"C:\Projects\PreProjects\Releases\CityService\CityService.Service\CityServicesInfo\healthMenuPage.xml");
+                xmlDoc.Load(@"D:\Projects\Preprojects\Releases\CityService\CityService.Service\CityServicesInfo_Alipay\healthMenuPage.xml");
             }
             else if (type == "szqx")
             {
-                xmlDoc.Load(@"C:\Projects\PreProjects\Releases\CityService\CityService.Service\CityServicesInfo\szqxMenuPage.xml");
+                xmlDoc.Load(@"D:\Projects\Preprojects\Releases\CityService\CityService.Service\CityServicesInfo_Alipay\szqxMenuPage.xml");
             }
             else if (type == "traval")
             {
-                xmlDoc.Load(@"C:\Projects\PreProjects\Releases\CityService\CityService.Service\CityServicesInfo\travalMenuPage.xml");
+                xmlDoc.Load(@"D:\Projects\Preprojects\Releases\CityService\CityService.Service\CityServicesInfo_Alipay\travalMenuPage.xml");
             }
             else if (type == "police")
             {
-                xmlDoc.Load(@"C:\Projects\PreProjects\Releases\CityService\CityService.Service\CityServicesInfo\policeMenuPage.xml");
+                xmlDoc.Load(@"D:\Projects\Preprojects\Releases\CityService\CityService.Service\CityServicesInfo_Alipay\policeMenuPage.xml");
             }
             else if (type == "edu")
             {
-                xmlDoc.Load(@"C:\Projects\PreProjects\Releases\CityService\CityService.Service\CityServicesInfo\eduMenuPage.xml");
+                xmlDoc.Load(@"D:\Projects\Preprojects\Releases\CityService\CityService.Service\CityServicesInfo_Alipay\eduMenuPage.xml");
             }
             else if (type == "szbm")
             {
-                xmlDoc.Load(@"C:\Projects\Preprojects\Releases\CityService\CityService.Service\CityServicesInfo\szbmMenuPage.xml");
+                xmlDoc.Load(@"D:\Projects\Preprojects\Releases\CityService\CityService.Service\CityServicesInfo_Alipay\szbmMenuPage.xml");
             }
             else
             {
-                xmlDoc.Load(@"C:\Projects\Preprojects\Releases\CityService\CityService.Service\CityServicesInfo\menuPage.xml");
+                xmlDoc.Load(@"D:\Projects\Preprojects\Releases\CityService\CityService.Service\CityServicesInfo_Alipay\menuPage.xml");
             }
             XmlNode xn = xmlDoc.SelectSingleNode("root");
 
@@ -107,19 +107,19 @@ namespace CityService.Service
 
             if (type == "health")
             {
-                xmlDoc.Load(@"C:\Projects\PreProjects\Releases\CityService\CityService.Service\CityServicesInfo_Alipay\healthMenuPage.xml");
+                xmlDoc.Load(@"D:\Projects\Preprojects\Releases\CityService\CityService.Service\CityServicesInfo_Alipay\healthMenuPage.xml");
             }
             else if (type == "szqx")
             {
-                xmlDoc.Load(@"C:\Projects\Preprojects\Releases\CityService\CityService.Service\CityServicesInfo_Alipay\szqxMenuPage.xml");
+                xmlDoc.Load(@"D:\Projects\Preprojects\Releases\CityService\CityService.Service\CityServicesInfo_Alipay\szqxMenuPage.xml");
             }
             else if (type == "traval")
             {
-                xmlDoc.Load(@"C:\Projects\Preprojects\Releases\CityService\CityService.Service\CityServicesInfo_Alipay\travalMenuPage.xml");
+                xmlDoc.Load(@"D:\Projects\Preprojects\Releases\CityService\CityService.Service\CityServicesInfo_Alipay\travalMenuPage.xml");
             }
             else if (type == "police")
             {
-                xmlDoc.Load(@"C:\Projects\Preprojects\Releases\CityService\CityService.Service\CityServicesInfo_Alipay\policeMenuPage.xml");
+                xmlDoc.Load(@"D:\Projects\Preprojects\Releases\CityService\CityService.Service\CityServicesInfo_Alipay\policeMenuPage.xml");
             }
             else if (type == "edu")
             {

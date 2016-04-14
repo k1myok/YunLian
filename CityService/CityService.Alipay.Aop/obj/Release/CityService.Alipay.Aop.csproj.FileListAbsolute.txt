@@ -1,4 +1,5 @@
 E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Aop\bin\Release\CityService.Alipay.Aop.dll
 E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Aop\bin\Release\CityService.Alipay.Aop.pdb
+E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Aop\obj\Release\CityService.Alipay.Aop.csprojResolveAssemblyReference.cache
 E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Aop\obj\Release\CityService.Alipay.Aop.dll
 E:\Projects\PreProjects\Source\CityService\CityService.Alipay.Aop\obj\Release\CityService.Alipay.Aop.pdb

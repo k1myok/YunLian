@@ -80,10 +80,11 @@
                     guid: guid
                 },
                 success: function (msg) {
-                    if (msg.d.succ == "True") {
-                        var total = parseInt(msg.d.data.totals);
+                    var temp = JSON.parse(msg);
+                    if (temp.succ == true) {
+                        var total = parseInt(temp.data.totals);
                         if (total > 0) {
-                            addTolist(msg.d.data.list);
+                            addTolist(temp.data.list);
                             if (total > page_index) {
                                 $("#moreButton").css("visibility", "visible");
                             }
@@ -94,7 +95,7 @@
                     }
                     else {
                         alert("你还没有进行咨询过");
-                        location.href = "homepage.html";
+                        location.href = "Consultingservices.html";
                     }
                 },
                 error: function () { },
@@ -141,8 +142,9 @@
                     Guid: Guid,
                 },
                 success: function (msg) {
-                    if (msg.d.succ == "True") {
-                        var result = msg.d.data.Context;
+                    var temp = JSON.parse(msg);
+                    if (temp.succ == true) {
+                        var result = temp.data.Context;
                         $("#" + Guid + "").css("display", "");
                         $("#" + Guid + "").append(result);
                     }

@@ -77,8 +77,8 @@
                                 caseid: caseid,
                             },
                             success: function (msg) {
-                                if (msg.d.succ == "True") {
-
+                                var temp = JSON.parse(msg);
+                                if (temp.succ == true) {
                                     window.location.href = 'OtherCaseResult.html?caseid=' + caseid;
                                 }
                                 else {

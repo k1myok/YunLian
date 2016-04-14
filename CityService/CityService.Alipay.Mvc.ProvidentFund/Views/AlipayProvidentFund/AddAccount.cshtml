@@ -1,4 +1,4 @@
-﻿@model CityService.Service.Controllers.Models.User
+﻿@model CityService.Service.Controllers.Models.AlipayUser
 @{
     Layout = null;
 }
@@ -28,7 +28,7 @@
                 <img src="~/Images/苏州市住房公积金管理中心.jpg" style="width:100%;" />
             </div>
             <div class="am-list am-list-5lb" am-mode="flat chip form">
-                <div class="am-list-header">注册账户</div>
+                <div class="am-list-header">注册账户（不含工业园区）</div>
                 <div class="am-list-body">
                     <div class="am-list-item am-input-autoclear">
                         <div class="am-list-label">公积金账户</div>
@@ -55,7 +55,7 @@
                     <div class="am-list-item am-input-autoclear" id="VP">
                         <div class="am-list-label">手机号码</div>
                         <div class="am-list-control">
-                            @Html.TextBoxFor(model => model.Phone, new { type="tel"})
+                            @Html.TextBoxFor(model => model.Phone, new { type = "tel", placeholder = "仅限本地手机号码" })
                         </div>
                         <div class="am-list-button" id="btnVP">
                             <button type="button" id="phone1" onclick="ValidaPhone()"></button>
@@ -216,13 +216,13 @@
                     </script>
                 </div>
             </div>
-            <div id="fuwu" style="display: block;font-family:STHeitiSC;font-size: 12px; margin-bottom: 15px;margin-top:15px; margin-left: 0px; width: 100%; text-align: center;bottom: 0px;z-index:-1;">
-                <div class="am-agreement am-ft-gray am-ft-sm">
-                    <p>
-                        本服务由苏州市住房公积金管理中心<br />苏州云联智慧信息技术应用有限公司提供支持
-                    </p>
-                </div>
-            </div>
+        </div>
+    </div>
+    <div id="fuwu" style="position:absolute;display: block;font-family:STHeitiSC;font-size: 12px; margin-bottom: 15px;margin-top:15px; margin-left: 0px; width: 100%; text-align: center;bottom: 0px;z-index:-1;">
+        <div class="am-agreement am-ft-gray am-ft-sm">
+            <p>
+                本服务由苏州市住房公积金管理中心<br />苏州云联智慧信息技术应用有限公司提供支持
+            </p>
         </div>
     </div>
 </body>

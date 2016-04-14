@@ -46,46 +46,47 @@
                 contentType: 'text/json',
                 data: "id=" + id,
                 success: function (msg) {
-                    if (msg.d.data.length > 0) {
+                    var temp = JSON.parse(msg);
+                    if (temp.data.length > 0) {
                         var htm = "";
-                        for (var i = 0; i < msg.d.data.length; i++) {
-                            if (msg.d.data[i].isDel == 0) {
+                        for (var i = 0; i < temp.data.length; i++) {
+                            if (temp.data[i].isDel == 0) {
                                 htm += 
                                         '<div class="am-list-item">' +
                                         '<div class="am-list-label" style="line-height:26px;width:120px;">分局</div>' +
                                         ' <div class="am-list-content am-ft-right" style="line-height:26px;text-align:right">' +
-                                                      '' + msg.d.data[i].DeptName + '' +
+                                                      '' + temp.data[i].DeptName + '' +
                                         '  </div>' +
                                         ' </div>' +
                                         '<div class="am-list-item">' +
                                         '<div class="am-list-label">派出所</div>' +
                                         ' <div class="am-list-content am-ft-right">' +
-                                                      '' + msg.d.data[i].PcsName + '' +
+                                                      '' + temp.data[i].PcsName + '' +
                                         '  </div>' +
                                         ' </div>' +
                                         '<div class="am-list-item">' +
                                         '<div class="am-list-label">警务室</div>' +
                                         ' <div class="am-list-content am-ft-right">' +
-                                                      '' + msg.d.data[i].JWSName + '' +
+                                                      '' + temp.data[i].JWSName + '' +
                                         '  </div>' +
                                         ' </div>' +
                                         '<div class="am-list-item am-list-item-form">' +
                                         '<div class="am-list-label" style="width:25%">街道地址</div>' +
                                         ' <div class="am-list-control" style="width:75%;text-align:right">' +
-                                                      '' + msg.d.data[i].StreetAdd + '' +
+                                                      '' + temp.data[i].StreetAdd + '' +
                                         '  </div>' +
                                         ' </div>' +
 
                                         '<div class="am-list-item">' +
                                         '<div class="am-list-label" style="width:25%">警员姓名</div>' +
                                         ' <div class="am-list-content am-ft-right" style="line-height:26px;text-align:right">' +
-                                                      '' + msg.d.data[i].PoliceMan + '' +
+                                                      '' + temp.data[i].PoliceMan + '' +
                                         '  </div>' +
                                         ' </div>' +
                                         '<div class="am-list-item">' +
                                         '<div class="am-list-label" style="width:25%">联系电话</div>' +
                                         ' <div class="am-list-content am-ft-right" style="line-height:26px;text-align:right">' +
-                                                      '' + msg.d.data[i].Phone + '' +
+                                                      '' + temp.data[i].Phone + '' +
                                         '  </div>' +
                                         ' </div>';
                                         

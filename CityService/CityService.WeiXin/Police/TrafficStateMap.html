@@ -51,11 +51,12 @@
      <script type="text/javascript">
          $(function () {
              $("#toast").show();
-             //window.setInterval("checkButtonState()", 200);
+             var place = $("#place").val();
              if (place != "") {
                  search();
              }
-             else {
+             else
+             {
                  Getlocationlist();
              }
          });
@@ -70,13 +71,6 @@
                  Getlocationlist();
              }
          }
-         //$("#place").bind('input propertychange', function() {
-         //    if (place != "")
-         //    { search(); }
-         //    else {
-         //        Getlocationlist();
-         //    }
-         //});
          function checkButtonState()
          {
              if (place != "")
@@ -85,7 +79,6 @@
                  Getlocationlist();
              }
          }
-      
          function search()
          {
              var place = $("#place").val();

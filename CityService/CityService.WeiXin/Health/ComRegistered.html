@@ -23,7 +23,12 @@
 <body>
     <!--挂号信息-->
     <div data-role="page">
-        <div data-role="content" style="background-color:#EFEFF4;visibility:;">
+        <div class="am-toast" id="toast">
+            <div class="am-toast-text">
+                <span class="am-toast-icon am-icon" am-mode="toast-loading"></span> 正在加载...
+            </div>
+        </div>
+        <div data-role="content" style="background-color:#EFEFF4;">
             <div class="am-list am-list-5lb" am-mode="flat form">
                 <div class="am-list-body">
                     <div class="am-list-header">挂号信息</div>
@@ -143,7 +148,7 @@
             </div>
         </div>
         <div class="weui_btn_area">
-            <a class="weui_btn weui_btn_primary" id="SaveButton">挂 号</a>
+            <a class="weui_btn weui_btn_primary" id="SaveButton" onclick="SaveRegister()">挂 号</a>
         </div>
     </div>
     <!--号源详情结束-->
@@ -200,6 +205,7 @@
         }
         //专家挂号信息到12320平台
         function SaveRegistered() {
+            $("#toast").show();
             //var OpenID = document.cookie.split(";")[0].split("=")[1];
             //var storage = window.localStorage;
             //var OpenID = storage.getItem("openID");
@@ -254,6 +260,11 @@
                 },
                 error: function () {
                     return;
+                },
+                complete: function ()
+                {
+
+                    $("#toast").hide();
                 }
             });
         }

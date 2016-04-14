@@ -42,8 +42,8 @@ namespace Aop.Api.Test
         private static void MenuGet()
         {
             IAopClient client = GetAlipayClient();
-            AlipayMobilePublicMenuGetRequest req = new AlipayMobilePublicMenuGetRequest();
-            AlipayMobilePublicMenuGetResponse res = client.Execute(req);
+            //AlipayMobilePublicMenuGetRequest req = new AlipayMobilePublicMenuGetRequest();
+            //AlipayMobilePublicMenuGetResponse res = client.Execute(req);
             System.Console.Write("-------------公众号菜单查询-------------" + "\n\r");
            // System.Console.Write("Body:" + res.Body + "\n\r");
         }
@@ -56,8 +56,7 @@ namespace Aop.Api.Test
             // -----线上地址-----
             // string serverUrl = "https://openapi.alipay.com/gateway.do";
             //应用ID
-            //string appId = "2013092500031084";
-            string appId = "2015060100099966";
+            string appId = "2013092500031084";
             //商户私钥
             string privateKeyPem = GetCurrentPath() + "aop-sandbox-RSA-private-c#.pem";
 

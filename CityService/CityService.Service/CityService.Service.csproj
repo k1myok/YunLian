@@ -44,11 +44,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CityService.DataAccess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\CityService.DataAccess.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -58,10 +54,10 @@
       <HintPath>bin\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Senparc.Weixin">
-      <HintPath>..\CityService.Service.Controllers\bin\Debug\Senparc.Weixin.dll</HintPath>
+      <HintPath>..\CityService.WeiXin.Mvc\bin\Senparc.Weixin.dll</HintPath>
     </Reference>
     <Reference Include="Senparc.Weixin.MP">
-      <HintPath>..\CityService.Service.Controllers\bin\Debug\Senparc.Weixin.MP.dll</HintPath>
+      <HintPath>..\CityService.WeiXin.Mvc\bin\Senparc.Weixin.MP.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data.Entity" />
@@ -119,7 +115,6 @@
     <None Include="Properties\PublishProfiles\AlipayServer.pubxml" />
     <None Include="Properties\PublishProfiles\AlipayServer_Debug.pubxml" />
     <None Include="Properties\PublishProfiles\app.china-ccw.comtest.pubxml" />
-    <None Include="Properties\PublishProfiles\test.pubxml" />
     <None Include="Service References\EhrServiceReference\configuration91.svcinfo" />
     <None Include="Service References\EhrServiceReference\configuration.svcinfo" />
     <None Include="Service References\EhrServiceReference\Reference.svcmap">
@@ -340,6 +335,10 @@
     <ProjectReference Include="..\CityService.Alipay.Aop\CityService.Alipay.Aop.csproj">
       <Project>{9c11cae5-5188-4e71-825b-68fc3135728a}</Project>
       <Name>CityService.Alipay.Aop</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CityService.DataAccess\CityService.DataAccess.csproj">
+      <Project>{24ea58ff-ba57-4211-abcc-f0eda89fb065}</Project>
+      <Name>CityService.DataAccess</Name>
     </ProjectReference>
     <ProjectReference Include="..\CityService.DataAccess\CityService.DataAccess.csproj">
       <Project>{24ea58ff-ba57-4211-abcc-f0eda89fb065}</Project>

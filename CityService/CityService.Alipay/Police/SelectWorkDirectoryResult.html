@@ -138,26 +138,26 @@
                 type: 'get',
                 contentType: 'text/json',
                 success: function (msg) {
-
-                    $("#wdType").html(msg.d.data.bjlx);
-                    $("#wdAddress").html(msg.d.data.bldd);
-                    $("#wdTime").html(msg.d.data.blsj);
-                    $("#wdBSXZ").html(msg.d.data.bsxz);
-                    $("#wdPhone").html(msg.d.data.ckdh);
-                    $("#wdEndTime").html(msg.d.data.cnqx);
-                    $("#wdFDQX").html(msg.d.data.fdqx);
-                    var htm = '<img src="' + msg.d.data.lct + '"/>';
+                    var temp = JSON.parse(msg);
+                    $("#wdType").html(temp.data.bjlx);
+                    $("#wdAddress").html(temp.data.bldd);
+                    $("#wdTime").html(temp.data.blsj);
+                    $("#wdBSXZ").html(temp.data.bsxz);
+                    $("#wdPhone").html(temp.data.ckdh);
+                    $("#wdEndTime").html(temp.data.cnqx);
+                    $("#wdFDQX").html(temp.data.fdqx);
+                    var htm = '<img src="' + temp.data.lct + '"/>';
                     $("#wdLCT").html(htm);
-                    $("#wdZT").html(msg.d.data.spzt);
-                    $("#wdCL").html(msg.d.data.sqcl);
-                    $("#wdXZ").html(msg.d.data.sxxz);
-                    if (msg.d.data.title != "") {
-                        $("#wdtitle").html(msg.d.data.title);
+                    $("#wdZT").html(temp.data.spzt);
+                    $("#wdCL").html(temp.data.sqcl);
+                    $("#wdXZ").html(temp.data.sxxz);
+                    if (temp.data.title != "") {
+                        $("#wdtitle").html(temp.data.title);
                     } else
                     {
                         $("#wdtitle").html(name);
                     }
-                    $("#wdYJ").html(msg.d.data.xkyj);
+                    $("#wdYJ").html(temp.data.xkyj);
                 },
                 error: function (xhr) {
                 },

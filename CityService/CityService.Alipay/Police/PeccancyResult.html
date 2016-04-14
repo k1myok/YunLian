@@ -50,62 +50,63 @@
                 contentType: 'text/json',
                 data: "lic=" + lic + "&vin=" + vin,
                 success: function (msg) {
-                    if (msg.d != null) {
-                        if (msg.d.succ == "True" && msg.d.data.length>0) {
+                    var temp = JSON.parse(msg);
+                    if (temp != null) {
+                        if (temp.succ ==true&&temp.data.length>0) {
                             var htm = "";
-                            for (var i = 0; i < msg.d.data.length; i++)
+                            for (var i = 0; i < temp.data.length; i++)
                             {
                                 htm += '<div style="padding-top:20px">' +
                                         '<div class="am-list-item">' +
                                         '<div class="am-list-label" style="width:25%">单据流水号</div>' +
                                         ' <div class="am-list-content">' +
-                                                      '' + msg.d.data[i].SN + '' +
+                                                      '' + temp.data[i].sn + '' +
                                         '  </div>' +
                                         ' </div>' +
                                         '<div class="am-list-item am-list-item-form">' +
                                         '<div class="am-list-label" style="width:25%">违章地点</div>' +
                                         ' <div class="am-list-control" style="line-height:auto;border-left:0px;border-right:0px;border-top:0px;width:75%">' +
-                                                      '' + msg.d.data[i].Address + '' +
+                                                      '' + temp.data[i].address + '' +
                                         '  </div>' + 
                                         ' </div>' +
 
                                         '<div class="am-list-item">' +
                                         '<div class="am-list-label" style="width:25%">发现机关</div>' +
                                         ' <div class="am-list-control" style="line-height:auto;border-left:0px;border-right:0px;border-top:0px;width:75%">' +
-                                                      '' + msg.d.data[i].Provider + '' +
+                                                      '' + temp.data[i].provider + '' +
                                         '  </div>' +
                                         ' </div>' +
                                         '<div class="am-list-item">' +
                                         '<div class="am-list-label" style="width:25%">罚款金额</div>' +
                                         ' <div class="am-list-content">' +
-                                                      '' + msg.d.data[i].Fins + ' 元' +
+                                                      '' + temp.data[i].fins + ' 元' +
                                         '  </div>' +
                                         ' </div>' +
                                         '<div class="am-list-item">' +
                                         '<div class="am-list-label" style="width:25%"> 违章行为</div>' +
                                         ' <div class="am-list-control" style="line-height:auto;border-left:0px;border-right:0px;border-top:0px;width:75%">' +
-                                                      '' + msg.d.data[i].Violation + '' +
+                                                      '' + temp.data[i].violation + '' +
                                         '  </div>' +
                                         ' </div>' +
                                         '<div class="am-list-item">' +
                                         '<div class="am-list-label" style="width:25%">是否已处理</div>' +
                                         ' <div class="am-list-content">' +
-                                                      '' + msg.d.data[i].ProcessFlag + '' +
+                                                      '' + temp.data[i].processFlag + '' +
                                         '  </div>' +
                                         ' </div>' +
                                         '<div class="am-list-item">' +
                                         '<div class="am-list-label" style="width:25%">是否已交款</div>' +
                                         ' <div class="am-list-content">' +
-                                                      '' + msg.d.data[i].PayFineFlag + '' +
+                                                      '' + temp.data[i].payFineFlag + '' +
                                         '  </div>' +
                                         ' </div>' +
                                         '<div class="am-list-item">' +
                                         '<div class="am-list-label" style="width:25%">违章时间</div>' +
                                         ' <div class="am-list-content">' +
-                                                      '' + msg.d.data[i].Time + '' +
+                                                      '' + temp.data[i].time + '' +
                                         '  </div>' +
                                         ' </div>' +
-                                        '<a class="am-list-item" href="SelectPeccancyPhoto.html?path=' + msg.d.data[i].Photos[0] + '">' +
+                                        '<a class="am-list-item" href="SelectPeccancyPhoto.html?path=' + temp.data[i].photos[0] + '">' +
                                             '<div class="am-list-content">违章图片</div>' +
                                             '<div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>'+
                                         '</a>'+
@@ -117,13 +118,13 @@
                         else
                         {
                             alert("未查到交通违法信息!");
-                            window.location.href = "SelectPeccancy.html";
+                           // window.location.href = "SelectPeccancy.html";
                         }
 
                     } else
                     {
                         alert("请输入正确的车牌号和车架号信息!");
-                        window.location.href = "SelectPeccancy.html";
+                       // window.location.href = "SelectPeccancy.html";
                     }
                     
                 },

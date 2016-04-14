@@ -136,10 +136,7 @@
     }
     function Del()
     {
-        //var OpenID = document.cookie.split(";")[0].split("=")[1];
-        var storage = window.localStorage;
-        var OpenID = storage.getItem("openID");
-
+        var OpenID = document.cookie.split(";")[0].split("=")[1];
         var url = "../../CityService.Service/HospitalInfoService.svc/DelMember";
         $.ajax(url, {
             type: "GET",

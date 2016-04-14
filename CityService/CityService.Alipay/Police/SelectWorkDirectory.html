@@ -48,14 +48,15 @@
                             type: 'get',
                             contentType: 'text/json',
                             success: function (msg) {
-                                if (msg.d.msg != null) {
-                                    alert(msg.d.msg);
+                                var temp = JSON.parse(msg);
+                                if (temp.msg != null) {
+                                    alert(temp.msg);
                                     window.location.href = "WorkDirectory.html";
                                 }
                                 else {
                                     var htm = "";
-                                    for (var i = 0; i < msg.d.data.list.length; i++) {
-                                        var ac = msg.d.data.list[i].AppCase;
+                                    for (var i = 0; i < temp.data.list.length; i++) {
+                                        var ac = temp.data.list[i].AppCase;
                                         var AppCase = "";
                                         if (ac == 1) {
                                             AppCase = "可申报";
@@ -64,26 +65,26 @@
                                         }
 
                                         var typ = "";
-                                        if (msg.d.data.list[i].Type == 2) {
+                                        if (temp.data.list[i].Type == 2) {
                                             typ = fj;
                                         } else {
                                             typ = "市局";
                                         }
-                                        htm += '<a class="am-list-item" href="SelectWorkDirectoryResult.html?pcg=' + msg.d.data.list[i].ProjectCaseGuid + '&pcdg=' + msg.d.data.list[i].ProjectCaseDepGuid + '&type=' + msg.d.data.list[i].Type + '&name=' + msg.d.data.list[i].ProjectCaseName + '">' +
-                                           '<div class="am-list-content">' + msg.d.data.list[i].ProjectCaseName +
+                                        htm += '<a class="am-list-item" href="SelectWorkDirectoryResult.html?pcg=' + temp.data.list[i].ProjectCaseGuid + '&pcdg=' + temp.data.list[i].ProjectCaseDepGuid + '&type=' + temp.data.list[i].Type + '&name=' + temp.data.list[i].ProjectCaseName + '">' +
+                                           '<div class="am-list-content">' + temp.data.list[i].ProjectCaseName +
                                            '<div class="am-list-brief">' + typ + ' / ' + AppCase + '</div>' + '</div>' +
                                            ' <div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>' +
                                         '</a>';
                                     }
                                     $("#list").html(htm);
 
-                                    if (pageIndex <= msg.d.data.totalPage) {
+                                    if (pageIndex <= temp.data.totalPage) {
                                         $("#showMore").css("display", "block");
                                     } else {
                                         $("#showMore").css("display", "none");
                                     }
 
-                                    if (msg.d.data.list.length < pageCount) {
+                                    if (temp.data.list.length < pageCount) {
                                         $("#showMore").css("display", "none");
                                     }
                                 }
@@ -113,14 +114,15 @@
                             type: 'get',
                             contentType: 'text/json',
                             success: function (msg) {
-                                if (msg.d.msg != null)
+                                var temp = JSON.parse(msg);
+                                if (temp.msg != null)
                                 {
                                     $("#showMore").css("display", "none");
                                     return;
                                 } else {
                                     var htm = $("#list").html();
-                                    for (var i = 0; i < msg.d.data.list.length; i++) {
-                                        var ac = msg.d.data.list[i].AppCase;
+                                    for (var i = 0; i < temp.data.list.length; i++) {
+                                        var ac = temp.data.list[i].AppCase;
                                         var AppCase = "";
                                         if (ac == 1) {
                                             AppCase = "可申报";
@@ -129,26 +131,26 @@
                                         }
 
                                         var typ = "";
-                                        if (msg.d.data.list[i].Type == 2) {
+                                        if (temp.data.list[i].Type == 2) {
                                             typ = fj;
                                         } else {
                                             typ = "市局";
                                         }
-                                        htm += '<a class="am-list-item" href="SelectWorkDirectoryResult.html?pcg=' + msg.d.data.list[i].ProjectCaseGuid + '&pcdg=' + msg.d.data.list[i].ProjectCaseDepGuid + '&type=' + msg.d.data.list[i].Type + '&name=' + msg.d.data.list[i].ProjectCaseName + '">' +
-                                           '<div class="am-list-content">' + msg.d.data.list[i].ProjectCaseName +
+                                        htm += '<a class="am-list-item" href="SelectWorkDirectoryResult.html?pcg=' + temp.data.list[i].ProjectCaseGuid + '&pcdg=' + temp.data.list[i].ProjectCaseDepGuid + '&type=' + temp.data.list[i].Type + '&name=' + temp.data.list[i].ProjectCaseName + '">' +
+                                           '<div class="am-list-content">' + temp.data.list[i].ProjectCaseName +
                                            '<div class="am-list-brief">' + typ + ' / ' + AppCase + '</div>' + '</div>' +
                                            ' <div class="am-list-arrow"><span class="am-icon" am-mode="arrow-horizontal"></span></div>' +
                                         '</a>';
                                     }
                                     $("#list").html(htm);
 
-                                    if (pageIndex < msg.d.data.totalPage) {
+                                    if (pageIndex < temp.data.totalPage) {
                                         $("#showMore").css("display", "block");
                                     } else {
                                         $("#showMore").css("display", "none");
                                     }
 
-                                    if (msg.d.data.list.length < pageCount)
+                                    if (temp.data.list.length < pageCount)
                                     {
                                         $("#showMore").css("display", "none");
                                     }

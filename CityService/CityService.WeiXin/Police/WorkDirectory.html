@@ -36,10 +36,13 @@
 </head>
 <body>
     <div data-role="page">
-        <div data-role="header" class="am-header" style="background-color:#EFEFF4;display:none;">
-        </div>
         <div data-role="content" style="background-color:#EFEFF4">
             <div class="am-list am-list-5lb" am-mode="flat chip form">
+                <div class="am-toast" id="toast">
+                    <div class="am-toast-text">
+                        <span class="am-toast-icon am-icon" am-mode="toast-loading"></span> 正在查询...
+                    </div>
+                </div>
                 <div class="am-list-body">
                     <div class="am-list-item am-input-autoclear">
                         <div class="am-list-label">公安局</div>
@@ -87,25 +90,46 @@
             </p>
         </div>
     </div>
-                <script>
-                    $(document).ready(function () {
-                        $("#GAJFJ").css("display", "none");
-                        $("#PCS").css("display", "none");
-
-                        $("#GAJType").on('change', function () {
-                            if ($("#GAJType").val() == 2) {
-
-                                var url = "../../CityService.Service/PoliceService.svc/SelectPoliceBureausInfo";
+    <script>
+        $(document).ready(function () {
+            
+            JZType();
+        $("#GAJFJ").css("display", "none");
+        $("#PCS").css("display", "none");
+       
+        $("#GAJType").on('change', function ()
+        {
+            if ($("#GAJType").val() == 2) {
+                var url = "../../CityService.Service/PoliceService.svc/SelectPoliceBureausInfo";
+                $.ajax(url, {
+                    type: 'get',
+                    contentType: 'text/json',
+                    success: function (msg) {
+                        var temp = JSON.parse(msg);
+                        var htm = '<div class="am-list-item am-input-autoclear"  >' +
+                            '<div class="am-list-label">分局：</div>' +
+                                    '<div class="am-list-control">' +
+                                    '<select id="FJType">' +
+                                    '<option value="">全部</option>';
+                        for (var i = 0; i < temp.data.length; i++) {
+                            htm += '<option value="' + temp.data[i].Id + '">' + temp.data[i].Name + '</option>';
+                        }
+                        htm += '</select></div></div>';
+                        $("#GAJFJ").html(htm);
+                        $("#GAJFJ").css("display", "block");
+                        $("#FJType").on('change', function () {
+                            if ($("#FJType").val() != "") {
+                                var url = "../../CityService.Service/PoliceService.svc/SelectPoliceStationInfo";
                                 $.ajax(url, {
                                     type: 'get',
                                     contentType: 'text/json',
-                                    success: function (msg)
-                                    {
+                                    data: "id=" + $("#FJType").val(),
+                                    success: function (msg) {
                                         var temp = JSON.parse(msg);
                                         var htm = '<div class="am-list-item am-input-autoclear"  >' +
-                                            '<div class="am-list-label">分局：</div>' +
+                                            '<div class="am-list-label">派出所：</div>' +
                                                     '<div class="am-list-control">' +
-                                                    '<select id="FJType">' +
+                                                    '<select id="PCSType">' +
                                                     '<option value="">全部</option>';
                                         for (var i = 0; i < temp.data.length; i++) {
                                             htm += '<option value="' + temp.data[i].Id + '">' + temp.data[i].Name + '</option>';
@@ -113,105 +137,77 @@
 
                                         htm += '</select></div></div>';
 
-                                        $("#GAJFJ").html(htm);
-                                        $("#GAJFJ").css("display", "block");
-
-
-                                        $("#FJType").on('change', function () {
-                                            if ($("#FJType").val() != "") {
-                                                var url = "../../CityService.Service/PoliceService.svc/SelectPoliceStationInfo";
-                                                $.ajax(url, {
-                                                    type: 'get',
-                                                    contentType: 'text/json',
-                                                    data: "id=" + $("#FJType").val(),
-                                                    success: function (msg) {
-                                                        var temp = JSON.parse(msg);
-                                                        var htm = '<div class="am-list-item am-input-autoclear"  >' +
-                                                            '<div class="am-list-label">派出所：</div>' +
-                                                                    '<div class="am-list-control">' +
-                                                                    '<select id="PCSType">'+
-                                                                    '<option value="">全部</option>';
-                                                        for (var i = 0; i < temp.data.length; i++) {
-                                                            htm += '<option value="' + temp.data[i].Id + '">' + temp.data[i].Name + '</option>';
-                                                        }
-
-                                                        htm += '</select></div></div>';
-
-                                                        $("#PCS").html(htm);
-                                                        $("#PCS").css("display", "block");
-                                                    },
-                                                    error: function (xhr) {
-                                                    },
-                                                    complete: function () {
-                                                    }
-                                                });
-                                            } else
-                                            {
-                                                $("#PCS").css("display", "none");
-                                            }
-                                        });
+                                        $("#PCS").html(htm);
+                                        $("#PCS").css("display", "block");
                                     },
                                     error: function (xhr) {
                                     },
                                     complete: function () {
                                     }
                                 });
-                            } else
-                            {
-                                $("#GAJFJ").css("display", "none");
+                            } else {
+                                $("#PCS").css("display", "none");
                             }
                         });
-                        
-                        var url = "../../CityService.Service/PoliceService.svc/SelectPoliceCategoryInfo";
-                        $.ajax(url, {
-                            type: 'get',
-                            contentType: 'text/json',
-                            success: function (msg) {
-                                var temp = JSON.parse(msg);
-                                var htm = '<div class="am-list-item am-input-autoclear"  >' +
-                                    '<div class="am-list-label">警种</div>' +
-                                            '<div class="am-list-control">' +
-                                            '<select id="JZType">'+
-                                            '<option value="">全部</option>';
-                                for (var i = 0; i < temp.data.length; i++) {
-                                    htm += '<option value="' + temp.data[i].ID + '">' + temp.data[i].Name + '</option>';
-                                }
-
-                                htm += '</select></div></div>';
-                                $("#JZ").html(htm);
-                            },
-                            error: function (xhr) {
-                            },
-                            complete: function () {
-                            }
-                        });
-
-                    });
-
-                    function SelectWorkDirectory()
-                    {
-                        var ty = $("#GAJType").val();
-                        var bi = "";
-                        var pi = "";
-                        var fj = "";
-                        if (ty == 2) {
-                            bi = $("#FJType").val();
-                            fj = $("#FJType").find("option:selected").text();
-                            if (bi != "")
-                            {
-                                pi = $("#PCSType").val();
-                            }
-                        }
-                        var ca = $("#JZType").val();
-                        var kw = $("#sxName").val();
-                        var su = $("#FL").val();
-                        alert(su);
-                        if (su == "" || su == "0"|| su =="1") {
-                            window.location.href = "SelectWorkDirectory.html?ty=" + ty + "&bi=" + bi + "&ca=" + ca + "&kw=" + kw + "&pi=" + pi + "&su=" + su + "&fj=" + fj;
-                        }
-                       
+                    },
+                    error: function (xhr) {
+                    },
+                    complete: function () {
                     }
+                });
+            } else {
+                $("#GAJFJ").css("display", "none");
+            }
+        });
+    });
+  function JZType()
+    {
+        var url = "../../CityService.Service/PoliceService.svc/SelectPoliceCategoryInfo";
+        $.ajax(url, {
+            type: 'get',
+            contentType: 'text/json',
+            success: function (msg) {
+                var temp = JSON.parse(msg);
+                var htm = '<div class="am-list-item am-input-autoclear"  >' +
+                    '<div class="am-list-label">警种</div>' +
+                            '<div class="am-list-control">' +
+                            '<select id="JZType">' +
+                            '<option value="">全部</option>';
+                for (var i = 0; i < temp.data.length; i++) {
+                    htm += '<option value="' + temp.data[i].ID + '">' + temp.data[i].Name + '</option>';
+                }
 
-                </script>
+                htm += '</select></div></div>';
+                $("#JZ").html(htm);
+            },
+            error: function (xhr) {
+            },
+            complete: function () {
+                $("#toast").hide();
+            }
+        });
+
+    }
+    function SelectWorkDirectory() {
+        var ty = $("#GAJType").val();
+        var bi = "";
+        var pi = "";
+        var fj = "";
+        if (ty == 2) {
+            bi = $("#FJType").val();
+            fj = $("#FJType").find("option:selected").text();
+            if (bi != "") {
+                pi = $("#PCSType").val();
+            }
+        }
+        var ca = $("#JZType").val();
+        var kw = $("#sxName").val();
+        var su = $("#FL").val();
+        if (su == "" || su == "0" || su == "1") {
+            window.location.href = "SelectWorkDirectory.html?ty=" + ty + "&bi=" + bi + "&ca=" + ca + "&kw=" + kw + "&pi=" + pi + "&su=" + su + "&fj=" + fj;
+        }
+
+    }
+    </script>
 </body>
 </html>

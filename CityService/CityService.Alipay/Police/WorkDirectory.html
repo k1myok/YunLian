@@ -99,13 +99,14 @@
                                     type: 'get',
                                     contentType: 'text/json',
                                     success: function (msg) {
+                                        var temp = JSON.parse(msg);
                                         var htm = '<div class="am-list-item am-input-autoclear"  >' +
                                             '<div class="am-list-label">分局：</div>' +
                                                     '<div class="am-list-control">' +
                                                     '<select id="FJType">' +
                                                     '<option value="">全部</option>';
-                                        for (var i = 0; i < msg.d.data.length; i++) {
-                                            htm += '<option value="' + msg.d.data[i].Id + '">' + msg.d.data[i].Name + '</option>';
+                                        for (var i = 0; i < temp.data.length; i++) {
+                                            htm += '<option value="' + temp.data[i].Id + '">' + temp.data[i].Name + '</option>';
                                         }
 
                                         htm += '</select></div>' +
@@ -124,13 +125,14 @@
                                                     contentType: 'text/json',
                                                     data: "id=" + $("#FJType").val(),
                                                     success: function (msg) {
+                                                        var temp = JSON.parse(msg);
                                                         var htm = '<div class="am-list-item am-input-autoclear"  >' +
                                                             '<div class="am-list-label">派出所：</div>' +
                                                                     '<div class="am-list-control">' +
                                                                     '<select id="PCSType">'+
                                                                     '<option value="">全部</option>';
-                                                        for (var i = 0; i < msg.d.data.length; i++) {
-                                                            htm += '<option value="' + msg.d.data[i].Id + '">' + msg.d.data[i].Name + '</option>';
+                                                        for (var i = 0; i < temp.data.length; i++) {
+                                                            htm += '<option value="' + temp.data[i].Id + '">' + temp.data[i].Name + '</option>';
                                                         }
 
                                                         htm += '</select></div>'+
@@ -167,6 +169,7 @@
                             type: 'get',
                             contentType: 'text/json',
                             success: function (msg) {
+                                var temp = JSON.parse(msg);
                                 var htm = '<div class="am-list-item" am-mode="select">' +
                                     '<div class="am-list-label">警种</div>' +
                                             '<div class="am-list-control">' +
@@ -174,8 +177,8 @@
                                             '<option value="">全部</option>';
                                            
                                        
-                                for (var i = 0; i < msg.d.data.length; i++) {
-                                    htm += '<option value="' + msg.d.data[i].ID + '">' + msg.d.data[i].Name + '</option>';
+                                for (var i = 0; i < temp.data.length; i++) {
+                                    htm += '<option value="' + temp.data[i].ID + '">' + temp.data[i].Name + '</option>';
                                 }
 
                                 htm += '</select></div>'+

@@ -140,15 +140,15 @@
 }
 
 .am-button:not([am-version])[am-mode~="light"] {
-	color: #04BE02;
-	border-color: #04BE02;
+	color: #0af;
+	border-color: #0af;
 	background: #fff
 }
 
 .am-button:not([am-version])[am-mode~="light"]:active,.am-button:not([am-version])[am-mode~="light"].hover {
-	border: 1px solid #04BE02;
+	border: 1px solid #0af;
 	color: #fff;
-	background: #04BE02
+	background: #0af
 }
 
 .am-button:not([am-version])[am-mode~="light"][am-mode~="red"] {

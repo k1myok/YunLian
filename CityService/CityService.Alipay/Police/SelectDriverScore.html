@@ -107,9 +107,11 @@
                     type: 'get',
                     contentType: 'text/json',
                     data: "dl=" + dl + "&fn=" + fn,
-                    success: function (msg) {
-                        if (msg.d != null) {
-                            if (msg.d.succ == "True" && msg.d.data.XM != null) {
+                    success: function (msg)
+                    {
+                        var temp = JSON.parse(msg);
+                        if (temp != null) {
+                            if (temp.succ == true && temp.data.XM != null) {
                                 window.location.href = 'DriverScoreResult.html?dl=' + dl + '&fn=' + fn;
                             }
                             else {

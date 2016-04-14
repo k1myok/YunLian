@@ -4,11 +4,13 @@ E:\Projects\PreProjects\Source\CityService\CityService.Service.Controllers\bin\R
 E:\Projects\PreProjects\Source\CityService\CityService.Service.Controllers\bin\Release\AFG.Map.Transform.dll
 E:\Projects\PreProjects\Source\CityService\CityService.Service.Controllers\bin\Release\CityService.Alipay.Aop.dll
 E:\Projects\PreProjects\Source\CityService\CityService.Service.Controllers\bin\Release\EntityFramework.dll
+E:\Projects\PreProjects\Source\CityService\CityService.Service.Controllers\bin\Release\Senparc.Weixin.dll
 E:\Projects\PreProjects\Source\CityService\CityService.Service.Controllers\bin\Release\Senparc.Weixin.MP.dll
 E:\Projects\PreProjects\Source\CityService\CityService.Service.Controllers\bin\Release\System.Web.Mvc.dll
-E:\Projects\PreProjects\Source\CityService\CityService.Service.Controllers\bin\Release\Senparc.Weixin.dll
 E:\Projects\PreProjects\Source\CityService\CityService.Service.Controllers\bin\Release\CityService.Alipay.Aop.pdb
 E:\Projects\PreProjects\Source\CityService\CityService.Service.Controllers\bin\Release\EntityFramework.xml
+E:\Projects\PreProjects\Source\CityService\CityService.Service.Controllers\bin\Release\Senparc.Weixin.xml
+E:\Projects\PreProjects\Source\CityService\CityService.Service.Controllers\bin\Release\Senparc.Weixin.MP.xml
 E:\Projects\PreProjects\Source\CityService\CityService.Service.Controllers\bin\Release\System.Web.Mvc.xml
 E:\Projects\PreProjects\Source\CityService\CityService.Service.Controllers\bin\Release\zh-Hans\EntityFramework.resources.dll
 E:\Projects\PreProjects\Source\CityService\CityService.Service.Controllers\bin\Release\zh-Hans\System.Web.Mvc.resources.dll

@@ -1,0 +1,53 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>住房置业担保公司受理点</title>
+    <link href="~/Content/jquery.mobile-1.4.5.css" rel="stylesheet" />
+    <script src="~/Script/jquery-1.10.2.min.js"></script>
+    <script src="~/Script/extensions/base.js"></script>
+    <script src="~/Script/jquery.mobile-1.4.5.js"></script>
+    <style>
+        .ui-page-theme-a .ui-btn, html .ui-bar-a .ui-btn, html .ui-body-a .ui-btn, html body .ui-group-theme-a .ui-btn, html head + body .ui-btn.ui-btn-a, .ui-page-theme-a .ui-btn:visited, html .ui-bar-a .ui-btn:visited, html .ui-body-a .ui-btn:visited, html body .ui-group-theme-a .ui-btn:visited, html head + body .ui-btn.ui-btn-a:visited {
+            background-color: #fff;
+            border-color: #ddd;
+            color: #333;
+            text-shadow: 0 1px 0 #f3f3f3;
+        }
+    </style>
+</head>
+<body>
+    <div data-role="page">
+        <script>
+            function Show(address) {
+                window.location.href = '../ProvidentFund/SelectPointResult?address=' + address;
+            }
+        </script>
+        <div data-role="content" style="padding:0 0 10px 0;">
+            <div>
+                <img src="~/Image/苏州市住房公积金管理中心.jpg" style="width:100%;" />
+            </div>
+            <div style="padding-top:10px;">
+                <div style="padding-bottom:10px;padding-left:10px;">
+                    <span style="font-size:20px;"><b>住房置业担保公司受理点</b></span>
+                </div>
+                <ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow" style="margin:0px;">
+                    <li><a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('苏州市人民路3118号')"><h2>姑苏分中心-苏州市住房置业担保公司</h2><p>地址：人民路3118号国发大厦北楼8楼</p><p>热线：80780817、80780850</p></a></li>
+                    <li><a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('苏州市人民路3118号')"><h2>虎丘分中心-苏州市住房置业担保公司</h2>  <p>地址：人民路3118号国发大厦北楼8楼</p><p>热线：80780817、80780850</p></a></li>
+                    <li><a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('张家港人民中路5号')"><h2>张家港分中心-张家港分公司</h2> <p>地址：人民中路5号</p><p>热线：58288598</p></a></li>
+                    <li><a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('常熟亿源广场')"><h2>常熟分中心-常熟分公司</h2> <p>地址：亿源广场A-507室</p><p>热线：52875250</p></a></li>
+                    <li><a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('昆山前进东路586号')"><h2>昆山分中心-昆山分公司</h2> <p>地址：前进东路586号</p><p>热线：55187595</p></a></li>
+                    <li><a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('太仓市城厢镇郑和西路29号')"><h2>太仓分中心-太仓分公司</h2> <p>地址：城厢镇郑和西路29号</p><p>热线：53513123</p></a></li>
+                    <li><a class="ui-btn ui-shadow ui-corner-all  ui-icon-location ui-btn-icon-right" href="javascript:Show('苏州吴江开平路789号金城大厦二楼')"><h2>吴江分中心-吴江分公司</h2> <p>地址：开平路789号金城大厦二楼</p><p>热线：63428341</p></a></li>
+                </ul>
+            </div>
+            <div style="bottom:0px;">
+                <img src="~/Image/公积金官方微信.png" style="width:100%;" />
+            </div>
+        </div>
+    </div>
+</body>
+</html>

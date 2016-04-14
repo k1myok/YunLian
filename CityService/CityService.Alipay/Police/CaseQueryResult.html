@@ -77,13 +77,14 @@
                      pendingId:decodeURI(getQueryStringByName("pendingId"))
                  },
                  success: function (msg) {
-                     if (msg.d.succ =="True")
+                     var temp = JSON.parse(msg);
+                     if (temp.succ =="True")
                      {
-                         $("#JJBH").html(msg.d.data.JJBH);
-                         $("#BJSJ").html(msg.d.data.BJSJ);
-                         $("#BADWMC").html(msg.d.data.BADWMC);
-                         $("#AJZT").html(msg.d.data.AJZT);
-                         $("#SM").html(msg.d.data.SM);
+                         $("#JJBH").html(temp.data.JJBH);
+                         $("#BJSJ").html(temp.data.BJSJ);
+                         $("#BADWMC").html(temp.data.BADWMC);
+                         $("#AJZT").html(temp.data.AJZT);
+                         $("#SM").html(temp.data.SM);
                      }
                      else
                      {

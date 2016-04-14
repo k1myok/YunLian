@@ -89,15 +89,16 @@
                       caseid: decodeURI(getQueryStringByName("caseid")),
                   },
                   success: function (msg) {
-                      if (msg.d.succ=="True") {
-                          $("#ProjectCaseName").html(msg.d.data.ProjectCaseName);
-                          $("#UnitContactor").html(msg.d.data.UnitContactor);
-                          $("#ProjectBillID").html(msg.d.data.ProjectBillID);
-                          $("#StartDoDate").html(msg.d.data.StartDoDate);
-                          $("#DueDate").html(msg.d.data.DueDate);
-                          $("#ProjectStatus").html(msg.d.data.ProjectStatus);
-                          $("#UnitAttribute").html(msg.d.data.UnitAttribute);
-                          $("#UnitName").html(msg.d.data.UnitName);
+                      var temp = JSON.parse(msg);
+                      if (temp.succ==true) {
+                          $("#ProjectCaseName").html(temp.data.ProjectCaseName);
+                          $("#UnitContactor").html(temp.data.UnitContactor);
+                          $("#ProjectBillID").html(temp.data.ProjectBillID);
+                          $("#StartDoDate").html(temp.data.StartDoDate);
+                          $("#DueDate").html(temp.data.DueDate);
+                          $("#ProjectStatus").html(temp.data.ProjectStatus);
+                          $("#UnitAttribute").html(temp.data.UnitAttribute);
+                          $("#UnitName").html(temp.data.UnitName);
                       }
                       else
                       {

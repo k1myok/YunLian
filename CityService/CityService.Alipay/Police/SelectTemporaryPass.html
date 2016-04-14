@@ -90,8 +90,9 @@
                 contentType: 'text/json',
                 data: "tempPass=" + tempPass,
                 success: function (msg) {
-                    if (msg.d.msg != null) {
-                        alert(msg.d.msg);
+                    var temp = JSON.parse(msg);
+                    if (temp.msg != null) {
+                        alert(temp.msg);
                     } else {
                         window.location.href = 'TemporaryPassResult.html?tempPass=' + tempPass;
                     }

@@ -69,12 +69,13 @@
                 contentType: 'text/json',
                 data: "dl=" + dl + "&fn=" + fn,
                 success: function (msg) {
-                    if (msg.d != null) {
-                        if (msg.d.succ == "True" && msg.d.data.XM != null) {
-                            $("#driverName").html(msg.d.data.XM);
-                            $("#carType").html(msg.d.data.ZJCX);
-                            $("#allScore").html(msg.d.data.LJJF);
-                            $("#yxqz").html(msg.d.data.YXQZ);
+                    var temp = JSON.parse(msg);
+                    if (temp != null) {
+                        if (temp.succ == true && temp.data.XM != null) {
+                            $("#driverName").html(temp.data.XM);
+                            $("#carType").html(temp.data.ZJCX);
+                            $("#allScore").html(temp.data.LJJF);
+                            $("#yxqz").html(temp.data.YXQZ);
                         }
                         else {
                             alert("未查到驾驶员记分信息!");

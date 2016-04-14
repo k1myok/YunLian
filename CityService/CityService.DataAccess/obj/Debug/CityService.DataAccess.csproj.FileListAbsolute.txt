@@ -7,5 +7,6 @@ E:\Projects\PreProjects\Source\CityService\CityService.DataAccess\bin\zh-Hans\En
 E:\Projects\PreProjects\Source\CityService\CityService.Service\bin\CityService.DataAccess.dll.config
 E:\Projects\PreProjects\Source\CityService\CityService.Service\bin\CityService.DataAccess.dll
 E:\Projects\PreProjects\Source\CityService\CityService.Service\bin\CityService.DataAccess.pdb
+E:\Projects\PreProjects\Source\CityService\CityService.DataAccess\obj\Debug\CityService.DataAccess.csprojResolveAssemblyReference.cache
 E:\Projects\PreProjects\Source\CityService\CityService.DataAccess\obj\Debug\CityService.DataAccess.dll
 E:\Projects\PreProjects\Source\CityService\CityService.DataAccess\obj\Debug\CityService.DataAccess.pdb

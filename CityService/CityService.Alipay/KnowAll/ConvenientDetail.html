@@ -41,7 +41,7 @@
                                 <h3 class="am-card-item-title" id="INFOTITLE"></h3>
                             </div>
                             <div class="am-card-item-content">
-                                <div class="am-card-item-subject"><p class="am-ft-black" id="PUBLICCONTENTHTML" style="word-break:break-all"></p></div>
+                                <div class="am-card-item-subject"><p class="am-ft-orange" id="PUBLICCONTENTHTML" style="word-break:break-all"></p></div>
                                 <div class="am-card-item-footnote">
                                     <div class="am-card-item-tims" id="ORGNAMEUPDATETIME" style="text-align:right;"></div>
                                 </div>
@@ -114,7 +114,6 @@
                 success: function (result) {
                     var json = JSON.parse(result.d);
                     if (json.succ != "false" && json.data != null) {
-                        alert(formatContent(json.data.PUBLICCONTENT));
                         $("#INFOTITLE").html(formatContent(json.data.INFOTITLE));
                         $("#PUBLICCONTENTHTML").html(formatContent(json.data.PUBLICCONTENT));
                         $("#ORGNAMEUPDATETIME").html(json.data.ORGNAME + "&nbsp;&nbsp;&nbsp;&nbsp;" + json.data.UPDATETIME);
@@ -194,8 +193,7 @@
                 //调用BASE64转码
                 var unicode = decode64(value);
                 if (unicode != null && unicode != "") {
-                    //return unicode.replace(/@/gm, '<br>');
-                    return unicode;
+                    return unicode.replace(/@@@/gm, '<br/>');
                 }
             }
             else {

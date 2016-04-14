@@ -1,5 +1,6 @@
 ﻿
-
+using Senparc.Weixin.MP.AdvancedAPIs.OAuth;
+using Senparc.Weixin.MP.CommonAPIs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +9,6 @@ using System.Threading.Tasks;
 using Aop.Api;
 using Aop.Api.Request;
 using Aop.Api.Response;
-using Senparc.Weixin.MP.AdvancedAPIs.OAuth;
-using Senparc.Weixin.MP.CommonAPIs;
 
     public class GetOpenID
     {
@@ -49,7 +48,7 @@ using Senparc.Weixin.MP.CommonAPIs;
                     string.Format("https://api.weixin.qq.com/sns/oauth2/access_token?appid={0}&secret={1}&code={2}&grant_type={3}",
                                     appId, secret, code, grantType);
                 ServiceContext.Default.WriteLog("start GetAccessToken url:" + url, "Public");
-                var result = CommonJsonSend.Send<OAuthAccessTokenResult>(null, url, null,CommonJsonSendType.GET, 30000);
+                var result = CommonJsonSend.Send<OAuthAccessTokenResult>(null, url, null, Senparc.Weixin.CommonJsonSendType.GET, 30000);
                 ServiceContext.Default.WriteLog("end GetAccessToken", "Public");
                 return result;
             }

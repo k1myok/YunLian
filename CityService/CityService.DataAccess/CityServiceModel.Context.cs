@@ -39,6 +39,8 @@ namespace CityService.DataAccess
         public DbSet<schedual> schedual { get; set; }
         public DbSet<Member> Member { get; set; }
         public DbSet<Register> Register { get; set; }
-       
+        public DbSet<ZWBST_ShfwzList> ZWBST_ShfwzList { get; set; }
+        public DbSet<ZWBST_EntDetail> ZWBST_EntDetail { get; set; }
+        public DbSet<ZWBST_EntSfbz> ZWBST_EntSfbz { get; set; }
     }
 }

@@ -4,6 +4,6 @@ E:\Projects\PreProjects\Source\CityService\CityService.DataAccess\bin\Release\Ci
 E:\Projects\PreProjects\Source\CityService\CityService.DataAccess\bin\Release\EntityFramework.dll
 E:\Projects\PreProjects\Source\CityService\CityService.DataAccess\bin\Release\EntityFramework.xml
 E:\Projects\PreProjects\Source\CityService\CityService.DataAccess\bin\Release\zh-Hans\EntityFramework.resources.dll
+E:\Projects\PreProjects\Source\CityService\CityService.DataAccess\obj\Release\CityService.DataAccess.csprojResolveAssemblyReference.cache
 E:\Projects\PreProjects\Source\CityService\CityService.DataAccess\obj\Release\CityService.DataAccess.dll
 E:\Projects\PreProjects\Source\CityService\CityService.DataAccess\obj\Release\CityService.DataAccess.pdb
-E:\Projects\PreProjects\Source\CityService\CityService.DataAccess\obj\Release\CityService.DataAccess.csprojResolveAssemblyReference.cache
