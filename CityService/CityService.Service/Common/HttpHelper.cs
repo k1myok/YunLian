@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -29,6 +30,7 @@ public class HttpHelper
         string ret = string.Empty;
         try
         {
+            //WriteToLog(string.Format("GetHtmlExByByPost:{0},{1}", postUrl, paramData));
             byte[] byteArray = dataEncode.GetBytes(paramData); //转化
             HttpWebRequest webReq = (HttpWebRequest)WebRequest.Create(new Uri(postUrl));
             webReq.Method = "POST";
@@ -49,8 +51,10 @@ public class HttpHelper
         }
         catch (Exception ex)
         {
+            WriteToLog(ex.Message);
             return null;
         }
+        //WriteToLog(string.Format("result:{0}",ret ));
         return ret;
     }
     public static string GetHtmlExByByPost(string postUrl, string paramData, Encoding dataEncode, Action<HttpWebRequest> action)
@@ -89,5 +93,23 @@ public class HttpHelper
         System.DateTime startTime = TimeZone.CurrentTimeZone.ToLocalTime(new System.DateTime(1970, 1, 1));
         time = startTime.AddMilliseconds(milliseconds);
         return time;
+    }
+
+    public static void WriteToLog(string logMessage)
+    {
+        try
+        {
+            var path = ConfigurationManager.AppSettings["LogPath"];
+            if (!System.IO.Directory.Exists(path))
+                System.IO.Directory.CreateDirectory(path);
+
+            var logFilePath = string.Format("{0}\\{1}.txt", path, DateTime.Now.ToString("yyyy_MM_dd hh_mm"));
+            System.IO.File.AppendAllText(logFilePath, logMessage);
+        }
+        catch (Exception ex)
+        {
+
+
+        }
     }
 }

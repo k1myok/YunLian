@@ -14,12 +14,13 @@ function auth_code()
 function auth_codehospital()
 {
     code = decodeURI(getQueryStringByName("code"));
-   
     if (code != "") {
         GetWechatOpenID(code);
     }
     else {
-        location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe8dc58e12b05f6a7&redirect_uri=http%3a%2f%2fcs.weixin.china-ccw.com%2fCityService%2fweixin%2fHealth%2fgetHospitallist.html&response_type=code&scope=snsapi_base&state=123#wechat_redirect";
+		var url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx33cfa168b97bde1b&redirect_uri=http://app.china-ccw.com:8011/CityService/Cityservice.weixin/Health/getHospitallist.html&response_type=code&scope=snsapi_base&state=123#wechat_redirect";
+		
+        location.href =decodeURI(url);
     }
 }
 function GetWechatOpenID(code)
@@ -34,8 +35,8 @@ function GetWechatOpenID(code)
         dataType: "Json",
         success: function (result) {
             var temp = JSON.parse(result.d);
-            //alert(temp.openid);
             document.cookie = "OpenID=" + temp.openid;
+			    // getHospital();
         },
         error: function (msg) {
            return;
